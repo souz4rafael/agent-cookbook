@@ -1,0 +1,40 @@
+.interactive-lab { flex-shrink: 0; border: 1px solid var(--cp-border); background: var(--cp-bg-elevated); border-radius: 12px; margin-bottom: 14px; }
+.lab-content { padding: 16px; }
+.lab-dialog[open] { display: flex; flex-direction: column; overflow: hidden; }
+.lab-dialog > .modal-header, .lab-dialog > .modal-footer { flex-shrink: 0; }
+.lab-dialog > .modal-body { overflow-y: auto; min-height: 0; }
+.review-try-example { margin: 12px 0; }
+.lab-content > p { font-size: 12px; color: var(--cp-text-muted); margin-bottom: 8px; line-height: 1.65; }
+.lab-example-picker { display: flex; align-items: center; gap: 12px; margin: 14px 0; font-size: 12px; }
+.lab-example-picker select { flex: 1; min-width: 0; }
+.lab-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+.lab-field > label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.lab-field input:not([type="checkbox"]), .lab-field select, .lab-example-picker select { width: 100%; padding: 8px 10px; border: 1px solid var(--cp-border); border-radius: 7px; background: var(--cp-surface); font-size: 13px; }
+.lab-field-boolean { display: grid; grid-template-columns: 1fr auto; align-content: start; gap: 2px 8px; }
+.lab-field-boolean input { width: 18px; height: 18px; }
+.lab-field-boolean .field-hint { grid-column: 1 / -1; }
+.lab-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+.lab-actions > span { font-size: 10px; color: var(--cp-text-muted); }
+.lab-result, .lab-draft { margin: 14px 0; border: 1px solid var(--cp-border); padding: 12px; border-radius: 10px; font-size: 12px; }
+.lab-result > summary, .lab-draft > summary { cursor: pointer; font-weight: 600; }
+.lab-check-scroll { overflow-x: auto; margin: 12px 0; }
+.lab-check-scroll table { width: 100%; border-collapse: collapse; text-align: left; min-width: 420px; }
+.lab-check-scroll th, .lab-check-scroll td { border-bottom: 1px solid var(--cp-border); padding: 7px; font-size: 11px; }
+.lab-check-scroll th { font-weight: 600; }
+.lab-draft label { display: block; margin-top: 12px; }
+.lab-draft textarea { display: block; width: 100%; margin: 8px 0; padding: 10px; border: 1px solid var(--cp-border); border-radius: 8px; background: var(--cp-surface); font-size: 12px; line-height: 1.7; }
+.lab-rule-guide { border-top: 1px solid var(--cp-border); padding-top: 14px; margin-top: 14px; font-size: 12px; overflow-wrap: anywhere; }
+.lab-rule-guide > summary { cursor: pointer; font-weight: 600; }
+.lab-rule-guide > p { color: var(--cp-text-muted); margin-top: 10px; line-height: 1.7; }
+.lab-rule-guide ol { padding-left: 20px; margin-bottom: 10px; }
+.lab-rule-guide li { padding: 8px 0; line-height: 1.7; }
+.lab-rule-guide li p { color: var(--cp-text-muted); }
+.evaluation-assertions { margin-top: 12px; padding-left: 20px; }
+.evaluation-assertions li { margin-bottom: 8px; font-size: 11px; }
+.eval-check-pass { color: var(--cp-success); }
+.eval-check-fail { color: var(--cp-danger); }
+@media (max-width: 580px) {
+  .lab-fields { grid-template-columns: 1fr; }
+  .lab-example-picker { flex-direction: column; align-items: stretch; }
+  .lab-field input:not([type="checkbox"]), .lab-field select, .lab-example-picker select, .lab-draft textarea { font-size: 16px; }
+}

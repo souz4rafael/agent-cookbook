@@ -1,0 +1,18 @@
+EXAMPLE COUNCIL - FICTIONAL COMMUNITY LEARNING SUPPORT
+Policy DEMO-1, learning edition 2
+
+Fictional policy DEMO-1 covers Community Learning Support for a resident of Example Borough with monthly household income at or below 1,200 demo units. Exactly 1,200 meets the example income threshold. Both residency and income need supporting evidence; the responsible service makes the decision.
+
+Demo units are invented learning values, not real currency. This is not an actual benefit or official eligibility guidance. The rule is a simplified example, not a complete assessment model. Missing information means unknown; conflicting evidence needs human clarification. No age, disability, nationality or other personal characteristic is inferred.
+
+Interactive preliminary checks:
+Residency is explicitly yes, no or unknown. Unknown needs clarification, not refusal. Evidence of residence elsewhere can be present without meeting the Example Borough criterion.
+Income fields are nonnegative numeric monthly demo units for the same fictional period. 1200 and 1200.00 are numerically equal. A blank is unknown; 0 is a known value. Never turn a missing amount into zero.
+Known, unequal declared and evidence amounts require Policy review before relying on either amount. Preserve both figures and establish the correct period and value.
+With no known numeric conflict, missing application information, unknown residence, missing residence evidence or either missing income amount requires Evidence follow-up.
+Complete consistent inputs with stated Example Borough residence and income at or below 1200 appear to meet the simplified criteria and go to Eligibility review.
+Complete consistent inputs outside either criterion go to Policy review, not an automatic refusal. Explain alternatives and allow correction before any actual decision.
+
+Boundary examples: 1199 is below the inclusive threshold; exactly 1200 meets it; 1201 is above it. None determines real entitlement. BEN-101, BEN-102 and BEN-103 are raw-input examples, not active policy reports or frozen answers.
+
+No sample grants or refuses entitlement. Real policies contain additional definitions and requirements and must be applied by the responsible service.

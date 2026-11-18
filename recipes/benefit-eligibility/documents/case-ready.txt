@@ -1,0 +1,10 @@
+FICTIONAL RAW INPUT EXAMPLE BEN-101
+Not active policy knowledge and not an eligibility assessment.
+
+Residence in Example Borough: yes
+Declared monthly household income: 950 demo units
+Monthly income shown in example evidence: 950 demo units
+Application information complete: true
+Evidence of stated residence present: true
+
+Enter these values in the editable preliminary-check lab, then try 1199, 1200 and 1201 in both numeric fields. The selected policies ground the recomputed checks and explanation draft. Every result needs human review. Nothing grants entitlement or promises payment.

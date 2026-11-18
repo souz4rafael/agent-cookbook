@@ -1,0 +1,395 @@
+schemaVersion: 1
+revision: 3
+id: citizen-qa
+status: published
+title: Citizen Q&A agent
+summary: Reduce repeated service questions with cited guidance and a reviewable handoff. Change a fictional topic, urgency and context to recompute the response, compare expected results and prepare a supervisor summary without sending anything.
+industry: Government and public services
+difficulty: beginner
+accentIcon: citizen
+learningGoals:
+  - Personalise the agent profile and compare tone and detail levels.
+  - Understand why connecting a library does not automatically select its documents.
+  - Change structured inputs, check citations and compare ordinary guidance with urgent escalation.
+  - Enable a tool and confirm a human handoff without performing real actions.
+sourceUrl: https://adoption.microsoft.com/en-gb/scenario-library/government/citizen-qa-agent/
+agent:
+  name: Citizen Services Assistant
+  description: ""
+  instructions: |-
+    # Purpose and scope
+    Help people understand the fictional Community Card service: required documents, processing guidance, appeals and human support. Give general guidance, not an application decision or a live status lookup. Urgency does not bring unrelated questions into scope.
+
+    # Sources and context
+    Use the selected, connected Community Card documents for the relevant topic. Use Appeals and contact details for a handoff. Do not invent policy, deadlines or contact channels. If a source is missing or conflicting, explain the gap rather than fill it from memory.
+    Use the question, selected topic, urgency, supplied context and relevant conversation already available. If these disagree or the request is unclear, ask one focused question before choosing a route. Request only the missing context needed; do not ask for identity documents or identification numbers.
+
+    # Guidance and review
+    - Check scope first, then distinguish routine guidance from an urgent in-scope issue or a request for human help.
+    - For routine questions, explain the relevant sourced requirement and next step. Distinguish published processing guidance from actual application progress.
+    - For urgent in-scope issues, prepare a supervisor-attention summary. For ordinary human help, prepare a support summary. Include the question, unresolved issue, relevant context and why staff review is needed.
+    - Offer the configured Create a human support case tool for the Citizen support queue, not an email or emergency response. Check that the source and tool are available.
+
+    # Action and response
+    Show the draft and destination for correction, then require separate explicit confirmation before creating a case. If declined, do not act. If details change, review and confirm the revised draft. On failure or an uncertain result, explain what is unconfirmed; never claim a case exists without a successful tool result.
+    Answer with the guidance or proposed route, supporting source, any uncertainty and the next step. Label drafts and distinguish a confirmed case receipt from a resolved issue. Do not promise staff response times beyond the approved source or decide an appeal.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and scope
+    Help people understand the fictional Community Card service: required documents, processing guidance, appeals and human support. Give general guidance, not an application decision or a live status lookup. Urgency does not bring unrelated questions into scope.
+
+    # Sources and context
+    Use the selected, connected Community Card documents for the relevant topic. Use Appeals and contact details for a handoff. Do not invent policy, deadlines or contact channels. If a source is missing or conflicting, explain the gap rather than fill it from memory.
+    Use the question, selected topic, urgency, supplied context and relevant conversation already available. If these disagree or the request is unclear, ask one focused question before choosing a route. Request only the missing context needed; do not ask for identity documents or identification numbers.
+
+    # Guidance and review
+    - Check scope first, then distinguish routine guidance from an urgent in-scope issue or a request for human help.
+    - For routine questions, explain the relevant sourced requirement and next step. Distinguish published processing guidance from actual application progress.
+    - For urgent in-scope issues, prepare a supervisor-attention summary. For ordinary human help, prepare a support summary. Include the question, unresolved issue, relevant context and why staff review is needed.
+    - Offer the configured Create a human support case tool for the Citizen support queue, not an email or emergency response. Check that the source and tool are available.
+
+    # Action and response
+    Show the draft and destination for correction, then require separate explicit confirmation before creating a case. If declined, do not act. If details change, review and confirm the revised draft. On failure or an uncertain result, explain what is unconfirmed; never claim a case exists without a successful tool result.
+    Answer with the guidance or proposed route, supporting source, any uncertainty and the next step. Label drafts and distinguish a confirmed case receipt from a resolved issue. Do not promise staff response times beyond the approved source or decide an appeal.
+  stepByStep: |-
+    # Community Card guidance workflow
+    Provide general guidance about the fictional Community Card: documents, processing, appeals and human support. Do not decide applications or appeals, query live status without a configured capability, or treat this service as an emergency response.
+
+    # Steps
+    1. Read the question, selected topic, urgency, supplied context and relevant conversation. Reuse known information. If the topic and question disagree or the need is unclear, ask one focused clarification. Avoid identity documents, identification numbers and unnecessary personal details.
+    2. Establish scope before responding to urgency. Explain the boundary for unrelated questions; do not route them as urgent Community Card requests.
+    3. Consult the selected, connected document for the topic. Use Appeals and contact details for handoffs. If sources are missing or conflict, state the limitation and seek clarification rather than invent policy, deadlines or contact channels.
+    4. For a routine question, explain the sourced requirement and practical next step. Keep published processing guidance separate from actual application progress. Do not promise a response time unsupported by the source.
+    5. For an urgent in-scope issue, draft a supervisor-attention summary. For requested human help, draft a support summary. Include the question, unresolved issue, relevant context and reason for staff review. Use the configured Create a human support case tool for the Citizen support queue, not an email.
+    6. Check the source and tool are available. Show the draft and destination for correction. Ask for separate explicit confirmation before creating the case; a request for help alone is not confirmation. Stop if declined. Review and reconfirm any changed draft.
+    7. Check the returned result. Report a case only after a successful tool result. If it fails or its status is uncertain, say what remains unconfirmed and what needs checking; do not imply staff received or resolved the issue.
+
+    # Response
+    Present the guidance or proposed route, supporting source, uncertainty and next step. Clearly label an unsubmitted draft. Keep a confirmed case receipt distinct from a decision or a resolved issue.
+  decisionRules: |-
+    # Purpose and inputs
+    Support fictional Community Card questions about documents, processing, appeals and human help. Use the question, selected topic, urgency, supplied context and relevant conversation. Ask one focused question when the request is ambiguous or these inputs disagree; do not collect identity documents, identification numbers or unnecessary personal details.
+
+    # Decision rules
+    - If the question is outside this service, explain the boundary first. Urgency does not make an unrelated question eligible for a Community Card handoff.
+    - If the required selected, connected source is unavailable or conflicts with another source, state the gap and seek clarification. Do not invent policy, deadlines or contact channels.
+    - If a routine question is in scope, use its Community Card document to explain the requirement and next step. Processing guidance is not a live application-status lookup.
+    - If an in-scope issue is urgent, prepare a supervisor-attention summary. If ordinary human help is requested, prepare a support summary. Include the question, unresolved issue, relevant context and reason for review.
+    - If a handoff is proposed, require Appeals and contact details and the available configured Create a human support case tool for the Citizen support queue. Do not substitute an email or imply an emergency response.
+    - If the draft and destination have not been reviewed, show them for correction. Create a case only after separate explicit confirmation. If confirmation is declined, do nothing. If the draft changes, require renewed review and confirmation.
+    - If the tool fails or its result is uncertain, explain what is unconfirmed and what needs checking. Report a case only from a successful tool result, never merely from an attempted call.
+
+    # Response and boundaries
+    Give the guidance or proposed route, supporting source, uncertainty and next step. Label drafts and distinguish a confirmed case receipt from resolution of the issue. Do not decide an application or appeal, claim live progress without a configured capability, or promise staff response times beyond the approved source.
+  examples: |-
+    # Behaviour examples
+    Situation: An urgent document question has no available handoff policy.
+    Expected behaviour: Explain the missing source; do not invent a route or claim staff were notified.
+
+    Situation: The person reviews a support draft but declines confirmation.
+    Expected behaviour: Leave it unsubmitted and offer to correct it; do not create a case.
+
+    Situation: The topic says documents, but the question asks about tomorrow's weather.
+    Expected behaviour: Clarify the mismatch and explain the service boundary; urgency does not justify a handoff.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: sharepoint-demo
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose a fictional library. The connection is only a local setting and does not sign in, access a network or open organisational files.
+    accountLabel: Alex Morgan · alex.morgan@example-council.invalid
+    resources:
+      - id: citizen-service
+        label: Citizen services
+        description: A fictional library containing three original public example documents about the Community Card.
+      - id: empty-library
+        label: Empty library (boundary test)
+        description: A deliberately incorrect choice. It contains none of this recipe's documents and clears earlier selections.
+    realWorldNote: A real implementation requires an administrator to configure identity, permissions and least-privilege access in SharePoint. None of that happens here.
+  - id: service-desk-demo
+    type: service-desk
+    title: Demo service desk
+    description: Choose the fictional queue to enable local case records. No service desk system is accessed.
+    accountLabel: Alex Morgan · alex.morgan@example-council.invalid
+    resources:
+      - id: citizen-support
+        label: Citizen support
+        description: A fictional queue that receives only SIM records within this browser.
+    realWorldNote: A real service requires an authenticated connector, consent, security controls, retention rules and an accountable team. This demonstration sends no emails and creates no real requests.
+knowledge:
+  - id: required-documents
+    title: Required documents for the Community Card
+    summary: A fictional list of supporting documents and alternatives for an entirely invented service.
+    connectionId: sharepoint-demo
+    resourceId: citizen-service
+    file: documents/required-documents.txt
+  - id: processing-deadlines
+    title: Processing deadlines and application status
+    summary: Invented deadlines and rules that demonstrate an answer limited to a selected source.
+    connectionId: sharepoint-demo
+    resourceId: citizen-service
+    file: documents/processing-deadlines.txt
+  - id: appeals-contact
+    title: Appeals and contact details
+    summary: A fictional review procedure and example contact details using the .invalid domain.
+    connectionId: sharepoint-demo
+    resourceId: citizen-service
+    file: documents/appeals-contact.txt
+facts:
+  - id: documents-answer
+    documentId: required-documents
+    keywords:
+      - documents
+      - documentation
+      - papers
+      - required docs
+      - supporting evidence
+      - proof of address
+      - what should I bring
+    answer: To apply for the fictional Community Card, provide photo identification and proof of address issued within the last 90 days.
+    detail: If the proof of address is in someone else's name, include a signed residency declaration. Legible copies are sufficient in this simulation; do not enter identification numbers or upload personal files.
+  - id: appeals-answer
+    documentId: appeals-contact
+    keywords:
+      - appeal
+      - appeals
+      - challenge
+      - review a decision
+      - contact
+    answer: Under the fictional Community Card policy, you can appeal a decision within 15 calendar days of receiving the outcome by providing the demonstration reference number and your reason for requesting a review.
+    detail: The fictional review is answered within 8 working days. The example contact address is support@example-council.invalid; it does not receive messages. To test a local handoff, ask for human support and then confirm the simulation separately.
+  - id: deadlines-answer
+    documentId: processing-deadlines
+    keywords:
+      - deadline
+      - deadlines
+      - how long
+      - processing time
+      - application status
+    answer: The fictional Community Card assessment takes up to 10 working days from receipt of all documents required in this demonstration.
+    detail: If a document is missing, the fictional clock pauses until it is supplied. The example status check uses a SIM reference at portal.example-council.invalid; this portal is not an accessible service.
+tools:
+  - id: create-citizen-case
+    type: create-case
+    title: Create a human support case
+    description: Creates a local SIM receipt with the summary you have reviewed. Requires a connection, an enabled tool and separate confirmation; asking in chat never executes the tool.
+    connectionId: service-desk-demo
+    resourceId: citizen-support
+    requiredKnowledge: [appeals-contact]
+    realWorldNote: A browser simulation only. No email, external ticket or request to a public authority is created. Do not include personal data.
+lab:
+  title: Answer or escalate a fictional citizen question
+  description: Choose the topic explicitly; the browser does not infer it from your question. Change urgency or context and run again to recompute a cited answer or reviewable support draft. Policy citations ground the guidance; your input and recent chat supply the draft context, not quoted policy facts.
+  fields:
+    - id: topic
+      label: Question topic
+      type: select
+      defaultValue: docs
+      hint: Select the scope of the fictional question.
+      options:
+        - { value: docs, label: Required documents }
+        - { value: deadlines, label: Processing deadlines }
+        - { value: appeals, label: Appeal guidance }
+        - { value: support, label: Human support }
+        - { value: outside, label: Outside this service }
+    - { id: urgent, label: Urgent staff attention requested, type: boolean, defaultValue: false, hint: Routes an in-scope question to supervisor review; not an emergency service. }
+    - { id: question, label: Fictional question, type: text, defaultValue: "Which papers do I need?", hint: Use invented details only; this text is preserved rather than interpreted by AI. }
+    - { id: context, label: Context for staff, type: text, defaultValue: "First application; no personal data.", hint: Explain the fictional unresolved issue for a reviewer. }
+  checks:
+    - { id: outside-topic, label: Topic outside the service, field: topic, operator: eq, value: outside }
+    - { id: urgent-request, label: Urgent attention requested, field: urgent, operator: eq, value: true }
+    - { id: support-topic, label: Human support requested, field: topic, operator: eq, value: support }
+    - { id: docs-topic, label: Documents requested, field: topic, operator: eq, value: docs }
+    - { id: deadlines-topic, label: Deadlines requested, field: topic, operator: eq, value: deadlines }
+    - { id: appeals-topic, label: Appeal guidance requested, field: topic, operator: eq, value: appeals }
+  rules:
+    - { id: scope-first, label: Keep unrelated questions outside scope, all: [{ checkId: outside-topic, equals: true }], outcomeId: outside-scope }
+    - { id: urgent-first, label: Escalate urgent in-scope context, all: [{ checkId: urgent-request, equals: true }], outcomeId: urgent-escalation }
+    - { id: support, label: Prepare requested human support, all: [{ checkId: support-topic, equals: true }], outcomeId: human-support }
+    - { id: documents, label: Retrieve document guidance, all: [{ checkId: docs-topic, equals: true }], outcomeId: document-guidance }
+    - { id: deadlines, label: Retrieve timing guidance, all: [{ checkId: deadlines-topic, equals: true }], outcomeId: deadline-guidance }
+    - { id: appeals, label: Retrieve appeal guidance, all: [{ checkId: appeals-topic, equals: true }], outcomeId: appeal-guidance }
+    - { id: fallback, label: Keep unsupported scope explicit, all: [], outcomeId: outside-scope }
+  outcomes:
+    - id: document-guidance
+      title: Required documents
+      summary: "For the fictional Community Card, provide photo identification and proof of address issued within the last 90 days. If the address proof is in another person's name, include a signed residency declaration. Question: {{question}}"
+      documentIds: [required-documents]
+    - id: deadline-guidance
+      title: Processing guidance
+      summary: The fictional assessment takes up to 10 working days after all required documents arrive. Missing documents pause that clock. This is general guidance, not a live application-status lookup.
+      documentIds: [processing-deadlines]
+    - id: appeal-guidance
+      title: Appeal guidance
+      summary: The invented Community Card policy allows an appeal within 15 calendar days with the demonstration reference and reason. A fictional response takes up to 8 working days. These are not real legal deadlines.
+      documentIds: [appeals-contact]
+    - id: human-support
+      title: Human support draft
+      summary: Review the question and context before confirming a local Citizen support request. No message is sent and no appointment is booked.
+      documentIds: [appeals-contact]
+      toolId: create-citizen-case
+      draft:
+        title: Citizen support summary for review
+        body: |
+          DRAFT ONLY — Citizen support
+          Question: {{question}}
+          Stated context: {{context}}
+          Topic: {{topic}}; urgent: {{urgent}}
+          Recent conversation: {{conversation}}
+          Please clarify the unresolved issue with the person. Check this summary before confirming a local SIM record; no external request is sent.
+    - id: urgent-escalation
+      title: Supervisor review draft
+      summary: Urgent attention was requested for an in-scope issue. Prepare a supervisor summary for Citizen support rather than guessing an exception or promising a faster decision. This simulation is not an emergency service.
+      documentIds: [appeals-contact]
+      toolId: create-citizen-case
+      draft:
+        title: Urgent supervisor message for review
+        body: |
+          DRAFT ONLY — Supervisor attention requested
+          Topic: {{topic}}
+          Question: {{question}}
+          Stated urgency: {{urgent}}
+          Unresolved context: {{context}}
+          Recent conversation: {{conversation}}
+          Please review the issue and determine the appropriate human response. Do not promise priority processing or change policy. Confirm only a local Citizen support SIM record; this draft is not sent.
+    - id: outside-scope
+      title: Outside the Community Card service
+      summary: This topic is outside the fictional Community Card service. No answer or urgent service is invented. Select documents, deadlines, appeals or human support to explore the supported scope.
+      documentIds: [appeals-contact]
+  cases:
+    - id: documents-happy
+      title: Papers synonym with ordinary guidance
+      inputs: { topic: docs, urgent: false, question: "Which papers do I need?", context: "First application; no personal data." }
+      expected: { outcomeId: document-guidance, kind: answer, documentIds: [required-documents], contains: [photo identification, 90 days] }
+    - id: deadlines-happy
+      title: Timing with a paused-clock boundary
+      inputs: { topic: deadlines, urgent: false, question: "How long does it take?", context: "One fictional document is missing." }
+      expected: { outcomeId: deadline-guidance, kind: answer, documentIds: [processing-deadlines], contains: [10 working days, pause] }
+    - id: appeals-happy
+      title: Fictional appeal guidance is not real legal advice
+      inputs: { topic: appeals, urgent: false, question: "How do I challenge the example outcome?", context: "Demonstration reference SIM-DEMO." }
+      expected: { outcomeId: appeal-guidance, kind: answer, documentIds: [appeals-contact], contains: [15 calendar days, not real legal deadlines] }
+    - id: support-happy
+      title: Reviewable context handoff
+      inputs: { topic: support, urgent: false, question: "Can a person help?", context: "Need help with the fictional residency declaration." }
+      expected: { outcomeId: human-support, kind: handoff-ready, toolId: create-citizen-case, documentIds: [appeals-contact], contains: [residency declaration, DRAFT ONLY] }
+    - id: urgent-exception
+      title: Urgency changes guidance into supervisor review
+      inputs: { topic: docs, urgent: true, question: "Which papers do I need?", context: "The fictional document requirement is unresolved after an earlier question." }
+      expected: { outcomeId: urgent-escalation, kind: handoff-ready, toolId: create-citizen-case, documentIds: [appeals-contact], contains: [Supervisor attention requested, unresolved after an earlier question] }
+    - id: outside-boundary
+      title: Urgency cannot bring an unrelated topic into scope
+      inputs: { topic: outside, urgent: true, question: "What is tomorrow's weather?", context: "Unrelated fictional request." }
+      expected: { outcomeId: outside-scope, kind: answer, documentIds: [appeals-contact], contains: [outside the fictional Community Card service] }
+    - id: missing-source
+      title: Missing document policy blocks the answer
+      inputs: { topic: docs, urgent: false, question: "Which papers do I need?", context: "First application; no personal data." }
+      disabledKnowledge: [required-documents]
+      expected: { outcomeId: document-guidance, kind: missing-knowledge, documentIds: [] }
+    - id: support-tool-disabled
+      title: Disabled support tool blocks confirmation
+      inputs: { topic: support, urgent: false, question: "Can a person help?", context: "Need help with the fictional residency declaration." }
+      disabledTools: [create-citizen-case]
+      expected: { outcomeId: human-support, kind: handoff-blocked, documentIds: [appeals-contact] }
+journey:
+  - id: personalize
+    title: Give the agent an identity
+    description: Edit the name or instructions to define public guidance and human support. Free text is stored for export, not executed; structured lab inputs drive the rules.
+    tab: overview
+    completeWhen:
+      type: profile-edited
+  - id: select-documents
+    title: Connect and select document guidance
+    description: Connect Demo SharePoint to Citizen services, then select Required documents for the Community Card. A connection alone does not select knowledge.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: required-documents
+  - id: select-deadlines
+    title: Add timing guidance
+    description: Select Processing deadlines and application status for the timing case.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: processing-deadlines }
+  - id: select-appeals
+    title: Add appeals and support policy
+    description: Select Appeals and contact details. This is also the prerequisite for support drafts and actions.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: appeals-contact }
+  - id: enable-handoff
+    title: Prepare human support
+    description: Connect Demo service desk to the Citizen support queue and enable Create a human support case before collecting Preview evidence. This does not create a case yet.
+    tab: tools
+    completeWhen: { type: tool, toolId: create-citizen-case }
+  - id: verify-answer
+    title: Run the papers question
+    description: In Review, use Try this example to load Papers synonym with ordinary guidance and run it. Read the result in Preview. A generic chat answer does not complete this case.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: documents-happy }
+  - id: verify-citation
+    title: Open the document policy
+    description: Open Required documents from the result's citation and compare the requirements with the answer.
+    tab: activity
+    completeWhen: { type: citation-opened, documentId: required-documents }
+  - id: verify-timing
+    title: Change the topic to timing
+    description: Load and run Timing with a paused-clock boundary. Compare the selected source and the timing answer with the papers answer.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: deadlines-happy }
+  - id: test-urgent
+    title: Turn urgency into supervisor review
+    description: Load and run Urgency changes guidance into supervisor review. Read the draft, including recent chat context; no request has been sent.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: urgent-exception }
+  - id: confirm-case
+    title: Confirm the urgent supervisor draft
+    description: Review the urgent draft and confirm a local Citizen support record. This step requires the urgent-escalation outcome, not any other support action.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: create-citizen-case, outcomeId: urgent-escalation }
+  - id: scope-boundary
+    title: Keep unrelated urgent questions outside scope
+    description: Load and run Urgency cannot bring an unrelated topic into scope. Verify that no action is offered.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: outside-boundary }
+  - id: evaluate
+    title: Pass the expected-result checks
+    description: Run Evaluate with all policy sources and the support tool configured. Check outcome, response kind, exact citations and draft snippets, including isolated missing-source and disabled-tool fixtures.
+    tab: activity
+    completeWhen: { type: evaluation-passed }
+test:
+  suggestedQuestions:
+    - What documents do I need for the Community Card?
+    - How long does the assessment take?
+    - How do I appeal a decision?
+    - I would like human support.
+    - What is the weather forecast for tomorrow?
+  handoffKeywords:
+    - human support
+    - speak to a person
+    - speak to an adviser
+    - open a case
+    - human adviser
+  unknownAnswer: This question is outside the topics recognised in this test. Try asking about documents, deadlines, appeals or human support for the fictional Community Card.
+  missingKnowledgeAnswer: I recognised the topic, but the required document is unavailable. Connect the Citizen services library and select the matching source before testing again.
+  handoffBlockedAnswer: Select Appeals and contact details, connect Demo service desk to Citizen support and enable Create a human support case. No case has been created.
+  handoffReadyAnswer: I can prepare a fictional handoff to human support. Review a summary without personal data and confirm the simulation separately. This response has not created a case.
+implementation:
+  - title: Inspiration, not a reproduction
+    description: The Citizen Q&A scenario in Microsoft's public library inspires this journey. All text, people, services, numbers, deadlines and policies in this example are invented. They are not official information or a copy of the source.
+  - title: Create and configure an agent in Copilot Studio
+    description: Create an agent in an approved Copilot Studio environment. Set its name, scope and instructions for public guidance, not decisions. In a topic, collect topic, urgency, question and agreed context into typed variables. Test a documents question before and after setting urgency; the latter must enter the review branch. The browser export is a design reference, not an importable agent.
+  - title: Add authorised SharePoint knowledge
+    description: In Knowledge, add approved SharePoint guidance for requirements, timing and appeals. Configure authentication appropriate to the channel and verify source permissions with allowed and denied users. Test papers and required docs paraphrases; check that each answer cites the right policy and that unavailable knowledge produces a limitation, not an invented answer.
+  - title: Define the tool and review before action
+    description: Add an approved agent flow or connector tool for the service desk. Inputs should include topic, urgency, reviewed summary, agreed recent context and a request correlation key; outputs should include request reference, status and safe error text. Present the supervisor draft in a confirmation step before calling the tool. Verify cancellation sends nothing, retries do not duplicate records and confirmed urgent requests reach the responsible team.
+  - title: Test answers, refusals and handoffs
+    description: In the Copilot Studio test environment, check grounded answers and citations using varied questions. Include missing sources, denied access, out-of-scope topics, outdated information and tool failures. Verify summary review, confirmation, the reference number and arrival in the correct queue. This exercise's local rules do not guarantee the real agent's behaviour.
+  - title: Choose a channel and publish after approval
+    description: Choose a channel that supports the intended audience and authentication. Before publishing in Copilot Studio, obtain governance, security and privacy approval, and confirm the environment's data policies, licensing and capacity. Use a controlled rollout with owners for monitoring and updates. Feature availability and configuration details vary by environment.
+  - title: Limits of this exercise
+    description: The interactive lab applies ordered rules to editable fictional inputs. Ordinary chat uses configured phrases; recent chat is copied into review drafts, not semantically summarised by AI. No LLM, identity check, live status lookup or network action runs. In a real agent, separately test retrieval, generated summaries, topic routing and tool outputs; this local lab cannot prove their production behaviour.

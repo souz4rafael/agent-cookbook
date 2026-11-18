@@ -1,0 +1,49 @@
+New Foundry visual reference: https://ai.azure.com/nextgen/
+Reference observed: 18 November 2026.
+
+Interface icons use the existing @fluentui/react-icons dependency (MIT).
+Copyright (c) Microsoft Corporation. See that package's LICENSE.
+Cookbook branding uses the shared CookbookMark, not the Microsoft Foundry logo.
+
+Provider marks in model-icons.json are identification assets displayed by the
+public Microsoft Foundry model catalog. They identify their respective owners;
+their presence does not imply affiliation, endorsement, or model availability.
+Source: https://ai.azure.com/modelcache/content/model-icon-config.json
+Foundry mark source: https://ai.azure.com/images/FoundryLogo.svg
+
+Aptos fonts and Foundry decorative illustrations are referenced from their
+original Microsoft-hosted URLs, not redistributed in this repository.
+System-font fallbacks remain available when the hosted fonts are unavailable.
+
+The Industry News & Trend Scanner v2 starter manifest and its description are
+attributed to Microsoft, with the original Distributable Code licensing link
+and educational disclaimer preserved in the recipe and its rendered detail page.
+Source: Microsoft Foundry Catalog > Agents, observed 18 November 2026.
+Tool marks are referenced from https://ai.azure.com/images/template-images/.
+
+This is an independently implemented educational Cookbook. It has no Azure
+authentication, subscriptions, credentials, deployments, telemetry, or AI calls.
+
+Fluent UI icon license (also applies to the two reference-pinned glyphs):
+
+MIT License
+
+Copyright (c) Microsoft Corporation.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

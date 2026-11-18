@@ -1,0 +1,366 @@
+schemaVersion: 1
+revision: 2
+id: upskilling-recommendation
+status: published
+title: Upskilling recommendation agent
+summary: Help a learner turn a goal and self-reported skills into an explainable learning playlist. Change the target role or skill checkboxes to recompute gaps and resources, or prepare an adviser draft when the goal is unclear. No CV is assessed, no learner is ranked and no enrolment occurs.
+industry: Government and public services
+difficulty: beginner
+accentIcon: learning
+learningGoals:
+  - Ground role-to-skill mapping in approved fictional guidance and a curated catalogue.
+  - Change a target role or stated skill and observe a different playlist with reasons.
+  - Treat an unrecorded skill as unknown rather than inability and clarify uncertain goals.
+  - Review an adviser draft and verify happy, boundary and prerequisite cases.
+sourceUrl: https://adoption.microsoft.com/en-gb/scenario-library/government/upskilling-recommendation-agent/
+agent:
+  name: Learning Pathway Assistant
+  description: ""
+  instructions: |-
+    # Purpose and boundaries
+    Help a learner explore service administration or junior reporting and review an optional learning playlist. Do not rank people, score employment suitability, predict jobs, infer protected characteristics, certify competence or enrol anyone.
+
+    # Resources and context
+    Use the selected, connected Example career pathways and skills and Fictional course and resource catalogue. These resources describe illustrative pathways and invented materials, not live course availability. Do not invent resources, prices, entry requirements or accessibility claims.
+    Reuse the chosen goal, self-reported skills, interests and questions already supplied. Ask a focused question if the goal or evidence is ambiguous. A skill not recorded is unknown, not inability. Do not infer skills from a person's background or ask for a CV or unnecessary personal details.
+
+    # Build the plan
+    - Map the chosen pathway to its relevant tracked skills using the approved guidance and configured checks.
+    - Suggest catalogue resources only for relevant skills not yet recorded. Explain each resource's skill focus, available format and position in the catalogue sequence. Skip resources whose skills are already recorded.
+    - If all tracked skills are recorded, suggest consolidation practice rather than inventing a gap or claiming verified competence.
+    - If the goal is unclear or unsupported, clarify preferred tasks before choosing courses. Offer an optional adviser review, not a forced pathway.
+
+    # Review and action
+    Present the goal, recorded skills, possible learning gaps, resource reasons, order, sources and next step. Invite corrections to the plan; flag availability, cost, entry requirements and accessibility for checking in a real catalogue.
+    For adviser help, use the configured Request a careers adviser review tool only with its required guidance and connection available. Show the agreed goal, skills, questions and Careers pathway review destination. Require separate explicit confirmation after review; stop if declined and reconfirm changed details.
+    If a source is missing or conflicts, pause the affected recommendation. If a tool fails or its result is uncertain, explain what is unconfirmed. Report a request only after success; a request is not an appointment, enrolment or employment outcome.
+  tone: friendly
+  detail: detailed
+instructionStyles:
+  structured: |-
+    # Purpose and boundaries
+    Help a learner explore service administration or junior reporting and review an optional learning playlist. Do not rank people, score employment suitability, predict jobs, infer protected characteristics, certify competence or enrol anyone.
+
+    # Resources and context
+    Use the selected, connected Example career pathways and skills and Fictional course and resource catalogue. These resources describe illustrative pathways and invented materials, not live course availability. Do not invent resources, prices, entry requirements or accessibility claims.
+    Reuse the chosen goal, self-reported skills, interests and questions already supplied. Ask a focused question if the goal or evidence is ambiguous. A skill not recorded is unknown, not inability. Do not infer skills from a person's background or ask for a CV or unnecessary personal details.
+
+    # Build the plan
+    - Map the chosen pathway to its relevant tracked skills using the approved guidance and configured checks.
+    - Suggest catalogue resources only for relevant skills not yet recorded. Explain each resource's skill focus, available format and position in the catalogue sequence. Skip resources whose skills are already recorded.
+    - If all tracked skills are recorded, suggest consolidation practice rather than inventing a gap or claiming verified competence.
+    - If the goal is unclear or unsupported, clarify preferred tasks before choosing courses. Offer an optional adviser review, not a forced pathway.
+
+    # Review and action
+    Present the goal, recorded skills, possible learning gaps, resource reasons, order, sources and next step. Invite corrections to the plan; flag availability, cost, entry requirements and accessibility for checking in a real catalogue.
+    For adviser help, use the configured Request a careers adviser review tool only with its required guidance and connection available. Show the agreed goal, skills, questions and Careers pathway review destination. Require separate explicit confirmation after review; stop if declined and reconfirm changed details.
+    If a source is missing or conflicts, pause the affected recommendation. If a tool fails or its result is uncertain, explain what is unconfirmed. Report a request only after success; a request is not an appointment, enrolment or employment outcome.
+  stepByStep: |-
+    # Learning pathway workflow
+    Help learners explore service administration or junior reporting through an optional playlist. Do not rank people, score employment suitability, predict jobs, infer protected characteristics, certify competence or enrol anyone.
+
+    # Steps
+    1. Read the chosen goal, self-reported skills, interests and questions in context. Reuse supplied information. Ask focused questions about ambiguous goals or evidence, without requesting a CV or unnecessary personal details. Unrecorded skills are unknown, not inability; do not infer skills from background.
+    2. Consult the selected, connected Example career pathways and skills and Fictional course and resource catalogue. If either is missing or conflicts, pause affected recommendations and explain why. The pathways and materials are illustrative, not live course availability.
+    3. Clarify preferred tasks when the goal is unclear or unsupported before choosing courses. Offer optional adviser help rather than forcing a pathway.
+    4. For a supported goal, use the approved mapping and configured checks to identify relevant tracked skills not yet recorded. Select only their catalogue resources, skipping skills already recorded. Explain each resource's skill focus, available format and position in the catalogue sequence.
+    5. If all relevant tracked skills are recorded, suggest consolidation practice. Do not invent another gap or treat self-report as verified competence.
+    6. Show the goal, recorded skills, possible gaps, resource reasons, order, sources and next step. Invite corrections. Flag availability, cost, entry requirements and accessibility for checking in a real catalogue; do not invent resources or these details.
+    7. For adviser help, check required guidance and the connection for the configured Request a careers adviser review tool. Show the agreed goal, skills, questions and Careers pathway review destination. Require separate explicit confirmation after review, stop if declined and reconfirm changed details.
+    8. Check the returned result. If the tool is unavailable, fails or has an uncertain result, explain what is unconfirmed. Report a request only after success, never as an appointment, enrolment or employment outcome.
+  decisionRules: |-
+    # Purpose and context
+    Support optional learning playlists for service administration or junior reporting. Reuse the chosen goal, self-reported skills, interests and questions. Ask focused questions when goals or evidence are ambiguous; avoid CVs and unnecessary personal details. Do not infer skills from background.
+
+    # Decision rules
+    - If the selected, connected Example career pathways and skills or Fictional course and resource catalogue is missing or conflicting, pause affected recommendations and explain the gap. Do not invent resources or catalogue details.
+    - If the goal is unclear or unsupported, clarify preferred tasks before choosing courses and offer optional adviser help rather than forcing a pathway.
+    - If a skill is not recorded, treat it as unknown, not inability. For a supported goal, use approved mappings and configured checks to select only catalogue resources for relevant skills not yet recorded.
+    - If a relevant skill is already recorded, skip its gap resource. If all tracked skills are recorded, suggest consolidation practice, not extra gaps or a competence certificate.
+    - When proposing resources, explain their skill focus, available format and catalogue order. These materials are invented, not live availability. Flag cost, entry requirements, availability and accessibility for checking in a real catalogue.
+    - If adviser help is wanted, check the required guidance and connection for the configured Request a careers adviser review tool. Show the agreed goal, skills, questions and Careers pathway review destination. Require separate explicit confirmation after review.
+    - If confirmation is declined, do not act. If details change, review and reconfirm. If the tool is unavailable, fails or returns an uncertain result, explain what is unconfirmed; report a request only after success.
+
+    # Response and limits
+    Give the goal, recorded skills, possible learning gaps, resource reasons, order, sources and next step; invite corrections. A request is not an appointment or enrolment. Do not rank people, score employment suitability, predict jobs, infer protected characteristics, certify competence or enrol anyone.
+  examples: |-
+    # Behaviour examples
+    Situation: The role guidance is available but the catalogue is missing.
+    Expected behaviour: Explain the gap and pause course recommendations; do not invent a resource.
+
+    Situation: The learner declines an adviser request after reading the draft.
+    Expected behaviour: Do not submit it; continue optional goal clarification.
+
+    Situation: The learner asks whether an unchecked skill makes them unsuitable for a job.
+    Expected behaviour: Explain that it is unrecorded, not inability; discuss learning goals without an employment score.
+editable: [name, instructions, tone, detail]
+connections:
+  - id: careers-library
+    type: sharepoint
+    title: Demo careers SharePoint
+    description: Fictional role guidance and a curated resource catalogue. Editable inputs represent a learner's stated skills; no CV is uploaded or parsed.
+    accountLabel: Careers learner at Example Council
+    resources:
+      - { id: learning-pathways, label: Learning pathways, description: Example role-to-skill mapping and invented courses. }
+      - { id: empty-library, label: Empty library (boundary test), description: Contains no learning guidance and removes unavailable selections. }
+    realWorldNote: Approve catalogue ownership, freshness, access and consent for personal information. A knowledge connection is not a CV parser or live course feed.
+  - id: careers-adviser
+    type: service-desk
+    title: Demo careers adviser
+    description: A local queue for an agreed learning-goal clarification request. No message or appointment is created.
+    accountLabel: Fictional careers guidance team
+    resources:
+      - { id: pathway-review, label: Careers pathway review, description: An adviser clarifies the learner's interests and unresolved questions. }
+    realWorldNote: A real flow needs consent, minimal context, an accountable team, returned request status and failure handling.
+knowledge:
+  - id: role-guidance
+    title: Example career pathways and skills
+    summary: Two illustrative role pathways, tracked skills and the boundary against recruitment decisions.
+    connectionId: careers-library
+    resourceId: learning-pathways
+    file: documents/role-guidance.txt
+  - id: course-catalogue
+    title: Fictional course and resource catalogue
+    summary: Four invented resources with formats, skill mappings and suggested sequence.
+    connectionId: careers-library
+    resourceId: learning-pathways
+    file: documents/course-catalogue.txt
+facts:
+  - id: roles-answer
+    documentId: role-guidance
+    keywords: [target roles, career pathways, role guidance]
+    answer: "This fictional catalogue covers two learning pathways: service administration, which practises clear communication, reliable records and responsible information handling; and junior reporting, which practises spreadsheet use, data quality and explaining charts. These are illustrative learning goals, not recruitment requirements."
+    detail: "Map only the experience the person chooses to describe. A skill not mentioned is unknown, not a weakness. Ask about the person's preferred tasks and learning goal before suggesting a pathway. Do not rank applicants, infer protected characteristics or decide who should be hired."
+  - id: courses-answer
+    documentId: course-catalogue
+    keywords: [course catalogue, learning resources, available courses]
+    answer: "The fictional catalogue contains COURSE-101 Reliable records, COURSE-102 Responsible information handling, COURSE-201 Data quality basics and COURSE-202 Tell the story in a chart. Service administration explores 101 then 102; junior reporting explores 201 then 202. Learners can discuss a different order with an adviser."
+    detail: "The resources combine practice spreadsheets, short guides, quizzes and a video exercise. They are invented examples, not available training products or live links. Check current availability, entry requirements, cost, format and accessibility in a real catalogue before recommending or booking any course. This simulator does not enrol learners."
+tools:
+  - id: request-pathway-review
+    type: create-case
+    title: Request a careers adviser review
+    description: Review the current learning goal and skill summary, then confirm a local Careers pathway review request. No message, appointment or enrolment is created.
+    connectionId: careers-adviser
+    resourceId: pathway-review
+    requiredKnowledge: [role-guidance, course-catalogue]
+    realWorldNote: Send only the agreed goal and questions through an approved flow; return a reference and handle failures without including unnecessary personal information.
+lab:
+  title: Build an editable learning playlist
+  description: Choose a target role and mark skills the fictional learner has already recorded. Unchecked means unrecorded, not unable. Rules compare the goal with four tracked skills and add only relevant unrecorded-skill resources in a curated order. Changing the goal changes the mapping, not a hiring score.
+  fields:
+    - id: target-role
+      label: Target learning pathway
+      type: select
+      defaultValue: service
+      hint: Choose a learning goal, not a job application or suitability rating.
+      options:
+        - { value: service, label: Service administration }
+        - { value: reporting, label: Junior reporting }
+        - { value: unclear, label: Goal needs clarification }
+    - { id: records, label: Reliable record keeping recorded, type: boolean, defaultValue: false, hint: Self-reported practice with consistent service records. }
+    - { id: information, label: Responsible information handling recorded, type: boolean, defaultValue: false, hint: Self-reported practice choosing which information to share. }
+    - { id: data-quality, label: Data quality checking recorded, type: boolean, defaultValue: false, hint: Self-reported practice finding duplicate rows and missing values. }
+    - { id: charts, label: Explaining charts recorded, type: boolean, defaultValue: false, hint: Self-reported practice choosing and explaining charts. }
+    - { id: interests, label: Fictional interests or questions, type: text, defaultValue: "I enjoy helping with a volunteer service log.", hint: Used in the review draft only; do not enter a CV or personal details. }
+  checks:
+    - { id: service-goal, label: Service administration goal, field: target-role, operator: eq, value: service }
+    - { id: reporting-goal, label: Junior reporting goal, field: target-role, operator: eq, value: reporting }
+    - { id: unclear-goal, label: Goal needs clarification, field: target-role, operator: eq, value: unclear }
+    - { id: records-recorded, label: Reliable records skill recorded, field: records, operator: eq, value: true }
+    - { id: information-recorded, label: Information handling skill recorded, field: information, operator: eq, value: true }
+    - { id: data-recorded, label: Data quality skill recorded, field: data-quality, operator: eq, value: true }
+    - { id: charts-recorded, label: Chart explanation skill recorded, field: charts, operator: eq, value: true }
+  rules:
+    - { id: clarify, label: Clarify before recommending courses, all: [{ checkId: unclear-goal, equals: true }], outcomeId: adviser-clarification }
+    - { id: service-complete, label: Both tracked service skills recorded, all: [{ checkId: service-goal, equals: true }, { checkId: records-recorded, equals: true }, { checkId: information-recorded, equals: true }], outcomeId: service-practice }
+    - { id: reporting-complete, label: Both tracked reporting skills recorded, all: [{ checkId: reporting-goal, equals: true }, { checkId: data-recorded, equals: true }, { checkId: charts-recorded, equals: true }], outcomeId: reporting-practice }
+    - { id: service-gaps, label: Suggest only unrecorded service skills, all: [{ checkId: service-goal, equals: true }], outcomeId: service-playlist }
+    - { id: reporting-gaps, label: Suggest only unrecorded reporting skills, all: [{ checkId: reporting-goal, equals: true }], outcomeId: reporting-playlist }
+    - { id: fallback, label: Clarify an unsupported learning goal, all: [], outcomeId: adviser-clarification }
+  outcomes:
+    - id: service-playlist
+      title: Service administration learning playlist
+      summary: Compare your recorded skills with the service administration pathway. The playlist below includes only relevant skills not yet recorded, in catalogue order. Unrecorded means unknown, not unable. These are optional learning resources, not recruitment requirements.
+      documentIds: [role-guidance, course-catalogue]
+      draft:
+        title: Service learning sequence for review
+        body: |
+          DRAFT ONLY — optional service administration learning plan
+          Recorded skills: reliable records={{records}}; information handling={{information}}.
+          Current mapping checks: {{checks}}
+          Follow only the resources included in the computed playlist shown with this result. Start with record-keeping practice if listed, then information-handling practice if listed. Skip any resource omitted because its skill is already recorded.
+          Review the resource reasons, format and order, and edit this plan before using it. In a real catalogue, check availability, cost and accessibility. No course is booked and no employment judgement is made.
+      recommendations:
+        - when: { checkId: records-recorded, equals: false }
+          title: COURSE-101 — Reliable records
+          description: Record keeping is not yet recorded. First practise sorting, filtering and checking an invented service log using the practice spreadsheet.
+        - when: { checkId: information-recorded, equals: false }
+          title: COURSE-102 — Responsible information handling
+          description: Information handling is not yet recorded. Read the short guide and complete the sharing-scenarios quiz; follow Reliable records if that resource is also listed.
+    - id: reporting-playlist
+      title: Junior reporting learning playlist
+      summary: Compare your recorded skills with the junior reporting pathway. The playlist below includes only relevant skills not yet recorded, in catalogue order. Unrecorded means unknown, not unable. Nothing is enrolled and no employment prediction is made.
+      documentIds: [role-guidance, course-catalogue]
+      draft:
+        title: Reporting learning sequence for review
+        body: |
+          DRAFT ONLY — optional junior reporting learning plan
+          Recorded skills: data quality={{data-quality}}; chart explanation={{charts}}.
+          Current mapping checks: {{checks}}
+          Follow only the resources included in the computed playlist shown with this result. Start with data-checking practice if listed, then chart-explanation practice if listed. Skip any resource omitted because its skill is already recorded.
+          Review the resource reasons, format and order, and edit this plan before using it. In a real catalogue, check availability, cost and accessibility. No course is booked and no employment judgement is made.
+      recommendations:
+        - when: { checkId: data-recorded, equals: false }
+          title: COURSE-201 — Data quality basics
+          description: Data quality checking is not yet recorded. First use the practice spreadsheet to find duplicate rows and missing values before drawing conclusions.
+        - when: { checkId: charts-recorded, equals: false }
+          title: COURSE-202 — Tell the story in a chart
+          description: Chart explanation is not yet recorded. Watch the fictional video lesson, choose a chart and write a plain-language explanation; follow Data quality basics if it is also listed.
+    - id: service-practice
+      title: Consolidate recorded service skills
+      summary: Both tracked service administration skills are recorded. No gap course is required by this limited mapping. Practise a service-log task and discuss your next goal with an adviser if useful. This is self-reported practice, not verified competence, certification or a hiring decision.
+      documentIds: [role-guidance, course-catalogue]
+    - id: reporting-practice
+      title: Consolidate recorded reporting skills
+      summary: Both tracked junior reporting skills are recorded. No gap course is required by this limited mapping. Practise checking a dataset and explaining a chart. This is self-reported practice, not verified competence, certification or a hiring decision.
+      documentIds: [role-guidance, course-catalogue]
+    - id: adviser-clarification
+      title: Clarify the learning goal
+      summary: The target role is unclear. Do not invent a course sequence or a suitability score. Review the optional adviser draft, correct it and choose whether to request help. No course has been selected.
+      documentIds: [role-guidance, course-catalogue]
+      toolId: request-pathway-review
+      draft:
+        title: Careers adviser context for review
+        body: |
+          DRAFT ONLY — Careers pathway review
+          Target goal: {{target-role}}
+          Stated interests or questions: {{interests}}
+          Recorded skills: reliable records={{records}}; information handling={{information}}; data quality={{data-quality}}; chart explanation={{charts}}.
+          Computed mapping checks: {{checks}}
+          Clarify the preferred tasks, learning goal and optional support needs. Unrecorded skills are unknown, not inability. Review before confirming a local SIM request; nothing is sent, booked or enrolled.
+  cases:
+    - id: service-two-gaps
+      title: Service goal produces an ordered two-resource playlist
+      inputs: { target-role: service, records: false, information: false, data-quality: false, charts: false, interests: "I enjoy helping with a volunteer service log." }
+      expected: { outcomeId: service-playlist, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [COURSE-101, COURSE-102, Unrecorded means unknown] }
+    - id: service-one-gap
+      title: Recording a skill removes its gap resource
+      inputs: { target-role: service, records: true, information: false, data-quality: false, charts: false, interests: "I enjoy helping with a volunteer service log." }
+      expected: { outcomeId: service-playlist, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [COURSE-102, Information handling is not yet recorded] }
+    - id: service-no-gaps
+      title: Recorded service skills do not require gap courses
+      inputs: { target-role: service, records: true, information: true, data-quality: false, charts: false, interests: "I enjoy helping with a volunteer service log." }
+      expected: { outcomeId: service-practice, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [No gap course is required, not verified competence] }
+    - id: changed-goal
+      title: Same skills with a reporting goal change the playlist
+      inputs: { target-role: reporting, records: true, information: true, data-quality: false, charts: false, interests: "I enjoy helping with a volunteer service log." }
+      expected: { outcomeId: reporting-playlist, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [COURSE-201, COURSE-202, junior reporting] }
+    - id: reporting-one-gap
+      title: Recorded data checking leaves the chart resource
+      inputs: { target-role: reporting, records: false, information: false, data-quality: true, charts: false, interests: "I want to explain a fictional stock chart." }
+      expected: { outcomeId: reporting-playlist, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [COURSE-202, Chart explanation is not yet recorded] }
+    - id: reporting-no-gaps
+      title: Recorded reporting skills produce a practice next step
+      inputs: { target-role: reporting, records: false, information: false, data-quality: true, charts: true, interests: "I want to explain a fictional stock chart." }
+      expected: { outcomeId: reporting-practice, kind: answer, documentIds: [role-guidance, course-catalogue], contains: [No gap course is required, explaining a chart] }
+    - id: unclear-goal
+      title: Unclear goal produces an adviser draft not a score
+      inputs: { target-role: unclear, records: true, information: false, data-quality: false, charts: false, interests: "I want a different kind of work but have not chosen a goal." }
+      expected: { outcomeId: adviser-clarification, kind: handoff-ready, toolId: request-pathway-review, documentIds: [role-guidance, course-catalogue], contains: [No course has been selected, have not chosen a goal, DRAFT ONLY] }
+    - id: missing-catalogue
+      title: A missing catalogue blocks recommendations
+      inputs: { target-role: service, records: false, information: false, data-quality: false, charts: false, interests: "I enjoy helping with a volunteer service log." }
+      disabledKnowledge: [course-catalogue]
+      expected: { outcomeId: service-playlist, kind: missing-knowledge, documentIds: [] }
+    - id: adviser-tool-disabled
+      title: Disabled adviser tool cannot submit a request
+      inputs: { target-role: unclear, records: true, information: false, data-quality: false, charts: false, interests: "I want a different kind of work but have not chosen a goal." }
+      disabledTools: [request-pathway-review]
+      expected: { outcomeId: adviser-clarification, kind: handoff-blocked, documentIds: [role-guidance, course-catalogue] }
+journey:
+  - id: purpose
+    title: Define a learning assistant not a hiring assessor
+    description: Edit the name or instructions to describe optional learning support and its boundaries. Free text is saved for export, not executed.
+    tab: overview
+    completeWhen: { type: profile-edited }
+  - id: roles
+    title: Connect and select role guidance
+    description: Connect Demo careers SharePoint to Learning pathways and select Example career pathways and skills.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: role-guidance }
+  - id: courses
+    title: Select the curated catalogue
+    description: Add Fictional course and resource catalogue. Its skill mapping, formats and order ground the computed playlist.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: course-catalogue }
+  - id: adviser
+    title: Prepare optional adviser support
+    description: Connect Demo careers adviser to Careers pathway review and enable Request a careers adviser review before collecting Preview evidence.
+    tab: tools
+    completeWhen: { type: tool, toolId: request-pathway-review }
+  - id: service
+    title: Build the first learning playlist
+    description: In Review, use Try this example to load and run Service goal produces an ordered two-resource playlist. In Preview, compare each unrecorded skill with its resource and rationale.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: service-two-gaps }
+  - id: citation
+    title: Read the catalogue citation
+    description: Open the course catalogue citation. Distinguish source-grounded resource descriptions from the newly computed personal playlist.
+    tab: activity
+    completeWhen: { type: citation-opened, documentId: course-catalogue }
+  - id: one-gap
+    title: Record one skill and compare
+    description: Load and run Recording a skill removes its gap resource. Verify that only information handling remains in the playlist.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: service-one-gap }
+  - id: no-gaps
+    title: Avoid prescribing unnecessary gap courses
+    description: Load and run Recorded service skills do not require gap courses. Notice that self-reporting is not certification.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: service-no-gaps }
+  - id: change-goal
+    title: Change the goal with the same skills
+    description: Load and run Same skills with a reporting goal change the playlist. Compare the role mapping and different course sequence.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: changed-goal }
+  - id: unclear
+    title: Clarify rather than invent a match
+    description: Load and run Unclear goal produces an adviser draft not a score. Review the goal, skill summary and unanswered questions.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: unclear-goal }
+  - id: confirm
+    title: Confirm the reviewed adviser draft
+    description: Review and confirm the unclear-goal draft. Only this local adviser action completes the step; no appointment is booked.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: request-pathway-review, outcomeId: adviser-clarification }
+  - id: evaluate
+    title: Verify the learning-pathway expectations
+    description: Run Evaluate with both policies and the adviser tool configured. Check the expected outcomes, resource snippets, citations and isolated blocked cases. Evaluate does not enrol or refer anyone.
+    tab: activity
+    completeWhen: { type: evaluation-passed }
+test:
+  suggestedQuestions:
+    - What career pathways are included?
+    - What learning resources are available?
+    - Use the interactive inputs to change a goal or recorded skill and recompute the playlist.
+  handoffKeywords: []
+  unknownAnswer: Open Review > Try this example for a learning goal and self-reported skills. Chat can explain career pathways or learning resources but does not parse a CV or process a typed profile ID.
+  missingKnowledgeAnswer: Select role guidance and the course catalogue in the connected Learning pathways library. No missing resource or recommendation will be invented.
+  handoffBlockedAnswer: Select both guidance documents, connect Careers pathway review and enable the adviser tool. No review request has been created.
+  handoffReadyAnswer: Review the current fictional goal, recorded skills and unresolved questions before confirming a local adviser request. No message, appointment or enrolment has been created.
+implementation:
+  - title: Collect a learning goal in Copilot Studio
+    description: Create an agent in an approved environment for learning guidance, not recruitment. In a topic, collect a target pathway and self-reported skills into typed variables, plus optional agreed interests. Explain that an unchecked skill is unknown. Test correction of one skill and a change of goal; the pathway should change without assigning an employability score.
+  - title: Ground the role mapping in approved knowledge
+    description: Add maintained role guidance and course information under Knowledge. Record who owns the mapping and how it is reviewed. In your topic or approved workflow, map each supported role to explicit skills rather than inventing hiring requirements. Test service and reporting goals with the same profile and inspect the cited role guidance.
+  - title: Generate a curated and explainable playlist
+    description: Use explicit conditions or an approved mapping tool with goal and recorded skills as inputs. Return unrecorded skills and ordered resource IDs with rationale, format and source. If querying a live catalogue, return availability and errors separately. Verify marking a skill removes only its gap resource and a fully recorded pathway does not force unnecessary training.
+  - title: Offer learning choices not automatic enrolment
+    description: Present the resource sequence, reasons and alternatives for learner review. Check current cost, entry requirements, accessibility and availability before recommending real courses. Test unavailable resources and unsupported goals; explain uncertainty or offer an adviser rather than promising a course, qualification or job.
+  - title: Implement the adviser action with confirmation
+    description: Add an approved agent flow or connector tool with agreed goal, selected skill summary, unresolved questions and correlation key as inputs. Return request reference and status. Display the draft and require explicit confirmation before execution. Verify cancellation sends nothing, retries are duplicate-safe and the intended adviser queue receives only agreed context.
+  - title: Evaluate and publish after governance review
+    description: In Copilot Studio, test role changes, one-gap and no-gap profiles, unclear goals, source denial and adviser failures. Have advisers review relevance and fairness without ranking applicants. Confirm privacy, consent, retention, licensing, channel access and catalogue ownership before a controlled publication.
+  - title: Keep the simulation boundary explicit
+    description: The browser computes a small deterministic role-to-resource mapping from fictional fields. It does not infer skills, assess CVs, run AI, search vacancies, contact advisers or enrol learners. A production solution requires its own mapping validation, tool tests and access checks; the browser export is a design reference, not an importable solution.

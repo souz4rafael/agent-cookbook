@@ -1,0 +1,11 @@
+FICTIONAL RAW INPUT EXAMPLE LEARN-102
+Not active knowledge and not a CV assessment or frozen recommendation.
+
+Target learning pathway: junior reporting
+Reliable record keeping recorded: false
+Responsible information handling recorded: false
+Data quality checking recorded: true
+Explaining charts recorded: false
+Interests: I want to explain a fictional stock chart.
+
+Run the interactive lab and inspect the resource rationale. Change the target role with the same skills to compare a different role-to-skill mapping. The resulting playlist is optional learning guidance, not a certification or prediction of job success.

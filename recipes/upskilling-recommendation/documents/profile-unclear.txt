@@ -1,0 +1,11 @@
+FICTIONAL RAW INPUT EXAMPLE LEARN-103
+Not active knowledge and not an adviser report.
+
+Target learning pathway: goal needs clarification
+Reliable record keeping recorded: true
+Responsible information handling recorded: false
+Data quality checking recorded: false
+Explaining charts recorded: false
+Interests: I want a different kind of work but have not chosen a goal.
+
+Run the interactive lab to prepare a draft based on these current inputs. Role guidance and the catalogue must both be selected. Review the goal, skill summary and questions before separately confirming an optional local adviser request. No message is sent and no appointment is booked.

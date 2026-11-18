@@ -1,0 +1,32 @@
+AGENTS COOKBOOKS - RESERVED RIGHTS NOTICE
+
+Copyright (c) 2026 souz4rafael. All rights reserved in original project material
+to the extent those rights are held by the copyright owner.
+
+This repository is publicly viewable, but it is not offered under an open-source
+license. Public availability is not permission to reuse the project.
+
+Except as permitted by applicable law, the GitHub Terms of Service, or a separate
+written permission from the copyright owner, no permission is granted to use,
+copy, modify, distribute, sublicense, sell, or create derivative works of the
+original project code or original recipe content.
+
+The public hosted educational demonstration may be visited and interacted with
+for its intended learning purpose. This permission does not authorize extracting
+or republishing the original project to operate another site or product.
+
+Nothing in this notice restricts rights granted under the GitHub Terms of
+Service, including viewing and forking a public repository within GitHub.
+Those platform rights do not constitute a general license for other reuse.
+
+Request prior written permission from the repository owner:
+https://github.com/souz4rafael
+An unanswered request, a fork, or public access does not constitute permission.
+
+Third-party packages, sample manifests, marks, text, icons, and visual assets
+are excluded from this notice. They remain subject to their own applicable
+licenses and rights. See THIRD-PARTY-NOTICES.txt and the recorded provenance.
+No rights in third-party material are granted or restricted by this notice.
+
+THE ORIGINAL PROJECT MATERIAL IS PROVIDED "AS IS", WITHOUT WARRANTIES OF ANY
+KIND, TO THE EXTENT PERMITTED BY LAW.

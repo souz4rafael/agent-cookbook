@@ -1,0 +1,14 @@
+{
+  "reference": "https://copilotstudio.microsoft.com",
+  "surface": "Add knowledge",
+  "retrievedOn": "2026-11-16",
+  "purpose": "Identify the same knowledge providers in an independent educational simulator. Product names and marks belong to their respective owners; no affiliation or endorsement is implied.",
+  "assets": {
+    "public-websites.svg": "Public websites icon embedded in the reference interface",
+    "sharepoint.svg": "SharePoint icon embedded in the reference interface",
+    "onedrive.svg": "OneDrive for Business icon embedded in the reference interface",
+    "dataverse.svg": "Dataverse icon embedded in the reference interface",
+    "servicenow.png": "https://res.sdf.cdn.office.net/admincenter/admin-content/ServiceNow_Medium.png",
+    "azure-sql.png": "https://preview.content.powerapps.com/resource/csux/agentic-automations/shell/release/2026.11.12/AzureSqlImg-7HM46RCV.png"
+  }
+}

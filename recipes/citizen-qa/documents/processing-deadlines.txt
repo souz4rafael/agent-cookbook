@@ -1,0 +1,12 @@
+PROCESSING DEADLINES AND APPLICATION STATUS
+Original fictional content. English edition 3 for demonstration.
+
+Notice: Example Council, Example Borough and the Community Card are invented. The numbers, deadlines and rules below were created only for this example and do not represent a real public policy.
+
+The fictional Community Card assessment takes up to 10 working days from receipt of all documents required in this demonstration.
+
+If a document is missing, the fictional clock pauses until it is supplied. The example status check uses a SIM reference at portal.example-council.invalid; this portal is not an accessible service.
+
+The .invalid domain is reserved for examples that must not resolve on the internet. The simulator does not visit that address or track real applications. The deadline is only a test fact cited by this recipe.
+
+Urgency does not shorten this fictional policy period. An urgent in-scope question can be drafted for supervisor review under the appeals and contact guidance; a human must decide the appropriate response. No live status or expedited outcome is asserted.

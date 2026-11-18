@@ -1,0 +1,10 @@
+FICTIONAL RAW INPUT EXAMPLE BEN-103
+Not active policy knowledge and not an eligibility assessment.
+
+Residence in Example Borough: yes
+Declared monthly household income: 1190 demo units
+Monthly income shown in example evidence: 1250 demo units
+Application information complete: true
+Evidence of stated residence present: true
+
+Run the interactive lab to compare the numeric figures. They represent the same fictional monthly period. Neither value should be selected as authoritative automatically. A reviewer must establish the correct amount and period before applying approved policy. No automated refusal, approval, decision letter or payment is produced.

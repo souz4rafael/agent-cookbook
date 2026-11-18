@@ -1,0 +1,33 @@
+.credit-estimate { display: inline-flex; align-items: center; gap: 5px; max-width: 100%; color: var(--cp-text-muted); font-size: 11px; white-space: normal; }
+.credit-estimate > svg, .credit-estimate > button { flex-shrink: 0; }
+.credit-estimate-copy { display: flex; flex-direction: column; min-width: 0; line-height: 1.5; }
+.credit-estimate-copy strong { color: var(--cp-text); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.credit-estimate-context { color: var(--cp-text-soft); font-size: 10px; }
+.chat-message .credit-estimate { margin-top: 12px; }
+.credit-estimate-dialog .modal-body > p { margin-bottom: 12px; }
+.credit-estimate-dialog .modal-body > h3 { font-size: 15px; margin-top: 22px; }
+.credit-estimate-total { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; padding: 14px; margin-bottom: 18px; border: 1px solid var(--cp-border); border-radius: 8px; background: var(--cp-bg-elevated); }
+.credit-estimate-total strong { color: var(--cp-text); font-size: 21px; font-variant-numeric: tabular-nums; }
+.credit-estimate-table-scroll { width: 100%; overflow-x: auto; margin-block: 14px; }
+.credit-estimate-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+.credit-estimate-table th, .credit-estimate-table td { padding: 9px 10px; border-bottom: 1px solid var(--cp-border); vertical-align: top; }
+.credit-estimate-table th { color: var(--cp-text); font-weight: 600; background: var(--cp-surface-soft); }
+.credit-estimate-table td:not(:first-child) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.credit-estimate-formula { padding: 12px 14px; margin-block: 12px; border-radius: 8px; background: var(--cp-surface-soft); color: var(--cp-text); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.credit-estimate-assumptions { padding-left: 20px; }
+.credit-estimate-assumptions li { margin-block: 8px; }
+.credit-estimate-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-block: 12px; }
+.credit-estimate-links a { color: var(--cp-link); }
+.credit-estimate-dialog .fine-print { margin-top: 14px; }
+.credit-projection { margin-top: 16px; }
+.credit-projection > p { margin-block: 10px; color: var(--cp-text-muted); font-size: 12px; line-height: 1.7; }
+.credit-projection-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 16px; }
+.credit-projection-controls label { display: flex; flex-direction: column; gap: 5px; color: var(--cp-text-muted); font-size: 12px; }
+.credit-projection-controls input { width: 150px; max-width: 100%; padding: 7px 10px; border: 1px solid var(--cp-border); border-radius: 6px; background: var(--cp-surface); color: var(--cp-text); }
+.credit-projection-controls .credit-estimate-copy strong { font-size: 20px; }
+
+@media (max-width: 600px) {
+  .credit-estimate-table th, .credit-estimate-table td { padding: 7px; font-size: 11px; }
+  .credit-estimate-dialog .modal-header h2 { font-size: 18px; }
+  .credit-estimate-dialog .modal-body { white-space: normal; }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "agent-cookbook",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "recipes:validate": "node scripts/compile-recipes.ts --check",
+    "recipes:compile": "node scripts/compile-recipes.ts",
+    "predev": "npm run recipes:compile",
+    "dev": "vite",
+    "recipes:validate:copilot": "node scripts/validate-copilot-recipes.ts",
+    "predev:copilot": "npm run recipes:validate:copilot",
+    "dev:copilot": "vite --config vite.copilot.config.ts",
+    "prebuild:copilot": "npm run recipes:validate:copilot",
+    "build:copilot": "tsc -b && vite build --config vite.copilot.config.ts",
+    "preview:copilot": "vite preview --config vite.copilot.config.ts",
+    "recipes:validate:foundry": "node scripts/validate-foundry-recipes.ts",
+    "predev:foundry": "npm run recipes:validate:foundry",
+    "dev:foundry": "vite --config vite.foundry.config.ts",
+    "prebuild:foundry": "npm run recipes:validate:foundry",
+    "build:foundry": "tsc -b && vite build --config vite.foundry.config.ts",
+    "preview:foundry": "vite preview --config vite.foundry.config.ts",
+    "recipes:validate:all": "npm run recipes:validate && npm run recipes:validate:copilot && npm run recipes:validate:foundry",
+    "recipes:author": "node scripts/recipe-author.ts",
+    "recipes:pack": "node scripts/recipe-author.ts pack",
+    "build:collection": "npm run recipes:validate:all && npm run recipes:compile && tsc -b && node scripts/build-collection.ts",
+    "preview:collection": "vite preview --config vite.collection.config.ts",
+    "dev:local": "node scripts/compile-local-recipes.ts && vite --mode local-recipes --port 4194",
+    "prebuild": "npm run recipes:compile",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/check-public-build.ts",
+    "pretest": "npm run recipes:compile",
+    "test": "node --test tests/*.test.ts",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fluentui/react-icons": "^2.0.346",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "oxlint": "^1.90.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16",
+    "yaml": "^2.9.0"
+  }
+}

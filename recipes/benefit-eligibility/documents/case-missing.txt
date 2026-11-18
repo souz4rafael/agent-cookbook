@@ -1,0 +1,10 @@
+FICTIONAL RAW INPUT EXAMPLE BEN-102
+Not active policy knowledge and not an eligibility assessment.
+
+Residence in Example Borough: yes
+Declared monthly household income: blank (unknown)
+Monthly income shown in example evidence: blank (missing)
+Application information complete: true
+Evidence of stated residence present: true
+
+Run the interactive lab with both income fields empty. Then enter 0 in both and rerun. Missing is not zero, and missing evidence is not an entitlement refusal. Staff review any explanation and evidence-follow-up draft before a local referral; no applicant is contacted.

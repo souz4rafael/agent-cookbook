@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const theme = new URLSearchParams(window.location.search).get('scoutTheme');
+        document.documentElement.dataset.theme = theme === 'dark' ? 'dark' : 'light';
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#f0f0f0" />
+    <meta name="description" content="Explore New Foundry agent recipes, starter manifests, and editable local drafts in an independent educational Cookbook. No Azure connection or live AI." />
+    <title>Microsoft Foundry Agents Cookbook</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

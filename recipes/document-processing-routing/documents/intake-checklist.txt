@@ -1,0 +1,14 @@
+EXAMPLE COUNCIL - FICTIONAL INTAKE CHECKLIST
+Community Room Permit, learning edition 2
+
+For the fictional Community Room Permit, intake requires an application form, venue permission and an event plan. Check that the three document types are present and that their room references agree with the demo register.
+
+Completeness is not approval. An intake check does not establish authenticity, safety compliance or entitlement to a permit. Use the interactive inputs to change document presence and references; no files are uploaded or extracted.
+
+Document categories: FORM (application), PERMISSION (venue permission), PLAN (event plan).
+The presence checkboxes explicitly supply those document categories. They are a stand-in for an intake classification output, not a document detector. A present document also needs its room reference. The package and demo-register reference must be supplied.
+
+Compare each present, nonblank document reference with the supplied nonblank register value. Comparison normalises Unicode, ignores case and trims outer whitespace; different room identifiers still conflict. Blank is missing information, not a known contradiction. A leftover reference in an unchecked document must not create a conflict. The register value is editable fictional input, not a live lookup.
+
+PKG-101, PKG-102 and PKG-103 are optional raw-input examples, not required knowledge or frozen answers. The current inputs, rather than a package ID, determine the checks.
+No actual resident data or records are included. These are invented examples, not official guidance.

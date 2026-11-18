@@ -1,0 +1,14 @@
+FICTIONAL RAW INPUT EXAMPLE PKG-103
+Not active policy knowledge and not a processed report.
+
+Enter or load these values in the interactive intake lab:
+Package reference: PKG-103
+Application form present: true
+Venue permission present: true
+Event plan present: true
+Application room reference: ROOM-C
+Permission room reference: ROOM-Z
+Plan room reference: ROOM-C
+Demo register room reference: ROOM-C
+
+Run the lab and compare the references in its draft. Correcting a value is a new fictional input, not a finding that either document is authentic. The lab must not silently choose a reference, infer fraud or reject the application.

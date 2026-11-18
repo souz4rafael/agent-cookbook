@@ -1,0 +1,29 @@
+AGENTS COOKBOOKS - THIRD-PARTY MATERIAL
+
+This independently implemented personal learning project is not affiliated with,
+sponsored by, or endorsed by Microsoft or other product owners.
+
+Product names, logos and provider marks are used to identify the products being
+discussed. No ownership of those marks or endorsement is claimed.
+
+Dependency versions are recorded in package-lock.json. Dependencies retain their
+individual licenses; consult the corresponding package distributions. Fluent UI
+React icons are MIT-licensed by Microsoft; the notice is also reproduced in
+src/foundry/assets/NOTICE.txt.
+
+Reference-artwork sources and observation dates:
+  src/assets/provenance.json
+  src/assets/providers/provenance.json
+  src/foundry/assets/NOTICE.txt
+
+The initial Foundry starter manifest preserves its Microsoft attribution,
+Distributable Code licensing reference and educational disclaimer in
+foundry/recipes/industry-news-trend-scanner.json. Those terms are not replaced by
+this notice. Review applicable terms before redistributing or adapting it.
+
+Other recipe fixtures are fictional teaching material. Source/reference URLs
+describe their inspiration or real-product implementation context; they do not
+make the simulator an official service.
+
+This notice records provenance; it does not grant additional rights to third-party
+materials or substitute for their applicable licenses.

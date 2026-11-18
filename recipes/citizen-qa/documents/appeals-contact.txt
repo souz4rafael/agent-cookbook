@@ -1,0 +1,16 @@
+APPEALS AND CONTACT DETAILS
+Original fictional content. English edition 3 for demonstration.
+
+Notice: Example Council, Example Borough and the Community Card are invented. The deadlines, review policy and contact details below are fictional. Do not use this information to calculate real legal or administrative deadlines.
+
+Under the fictional Community Card policy, you can appeal a decision within 15 calendar days of receiving the outcome by providing the demonstration reference number and your reason for requesting a review.
+
+The fictional review is answered within 8 working days. The example contact address is support@example-council.invalid; it does not receive messages. To test a local handoff, ask for human support and then confirm the simulation separately.
+
+Confirming a handoff produces only a SIM receipt within the demonstration. No email is sent, no real queue is contacted and no public employee receives a request. Do not enter personal data.
+
+Supported scope: Community Card documents, processing deadlines, appeals and human support. Other topics remain outside this service even when marked urgent. This is not an emergency service.
+
+For an in-scope question marked urgent, prepare a supervisor attention draft for the Citizen support queue. Include the stated topic, question, urgency, unresolved context and recent conversation so staff can review what was discussed. Do not promise faster processing or invent an exception to policy. For ordinary support, prepare the same minimum context without an urgency claim.
+
+The interactive lab copies the supplied context and recent chat deterministically; it does not perform an AI summary. A reviewer must check and correct the draft before confirming a local record. Appeals and contact details must be selected and connected before either support action is available.

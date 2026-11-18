@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var override = new URLSearchParams(window.location.search).get('scoutTheme');
+        var theme = override === 'light' || override === 'dark'
+          ? override
+          : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Learn to build, preview and understand agents through interactive recipes. An independent educational simulator with fictional data, no generative AI and no real connections." />
+    <title>Copilot Studio Agents Cookbook · Learn by building</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

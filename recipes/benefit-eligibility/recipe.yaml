@@ -1,0 +1,438 @@
+schemaVersion: 1
+revision: 2
+id: benefit-eligibility
+status: published
+title: Benefit eligibility agent
+summary: Help staff prepare a transparent preliminary check of a fictional support policy. Edit numeric income, residency and evidence inputs to recompute rules, distinguish unknown from zero and compare the threshold boundary. Review explanation drafts and alternatives before a local referral; never make an automated entitlement decision.
+industry: Government and public services
+difficulty: beginner
+accentIcon: benefit
+learningGoals:
+  - Ground a preliminary assessment in a selected fictional policy and evidence guidance.
+  - Compare numeric income with the inclusive threshold while preserving missing and conflicting data.
+  - Explain uncertainty, alternatives and human review without granting or refusing entitlement.
+  - Review a draft and verify exact boundary cases and blocked prerequisites.
+sourceUrl: https://adoption.microsoft.com/en-gb/scenario-library/government/benefit-eligibility-agent/
+agent:
+  name: Benefit Guidance Assistant
+  description: ""
+  instructions: |-
+    # Purpose and authority
+    Help staff prepare a preliminary Community Learning Support check under the fictional policy. Only authorised staff decide entitlement after verifying policy and evidence. Never approve, refuse or pay benefits, issue a decision letter or infer personal characteristics.
+
+    # Sources and inputs
+    Use the selected, connected Fictional eligibility policy and Evidence, decisions and review guidance. Take thresholds, comparison boundaries and evidence requirements from approved rules, not memory. If guidance is missing or conflicting, pause the check and explain the gap.
+    Reuse stated residency, declared monthly household income, evidence income, application completeness and residence-evidence presence. Ask for missing or ambiguous details using the same period and units. Missing income is unknown, never zero; a stated zero is a value. Evidence presence does not establish authenticity. Avoid real identity documents and unnecessary personal details.
+
+    # Preliminary sequence
+    - Preserve known conflicting income figures first; do not select, average or guess a value. Propose the configured Prepare a policy exception review tool.
+    - Otherwise, unknown residency, missing figures or incomplete evidence require Prepare an evidence follow-up, not a refusal.
+    - With complete, consistent information, use configured checks against approved residency and inclusive income rules. Outside-criteria inputs require Prepare a policy exception review; inputs that appear to meet criteria require Prepare a caseworker eligibility review.
+
+    # Review and response
+    Present the preliminary finding, inputs, checks, policy basis, uncertainty, source-supported alternatives and next step. Explain correction or appeal routes only as supported by approved guidance; never invent rights or deadlines.
+    Show an explanation draft and the proposed staff queue. Require staff review, corrections and separate explicit confirmation before using the matching configured tool. Declined confirmation means no action; changed details require renewed review and confirmation.
+    Check source and connection prerequisites. If the tool is unavailable, fails or returns an uncertain result, state what is unconfirmed. Report a referral only after a successful result, not a benefit decision, payment or applicant contact.
+  tone: friendly
+  detail: detailed
+instructionStyles:
+  structured: |-
+    # Purpose and authority
+    Help staff prepare a preliminary Community Learning Support check under the fictional policy. Only authorised staff decide entitlement after verifying policy and evidence. Never approve, refuse or pay benefits, issue a decision letter or infer personal characteristics.
+
+    # Sources and inputs
+    Use the selected, connected Fictional eligibility policy and Evidence, decisions and review guidance. Take thresholds, comparison boundaries and evidence requirements from approved rules, not memory. If guidance is missing or conflicting, pause the check and explain the gap.
+    Reuse stated residency, declared monthly household income, evidence income, application completeness and residence-evidence presence. Ask for missing or ambiguous details using the same period and units. Missing income is unknown, never zero; a stated zero is a value. Evidence presence does not establish authenticity. Avoid real identity documents and unnecessary personal details.
+
+    # Preliminary sequence
+    - Preserve known conflicting income figures first; do not select, average or guess a value. Propose the configured Prepare a policy exception review tool.
+    - Otherwise, unknown residency, missing figures or incomplete evidence require Prepare an evidence follow-up, not a refusal.
+    - With complete, consistent information, use configured checks against approved residency and inclusive income rules. Outside-criteria inputs require Prepare a policy exception review; inputs that appear to meet criteria require Prepare a caseworker eligibility review.
+
+    # Review and response
+    Present the preliminary finding, inputs, checks, policy basis, uncertainty, source-supported alternatives and next step. Explain correction or appeal routes only as supported by approved guidance; never invent rights or deadlines.
+    Show an explanation draft and the proposed staff queue. Require staff review, corrections and separate explicit confirmation before using the matching configured tool. Declined confirmation means no action; changed details require renewed review and confirmation.
+    Check source and connection prerequisites. If the tool is unavailable, fails or returns an uncertain result, state what is unconfirmed. Report a referral only after a successful result, not a benefit decision, payment or applicant contact.
+  stepByStep: |-
+    # Preliminary benefit workflow
+    Prepare a fictional Community Learning Support check for staff, not an entitlement decision. Authorised staff must verify policy and evidence. Never approve, refuse or pay benefits, issue a decision letter or infer personal characteristics.
+
+    # Steps
+    1. Consult the selected, connected Fictional eligibility policy and Evidence, decisions and review guidance. Obtain thresholds, inclusive boundaries and evidence requirements from approved rules. If sources are missing or conflicting, pause the check and explain why; do not rely on memory.
+    2. Read stated residency, declared monthly household income, evidence income, application completeness and residence-evidence presence from context. Clarify missing or ambiguous details and ensure the period and units agree. Preserve missing as unknown, not zero; a stated zero is a value. Do not treat presence as authenticity or request real identity documents or unnecessary personal details.
+    3. Check known income figures for conflict before other routing. Preserve both values; never select, average or guess the correct one. Propose the configured Prepare a policy exception review tool.
+    4. If there is no known conflict, use Prepare an evidence follow-up for unknown residency, missing figures or incomplete evidence. Do not turn missing information into a refusal.
+    5. With complete, consistent inputs, use configured checks for approved residency and inclusive income rules. Propose Prepare a policy exception review for outside-criteria inputs or Prepare a caseworker eligibility review when criteria appear met.
+    6. Present the preliminary finding, inputs, checks, policy basis, uncertainty, source-supported alternatives and next step. Explain correction or appeal routes only from approved guidance, without inventing rights or deadlines.
+    7. Show the explanation draft and staff queue. Check source and connection prerequisites for the matching configured tool. Require staff review, corrections and separate explicit confirmation before referral. Stop if declined; review and reconfirm changed details.
+    8. Check the result. If the tool is unavailable, fails or has an uncertain result, explain what is unconfirmed. Report a referral only after success, not a benefit decision, payment or applicant contact.
+  decisionRules: |-
+    # Purpose and inputs
+    Support preliminary fictional Community Learning Support checks. Reuse stated residency, declared monthly household income, evidence income, application completeness and residence-evidence presence. Clarify ambiguous or missing details using the same period and units. Avoid real identity documents and unnecessary personal details.
+
+    # Decision rules
+    - If the selected, connected Fictional eligibility policy or Evidence, decisions and review guidance is missing or conflicting, pause the check and explain the gap. Use approved thresholds, inclusive boundaries and evidence requirements, not remembered policy.
+    - If income is missing, preserve it as unknown, not zero. A stated zero is a value. Evidence presence alone does not establish authenticity.
+    - If known income figures conflict, preserve both before other routing and propose the configured Prepare a policy exception review tool. Do not select, average or guess the correct amount.
+    - If there is no known conflict but residency is unknown, a figure is missing or evidence is incomplete, propose Prepare an evidence follow-up. Missing information is not a refusal.
+    - If information is complete and consistent, use configured checks against approved residency and inclusive income rules. Propose Prepare a policy exception review for outside-criteria inputs; otherwise propose Prepare a caseworker eligibility review.
+    - If referral is proposed, show an explanation draft and staff queue. Check source and connection prerequisites for the matching configured tool. Require staff review, corrections and separate explicit confirmation. If declined, do not act; if details change, review and reconfirm.
+    - If the tool is unavailable, fails or has an uncertain result, state what is unconfirmed. Report referral only after a successful result, not a decision, payment or applicant contact.
+
+    # Response and authority
+    Give the preliminary finding, inputs, checks, policy basis, uncertainty, source-supported alternatives and next step. Describe correction or appeal routes only from approved guidance; invent no rights or deadlines. Only authorised staff decide entitlement after verifying policy and evidence. Never approve, refuse or pay benefits, issue a decision letter or infer personal characteristics.
+  examples: |-
+    # Behaviour examples
+    Situation: The approved eligibility policy cannot be retrieved.
+    Expected behaviour: Pause the check and explain the missing source; do not reuse a remembered threshold.
+
+    Situation: Staff decline the reviewed referral.
+    Expected behaviour: Do not submit it or describe it as a decision; offer draft corrections.
+
+    Situation: Declared income is blank but evidence records zero.
+    Expected behaviour: Preserve unknown and zero separately and propose evidence follow-up, without guessing the declaration or refusing support.
+editable: [name, instructions, tone, detail]
+connections:
+  - id: benefits-library
+    type: sharepoint
+    title: Demo benefits SharePoint
+    description: Fictional eligibility and evidence policies. The interactive inputs are invented values, not real applicant records or financial documents.
+    accountLabel: Benefits learner at Example Council
+    resources:
+      - { id: learning-support, label: Community Learning Support, description: Invented DEMO-1 rules and staff review guidance. }
+      - { id: empty-library, label: Empty library (boundary test), description: Contains no benefit policy and removes unavailable selections. }
+    realWorldNote: A real service needs current approved policy, versioned rules and appropriate access to applicant information. Knowledge retrieval is not an authoritative entitlement engine.
+  - id: eligibility-desk
+    type: service-desk
+    title: Demo eligibility review
+    description: Local staff review of inputs that appear to meet the simplified criteria. No approval or payment occurs.
+    accountLabel: Fictional eligibility review team
+    resources:
+      - { id: eligibility-review, label: Eligibility review, description: A caseworker verifies evidence before any actual decision. }
+    realWorldNote: Retain policy version, evidence references, accountable reviewer ownership and an audit trail. A review request grants no entitlement.
+  - id: evidence-desk
+    type: service-desk
+    title: Demo evidence follow-up
+    description: Local review of incomplete information. No request for documents is sent.
+    accountLabel: Fictional evidence follow-up team
+    resources:
+      - { id: evidence-followup, label: Evidence follow-up, description: Staff clarify missing inputs rather than treating them as refusals. }
+    realWorldNote: Use minimal agreed context, secure communication, appropriate consent and failure handling. Missing values must not silently become zero.
+  - id: policy-desk
+    type: service-desk
+    title: Demo policy review
+    description: Local review of conflicting figures or inputs outside the simplified criteria. No automatic refusal is made.
+    accountLabel: Fictional policy review team
+    resources:
+      - { id: policy-review, label: Policy review, description: Staff establish the correct facts and consider policy interpretation and alternatives. }
+    realWorldNote: Qualified reviewers must apply approved policy and explain correction and appeal routes. A conversational model must not guess financial facts or decide entitlement.
+knowledge:
+  - id: eligibility-policy
+    title: Fictional eligibility policy
+    summary: DEMO-1 residency and inclusive 1,200 demo-unit threshold for preliminary checks only.
+    connectionId: benefits-library
+    resourceId: learning-support
+    file: documents/eligibility-policy.txt
+  - id: evidence-guidance
+    title: Evidence, decisions and review guidance
+    summary: Evidence preparation, uncertainty, staff review, alternatives and explanation drafts.
+    connectionId: benefits-library
+    resourceId: learning-support
+    file: documents/evidence-guidance.txt
+facts:
+  - id: policy-answer
+    documentId: eligibility-policy
+    keywords: [eligibility criteria, policy rules, threshold]
+    answer: "Fictional policy DEMO-1 covers Community Learning Support for a resident of Example Borough with monthly household income at or below 1,200 demo units. Exactly 1,200 meets the example income threshold. Both residency and income need supporting evidence; the responsible service makes the decision."
+    detail: "Demo units are invented learning values, not real currency. This is not an actual benefit or official eligibility guidance. The rule is a simplified example, not a complete assessment model. Missing information means unknown; conflicting evidence needs human clarification. No age, disability, nationality or other personal characteristic is inferred."
+  - id: evidence-answer
+    documentId: evidence-guidance
+    keywords: [required evidence, evidence checklist, review rights, appeal, papers, required docs]
+    answer: "The fictional evidence checklist asks for a completed application, proof of residence and a statement supporting the declared monthly household income. Staff review missing or conflicting information before deciding. A real decision explanation should identify the policy, evidence, reasons and the available correction or appeal route."
+    detail: "This exercise drafts explanations for human review but does not issue decision letters or set appeal deadlines. Use the actual service's approved review process in a real implementation. Let the applicant correct information and ask for human support. Never enter real identity documents, income records or contact details here."
+tools:
+  - id: prepare-eligibility-review
+    type: create-case
+    title: Prepare a caseworker eligibility review
+    description: Review the current preliminary checks and explanation draft before confirming a local Eligibility review request. A confirmation does not approve support.
+    connectionId: eligibility-desk
+    resourceId: eligibility-review
+    requiredKnowledge: [eligibility-policy, evidence-guidance]
+    realWorldNote: Provide policy version, reviewed evidence references and preliminary check results to an authorised caseworker. Do not issue an approval, decision letter or payment automatically.
+  - id: prepare-evidence-followup
+    type: create-case
+    title: Prepare an evidence follow-up
+    description: Review missing or unknown inputs before confirming a local Evidence follow-up request. No applicant is contacted.
+    connectionId: evidence-desk
+    resourceId: evidence-followup
+    requiredKnowledge: [eligibility-policy, evidence-guidance]
+    realWorldNote: Give staff a missing-information summary to review before any secure request for evidence. Define ownership and error handling.
+  - id: prepare-policy-review
+    type: create-case
+    title: Prepare a policy exception review
+    description: Review conflicting or outside-criteria inputs and alternatives before confirming a local Policy review request. No automated refusal is made.
+    connectionId: policy-desk
+    resourceId: policy-review
+    requiredKnowledge: [eligibility-policy, evidence-guidance]
+    realWorldNote: Preserve the evidence and rule version for qualified review. Return a request reference, not an entitlement decision.
+lab:
+  title: Prepare an editable preliminary policy check
+  description: Use fictional data only. Income fields are numbers in monthly demo units, so 1200 and 1200.00 compare numerically; clearing a field means unknown, not zero. Known conflicting figures require policy review first. Other missing evidence requires follow-up. Every result and draft needs human review; no benefit is granted or refused.
+  fields:
+    - id: residency
+      label: Residence in Example Borough
+      type: select
+      defaultValue: "yes"
+      hint: Unknown is incomplete information, not a failed residency rule.
+      options:
+        - { value: "yes", label: Yes — stated residence }
+        - { value: "no", label: No — stated residence elsewhere }
+        - { value: unknown, label: Unknown — needs clarification }
+    - { id: declared-income, label: Declared monthly household income, type: number, defaultValue: 950, min: 0, hint: Demo units only; leave blank for unknown or enter 0 for a known zero. }
+    - { id: evidence-income, label: Monthly income shown in example evidence, type: number, defaultValue: 950, min: 0, hint: Use the same monthly period and units; blank means missing evidence. }
+    - { id: application-complete, label: Application information complete, type: boolean, defaultValue: true, hint: Simulates the staff preparation check; no application is uploaded. }
+    - { id: residence-evidence, label: Evidence of stated residence present, type: boolean, defaultValue: true, hint: Includes evidence of residence elsewhere; presence does not verify authenticity. }
+  checks:
+    - { id: residency-known, label: Residence is known, field: residency, operator: neq, value: unknown }
+    - { id: borough-resident, label: Stated Example Borough residence, field: residency, operator: eq, value: "yes" }
+    - { id: declaration-known, label: Declared income supplied, field: declared-income, operator: present }
+    - { id: evidence-known, label: Evidence income supplied, field: evidence-income, operator: present }
+    - { id: income-consistent, label: Declared and evidence income agree numerically, field: declared-income, operator: eq, otherField: evidence-income }
+    - { id: within-threshold, label: Declared income at or below 1200 demo units, field: declared-income, operator: lte, value: 1200 }
+    - { id: application-ready, label: Application information complete, field: application-complete, operator: eq, value: true }
+    - { id: residence-supported, label: Residence evidence present, field: residence-evidence, operator: eq, value: true }
+  rules:
+    - id: conflicting-figures
+      label: Preserve known conflicts before applying a threshold
+      all: [{ checkId: declaration-known, equals: true }, { checkId: evidence-known, equals: true }, { checkId: income-consistent, equals: false }]
+      outcomeId: conflicting-inputs
+    - id: incomplete-information
+      label: Missing facts require clarification not failure
+      all: []
+      any: [{ checkId: residency-known, equals: false }, { checkId: declaration-known, equals: false }, { checkId: evidence-known, equals: false }, { checkId: application-ready, equals: false }, { checkId: residence-supported, equals: false }]
+      outcomeId: missing-information
+    - id: outside-criteria
+      label: Known inputs outside criteria still need human review
+      all: []
+      any: [{ checkId: borough-resident, equals: false }, { checkId: within-threshold, equals: false }]
+      outcomeId: outside-preliminary-criteria
+    - { id: fallback, label: Complete consistent inputs appear to meet the simplified criteria, all: [], outcomeId: criteria-appear-met }
+  outcomes:
+    - id: criteria-appear-met
+      title: Criteria appear met — human review required
+      summary: "Preliminary DEMO-1 check only: stated residence and consistent monthly income of {{declared-income}} demo units appear to meet the example criteria, including the inclusive 1200 threshold. A caseworker must verify evidence and policy. This is not an entitlement decision, approval or promise of payment."
+      documentIds: [eligibility-policy, evidence-guidance]
+      toolId: prepare-eligibility-review
+      draft:
+        title: Preliminary explanation for caseworker review
+        body: |
+          DRAFT ONLY — not an issued decision letter
+          Policy: fictional DEMO-1, monthly income at or below 1200 demo units and Example Borough residence.
+          Inputs: residency={{residency}}; declared income={{declared-income}}; evidence income={{evidence-income}}; application complete={{application-complete}}; residence evidence={{residence-evidence}}.
+          Computed checks: {{checks}}
+          Preliminary reason: the supplied inputs appear consistent with the simplified criteria. No entitlement has been decided.
+          Human review route: Eligibility review must verify facts, evidence and policy before any decision. The person can correct the information or request a policy review through the responsible service.
+          Alternatives: ask staff about other learning-support routes or general learning guidance if this scheme is unsuitable; availability is not guaranteed.
+          No legal deadline is set. Review this draft before confirming a local SIM referral; nothing is sent, issued or paid.
+    - id: missing-information
+      title: Information incomplete — not a refusal
+      summary: Preliminary check incomplete. Read the failed checks for missing application information, residency or supporting evidence. Missing income is unknown, not zero. Send the reviewed draft to Evidence follow-up locally; do not treat absent information as a failed entitlement criterion.
+      documentIds: [eligibility-policy, evidence-guidance]
+      toolId: prepare-evidence-followup
+      draft:
+        title: Missing-information explanation for review
+        body: |
+          DRAFT ONLY — not an issued decision letter
+          Policy: fictional DEMO-1.
+          Inputs: residency={{residency}}; declared income={{declared-income}}; evidence income={{evidence-income}}; application complete={{application-complete}}; residence evidence={{residence-evidence}}.
+          Computed checks: {{checks}}
+          Preliminary reason: information or evidence is incomplete. Unknown income must not become zero; unknown residence must not become a refusal.
+          Human review route: Evidence follow-up should clarify the missing items and let the person correct information. Staff must apply the actual service's approved review process before any decision.
+          Alternatives: ask staff for help supplying evidence or discuss other learning-support routes and general learning guidance; no alternative is promised.
+          No legal deadline is set. Review this draft before confirming a local SIM referral; no applicant is contacted.
+    - id: conflicting-inputs
+      title: Conflicting figures — do not choose one
+      summary: "Preliminary check paused: declared income {{declared-income}} and evidence income {{evidence-income}} demo units disagree. Preserve both figures and ask Policy review to establish the correct period and value. Do not pick a convenient figure, infer fraud, approve or refuse support."
+      documentIds: [eligibility-policy, evidence-guidance]
+      toolId: prepare-policy-review
+      draft:
+        title: Conflicting-evidence explanation for review
+        body: |
+          DRAFT ONLY — not an issued decision letter
+          Policy: fictional DEMO-1, inclusive threshold 1200 demo units.
+          Inputs: residency={{residency}}; declared income={{declared-income}}; evidence income={{evidence-income}}; application complete={{application-complete}}; residence evidence={{residence-evidence}}.
+          Computed checks: {{checks}}
+          Preliminary reason: known numeric figures conflict. Neither figure is selected as authoritative and no entitlement decision is made.
+          Human review route: Policy review must establish the correct amount and period, resolve other gaps and allow correction before applying the approved policy.
+          Alternatives: discuss other learning-support routes or general learning guidance while facts are clarified; availability is not guaranteed.
+          No legal deadline is set. Review this draft before confirming a local SIM referral; no refusal or other decision is issued.
+    - id: outside-preliminary-criteria
+      title: Inputs outside simplified criteria — review alternatives
+      summary: "Preliminary DEMO-1 check only: the supplied residence or consistent income of {{declared-income}} demo units falls outside a simplified criterion. This is not a refusal. Policy review must verify the inputs, consider the applicable policy and discuss alternatives before any actual decision."
+      documentIds: [eligibility-policy, evidence-guidance]
+      toolId: prepare-policy-review
+      draft:
+        title: Preliminary criteria and alternatives explanation
+        body: |
+          DRAFT ONLY — not an issued decision letter
+          Policy: fictional DEMO-1, Example Borough residence and income at or below 1200 demo units.
+          Inputs: residency={{residency}}; declared income={{declared-income}}; evidence income={{evidence-income}}; application complete={{application-complete}}; residence evidence={{residence-evidence}}.
+          Computed checks: {{checks}}
+          Preliminary reason: at least one stated input is outside the simplified rule. This is not an automated refusal or a final legal assessment.
+          Human review route: Policy review must verify facts and applicable policy. Invite corrections and use the actual service's approved review or appeal route for any later decision.
+          Alternatives: ask staff about other learning-support routes, the appropriate local service or general learning guidance; no alternative eligibility is assumed.
+          No legal deadline is set. Review this draft before confirming a local SIM referral; no decision or payment occurs.
+  cases:
+    - id: income-1199
+      title: 1199 is below the inclusive threshold
+      inputs: { residency: "yes", declared-income: 1199, evidence-income: 1199, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: criteria-appear-met, kind: handoff-ready, toolId: prepare-eligibility-review, documentIds: [eligibility-policy, evidence-guidance], contains: ['1199', 'not an entitlement decision', 'Human review route'] }
+    - id: income-1200
+      title: Exactly 1200 meets the example income threshold
+      inputs: { residency: "yes", declared-income: 1200, evidence-income: 1200.00, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: criteria-appear-met, kind: handoff-ready, toolId: prepare-eligibility-review, documentIds: [eligibility-policy, evidence-guidance], contains: [inclusive 1200 threshold, DRAFT ONLY] }
+    - id: income-1201
+      title: 1201 requires policy review not automatic refusal
+      inputs: { residency: "yes", declared-income: 1201, evidence-income: 1201, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: outside-preliminary-criteria, kind: handoff-ready, toolId: prepare-policy-review, documentIds: [eligibility-policy, evidence-guidance], contains: ['1201', 'This is not a refusal', 'Alternatives'] }
+    - id: income-missing
+      title: Missing numeric input stays unknown
+      inputs: { residency: "yes", declared-income: null, evidence-income: null, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: missing-information, kind: handoff-ready, toolId: prepare-evidence-followup, documentIds: [eligibility-policy, evidence-guidance], contains: [unknown, not zero, Evidence follow-up] }
+    - id: income-zero
+      title: Known zero is a value not missing income
+      inputs: { residency: "yes", declared-income: 0, evidence-income: 0, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: criteria-appear-met, kind: handoff-ready, toolId: prepare-eligibility-review, documentIds: [eligibility-policy, evidence-guidance], contains: [income of 0 demo units, No entitlement has been decided] }
+    - id: conflicting-figures
+      title: Conflicting figures straddle the threshold
+      inputs: { residency: "yes", declared-income: 1190, evidence-income: 1250, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: conflicting-inputs, kind: handoff-ready, toolId: prepare-policy-review, documentIds: [eligibility-policy, evidence-guidance], contains: ['1190', '1250', 'Neither figure is selected as authoritative'] }
+    - id: residency-unknown
+      title: Unknown residence needs clarification
+      inputs: { residency: unknown, declared-income: 950, evidence-income: 950, application-complete: true, residence-evidence: false }
+      expected: { outcomeId: missing-information, kind: handoff-ready, toolId: prepare-evidence-followup, documentIds: [eligibility-policy, evidence-guidance], contains: [unknown residence must not become a refusal] }
+    - id: residency-outside
+      title: Residence elsewhere prompts review and alternatives
+      inputs: { residency: "no", declared-income: 950, evidence-income: 950, application-complete: true, residence-evidence: true }
+      expected: { outcomeId: outside-preliminary-criteria, kind: handoff-ready, toolId: prepare-policy-review, documentIds: [eligibility-policy, evidence-guidance], contains: [This is not a refusal, appropriate local service] }
+    - id: missing-policy
+      title: Missing policy blocks the preliminary explanation
+      inputs: { residency: "yes", declared-income: 1200, evidence-income: 1200, application-complete: true, residence-evidence: true }
+      disabledKnowledge: [eligibility-policy]
+      expected: { outcomeId: criteria-appear-met, kind: missing-knowledge, documentIds: [] }
+    - id: review-tool-disabled
+      title: Disabled review tool cannot create a referral
+      inputs: { residency: "yes", declared-income: 1200, evidence-income: 1200, application-complete: true, residence-evidence: true }
+      disabledTools: [prepare-eligibility-review]
+      expected: { outcomeId: criteria-appear-met, kind: handoff-blocked, documentIds: [eligibility-policy, evidence-guidance] }
+journey:
+  - id: purpose
+    title: Define guidance not automated entitlement decisions
+    description: Edit the name or instructions to describe preliminary checks and mandatory human review. Free text is stored for export, not executed.
+    tab: overview
+    completeWhen: { type: profile-edited }
+  - id: policy
+    title: Connect and select the fictional policy
+    description: Connect Demo benefits SharePoint to Community Learning Support and select Fictional eligibility policy.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: eligibility-policy }
+  - id: evidence
+    title: Select evidence and review guidance
+    description: Add Evidence, decisions and review guidance. Every explanation and action needs both sources, not a frozen case report.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: evidence-guidance }
+  - id: eligibility-tool
+    title: Prepare caseworker review
+    description: Connect Demo eligibility review and enable Prepare a caseworker eligibility review.
+    tab: tools
+    completeWhen: { type: tool, toolId: prepare-eligibility-review }
+  - id: evidence-tool
+    title: Prepare evidence follow-up
+    description: Connect Demo evidence follow-up and enable Prepare an evidence follow-up.
+    tab: tools
+    completeWhen: { type: tool, toolId: prepare-evidence-followup }
+  - id: policy-tool
+    title: Prepare exception review
+    description: Connect Demo policy review and enable Prepare a policy exception review.
+    tab: tools
+    completeWhen: { type: tool, toolId: prepare-policy-review }
+  - id: below
+    title: Run a below-threshold preliminary check
+    description: In Review, use Try this example to load and run 1199 is below the inclusive threshold. Read the result in Preview and review the numeric comparison and the no-decision boundary.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: income-1199 }
+  - id: citation
+    title: Verify the policy source
+    description: Open the eligibility policy citation and check the inclusive threshold and requirement for human decisions.
+    tab: activity
+    completeWhen: { type: citation-opened, documentId: eligibility-policy }
+  - id: exact
+    title: Test the exact boundary
+    description: Load and run Exactly 1200 meets the example income threshold. Numeric 1200 and 1200.00 are equal, not conflicting strings.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: income-1200 }
+  - id: above
+    title: Test one unit above
+    description: Load and run 1201 requires policy review not automatic refusal. Read the alternatives and correction route in the draft.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: income-1201 }
+  - id: missing
+    title: Keep blank income unknown
+    description: Load and run Missing numeric input stays unknown. Missing values must not silently become zero or a refusal.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: income-missing }
+  - id: zero
+    title: Distinguish a known zero
+    description: Load and run Known zero is a value not missing income. Compare its checks and route with blank fields.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: income-zero }
+  - id: conflicting
+    title: Preserve both conflicting figures
+    description: Load and run Conflicting figures straddle the threshold. Neither figure should become authoritative automatically.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: conflicting-figures }
+  - id: residence
+    title: Keep unknown residence separate from no
+    description: Load and run Unknown residence needs clarification. It needs follow-up, not a failed residency decision.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: residency-unknown }
+  - id: confirm-ready
+    title: Confirm a reviewed preliminary explanation
+    description: Run the 1200 case again, review its draft and confirm a local Eligibility review referral. Nothing is approved or issued.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: prepare-eligibility-review, outcomeId: criteria-appear-met }
+  - id: confirm-conflict
+    title: Confirm the conflict review draft
+    description: Run the conflicting-figures case again and confirm its Policy review draft. A different policy-review outcome cannot complete this step.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: prepare-policy-review, outcomeId: conflicting-inputs }
+  - id: evaluate
+    title: Verify boundary and prerequisite expectations
+    description: Run Evaluate with both policies and all three tools configured. Check exact boundary, missing, zero, conflict and residency outcomes plus isolated prerequisite failures. No evaluation issues a decision or referral.
+    tab: activity
+    completeWhen: { type: evaluation-passed }
+test:
+  suggestedQuestions:
+    - What are the eligibility criteria and threshold?
+    - What evidence and review rights should be explained?
+    - Use the interactive inputs to compare missing income, zero and the exact threshold.
+  handoffKeywords: []
+  unknownAnswer: Open Review > Try this example for a fictional preliminary check. Chat can explain eligibility criteria, required evidence or review rights but cannot assess a typed applicant ID, grant or refuse support, issue a letter or make a payment.
+  missingKnowledgeAnswer: Select the policy and evidence guidance in the connected Community Learning Support library. No missing policy, income or evidence will be invented.
+  handoffBlockedAnswer: Keep both policy documents selected, connect the proposed review destination and enable its tool. No referral or decision has been created.
+  handoffReadyAnswer: Review the current inputs, preliminary reasons, alternatives and draft before confirming a local SIM referral. No entitlement decision, issued letter, payment or external action occurs.
+implementation:
+  - title: Define a preliminary-check agent in Copilot Studio
+    description: Create an agent in an approved environment for one service with an accountable policy owner. Define typed topic inputs for residency, declared monthly income, evidence income and preparation checks. Collect only necessary information with consent and correction options. Test blank, zero and unknown separately; none may be inferred by a model.
+  - title: Add approved policy and review knowledge
+    description: Add current policy, evidence requirements and review guidance under Knowledge with suitable authentication. Record policy version and ownership. Test authorised and denied access and require cited explanations; a retrieved policy is not proof of an applicant's circumstances or an authoritative entitlement decision.
+  - title: Normalise evidence before calling explicit rules
+    description: Use an approved flow or rules-service connector to validate numeric units, period and missing values. Inputs should preserve raw evidence references alongside normalised monthly amounts; outputs should include check results, missing fields, conflicts and rule version. Compare 1199, 1200, 1200.00 and 1201 plus null and zero. Conflicting periods or amounts must return a review requirement rather than a guessed value.
+  - title: Draft an explanation without issuing a decision
+    description: Map preliminary checks to a draft containing policy version, evidence, reasons, uncertainty, correction route and alternatives. Keep the final entitlement decision with authorised staff. Test missing and outside-criteria cases; neither should generate a refusal letter or invented legal deadline. If generation is used, verify every claimed fact and route against approved inputs and policy.
+  - title: Implement the three reviewed referral actions
+    description: Add approved agent flows or connector tools for caseworker review, evidence follow-up and policy exceptions. Inputs should include reviewed summary, evidence references, rule version, destination and a correlation key; outputs should include request reference and status. Display the draft and require explicit staff confirmation. Verify cancellation sends nothing, retries do not duplicate referrals and no action grants entitlement.
+  - title: Validate and publish with accountable owners
+    description: In Copilot Studio, test boundaries, conflicting periods, missing evidence, residency uncertainty, denied access, stale policy and failed tools. Have service owners verify reasons, alternatives and actual correction or appeal routes. Confirm privacy, security, retention, licensing, channel access and human-review capacity before controlled publication.
+  - title: Keep the non-AI and decision boundaries visible
+    description: This browser computes simplified deterministic checks from fictional inputs; it does not assess real households, verify evidence, run AI or access applicant systems. Drafts are not issued decision letters and SIM records stay local. The export is a design reference, not a deployable rules service. A real benefit decision always requires the responsible service's approved process.

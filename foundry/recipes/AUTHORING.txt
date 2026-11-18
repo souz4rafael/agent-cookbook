@@ -1,0 +1,52 @@
+FOUNDRY COOKBOOK RECIPE CONTRACT
+
+Add a JSON file in foundry/recipes/. No page component, route, or catalog edit is
+needed. Use the existing industry-news-trend-scanner.json as a complete example.
+The filename must match the recipe id. IDs use lowercase letters, digits, and
+single hyphens between words (up to 64 characters).
+
+schemaVersion: 1. Increment revision when a recipe's saved-draft contract changes.
+The schema is src/foundry/recipes/schema.ts; unknown fields fail validation.
+Catalog discovery is src/foundry/recipes/catalog.ts, using Vite's eager glob.
+
+Catalog fields: id, title, summary, publisher, createdOn (YYYY-MM-DD), featuredOrder.
+tools: unique id, displayed name, and a supported icon key.
+sections: ordered id/title/blocks. Blocks are paragraph/text or list/items.
+Paragraphs and list items support **bold** text only. HTML is never evaluated.
+source: reference URL/version, license text/label/URL, disclaimer, learnMoreUrl.
+manifest: defaultName, model label, instructions, and references to tool ids.
+
+All tools and model names are inert configuration metadata. They are never
+executed. Do not put credentials, tenant or subscription IDs, customer data,
+real connection IDs, executable expressions, or network calls in recipes.
+Only official HTTPS Microsoft URLs are allowed in source metadata.
+
+Catalog cards, details, Quick facts, creation forms, search, local draft editing,
+and home recent work are shared components. New recipes must not require
+recipe-specific JSX or conditional logic in those components.
+
+Named drafts use isolated browser storage:
+foundry-agents-cookbook:drafts:v1
+Multiple drafts can originate from the same recipe. Recipe data is immutable;
+editing a draft never changes the source JSON or another draft. Invalid or
+incompatible saved data is reported and never silently overwritten. A recipe
+revision change currently requires explicit user recovery; there is no automatic
+migration or destructive reset.
+
+This phase implements the visual catalog/manifest flow and local configuration
+drafts only. It does not implement a live agent, Bing search, model deployment,
+or a simulated briefing engine. Keep these notes outside reusable instructions.
+
+Validate:
+  npm run recipes:validate:foundry
+  node --test tests\foundry-recipes.test.ts tests\foundry-home.test.ts
+  npm run build:foundry
+Run locally:
+  npm run dev:foundry
+
+The dev and build commands validate recipe JSON, IDs, file naming, references,
+and source URLs before starting. CI also runs the framework tests and build.
+
+The initial recipe preserves the Microsoft Foundry starter-manifest v2 text
+observed on 18 November 2026. Attribution and applicable licensing links remain
+visible on its detail page. The Cookbook implementation is independent.

@@ -1,0 +1,9 @@
+.message-actions-wrap { margin-top: 16px; }
+.message-actions { display: flex; align-items: center; gap: 8px; }
+.message-action { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--cp-text-muted); }
+.message-action:hover:not(:disabled), .message-action:focus-visible { background: var(--cp-surface-soft); color: var(--cp-text); }
+.message-action[aria-pressed="true"] { color: var(--cp-accent); }
+.message-action > .message-action-filled { display: none; }
+.message-action:is(:hover, :focus-visible, [aria-pressed="true"]) > .message-action-regular { display: none; }
+.message-action:is(:hover, :focus-visible, [aria-pressed="true"]) > .message-action-filled { display: block; }
+.message-copy-error { max-width: 520px; margin-top: 6px; font-size: 11px; line-height: 1.65; color: var(--cp-danger); }

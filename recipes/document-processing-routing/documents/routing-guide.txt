@@ -1,0 +1,16 @@
+EXAMPLE COUNCIL - FICTIONAL ROUTING GUIDE
+Community Room Permit, learning edition 2
+
+Route a complete, consistent package to Permit processing. Route missing evidence to Intake follow-up. Route conflicting references to Manual review. A conflict takes priority over routine processing; a person resolves exceptions.
+
+Review the recomputed checks and routing draft before confirming. Routing requires the selected intake checklist and routing guide, plus the matching connected and enabled tool. Each confirmation creates only a local SIM record.
+
+Apply the rules in this order:
+1. A supplied, nonblank reference in a present document that differs from a known register reference goes to Manual review. Keep both values. This takes priority even when another document is missing.
+2. With no known conflict, any missing document, package reference or required room reference goes to Intake follow-up. A blank is not a known conflict.
+3. Only a package with all three document types, all required references and normalised register matches goes to Permit processing.
+
+The draft must include the current package reference, presence values, document and register references, check results and proposed destination. A reviewer can correct input and rerun before confirmation. Previously computed findings are not evidence about changed inputs.
+
+New fictional package references can be entered in the lab. Typing one in ordinary chat does not inspect a file. No reference is looked up externally.
+None of these queues is connected to a real service. No emails or permit decisions are produced.

@@ -1,0 +1,122 @@
+.fd-main:has(.fd-catalog) { overflow: hidden; scrollbar-gutter: auto; }
+.fd-catalog { display: flex; flex-direction: column; height: 100%; }
+.fd-catalog-header { padding: 20px 24px 0; flex-shrink: 0; border-bottom: 1px solid var(--cp-bg); }
+.fd-catalog-header h1 { font-size: 20px; font-weight: 600; line-height: 28px; }
+.fd-catalog-header nav { margin-left: -8px; overflow-x: auto; scrollbar-width: thin; }
+.fd-catalog-header [role="tablist"] { display: flex; width: max-content; }
+.fd-catalog-header [role="tab"] { display: flex; align-items: center; gap: 4px; padding: 6px 8px; height: 32px; white-space: nowrap; position: relative; }
+.fd-catalog-header [aria-selected="true"]::after { content: ""; position: absolute; bottom: 0; height: 2px; left: 8px; right: 8px; background: var(--cp-accent-bright); }
+.fd-preview-badge { border: 1px solid var(--cp-border); padding: 0 3px; font-size: 10px; line-height: 13px; font-weight: 400; color: var(--cp-text-soft); }
+.fd-catalog-content { flex: 1; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; padding: 16px 24px 32px; }
+.fd-catalog-intro p + p { margin-top: 20px; }
+.fd-catalog a { color: var(--cp-accent); }
+.fd-catalog a > svg { width: 12px; height: 12px; }
+.fd-catalog-filters { display: flex; gap: 16px; margin: 28px 0 16px; }
+.fd-catalog-search { display: flex; align-items: center; gap: 6px; background: var(--cp-surface-soft); border-radius: 4px; height: 32px; width: 312px; padding: 0 10px; }
+.fd-catalog-search svg { width: 24px; height: 24px; color: var(--cp-text-soft); }
+.fd-catalog-search input { width: 100%; min-width: 0; border: 0; outline: 0; padding: 0; background: none; }
+.fd-catalog-search:focus-within { outline: 2px solid var(--cp-accent); outline-offset: -2px; }
+.fd-catalog-sort { display: flex; align-items: center; background: var(--cp-surface-soft); border-radius: 4px; height: 32px; width: 250px; padding-left: 12px; position: relative; }
+.fd-catalog-sort > span { flex-shrink: 0; }
+.fd-catalog-sort select { appearance: none; background: none; border: none; border-radius: 4px; height: 32px; flex: 1; min-width: 0; padding: 0 32px 0 6px; }
+.fd-catalog-sort select option { color: var(--cp-text); background: var(--cp-surface); }
+.fd-catalog-sort svg { position: absolute; right: 12px; pointer-events: none; width: 16px; height: 16px; color: var(--cp-text-soft); }
+.fd-recipe-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.fd-recipe-card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%; min-height: 134px; padding: 24px; background: var(--cp-surface-soft); border-radius: 12px; }
+.fd-recipe-card-title { font-size: 16px; line-height: 22px; font-weight: 600; overflow-wrap: anywhere; }
+.fd-recipe-publisher { font-size: 12px; line-height: 16px; color: var(--cp-text-soft); }
+.fd-recipe-tools { display: flex; gap: 2px; margin-top: 16px; }
+.fd-tool-mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; background: var(--cp-surface); flex-shrink: 0; }
+.fd-tool-mark svg, .fd-tool-mark img { width: 20px; height: 20px; object-fit: contain; }
+.fd-tool-mark img { width: 24px; height: 24px; }
+.fd-catalog-footnote { margin-top: 32px; font-size: 12px; color: var(--cp-text-soft); }
+.fd-catalog-empty, .fd-catalog-missing { padding-block: 32px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.fd-catalog-empty h2, .fd-catalog-missing h2 { font-size: 20px; font-weight: 600; }
+.fd-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.fd-manifest-heading { display: flex; align-items: center; gap: 12px; padding-top: 12px; }
+.fd-manifest-heading > .fd-icon-button { width: 24px; height: 24px; padding: 2px; }
+.fd-manifest-heading h2 { font-size: 24px; line-height: 32px; font-weight: 600; }
+.fd-manifest-heading > .fd-button { margin-left: auto; flex-shrink: 0; }
+.fd-manifest-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; margin-top: 52px; align-items: start; }
+.fd-manifest-article { min-width: 0; }
+.fd-manifest-article section + section { margin-top: 24px; }
+.fd-manifest-article h2 { font-size: 24px; line-height: 32px; font-weight: 600; }
+.fd-manifest-article p { margin: 12px 0; line-height: 20px; }
+.fd-manifest-article strong { font-weight: 600; }
+.fd-manifest-article ul { padding-left: 16px; margin: 12px 0; }
+.fd-manifest-article .fd-manifest-legal { margin-top: 24px; }
+.fd-manifest-legal a { text-decoration: underline; }
+.fd-quick-facts { border: 1px solid var(--cp-border); border-radius: 12px; padding: 16px; }
+.fd-quick-facts h2 { font-size: 18px; line-height: 24px; font-weight: 600; margin-bottom: 16px; }
+.fd-quick-facts dl { margin: 0; display: flex; flex-direction: column; gap: 24px; }
+.fd-quick-facts dl > div { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; min-height: 24px; }
+.fd-quick-facts dt { font-weight: 600; padding-top: 2px; }
+.fd-quick-facts dd { margin: 0; text-align: right; display: flex; flex-direction: column; gap: 8px; }
+.fd-fact-tool { display: inline-flex; align-items: center; gap: 8px; }
+.fd-fact-tool .fd-tool-mark { width: 20px; height: 20px; }
+.fd-fact-tool .fd-tool-mark img { width: 16px; height: 16px; }
+.fd-local-drafts { border-top: 1px solid var(--cp-border); padding-top: 20px; margin-top: 28px; }
+.fd-local-drafts h2 { font-size: 18px; line-height: 24px; }
+.fd-local-drafts p { color: var(--cp-text-soft); }
+.fd-local-drafts ul { list-style: none; padding: 0; }
+.fd-local-drafts li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 8px; border-bottom: 1px solid var(--cp-border); }
+.fd-local-drafts li button { text-align: left; padding: 0; color: var(--cp-accent); overflow-wrap: anywhere; }
+.fd-local-drafts li span { flex-shrink: 0; font-size: 12px; color: var(--cp-text-soft); }
+.fd-create-dialog { width: min(520px, calc(100vw - 32px)); border-radius: 8px; padding: 16px 24px; }
+.fd-create-dialog .modal-header { margin-bottom: 12px; }
+.fd-create-dialog .modal-header h2 { font-size: 20px; line-height: 28px; }
+.fd-create-dialog form > p:first-child { color: var(--cp-text-muted); margin-bottom: 12px; line-height: 20px; }
+.fd-create-dialog label { display: block; color: var(--cp-text-muted); margin-bottom: 6px; }
+.fd-create-dialog label span { color: var(--cp-danger); }
+.fd-create-dialog input { display: block; width: 100%; border: 1px solid var(--cp-transparent); background: var(--cp-surface-soft); border-radius: 4px; padding: 5px 12px; height: 32px; }
+.fd-create-dialog .fd-local-note { font-size: 11px; margin: 8px 0 0; }
+.fd-local-note { color: var(--cp-text-soft); font-size: 12px; line-height: 18px; }
+.fd-create-actions { display: flex; gap: 8px; justify-content: flex-end; margin: 16px -24px -16px; padding: 16px 24px; border-top: 1px solid var(--cp-surface-soft); }
+.fd-form-error { color: var(--cp-danger); font-size: 13px; margin-block: 8px; }
+.fd-storage-warning { display: flex; gap: 12px; padding: 10px 24px; background: var(--cp-surface-soft); border-bottom: 1px solid var(--cp-border); font-size: 13px; color: var(--cp-text-muted); }
+.fd-main:has(.fd-storage-warning) { display: flex; flex-direction: column; }
+.fd-storage-warning { flex-shrink: 0; }
+.fd-main:has(.fd-storage-warning) .fd-catalog { flex: 1; min-height: 0; }
+.fd-draft-dialog { width: min(760px, calc(100vw - 32px)); }
+.fd-draft-dialog form > label { display: block; margin: 16px 0 6px; }
+.fd-draft-dialog form > input, .fd-draft-dialog textarea { display: block; width: 100%; border: 1px solid var(--cp-border-strong); background: var(--cp-surface-soft); border-radius: 4px; padding: 8px 12px; }
+.fd-draft-dialog textarea { resize: vertical; font: 13px/20px Consolas, "Courier New", monospace; min-height: 180px; }
+.fd-draft-dialog form > small { display: block; margin-top: 4px; color: var(--cp-text-soft); }
+.fd-draft-instructions-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 16px 0 6px; }
+.fd-draft-instructions-label button { display: flex; align-items: center; gap: 6px; padding: 3px 10px; font-size: 12px; }
+.fd-draft-instructions-label svg { width: 16px; height: 16px; }
+.fd-draft-dialog fieldset { border: 1px solid var(--cp-border); border-radius: 8px; padding: 8px 12px; margin: 20px 0 12px; }
+.fd-draft-tool { display: flex; align-items: center; gap: 8px; padding-block: 4px; }
+.fd-draft-tool input { accent-color: var(--cp-accent); }
+.fd-draft-dialog .fd-dialog-actions { gap: 8px; }
+.fd-local-work td { padding: 10px 16px; border-top: 1px solid var(--cp-border); overflow-wrap: anywhere; }
+.fd-local-work button { padding: 0; text-align: left; color: var(--cp-accent); }
+.fd-local-work small { color: var(--cp-text-soft); }
+
+@media (max-width: 1150px) {
+  .fd-recipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fd-manifest-layout { grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; }
+  .fd-quick-facts dl > div { flex-direction: column; gap: 4px; }
+  .fd-quick-facts dd { text-align: left; }
+}
+
+@media (max-width: 900px) {
+  .fd-manifest-layout { display: flex; flex-direction: column; margin-top: 32px; }
+  .fd-quick-facts { order: -1; width: 100%; }
+  .fd-quick-facts dl > div { flex-direction: row; }
+  .fd-manifest-heading { flex-wrap: wrap; }
+  .fd-manifest-heading h2 { flex: 1; min-width: 160px; }
+  .fd-manifest-heading > .fd-button { margin-left: 36px; }
+}
+
+@media (max-width: 760px) {
+  .fd-catalog-header { padding: 16px 16px 0; }
+  .fd-catalog-content { padding: 16px; }
+  .fd-catalog-filters { flex-wrap: wrap; margin-top: 24px; gap: 12px; }
+  .fd-catalog-search, .fd-catalog-sort { width: 100%; }
+  .fd-recipe-grid { grid-template-columns: 1fr; }
+  .fd-recipe-card { padding: 20px; }
+  .fd-manifest-heading h2, .fd-manifest-article h2 { font-size: 22px; line-height: 28px; }
+  .fd-local-drafts li { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .fd-local-work td:nth-child(2), .fd-local-work td:nth-child(4), .fd-local-work td:nth-child(5) { display: none; }
+}

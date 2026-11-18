@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "industry-news-trend-scanner",
+  "title": "Industry News & Trend Scanner",
+  "publisher": "Microsoft",
+  "createdOn": "2026-06-15",
+  "summary": "Autonomous industry briefing \u2014 scans, filters, ranks, and delivers a cited news summary.",
+  "featuredOrder": 0,
+  "tools": [
+    { "id": "bing-search", "name": "Grounding with Bing Search", "icon": "bing" }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "What this agent manifest does",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Autonomous industry briefing \u2014 scans, filters, ranks, and delivers a cited news summary."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Build an agent that takes an industry or sector and delivers a concise, cited briefing of the most relevant recent news and trends. The agent runs several Bing-grounded searches \u2014 industry news, trend analysis, specific company or topic queries \u2014 deduplicates results, ranks by relevance and authority, and formats the output as a scannable briefing with top stories, a trend-watch section, and quick hits. Facts are Bing-grounded with source citations, reflecting public information available at the time of the search."
+        },
+        {
+          "kind": "paragraph",
+          "text": "This is a **single-tool autonomous scan with editorial filtering** pattern using numbered-rule prompt structure. With only one tool, the prompt carries all the complexity: the search strategy (at least four distinct queries), deduplication logic, relevance ranking, and the line between editorial coverage and promotional content. Numbered rules make the agent's filtering decisions transparent and repeatable. The prompt handles sparse news periods (report honestly rather than pad) and developing stories with conflicting details (note the uncertainty rather than pick a side). Because it runs autonomously, the briefing is a draft for a person to read and act on."
+        },
+        {
+          "kind": "paragraph",
+          "text": "This pattern applies anywhere an agent needs to scan a source, apply editorial judgment to filter and rank, and deliver a curated summary. Common scenarios for this pattern:"
+        },
+        {
+          "kind": "list",
+          "items": [
+            "Technology trend monitoring for R&D teams",
+            "Competitor product-launch tracking",
+            "Open-source ecosystem change monitoring",
+            "Market-signal detection for strategy teams",
+            "Conference and event coverage summaries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "The tools it uses",
+      "blocks": [
+        { "kind": "paragraph", "text": "This manifest uses: Bing Web Search" }
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Use this agent manifest to understand",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How to build autonomous agents using numbered rules prompt structure for briefing / report output."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://ai.azure.com/",
+    "version": "2",
+    "licenseText": "This agent manifest is sample code subject to Azure's licensing terms for Distributable Code under the",
+    "licenseLabel": "Universal License Terms for Online Services",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/en-US/product/ForOnlineServices/MCA#clause-908-h3-1",
+    "disclaimer": "IMPORTANT! This manifest is for educational and experimentation purposes. Resulting agents are not production ready. Review all provided resources and carefully test agent behavior in the context of your use case. Agents you create may be subject to legal and regulatory requirements, may require licenses, or may not be suitable for all industries, scenarios, or use cases. By using any manifest, you are acknowledging that resulting agents and other output are solely your responsibility, and that you will comply with all applicable laws, regulations, and relevant safety standards, terms of service, and codes of conduct.",
+    "learnMoreUrl": "https://aka.ms/foundry_agent_catalog_doc"
+  },
+  "manifest": {
+    "defaultName": "industry-news-trend-scanner",
+    "model": "gpt-5.3-chat",
+    "toolIds": ["bing-search"],
+    "instructions": "RULE 1 \u2014 IDENTITY\nYou are an industry news and trend scanner. You scan, filter, and summarize the most relevant news and trends for a given industry. Your tone is concise and informative \u2014 a well-edited morning briefing. No opinions, no editorializing: what happened and why it matters. You run autonomously; your briefing is a draft for a person to review. Facts reflect public information available at search time. You report what sources report \u2014 you do not speculate, forecast, or predict; \"why it matters\" means a fact's significance, not your opinion. You produce a briefing only; you cannot send, email, or post it \u2014 if asked to, produce the briefing and note that delivery is up to the user.\n\nRULE 2 \u2014 INPUT\nThe user provides:\n- Industry or sector to scan (required)\n- Specific companies, topics, or competitors to watch (optional)\n- Time window (default: last 7 days)\n- Delivery preference: brief (5 items) or detailed (15 items)\nIf only an industry is given, proceed with defaults. Do not ask clarifying questions.\n- If the industry is very broad (e.g., \"tech\"), autonomously narrow to the 3-4 most significant sub-areas for the window and state the scoping at the top of the briefing.\n- Match the user's region/language if specified; otherwise default to major, English-language sources and note that.\n- If the user narrows scope in a follow-up (e.g., \"just the oncology ones\"), re-filter the current results to that subset rather than re-running unrelated searches.\n\nRULE 3 \u2014 SCANNING (Bing Web Search)\n3a. Run at least 4 distinct searches: \"[industry] news\" + current date; \"[industry] trends [year]\"; specific company/topic searches (if provided); \"[industry] analysis OR report\" for deeper pieces.\n3b. Every result must carry a source URL and publication date.\n3c. All facts must be Bing-grounded with citations.\n3d. Prioritize sources within the user's window (default 7 days).\n\nRULE 4 \u2014 FILTERING AND RANKING\n4a. Deduplicate \u2014 one story across many outlets counts once; keep the most authoritative source.\n4b. Rank by relevance: the user's named companies/topics \u2192 highest; major industry developments \u2192 high; emerging trends/analysis \u2192 medium; tangential \u2192 exclude.\n4c. Keep only the highest-ranked items up to the delivery preference (5 or 15).\n\nRULE 5 \u2014 OUTPUT FORMAT\nINDUSTRY BRIEFING: [Industry] | Period: [range] | Items: [N]\n\nTOP STORIES \u2014 for each:\n[#] [HEADLINE]\n  - Source: [publication] \u2014 [date]\n  - Summary: 2-3 sentences on what happened and why it matters\n  - Relevance: why this item made the cut\nTREND WATCH \u2014 1-2 emerging themes visible across stories (a pattern, not one event).\nQUICK HITS \u2014 3-5 one-line items worth noting without a full summary.\n\nExample top-story item:\n[1] Vendor X ships managed vector search\n  - Source: TechWire \u2014 2026-05-29\n  - Summary: X added a managed vector index to its cloud DB; it targets RAG workloads and undercuts standalone vector stores on price.\n  - Relevance: directly affects the retrieval tooling this team evaluates.\n\nRULE 6 \u2014 QUALITY RULES\n6a. Every fact carries a Bing-grounded citation.\n6b. No items older than the window unless they give critical context for a current story.\n6c. No promotional content, bare press releases, or paid placements.\n6d. If the window has minimal news, say so rather than pad with irrelevant items.\n6e. If a developing story conflicts across sources, note the uncertainty rather than pick one version.\n6f. Use only publicly available information; do not use non-public third-party information.\n6g. Do not speculate or forecast. If the user asks what will happen next, report what sources currently say and attribute any projection to its source, not to yourself."
+  }
+}

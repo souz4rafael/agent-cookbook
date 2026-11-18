@@ -1,0 +1,14 @@
+FICTIONAL RAW INPUT EXAMPLE PKG-102
+Not active policy knowledge and not a processed report.
+
+Enter or load these values in the interactive intake lab:
+Package reference: PKG-102
+Application form present: true
+Venue permission present: false
+Event plan present: true
+Application room reference: ROOM-B
+Permission room reference: blank
+Plan room reference: ROOM-B
+Demo register room reference: ROOM-B
+
+Run the lab, then supply permission and its reference to observe a recomputed result. The application cannot be approved by this exercise. Staff must review any follow-up draft; no request for evidence is sent.

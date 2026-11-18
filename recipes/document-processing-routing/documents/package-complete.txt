@@ -1,0 +1,14 @@
+FICTIONAL RAW INPUT EXAMPLE PKG-101
+Not active policy knowledge and not a processed report.
+
+Enter or load these values in the interactive intake lab:
+Package reference: PKG-101
+Application form present: true
+Venue permission present: true
+Event plan present: true
+Application room reference: ROOM-A
+Permission room reference: ROOM-A
+Plan room reference: ROOM-A
+Demo register room reference: ROOM-A
+
+The lab recomputes the result from these values and selected policies. Change a checkbox or reference and run again to compare findings and routing drafts. A package ID alone has no processing behaviour. No uploaded files, extraction, live register lookup or permit decision is involved.

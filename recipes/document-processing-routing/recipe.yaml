@@ -1,0 +1,401 @@
+schemaVersion: 1
+revision: 2
+id: document-processing-routing
+status: published
+title: Document processing & routing agent
+summary: Reduce intake rework by checking fictional document types, missing evidence and inconsistent room references. Change presence checkboxes or reference strings to recompute findings, then review the proposed destination and routing draft. No files are uploaded and no permit is approved.
+industry: Government and public services
+difficulty: beginner
+accentIcon: document
+learningGoals:
+  - Ground intake checks and routing in selected policy documents.
+  - Change raw fictional inputs and observe recomputed completeness and reference checks.
+  - Compare processing, missing-evidence and conflict routes without approving an application.
+  - Review drafts, confirm the specific routing action and pass expected-result evaluations.
+sourceUrl: https://adoption.microsoft.com/en-gb/scenario-library/government/document-processing-routing-agent/
+agent:
+  name: Document Intake Assistant
+  description: ""
+  instructions: |-
+    # Purpose and scope
+    Help staff check Community Room Permit intake and prepare a reviewable routing draft. Completeness is not permit approval, authenticity, safety compliance or proof of fraud.
+
+    # Resources and inputs
+    Use the selected, connected Community Room Permit intake checklist and Intake routing guide. If either is missing or conflicts with available guidance, explain the gap and pause routing rather than invent a rule.
+    Reuse the package reference, stated presence of the application form, venue permission and event plan, their room references and the register reference already supplied. Ask for missing or ambiguous information without requesting unnecessary personal data. Use configured checks and authorised connected tools for comparisons; do not claim to read files, perform OCR or query a register unless that capability is configured and succeeds.
+
+    # Checking and routing
+    - Check document categories, required fields and reference consistency using the approved comparison rules. Preserve original values and distinguish absent documents from blank fields.
+    - A known conflicting reference in a present document takes priority over missing items. Propose Route reference conflict to manual review and retain both values for staff; do not choose which is correct.
+    - Without a known conflict, missing documents or required references need Route missing evidence to follow-up.
+    - Only complete, consistent inputs support Route complete package to processing for caseworker assessment.
+
+    # Review and execution
+    Use only the configured tool for the proposed destination. Show a draft with package reference, document presence, compared values, findings, policy basis and destination. Require staff review, corrections and separate explicit confirmation before routing. Stop if declined; review and reconfirm changed details.
+    If the tool or its connection is unavailable, or execution fails or is uncertain, explain the blocker. Do not claim a package was routed without a successful tool result or imply that an applicant was contacted.
+
+    # Response
+    Present the intake finding, missing or conflicting items, supporting sources, proposed queue and next step. Label the draft and report any confirmed routing receipt separately. Keep staff responsible for resolving discrepancies and deciding the permit.
+  tone: friendly
+  detail: detailed
+instructionStyles:
+  structured: |-
+    # Purpose and scope
+    Help staff check Community Room Permit intake and prepare a reviewable routing draft. Completeness is not permit approval, authenticity, safety compliance or proof of fraud.
+
+    # Resources and inputs
+    Use the selected, connected Community Room Permit intake checklist and Intake routing guide. If either is missing or conflicts with available guidance, explain the gap and pause routing rather than invent a rule.
+    Reuse the package reference, stated presence of the application form, venue permission and event plan, their room references and the register reference already supplied. Ask for missing or ambiguous information without requesting unnecessary personal data. Use configured checks and authorised connected tools for comparisons; do not claim to read files, perform OCR or query a register unless that capability is configured and succeeds.
+
+    # Checking and routing
+    - Check document categories, required fields and reference consistency using the approved comparison rules. Preserve original values and distinguish absent documents from blank fields.
+    - A known conflicting reference in a present document takes priority over missing items. Propose Route reference conflict to manual review and retain both values for staff; do not choose which is correct.
+    - Without a known conflict, missing documents or required references need Route missing evidence to follow-up.
+    - Only complete, consistent inputs support Route complete package to processing for caseworker assessment.
+
+    # Review and execution
+    Use only the configured tool for the proposed destination. Show a draft with package reference, document presence, compared values, findings, policy basis and destination. Require staff review, corrections and separate explicit confirmation before routing. Stop if declined; review and reconfirm changed details.
+    If the tool or its connection is unavailable, or execution fails or is uncertain, explain the blocker. Do not claim a package was routed without a successful tool result or imply that an applicant was contacted.
+
+    # Response
+    Present the intake finding, missing or conflicting items, supporting sources, proposed queue and next step. Label the draft and report any confirmed routing receipt separately. Keep staff responsible for resolving discrepancies and deciding the permit.
+  stepByStep: |-
+    # Intake workflow
+    Prepare Community Room Permit intake findings and routing drafts for staff. Do not approve permits, establish authenticity or safety compliance, or treat a discrepancy as proof of fraud.
+
+    # Steps
+    1. Read the supplied package reference, document-presence information, application, permission and event-plan room references, and register reference. Reuse context and ask only for missing or ambiguous details; avoid unnecessary personal data.
+    2. Consult the selected, connected Community Room Permit intake checklist and Intake routing guide. If guidance is missing or conflicting, explain the limitation and pause routing. Do not invent a policy.
+    3. Use configured checks and authorised connected tools to check categories, required fields and reference consistency under approved comparison rules. Retain original values and distinguish absent documents from blank fields. Do not claim OCR, file inspection or a register lookup unless configured and successfully performed.
+    4. Check for known reference conflicts in present documents first, even if other items are missing. Preserve both conflicting values and propose the configured Route reference conflict to manual review tool; staff decide which value is correct.
+    5. If there is no known conflict, propose Route missing evidence to follow-up for missing documents or required references. Only complete, consistent inputs support Route complete package to processing for caseworker assessment. Use the configured tool matching that destination.
+    6. Present a draft with package reference, document presence, compared values, findings, policy basis and queue. Require staff review and corrections, followed by separate explicit confirmation before routing. If declined, stop. Review and reconfirm any changed draft.
+    7. Check the tool result. If the connection or tool is unavailable, execution fails or the result is uncertain, explain the blocker. Report routing only after success, not because a draft exists. Do not imply an applicant was contacted.
+
+    # Response
+    Give the intake finding, missing or conflicting items, supporting sources, proposed queue and next step. Label the draft and separate any confirmed routing receipt from it. Staff retain responsibility for discrepancy resolution and the permit decision.
+  decisionRules: |-
+    # Intake purpose and context
+    Support Community Room Permit intake, not permit approval, authenticity verification, safety compliance or fraud findings. Reuse the supplied package reference, presence of the application form, venue permission and event plan, their room references and the register reference. Ask for missing or ambiguous details and avoid unnecessary personal data.
+
+    # Decision rules
+    - If the selected, connected Community Room Permit intake checklist or Intake routing guide is unavailable or conflicting, explain the policy gap and pause routing; do not invent a rule.
+    - When checking categories, required fields and references, use configured checks and authorised connected tools with approved comparison rules. Keep original values and distinguish absent documents from blank fields. Claim OCR, file inspection or a register lookup only if configured and successfully performed.
+    - If a present document has a known reference conflict, propose the configured Route reference conflict to manual review tool even when other items are missing. Preserve both values; staff resolve the conflict.
+    - If there is no known conflict but a document or required reference is missing, propose Route missing evidence to follow-up.
+    - If all required inputs are complete and consistent, propose Route complete package to processing for caseworker assessment. Use only the configured tool matching the proposed destination.
+    - If routing is proposed, show a draft containing package reference, document presence, compared values, findings, policy basis and destination. Require staff review and separate explicit confirmation. If declined, do not route. If details change, repeat review and confirmation.
+    - If the tool or connection is unavailable, execution fails or the result is uncertain, state the blocker. Never claim successful routing without a successful tool result or imply that the applicant was contacted.
+
+    # Response
+    Present the intake finding, missing or conflicting items, supporting sources, proposed queue and next step. Label drafts and distinguish a confirmed routing receipt from a permit decision. Leave discrepancy resolution and the decision with authorised staff.
+  examples: |-
+    # Behaviour examples
+    Situation: The processing tool fails after confirmation.
+    Expected behaviour: State that routing is unconfirmed and needs checking; do not report success.
+
+    Situation: Staff decline the follow-up draft.
+    Expected behaviour: Do not create a routing request; offer to revise the draft.
+
+    Situation: Venue permission is missing and a present form conflicts with the known register reference.
+    Expected behaviour: Preserve the conflicting values and propose manual review first, without calling the discrepancy fraud.
+editable: [name, instructions, tone, detail]
+connections:
+  - id: intake-library
+    type: sharepoint
+    title: Demo intake SharePoint
+    description: Fictional intake and routing policies. The interactive inputs represent already transcribed document fields; selecting knowledge does not upload or extract files.
+    accountLabel: Intake learner at Example Council
+    resources:
+      - { id: permit-intake, label: Community Room Permit intake, description: Approved fictional checklist and destination rules. }
+      - { id: empty-library, label: Empty library (boundary test), description: Contains no intake policy and clears unavailable selections. }
+    realWorldNote: A real pipeline needs authorised storage, authentication, retention and approved extraction tools. SharePoint knowledge alone does not classify or validate files.
+  - id: processing-desk
+    type: service-desk
+    title: Demo permit processing
+    description: A local destination for complete and consistent inputs, not permit approval.
+    accountLabel: Fictional permit processing team
+    resources:
+      - { id: permit-processing, label: Permit processing, description: Packages awaiting caseworker assessment. }
+    realWorldNote: Configure an approved flow or connector with minimal inputs, permissions, a returned reference and duplicate-safe retry handling.
+  - id: followup-desk
+    type: service-desk
+    title: Demo intake follow-up
+    description: A local destination for missing documents or blank references. No applicant is contacted.
+    accountLabel: Fictional intake follow-up team
+    resources:
+      - { id: intake-followup, label: Intake follow-up, description: Staff check missing items before requesting evidence. }
+    realWorldNote: Verify contact permissions and staff approval before any real evidence request; record delivery failures.
+  - id: review-desk
+    type: service-desk
+    title: Demo manual review
+    description: A local destination for conflicting references, not an automatic rejection.
+    accountLabel: Fictional manual review team
+    resources:
+      - { id: manual-review, label: Manual review, description: Staff resolve inconsistent evidence. }
+    realWorldNote: Preserve the conflicting values and traceable evidence for an authorised reviewer. A discrepancy is not proof of fraud.
+knowledge:
+  - id: intake-checklist
+    title: Community Room Permit intake checklist
+    summary: Document categories, required fields and limits of an intake check.
+    connectionId: intake-library
+    resourceId: permit-intake
+    file: documents/intake-checklist.txt
+  - id: routing-guide
+    title: Intake routing guide
+    summary: Ordered conflict, missing-item and processing routes with staff review.
+    connectionId: intake-library
+    resourceId: permit-intake
+    file: documents/routing-guide.txt
+facts:
+  - id: checklist-answer
+    documentId: intake-checklist
+    keywords: [checklist, required documents, document types, papers, required docs]
+    answer: "For the fictional Community Room Permit, intake requires an application form, venue permission and an event plan. Check that the three document types are present and that their room references agree with the demo register."
+    detail: "Completeness is not approval. An intake check does not establish authenticity, safety compliance or entitlement to a permit. Use the interactive inputs to change document presence and references; no files are uploaded or extracted."
+  - id: routing-answer
+    documentId: routing-guide
+    keywords: [routing rules, destinations, queues]
+    answer: "Route a complete, consistent package to Permit processing. Route missing evidence to Intake follow-up. Route conflicting references to Manual review. A conflict takes priority over routine processing; a person resolves exceptions."
+    detail: "Review the recomputed checks and routing draft before confirming. Routing requires the selected intake checklist and routing guide, plus the matching connected and enabled tool. Each confirmation creates only a local SIM record."
+tools:
+  - id: route-complete-package
+    type: create-case
+    title: Route complete package to processing
+    description: Review the current input checks and draft, then confirm a local Permit processing request. No permit is approved.
+    connectionId: processing-desk
+    resourceId: permit-processing
+    requiredKnowledge: [intake-checklist, routing-guide]
+    realWorldNote: Send the reviewed package reference, findings and policy version to the approved queue; return a receipt and handle retries without duplication.
+  - id: route-missing-package
+    type: create-case
+    title: Route missing evidence to follow-up
+    description: Review the current missing-item checks and draft, then confirm a local Intake follow-up request. Nobody is contacted.
+    connectionId: followup-desk
+    resourceId: intake-followup
+    requiredKnowledge: [intake-checklist, routing-guide]
+    realWorldNote: Create a staff follow-up task with missing-item details, not an automatic request to an applicant.
+  - id: route-mismatched-package
+    type: create-case
+    title: Route reference conflict to manual review
+    description: Preserve the current conflicting values in a review draft. A local request does not reject the application.
+    connectionId: review-desk
+    resourceId: manual-review
+    requiredKnowledge: [intake-checklist, routing-guide]
+    realWorldNote: Give authorised reviewers the conflicting references and source evidence without automatically resolving the discrepancy.
+lab:
+  title: Inspect an editable fictional intake package
+  description: Presence checkboxes classify supplied input as FORM, PERMISSION or PLAN; they do not detect real documents. Reference comparison normalises Unicode, ignores case and trims outer whitespace. A known conflict in a present document takes priority over missing items; blank required references need follow-up. Change any field and rerun to see new checks and a reviewable draft.
+  fields:
+    - { id: package, label: Fictional package reference, type: text, defaultValue: PKG-101, hint: Use an invented reference only. }
+    - { id: form-present, label: Application form present (FORM), type: boolean, defaultValue: true, hint: Simulates the result of document classification. }
+    - { id: permission-present, label: Venue permission present (PERMISSION), type: boolean, defaultValue: true, hint: Uncheck to simulate missing permission. }
+    - { id: plan-present, label: Event plan present (PLAN), type: boolean, defaultValue: true, hint: Uncheck to simulate a missing event plan. }
+    - { id: form-ref, label: Application room reference, type: text, defaultValue: ROOM-A, hint: Comparison ignores case and outer whitespace; a blank is incomplete. }
+    - { id: permission-ref, label: Permission room reference, type: text, defaultValue: ROOM-A, hint: Compared only when permission is present. }
+    - { id: plan-ref, label: Plan room reference, type: text, defaultValue: ROOM-A, hint: Compared only when the plan is present. }
+    - { id: register-ref, label: Demo register room reference, type: text, defaultValue: ROOM-A, hint: Editable stand-in for an authorised lookup; no register is queried. }
+  checks:
+    - { id: package-known, label: Package reference supplied, field: package, operator: present }
+    - { id: form-present, label: FORM supplied, field: form-present, operator: eq, value: true }
+    - { id: permission-present, label: PERMISSION supplied, field: permission-present, operator: eq, value: true }
+    - { id: plan-present, label: PLAN supplied, field: plan-present, operator: eq, value: true }
+    - { id: form-ref-known, label: Application reference supplied, field: form-ref, operator: present }
+    - { id: permission-ref-known, label: Permission reference supplied, field: permission-ref, operator: present }
+    - { id: plan-ref-known, label: Plan reference supplied, field: plan-ref, operator: present }
+    - { id: register-known, label: Register reference supplied, field: register-ref, operator: present }
+    - { id: form-match, label: Application matches register, field: form-ref, operator: eq, otherField: register-ref }
+    - { id: permission-match, label: Permission matches register, field: permission-ref, operator: eq, otherField: register-ref }
+    - { id: plan-match, label: Plan matches register, field: plan-ref, operator: eq, otherField: register-ref }
+  rules:
+    - id: form-conflict
+      label: Present application conflicts with known register
+      all: [{ checkId: form-present, equals: true }, { checkId: form-ref-known, equals: true }, { checkId: register-known, equals: true }, { checkId: form-match, equals: false }]
+      outcomeId: reference-conflict
+    - id: permission-conflict
+      label: Present permission conflicts with known register
+      all: [{ checkId: permission-present, equals: true }, { checkId: permission-ref-known, equals: true }, { checkId: register-known, equals: true }, { checkId: permission-match, equals: false }]
+      outcomeId: reference-conflict
+    - id: plan-conflict
+      label: Present plan conflicts with known register
+      all: [{ checkId: plan-present, equals: true }, { checkId: plan-ref-known, equals: true }, { checkId: register-known, equals: true }, { checkId: plan-match, equals: false }]
+      outcomeId: reference-conflict
+    - id: complete
+      label: All required documents and references are consistent
+      all: [{ checkId: package-known, equals: true }, { checkId: form-present, equals: true }, { checkId: permission-present, equals: true }, { checkId: plan-present, equals: true }, { checkId: form-ref-known, equals: true }, { checkId: permission-ref-known, equals: true }, { checkId: plan-ref-known, equals: true }, { checkId: register-known, equals: true }, { checkId: form-match, equals: true }, { checkId: permission-match, equals: true }, { checkId: plan-match, equals: true }]
+      outcomeId: complete-package
+    - { id: fallback, label: Missing documents or fields require follow-up, all: [], outcomeId: missing-evidence }
+  outcomes:
+    - id: complete-package
+      title: Complete and consistent intake
+      summary: "Package {{package}} has FORM, PERMISSION and PLAN with matching room references. Proposed destination: Permit processing for a caseworker assessment, not permit approval. Review the current checks before confirming."
+      documentIds: [intake-checklist, routing-guide]
+      toolId: route-complete-package
+      draft:
+        title: Permit processing routing draft
+        body: |
+          DRAFT ONLY — Permit processing
+          Package: {{package}}
+          Classification inputs: FORM={{form-present}}, PERMISSION={{permission-present}}, PLAN={{plan-present}}.
+          References: application={{form-ref}}, permission={{permission-ref}}, plan={{plan-ref}}, demo register={{register-ref}}.
+          Computed checks: {{checks}}
+          Request a caseworker assessment, not approval. Review this draft before confirming a local SIM record.
+    - id: missing-evidence
+      title: Incomplete intake
+      summary: "Package {{package}} needs Intake follow-up. A required document or reference is missing. Read the failed checks to identify exactly what needs clarification. An unchecked document is absent input, not a document inspected and rejected."
+      documentIds: [intake-checklist, routing-guide]
+      toolId: route-missing-package
+      draft:
+        title: Missing-item follow-up draft
+        body: |
+          DRAFT ONLY — Intake follow-up
+          Package: {{package}}
+          Classification inputs: FORM={{form-present}}, PERMISSION={{permission-present}}, PLAN={{plan-present}}.
+          References: application={{form-ref}}, permission={{permission-ref}}, plan={{plan-ref}}, demo register={{register-ref}}.
+          Computed checks: {{checks}}
+          Staff should verify the missing items before requesting evidence. No applicant is contacted by this local simulation.
+    - id: reference-conflict
+      title: Conflicting room references
+      summary: "Package {{package}} needs Manual review because a present document disagrees with the known demo register. Conflict review takes priority, even if another document is missing. Preserve both values; the discrepancy does not prove fraud or justify rejection."
+      documentIds: [intake-checklist, routing-guide]
+      toolId: route-mismatched-package
+      draft:
+        title: Reference conflict review draft
+        body: |
+          DRAFT ONLY — Manual review
+          Package: {{package}}
+          Classification inputs: FORM={{form-present}}, PERMISSION={{permission-present}}, PLAN={{plan-present}}.
+          References: application={{form-ref}}, permission={{permission-ref}}, plan={{plan-ref}}, demo register={{register-ref}}.
+          Computed checks: {{checks}}
+          Establish the correct reference and clarify any other gaps. Do not silently substitute a value or reject the application. Review before confirming a local SIM record.
+  cases:
+    - id: complete-happy
+      title: All three document types match the register
+      inputs: { package: PKG-101, form-present: true, permission-present: true, plan-present: true, form-ref: ROOM-A, permission-ref: ROOM-A, plan-ref: ROOM-A, register-ref: ROOM-A }
+      expected: { outcomeId: complete-package, kind: handoff-ready, toolId: route-complete-package, documentIds: [intake-checklist, routing-guide], contains: [Permit processing, not permit approval] }
+    - id: permission-missing
+      title: Removing venue permission changes the destination
+      inputs: { package: PKG-102, form-present: true, permission-present: false, plan-present: true, form-ref: ROOM-B, permission-ref: "", plan-ref: ROOM-B, register-ref: ROOM-B }
+      expected: { outcomeId: missing-evidence, kind: handoff-ready, toolId: route-missing-package, documentIds: [intake-checklist, routing-guide], contains: [Intake follow-up, PERMISSION=No] }
+    - id: permission-conflict
+      title: Changing one room reference requires manual review
+      inputs: { package: PKG-103, form-present: true, permission-present: true, plan-present: true, form-ref: ROOM-C, permission-ref: ROOM-Z, plan-ref: ROOM-C, register-ref: ROOM-C }
+      expected: { outcomeId: reference-conflict, kind: handoff-ready, toolId: route-mismatched-package, documentIds: [intake-checklist, routing-guide], contains: [Manual review, ROOM-Z, ROOM-C] }
+    - id: blank-reference
+      title: A present document with a blank reference is incomplete
+      inputs: { package: PKG-104, form-present: true, permission-present: true, plan-present: true, form-ref: ROOM-A, permission-ref: "", plan-ref: ROOM-A, register-ref: ROOM-A }
+      expected: { outcomeId: missing-evidence, kind: handoff-ready, toolId: route-missing-package, documentIds: [intake-checklist, routing-guide], contains: [required document or reference is missing] }
+    - id: conflict-before-missing
+      title: Known conflict takes priority over a missing plan
+      inputs: { package: PKG-105, form-present: true, permission-present: true, plan-present: false, form-ref: ROOM-A, permission-ref: ROOM-Z, plan-ref: "", register-ref: ROOM-A }
+      expected: { outcomeId: reference-conflict, kind: handoff-ready, toolId: route-mismatched-package, documentIds: [intake-checklist, routing-guide], contains: [Conflict review takes priority] }
+    - id: absent-reference-ignored
+      title: An absent document cannot create a reference conflict
+      inputs: { package: PKG-106, form-present: true, permission-present: false, plan-present: true, form-ref: ROOM-A, permission-ref: ROOM-Z, plan-ref: ROOM-A, register-ref: ROOM-A }
+      expected: { outcomeId: missing-evidence, kind: handoff-ready, toolId: route-missing-package, documentIds: [intake-checklist, routing-guide], contains: [Intake follow-up] }
+    - id: missing-routing-policy
+      title: Missing routing policy prevents a grounded proposal
+      inputs: { package: PKG-101, form-present: true, permission-present: true, plan-present: true, form-ref: ROOM-A, permission-ref: ROOM-A, plan-ref: ROOM-A, register-ref: ROOM-A }
+      disabledKnowledge: [routing-guide]
+      expected: { outcomeId: complete-package, kind: missing-knowledge, documentIds: [] }
+    - id: processing-tool-disabled
+      title: Disabled processing tool blocks routing
+      inputs: { package: PKG-101, form-present: true, permission-present: true, plan-present: true, form-ref: ROOM-A, permission-ref: ROOM-A, plan-ref: ROOM-A, register-ref: ROOM-A }
+      disabledTools: [route-complete-package]
+      expected: { outcomeId: complete-package, kind: handoff-blocked, documentIds: [intake-checklist, routing-guide] }
+journey:
+  - id: purpose
+    title: Define intake support and its limits
+    description: Edit the name or instructions to describe intake checks, not permit approval. Free text is stored for the implementation brief.
+    tab: overview
+    completeWhen: { type: profile-edited }
+  - id: checklist
+    title: Connect and select the intake checklist
+    description: Connect Demo intake SharePoint to Community Room Permit intake and select the checklist. Documents remain separate from the connection.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: intake-checklist }
+  - id: routing
+    title: Select the destination policy
+    description: Add the Intake routing guide. Every proposed action needs both policy documents.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: routing-guide }
+  - id: processing-tool
+    title: Prepare the processing destination
+    description: Connect Demo permit processing and enable Route complete package to processing.
+    tab: tools
+    completeWhen: { type: tool, toolId: route-complete-package }
+  - id: followup-tool
+    title: Prepare the follow-up destination
+    description: Connect Demo intake follow-up and enable Route missing evidence to follow-up.
+    tab: tools
+    completeWhen: { type: tool, toolId: route-missing-package }
+  - id: review-tool
+    title: Prepare manual review
+    description: Connect Demo manual review and enable Route reference conflict to manual review.
+    tab: tools
+    completeWhen: { type: tool, toolId: route-mismatched-package }
+  - id: complete
+    title: Check a complete package
+    description: In Review, use Try this example to load and run All three document types match the register. Inspect the result and reference checks in Preview.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: complete-happy }
+  - id: citation
+    title: Read the routing source
+    description: Open the Intake routing guide citation and compare the computed destination with its policy.
+    tab: activity
+    completeWhen: { type: citation-opened, documentId: routing-guide }
+  - id: missing
+    title: Remove permission and recompute
+    description: Load and run Removing venue permission changes the destination. Compare the checkbox and follow-up result with the complete package.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: permission-missing }
+  - id: mismatch
+    title: Change a reference and recompute
+    description: Load and run Changing one room reference requires manual review. Read both conflicting values in the draft.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: permission-conflict }
+  - id: boundary
+    title: Distinguish blank from conflicting
+    description: Load and run A present document with a blank reference is incomplete. A missing value is not a known contradiction.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: blank-reference }
+  - id: confirm-processing
+    title: Review and confirm the processing draft
+    description: Run the complete case again, review the draft and confirm a local Permit processing record. This is not a permit approval.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: route-complete-package, outcomeId: complete-package }
+  - id: confirm-review
+    title: Review and confirm the exception draft
+    description: Run the reference-conflict case again and confirm its Manual review draft. Confirming a different route does not complete this step.
+    tab: handoff
+    completeWhen: { type: action-confirmed, toolId: route-mismatched-package, outcomeId: reference-conflict }
+  - id: evaluate
+    title: Verify all expected intake results
+    description: Run Evaluate with both policies and all three destinations configured. Check outcomes, exact citations and drafts, including isolated prerequisite failures. Evaluate does not route any package.
+    tab: activity
+    completeWhen: { type: evaluation-passed }
+test:
+  suggestedQuestions:
+    - What papers are required in the intake checklist?
+    - What are the routing rules?
+    - Use the interactive inputs to change a package and recompute its routing draft.
+  handoffKeywords: []
+  unknownAnswer: Open Review > Try this example to inspect a fictional package and recompute checks. Chat can explain the intake checklist or routing rules, but typing a package ID does not process a report or upload.
+  missingKnowledgeAnswer: Select the intake checklist and routing guide in the connected Community Room Permit intake library. No missing policy is replaced by a frozen sample report.
+  handoffBlockedAnswer: Keep both intake policies selected, connect the proposed destination and enable its matching tool. Nothing has been routed.
+  handoffReadyAnswer: Review the current findings and routing draft before confirming a local SIM record. Nothing has been routed.
+implementation:
+  - title: Define the process in Copilot Studio
+    description: Create an agent in an approved environment for one permit intake process. Define typed topic variables for package reference, document presence and extracted room references. Keep applicant assessment out of scope. Use the lab's complete, missing and conflict cases as acceptance examples; the browser YAML is a specification, not a deployable agent package.
+  - title: Add policy knowledge with access controls
+    description: In Knowledge, add the approved intake checklist and routing guidance from SharePoint. Assign policy owners and version checks. Verify an authorised tester can retrieve both sources and an unauthorised tester cannot. The expected result is cited intake guidance, not access to another applicant's evidence.
+  - title: Replace simulated classification with an approved extraction flow
+    description: Define an agent flow or approved connector tool accepting an authorised file reference and document type. Return extracted fields, detected type, confidence and extraction status. Validate output before setting topic variables; unreadable or uncertain documents go to staff. Test a scanned form and an unreadable file. Knowledge retrieval alone is not OCR, classification or authenticity checking.
+  - title: Compare with an authorised register lookup
+    description: Add an approved lookup tool accepting the package reference and returning the authoritative room reference or a not-found/error status. Compare normalised references using explicit conditions in the workflow, not a generated guess. Preserve raw values. Test matching, blank, conflicting and denied lookup results; only a known conflict should enter Manual review.
+  - title: Implement reviewed routing tools
+    description: Use approved flows or connectors for the three real queues. Inputs should include package reference, document categories, check results, evidence references, policy version and a correlation key. Outputs should include queue, request reference and status. Show a draft and require explicit staff confirmation before the call. Verify cancellation creates nothing and retries cannot create duplicates.
+  - title: Test and publish only after approval
+    description: In Copilot Studio, test complete, missing, conflicting, mixed, unreadable and access-denied cases. Verify the destination and persisted receipt in the target system, not just the chat text. Confirm security, privacy, retention, licensing, channel authentication and accountable queue owners before a controlled publication.
+  - title: Distinguish the lab from production
+    description: This browser recomputes deterministic rules from editable fictional fields. It neither uploads documents nor runs OCR, AI, register lookups or real routing. A SIM receipt stays local. A production pipeline needs separately tested extraction, validation, permissions, monitoring and human assessment; successful intake never approves a permit.

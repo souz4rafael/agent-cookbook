@@ -1,0 +1,20 @@
+EXAMPLE COUNCIL - FICTIONAL COURSE AND RESOURCE CATALOGUE
+Learning edition 2. No real enrolments, providers or links.
+
+The fictional catalogue contains COURSE-101 Reliable records, COURSE-102 Responsible information handling, COURSE-201 Data quality basics and COURSE-202 Tell the story in a chart. Service administration explores 101 then 102; junior reporting explores 201 then 202. Learners can discuss a different order with an adviser.
+
+The resources combine practice spreadsheets, short guides, quizzes and a video exercise. They are invented examples, not available training products or live links. Check current availability, entry requirements, cost, format and accessibility in a real catalogue before recommending or booking any course. This simulator does not enrol learners.
+
+COURSE-101: practice sorting, filtering and checking entries in an invented service log.
+COURSE-102: read a short information-handling guide and complete a sharing-scenarios quiz.
+COURSE-201: inspect an example spreadsheet for duplicates and missing values.
+COURSE-202: watch a fictional chart-selection lesson and write a plain-language explanation of a practice chart.
+
+Curated mapping:
+Service administration: if reliable records are not recorded, offer COURSE-101; if information handling is not recorded, offer COURSE-102. When both are offered, use 101 before 102.
+Junior reporting: if data quality checking is not recorded, offer COURSE-201; if chart explanation is not recorded, offer COURSE-202. When both are offered, check data with 201 before explaining it with 202.
+Skip a resource whose tracked skill is already recorded rather than prescribing every course. When both tracked skills are recorded, suggest optional practice or discussion of a new goal. If the goal is unclear, clarify it with an adviser before selecting courses.
+
+The lab's playlist is derived from these mappings and supplied inputs; it is not a verbatim recommendation stored in this source. In a real catalogue, recheck availability and appropriateness before recommending a resource.
+
+No measured completion times, qualifications or job outcomes are asserted.
