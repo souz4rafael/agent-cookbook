@@ -1,0 +1,646 @@
+schemaVersion: 1
+revision: 1
+id: care-continuity-assistant
+status: published
+title: Care Continuity Assistant
+summary: Check whether an assigned referral is truly overdue with no return. Prepare an unsent question for a human reviewer only when the evidence and contact permissions support it.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Compare the review day with the last on-time day for an open referral and leave a missing deadline unresolved.
+  - Distinguish a return in either source, no return in two checked sources and an unchecked return tray.
+  - Identify when the assigned coordinator can review an unsent status question and why an unapproved contact route holds it back.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Continuity of care
+    perspective: operations
+  headline: Before chasing a referral, check where the reply would have landed.
+  problem: A coordinator sees no reply in the intake log as a deadline approaches. The receiving desk also keeps a return tray. Without checking both, the coordinator cannot tell whether a response is late, already filed elsewhere or still due today.
+  impact: Chasing a reply that has already arrived takes both desks away from referrals that still need attention. Putting case history into a routine status enquiry would share more than the receiving desk needs.
+  approach: For an assigned, permitted review, check that the referral is open and the review day is later than its due day. Reconcile the log and tray through that day. Only if both were checked with no return and a private route is approved does the exercise prepare a neutral question for the coordinator to review.
+  startSmall: Use the open item due on day 10. Compare a review on day 10 with one on day 13, then leave the return tray unchecked on day 13 to see why lateness alone does not justify a draft.
+  potentialValue: Reviewers could spend less time on duplicate enquiries and see which referrals need a records check rather than a message.
+  measure: In a reviewed sample, count drafts for items still on time or already acknowledged. Count unchecked sources separately from verified missing returns.
+  boundary: The worksheet uses fictional days, assignments and permissions, not a patient queue. An acknowledgement establishes a return, not completion of care. A coordinator decides whether contact is appropriate; the exercise sends nothing and does not update the ledger.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: An empty intake log can trigger a needless chase when the reply is already in the receiving desk’s tray.
+    experiment: Move the review from day 10 to day 13, then mark a return source unchecked to see why the draft is withheld.
+    takeaway: A late open referral with two checked sources and no reply is different from one nobody has finished checking.
+    scope: An assigned coordinator reviews fictional ledger evidence and unsent wording without contacting either desk.
+agent:
+  name: Care Continuity Assistant
+  description: Help an assigned coordinator distinguish an overdue, unanswered referral from a due-today item, a returned item or a gap in the follow-up ledger.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help an assigned coordinator distinguish an overdue, unanswered referral from a due-today item, a returned item or a gap in the follow-up ledger.
+    Chat gives process guidance only. Do not confirm whether a referral exists, request an identifier, or show a queue in chat.
+    In the exercise, first verify the selected assignment and permission for this follow-up purpose. Decline outside that scope without revealing any case details.
+    Require an open referral, a recorded due day already passed, both return sources checked with no return and an approved private channel. Never treat a blank inbox as proof of no return.
+    Prepare a short status question for human review. Do not carry worksheet details into it or send it.
+    No personal health identifiers, diagnosis, clinical prioritisation or contact sent. The reviewer alone decides what to do outside this exercise.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help an assigned coordinator distinguish an overdue, unanswered referral from a due-today item, a returned item or a gap in the follow-up ledger.
+    Chat gives process guidance only. Do not confirm whether a referral exists, request an identifier, or show a queue in chat.
+    In the exercise, first verify the selected assignment and permission for this follow-up purpose. Decline outside that scope without revealing any case details.
+    Require an open referral, a recorded due day already passed, both return sources checked with no return and an approved private channel. Never treat a blank inbox as proof of no return.
+    Prepare a short status question for human review. Do not carry worksheet details into it or send it.
+    No personal health identifiers, diagnosis, clinical prioritisation or contact sent. The reviewer alone decides what to do outside this exercise.
+  stepByStep: |-
+    # Procedure
+
+    Help an assigned coordinator distinguish an overdue, unanswered referral from a due-today item, a returned item or a gap in the follow-up ledger.
+    1. Chat gives process guidance only. Do not confirm whether a referral exists, request an identifier, or show a queue in chat.
+    2. In the exercise, first verify the selected assignment and permission for this follow-up purpose. Decline outside that scope without revealing any case details.
+    3. Require an open referral, a recorded due day already passed, both return sources checked with no return and an approved private channel. Never treat a blank inbox as proof of no return.
+    4. Prepare a short status question for human review. Do not carry worksheet details into it or send it.
+    No personal health identifiers, diagnosis, clinical prioritisation or contact sent. The reviewer alone decides what to do outside this exercise.
+  decisionRules: |-
+    # Decision rules
+
+    Help an assigned coordinator distinguish an overdue, unanswered referral from a due-today item, a returned item or a gap in the follow-up ledger.
+    No assignment or permission: stop without confirming any referral.
+    Closed, paused or already returned: no contact draft. Unchecked sources or missing dates: reconcile first.
+    Review day must be later than due day, not equal. Even then, a draft needs a checked no-return result and an approved contact channel.
+    No personal health identifiers, diagnosis, clinical prioritisation or contact sent. The reviewer alone decides what to do outside this exercise.
+    Chat gives process guidance only. Do not confirm whether a referral exists, request an identifier, or show a queue in chat.
+    In the exercise, first verify the selected assignment and permission for this follow-up purpose. Decline outside that scope without revealing any case details.
+  examples: |-
+    “The due day is today.” → Not overdue; no draft.
+    “One return source is blank.” → Check both the intake log and return tray; an unchecked tray does not establish a missing return.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Care Continuity Assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: return-reconciliation-sheet
+    title: How to reconcile the follow-up ledger
+    summary: Start with the review assignment, then check whether the referral remains open for follow-up. A paused or closed item is not eligible for routine contact. Do not infer an assignment or due date from position in the queue.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/return-reconciliation-sheet.txt
+  - id: minimum-contact-note
+    title: Minimum wording for a contact review
+    summary: Only the assigned exercise coordinator with permission for this purpose may review a particular queue item. Outside that scope, decline without confirming if a referral exists. Role and permission switches are training inputs, not evidence of identity or a live authorization check.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/minimum-contact-note.txt
+facts:
+  - id: due-rule
+    documentId: return-reconciliation-sheet
+    keywords:
+      - Is a referral overdue on its recorded due day
+    answer: No. The due day is the last on-time day. An open referral is past due only when the review day is later than its recorded due day.
+    detail: Use the same clock for both fields. An absent deadline or review day is missing evidence; it is not permission to guess a date.
+  - id: return-check
+    documentId: return-reconciliation-sheet
+    keywords:
+      - How do I establish that no return was received
+    answer: Reconcile both the intake log and the receiving desk’s return tray through the review cut-off. One blank or unchecked source does not establish no return.
+    detail: A recorded acknowledgement in either source counts as a return for this review, not proof that care is finished. Do not draft a no-return enquiry for that item.
+  - id: draft-contact
+    documentId: minimum-contact-note
+    keywords:
+      - What belongs in a contact draft for coordinator review
+    answer: For an eligible item with an approved private channel, write only a neutral question asking whether the receiving desk has a response. Label the question unsent.
+    detail: Omit identifying and clinical details, case history and elapsed days. Do not infer a diagnosis, choose another contact route or send the review copy.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-return-reconciliation-sheet
+    title: Select How to reconcile the follow-up ledger
+    description: Add How to reconcile the follow-up ledger to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: return-reconciliation-sheet
+  - id: read-minimum-contact-note
+    title: Select Minimum wording for a contact review
+    description: Add Minimum wording for a contact review to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: minimum-contact-note
+  - id: try-1
+    title: Prepare a review copy for an overdue unanswered referral
+    description: In Review > Try this example, load "Prepare a review copy for an overdue unanswered referral" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: past-due-no-return
+  - id: try-2
+    title: Stop on the last on-time day
+    description: In Review > Try this example, load "Stop on the last on-time day" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: due-today
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the How to reconcile the follow-up ledger citation on the result for "Prepare a review copy for an overdue unanswered referral".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: return-reconciliation-sheet
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Is a referral overdue on its recorded due day?
+    - How do I establish that no return was received?
+    - What belongs in a contact draft for coordinator review?
+  handoffKeywords: []
+  unknownAnswer: I cannot disclose queue entries or confirm whether a referral exists. I can explain how an assigned coordinator checks dates, reconciles returns and reviews unsent contact.
+  missingKnowledgeAnswer: The selected follow-up guide is unavailable. I cannot establish an overdue referral or draft contact from missing evidence.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Care Continuity Assistant
+    mode: simulated
+    starter:
+      label: Practice checking a follow-up ledger
+      prompt: Practice checking a follow-up ledger
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: "No queue or individual referral is available in chat. Which part of the process would you like to practice: the due day, checking returns or drafting contact?"
+          - id: alternative
+            text: Choose a general coordination question. Fictional queue states are explained only in the assigned-coordinator exercise; no contact can be sent.
+      - id: choose-route
+        role: user
+        choices:
+          - id: due-rule
+            label: Decide when due becomes overdue
+            next: reply-due-rule
+          - id: return-check
+            label: Distinguish silence from an unchecked source
+            next: reply-return-check
+          - id: draft-contact
+            label: Keep an unsent enquiry minimal
+            next: reply-draft-contact
+      - id: reply-due-rule
+        role: simulation
+        prompt: Is a referral overdue on its recorded due day?
+        end: true
+      - id: reply-return-check
+        role: simulation
+        prompt: How do I establish that no return was received?
+        end: true
+      - id: reply-draft-contact
+        role: simulation
+        prompt: What belongs in a contact draft for coordinator review?
+        end: true
+lab:
+  title: Is a no-return enquiry justified?
+  description: Use synthetic day numbers on one exercise clock. Change the review day, return checks or permission and compare which entries warrant an unsent question. Do not supply personal information.
+  fields:
+    - id: assignment
+      label: Coordinator assignment
+      type: select
+      options:
+        - value: assigned
+          label: Assigned to this exercise item
+        - value: unassigned
+          label: Not assigned, or assignment unconfirmed
+      defaultValue: unassigned
+      hint: Being able to see a worksheet does not imply an assignment.
+    - id: permission
+      label: Permission for this follow-up purpose?
+      type: boolean
+      defaultValue: false
+      hint: Recorded permission must cover this exercise review and potential draft.
+    - id: status
+      label: Referral ledger state
+      type: select
+      options:
+        - value: open
+          label: Open for follow-up
+        - value: inactive
+          label: Paused or closed
+        - value: unclear
+          label: Ledger state unresolved
+      defaultValue: unclear
+      hint: Only an open item can qualify.
+    - id: due-day
+      label: Last on-time day
+      type: number
+      defaultValue: null
+      min: 0
+      max: 365
+      hint: Exercise day count from the start of the ledger period; leave empty if no deadline is documented.
+    - id: review-day
+      label: Day of review
+      type: number
+      defaultValue: null
+      min: 0
+      max: 365
+      hint: Use the same exercise clock as the due day; leave empty if unavailable.
+    - id: returns
+      label: Return evidence at the review cut-off
+      type: select
+      options:
+        - value: none-verified
+          label: Both intake log and return tray checked; no return
+        - value: received
+          label: Acknowledgement recorded in at least one source
+        - value: incomplete
+          label: A source is blank or not checked
+      defaultValue: incomplete
+      hint: A single unchecked source prevents a no-return conclusion.
+    - id: channel
+      label: Contact route for review
+      type: select
+      options:
+        - value: approved
+          label: Approved private receiving-desk channel
+        - value: unverified
+          label: Missing or unapproved channel
+      defaultValue: unverified
+      hint: No contact details are entered, and no message can be sent.
+  checks:
+    - id: assigned
+      label: Coordinator assigned to item
+      field: assignment
+      operator: eq
+      value: assigned
+    - id: permitted
+      label: Follow-up purpose permitted
+      field: permission
+      operator: eq
+      value: true
+    - id: open
+      label: Open for follow-up
+      field: status
+      operator: eq
+      value: open
+    - id: inactive
+      label: Paused or closed
+      field: status
+      operator: eq
+      value: inactive
+    - id: known-due
+      label: Due day recorded
+      field: due-day
+      operator: present
+    - id: known-review
+      label: Review day recorded
+      field: review-day
+      operator: present
+    - id: past-due
+      label: Review day strictly after due day
+      field: review-day
+      operator: gt
+      otherField: due-day
+    - id: returned
+      label: A return is documented
+      field: returns
+      operator: eq
+      value: received
+    - id: no-return
+      label: Both sources checked with no return
+      field: returns
+      operator: eq
+      value: none-verified
+    - id: approved-channel
+      label: Private channel approved
+      field: channel
+      operator: eq
+      value: approved
+  rules:
+    - id: assignment-first
+      label: Decline outside assigned scope
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: withhold
+    - id: permission-first
+      label: Decline without purpose permission
+      all:
+        - checkId: permitted
+          equals: false
+      outcomeId: withhold
+    - id: inactive-stop
+      label: Exclude a paused or closed item
+      all:
+        - checkId: inactive
+          equals: true
+      outcomeId: not-active
+    - id: return-found
+      label: Stop the no-return workflow
+      all:
+        - checkId: open
+          equals: true
+        - checkId: returned
+          equals: true
+      outcomeId: return-recorded
+    - id: within-window
+      label: Do not draft on or before a known due day
+      all:
+        - checkId: open
+          equals: true
+        - checkId: known-due
+          equals: true
+        - checkId: known-review
+          equals: true
+        - checkId: past-due
+          equals: false
+      outcomeId: not-overdue
+    - id: draft-only
+      label: Prepare a minimum unsent enquiry
+      all:
+        - checkId: open
+          equals: true
+        - checkId: past-due
+          equals: true
+        - checkId: no-return
+          equals: true
+        - checkId: approved-channel
+          equals: true
+      outcomeId: review-contact
+    - id: route-hold
+      label: Do not improvise a contact route
+      all:
+        - checkId: open
+          equals: true
+        - checkId: past-due
+          equals: true
+        - checkId: no-return
+          equals: true
+        - checkId: approved-channel
+          equals: false
+      outcomeId: verify-route
+    - id: reconcile
+      label: Do not infer missing ledger evidence
+      all: []
+      outcomeId: reconcile-first
+  outcomes:
+    - id: withhold
+      title: Outside the permitted coordination review
+      summary: I cannot confirm whether a referral exists or disclose queue information for this request. No contact draft was prepared.
+      documentIds:
+        - minimum-contact-note
+    - id: not-active
+      title: Not an active follow-up item
+      summary: The ledger marks this item paused or closed. Exclude it from routine no-return follow-up. No contact draft was prepared.
+      documentIds:
+        - return-reconciliation-sheet
+    - id: return-recorded
+      title: A return is present
+      summary: An acknowledgement is recorded. This excludes the item from no-return follow-up; it does not establish that care is finished. No contact draft was prepared.
+      documentIds:
+        - return-reconciliation-sheet
+    - id: not-overdue
+      title: The response window has not passed
+      summary: Review day {{review-day}} is on or before due day {{due-day}}. Due today does not mean overdue. No contact draft was prepared.
+      documentIds:
+        - return-reconciliation-sheet
+    - id: review-contact
+      title: "Overdue with no return: review the unsent wording"
+      summary: Review day {{review-day}} is later than due day {{due-day}}. The referral remains open; both the intake log and the return tray were checked with no return. An approved private receiving-desk channel is recorded. Review the wording separately; no contact was sent.
+      documentIds:
+        - return-reconciliation-sheet
+        - minimum-contact-note
+      draft:
+        title: Unsent question for coordinator review
+        body: Could your desk confirm whether a response is available through the agreed referral channel?
+    - id: verify-route
+      title: An overdue item is not permission to use any route
+      summary: The due day has passed and both sources show no return, but there is no approved private channel for the receiving desk. Verify the route separately; do not substitute another. No contact draft was prepared.
+      documentIds:
+        - return-reconciliation-sheet
+        - minimum-contact-note
+    - id: reconcile-first
+      title: No established basis for contact
+      summary: "The supplied ledger does not establish all the required facts: an open item, a known deadline already passed and no return in both checked sources. Reconcile the missing or conflicting evidence before considering contact. No contact draft was prepared."
+      documentIds:
+        - return-reconciliation-sheet
+  cases:
+    - id: past-due-no-return
+      title: Prepare a review copy for an overdue unanswered referral
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: review-contact
+        documentIds:
+          - return-reconciliation-sheet
+          - minimum-contact-note
+        kind: answer
+        contains:
+          - Review day 13 is later than due day 10
+          - Unsent question for coordinator review
+          - Could your desk confirm whether a response is available through the agreed referral channel?
+          - no contact was sent
+    - id: due-today
+      title: Stop on the last on-time day
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 10
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: not-overdue
+        documentIds:
+          - return-reconciliation-sheet
+        kind: answer
+        contains:
+          - Due today does not mean overdue
+          - No contact draft was prepared.
+    - id: returned-after-deadline
+      title: Exclude an item with a recorded acknowledgement
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: received
+        channel: approved
+      expected:
+        outcomeId: return-recorded
+        documentIds:
+          - return-reconciliation-sheet
+        kind: answer
+        contains:
+          - An acknowledgement is recorded
+          - No contact draft was prepared.
+    - id: unchecked-tray
+      title: Do not infer no return from one empty source
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: incomplete
+        channel: approved
+      expected:
+        outcomeId: reconcile-first
+        documentIds:
+          - return-reconciliation-sheet
+        kind: answer
+        contains:
+          - Reconcile the missing or conflicting evidence
+          - No contact draft was prepared.
+    - id: missing-due-day
+      title: Do not invent a deadline
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: null
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: reconcile-first
+        documentIds:
+          - return-reconciliation-sheet
+        kind: answer
+        contains:
+          - known deadline already passed
+          - No contact draft was prepared.
+    - id: paused-referral
+      title: Exclude an inactive referral
+      inputs:
+        assignment: assigned
+        permission: true
+        status: inactive
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: not-active
+        documentIds:
+          - return-reconciliation-sheet
+        kind: answer
+        contains:
+          - paused or closed
+          - No contact draft was prepared.
+    - id: unverified-route
+      title: Hold contact without an approved route
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: unverified
+      expected:
+        outcomeId: verify-route
+        documentIds:
+          - return-reconciliation-sheet
+          - minimum-contact-note
+        kind: answer
+        contains:
+          - do not substitute another
+          - No contact draft was prepared.
+    - id: wrong-assignment
+      title: Decline someone outside the assigned review
+      inputs:
+        assignment: unassigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: withhold
+        documentIds:
+          - minimum-contact-note
+        kind: answer
+        contains:
+          - I cannot confirm whether a referral exists
+          - No contact draft was prepared.
+    - id: no-purpose-permission
+      title: Decline an assigned role without permission
+      inputs:
+        assignment: assigned
+        permission: false
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: withhold
+        documentIds:
+          - minimum-contact-note
+        kind: answer
+        contains:
+          - I cannot confirm whether a referral exists
+          - No contact draft was prepared.
+    - id: ledger-guide-removed
+      title: Try drafting without the reconciliation guide
+      inputs:
+        assignment: assigned
+        permission: true
+        status: open
+        due-day: 10
+        review-day: 13
+        returns: none-verified
+        channel: approved
+      expected:
+        outcomeId: review-contact
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - return-reconciliation-sheet
+implementation:
+  - title: Build this in the real service
+    description: Have the responsible coordination team define due-day conventions, what constitutes a return, permitted channels and who may review a draft. Exercise these rules with synthetic queue items before considering any operational design.
+  - title: What to measure
+    description: Count false overdue labels on the due day, drafts despite an unchecked return source, details copied unnecessarily into a draft and any contact implied to have been sent.
+  - title: Scope of this draft
+    description: No personal health identifiers, diagnosis, clinical prioritisation or contact sent. The reviewer alone decides what to do outside this exercise. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

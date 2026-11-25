@@ -1,0 +1,5 @@
+Alderfen | Marker acceptance entry · AC-512
+Fictional training material. Not an official service record or policy.
+
+AC-512, receipt row M4, uses K-730 / S-MOSS / CT-73. “Accepted units” is the signed count, not the carrier’s tally.
+The printed teaching example records 8 accepted. In alternate snapshots the field may show a different number or be blank. Only the signed snapshot is usable: a withheld entry or an unknown endorsement is not a signed count, even if digits remain on screen.

@@ -1,0 +1,16 @@
+Alderfen | Reading a plan and a referral side by side
+Fictional training material. Not an official service record or policy.
+
+A care plan and a referral entry answer different questions. The plan records what is supposed to happen. The referral entry records the last administrative event supported by the page. Neither, on its own, proves what happened afterwards.
+
+Explain the written step using three prompts: who is expected to do something, what are they expected to do, and what reply should the person look for? If a step is unreadable, direct the question to the team that wrote the plan. Do not supply a replacement step or interpret clinical content.
+
+“Received” means the receiving desk acknowledged the referral, not that a time was offered. “Time offered” is a proposal, not evidence of acceptance. When two entries disagree, describe the discrepancy rather than choosing whichever entry sounds more definite. Ask the responsible service to confirm the state through its usual channel.
+
+Name who acts next, what the plan says they will do, and what reply to look for. Repeat the written step without adding a new one.
+
+If the step is missing or unclear, ask the team that wrote the plan to explain it. A navigator does not interpret clinical content, diagnose or recommend treatment.
+
+No. A receipt acknowledges delivery to the receiving desk. It does not establish that a time has been offered, accepted or booked.
+
+Read the latest supported entry separately from the intended next step. If entries conflict, ask the responsible desk to clarify instead of inferring a booking.

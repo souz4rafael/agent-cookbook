@@ -1,0 +1,9 @@
+Mothlight Prop Library
+What belongs in the comparison tray
+
+The tray is for a proposal to compare two ways of matching returned props. It is not for changing a catalogue entry. A reviewer needs the observed minutes and shift length, the job that required context, the catalogue boundary, what can change and the proposed comparison. Leave out names of people, companies and real inventory.
+
+A tray request is not consent to record. Run the comparison case in the worksheet to inspect the proposed note. If the tool is available, check the destination and wording, then decide separately in the host confirmation dialog. Cancel leaves no new record or receipt.
+Only a successful host confirmation creates a browser-local case. A chat reply, selecting a destination or running an evaluation is not consent. No note goes to a real reviewer.
+
+If the tray tool is disabled, draft text is at most a worksheet: there is no action to confirm. If a required source is missing, there is no grounded draft. Restore the missing prerequisite and run the example again rather than copying the text to another destination.

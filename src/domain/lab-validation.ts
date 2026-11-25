@@ -26,7 +26,8 @@ const labFields = {
   })).max(40),
   rules: z.array(z.strictObject({
     id, label: title, all: z.array(requirementSchema).max(40),
-    any: z.array(requirementSchema).min(1).max(40).optional(), outcomeId: id,
+    any: z.array(requirementSchema).min(1).max(40).optional(),
+    requiresKnowledge: z.array(id).min(1).max(40).optional(), outcomeId: id,
   })).min(1).max(30),
   outcomes: z.array(z.strictObject({
     id, title, summary: template, documentIds: z.array(id).max(40), skillId: id.optional(), toolId: id.optional(),
@@ -145,9 +146,10 @@ function definitionIssues(lab: LabDefinition): ReferenceIssue[] {
     requirements(rule.all, [...path, 'all'])
     if (rule.any) requirements(rule.any, [...path, 'any'])
     if (!outcomes.has(rule.outcomeId)) add([...path, 'outcomeId'], `Unknown outcome "${rule.outcomeId}".`)
+    if (rule.requiresKnowledge) unique(rule.requiresKnowledge, [...path, 'requiresKnowledge'])
     if (index === lab.rules.length - 1) {
-      if (rule.all.length || rule.any !== undefined) add(path, 'The final fallback rule must have all: [] and no any requirements.')
-    } else if (!rule.all.length && !rule.any?.length) add(path, 'An unconditional rule is only allowed as the final fallback.')
+      if (rule.all.length || rule.any !== undefined || rule.requiresKnowledge) add(path, 'The final fallback rule must have all: [] and no other requirements.')
+    } else if (!rule.all.length && !rule.any?.length && !rule.requiresKnowledge?.length) add(path, 'An unconditional rule is only allowed as the final fallback.')
   })
   lab.outcomes.forEach((outcome, index) => {
     const path = ['outcomes', index]
@@ -201,6 +203,14 @@ export function labReferenceIssues(recipe: Recipe): ReferenceIssue[] {
   })
   const toolRefs = (ids: string[], path: ReferenceIssue['path']) => ids.forEach((id, index) => {
     if (!tools.has(id)) add([...path, index], `Unknown tool "${id}".`)
+  })
+  lab.rules.forEach((rule, index) => {
+    if (!rule.requiresKnowledge) return
+    documentRefs(rule.requiresKnowledge, ['lab', 'rules', index, 'requiresKnowledge'])
+    const outcome = lab.outcomes.find(item => item.id === rule.outcomeId)
+    if (outcome && rule.requiresKnowledge.some(id => !outcome.documentIds.includes(id))) {
+      add(['lab', 'rules', index, 'requiresKnowledge'], 'The selected outcome must cite every source used to match this rule.')
+    }
   })
   lab.outcomes.forEach((outcome, index) => {
     const path = ['lab', 'outcomes', index]

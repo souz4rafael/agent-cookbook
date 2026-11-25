@@ -1,0 +1,722 @@
+schemaVersion: 1
+revision: 1
+id: bottleneck-analyst
+status: published
+title: Bottleneck Analyst
+summary: Follow four dummy map reprints from Intake to Print. Use their dated slips to count repeated edition-seal requests and elapsed days, then test whether two periods really support a comparison.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Trace a blank edition-seal box from Print back to Intake. Count each affected reprint once rather than counting the return trip and the forward handoff.
+  - Match templates A–D across two periods. Use the four pairs to calculate the share of jobs returned and the mean time from intake to release for each period.
+  - Check Copy and Plain separately against the before register. Explain why a substituted job or missing release blocks comparison and why a shorter replay does not prove the form saved time.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Citizen requests and process improvement
+    perspective: operations
+  headline: Why did Print ask for a seal that Intake had already accepted?
+  problem: Intake records the edition seal for a map reprint, but the slip travelling to Print has an empty seal box. Print sends the job back for the same seal. The team wants to know whether copying the accepted seal onto the slip is worth testing.
+  impact: A count of handoffs would mix the return for missing information with the ordinary trip back to Print. A shorter time to release could reflect a shorter queue rather than a better form.
+  approach: Pair the four standard reprint templates across two ten-day registers. Compare the before register with one after packet at a time. Mark each job returned for the same seal once, subtract intake day from release day for each job, then enter the totals to check them against the slips.
+  startSmall: Follow job A until release and find the return that counts. Then compare the four pairs in the Copy replay. Use Plain instead for a replay of the old form; it is an alternative to Copy, not a third period.
+  potentialValue: The blank box points to a specific change the team could test at the handoff. Showing which jobs and timestamps went into the comparison gives a reviewer a way to challenge that proposal.
+  measure: In the scripted Copy comparison, returns affect 3 of 4 jobs before and 1 of 4 after. Elapsed days total 18 and 14, giving means of 4.5 and 3.5 days. Plain leaves both measures unchanged. A missing release stamp makes the duration unknown, not zero.
+  boundary: These paired paper samples illustrate a comparison, not proof that the form caused a shorter wait or improved a real service. Four complete pairs are a worksheet requirement, not a statistical threshold. No operational logs or staff rankings are involved.
+  sourceLabel: "Microsoft Learn: authoring instructions in Copilot Studio (product reference)"
+  home:
+    challenge: Print sends reprints back for a seal Intake already accepted. Counting desk transfers alone cannot tell how many jobs repeated that step.
+    experiment: Pair the four templates and enter the return and elapsed-day totals for Copy. Then select Torn slip and identify which job can no longer be timed.
+    takeaway: Copy shows fewer seal returns in this replay; Plain shows no change. Neither tells you that carrying the seal forward caused a faster release.
+    scope: Hand-counted fictional desk slips only. The lab checks your totals; it does not mine service logs or compare staff performance.
+agent:
+  name: Bottleneck Analyst
+  description: Teach a process-level bottleneck review from two invented desk registers and a hand-counted worksheet. The lab checks learner-entered totals; it does not mine logs.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Teach a process-level bottleneck review from two invented desk registers and a hand-counted worksheet. The lab checks learner-entered totals; it does not mine logs.
+    Match the same four standard single-sheet reprint templates across days 1–10 and 11–20. Keep the intake-to-release clock and edition-seal return definition constant. Check coverage and completion before comparing.
+    Trace a specific return: Intake already accepted an edition seal; Print received a blank seal box and sent the packet back for that same seal. Count a job once even if the seal appears several times. Do not count ordinary forward transfers.
+    By hand, tally affected jobs and sum release day minus intake day. Divide both totals by the four paired jobs per period. Compare the entered totals to the named source packet and show the arithmetic. Blank is unknown, not zero.
+    Report unchanged, incomplete, unmatched, thin or miscounted evidence explicitly. Describe the proposed change as carrying the accepted seal onto the print slip. Consider queue time or the scripted replay as alternative explanations.
+    Compare only fictional process steps. Do not profile or rank a person or group, access operational logs, infer causation or claim an actual measured improvement.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Teach a process-level bottleneck review from two invented desk registers and a hand-counted worksheet. The lab checks learner-entered totals; it does not mine logs.
+    Match the same four standard single-sheet reprint templates across days 1–10 and 11–20. Keep the intake-to-release clock and edition-seal return definition constant. Check coverage and completion before comparing.
+    Trace a specific return: Intake already accepted an edition seal; Print received a blank seal box and sent the packet back for that same seal. Count a job once even if the seal appears several times. Do not count ordinary forward transfers.
+    By hand, tally affected jobs and sum release day minus intake day. Divide both totals by the four paired jobs per period. Compare the entered totals to the named source packet and show the arithmetic. Blank is unknown, not zero.
+    Report unchanged, incomplete, unmatched, thin or miscounted evidence explicitly. Describe the proposed change as carrying the accepted seal onto the print slip. Consider queue time or the scripted replay as alternative explanations.
+    Compare only fictional process steps. Do not profile or rank a person or group, access operational logs, infer causation or claim an actual measured improvement.
+  stepByStep: |-
+    # Procedure
+
+    Teach a process-level bottleneck review from two invented desk registers and a hand-counted worksheet. The lab checks learner-entered totals; it does not mine logs.
+    1. Match the same four standard single-sheet reprint templates across days 1–10 and 11–20. Keep the intake-to-release clock and edition-seal return definition constant. Check coverage and completion before comparing.
+    2. Trace a specific return: Intake already accepted an edition seal; Print received a blank seal box and sent the packet back for that same seal. Count a job once even if the seal appears several times. Do not count ordinary forward transfers.
+    3. By hand, tally affected jobs and sum release day minus intake day. Divide both totals by the four paired jobs per period. Compare the entered totals to the named source packet and show the arithmetic. Blank is unknown, not zero.
+    4. Report unchanged, incomplete, unmatched, thin or miscounted evidence explicitly. Describe the proposed change as carrying the accepted seal onto the print slip. Consider queue time or the scripted replay as alternative explanations.
+    Compare only fictional process steps. Do not profile or rank a person or group, access operational logs, infer causation or claim an actual measured improvement.
+  decisionRules: |-
+    # Decision rules
+
+    Teach a process-level bottleneck review from two invented desk registers and a hand-counted worksheet. The lab checks learner-entered totals; it does not mine logs.
+    If the question is about people or groups, decline the comparison. If the job definition changes, fewer than four templates have paired evidence, or an endpoint is missing, withhold the full comparison.
+    For complete pairs, audit each manual total against the chosen register before comparing before and after. Different totals alone do not prove the forms caused a change.
+    Equal loop counts and elapsed-day sums at the same denominator mean unchanged on these two measures. Never substitute a favourable alternate replay.
+    Compare only fictional process steps. Do not profile or rank a person or group, access operational logs, infer causation or claim an actual measured improvement.
+  examples: |-
+    A packet goes from Print back to Intake for an already accepted edition seal → count one affected job, not every occurrence of the word “seal”.
+    Four arrivals in each window but an oversize job replaces a standard job → equal sample sizes do not make the cohorts comparable.
+    No release stamp → leave the duration blank, not zero. A shorter fictional mean is not measured service improvement.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Bottleneck Analyst.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: before-desk-register
+    title: "Before register: the edition-seal return"
+    summary: Window one covers exercise days 1–10 inclusive. A, B, C and D are four dummy, standard single-sheet map reprint templates. Each visits Intake and then Print. These are job shapes, not resident identifiers. Each “release” below ends that job’s clock.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/before-desk-register.txt
+  - id: after-desk-register
+    title: "After register: alternative paper packets"
+    summary: Window two covers exercise days 11–20 inclusive. Use ONE packet with the before register, never both after packets together. Copy and Plain replay the same four standard single-sheet templates A–D. Copy tests a slip that carries the accepted edition seal forward. Plain is an alternative fictional run of the old form.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/after-desk-register.txt
+  - id: paired-counting-sheet
+    title: "Counting sheet: pair first, then divide"
+    summary: "Unit: one standard single-sheet reprint template run once in each period. Pair A with A, B with B, C with C, and D with D. Include arrivals in days 1–10 before and 11–20 after, each observed through the end of its own ten-day window. To compare both measures this classroom exercise requires all four pairs, no work-type substitutions and a release for each job. Four pairs is a teaching rule, not a statistical significance threshold."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/paired-counting-sheet.txt
+facts:
+  - id: trace-return
+    documentId: before-desk-register
+    keywords:
+      - Why did Print ask for the edition seal again
+    answer: Intake had accepted the edition seal on job A on day 1. On day 2 Print saw a blank seal box on its own slip and returned the job to Intake for the same seal. The requirement was repeated because the acceptance did not travel with the packet.
+    detail: On day 3 Intake copied the same seal and on day 4 Print received it. Count one affected job, not two handoffs or two approvals. The before register also shows job D reaching release without this return.
+  - id: paired-result
+    documentId: paired-counting-sheet
+    keywords:
+      - How do the four paired reprints compare
+    answer: In the fictional Copy replay, jobs returned for the edition seal went from 3/4 (75%) to 1/4 (25%). Mean intake-to-release time went from 18/4 = 4.5 days to 14/4 = 3.5 days. These are manual totals from two sets of four paired paper histories.
+    detail: The difference is 50 percentage points fewer affected jobs and one day less in the mean for these scripted replays. The figures are an association, not proof the form caused the change or that any actual service improved.
+  - id: check-coverage
+    documentId: paired-counting-sheet
+    keywords:
+      - Can a missing release stamp count as zero days
+    answer: No. Without a release stamp the endpoint is unknown, even if the job reached Print. Withhold the full comparison rather than setting a duration to zero or silently dropping a job.
+    detail: "In Review > Try this example, compare Torn slip with Two pairs: the first lacks an endpoint for a named pair; the second has only two complete pairs. Neither supplies the four complete pairs required by this worksheet."
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-before-desk-register
+    title: "Select Before register: the edition-seal return"
+    description: "Add Before register: the edition-seal return to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: before-desk-register
+  - id: read-after-desk-register
+    title: "Select After register: alternative paper packets"
+    description: "Add After register: alternative paper packets to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: after-desk-register
+  - id: read-paired-counting-sheet
+    title: "Select Counting sheet: pair first, then divide"
+    description: "Add Counting sheet: pair first, then divide to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: paired-counting-sheet
+  - id: try-1
+    title: Compare the four paired Copy slips
+    description: In Review > Try this example, load "Compare the four paired Copy slips" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: paired-copy
+  - id: try-2
+    title: Check the old form against its unchanged replay
+    description: In Review > Try this example, load "Check the old form against its unchanged replay" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: paired-plain
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Before register: the edition-seal return citation on the result for "Compare the four paired Copy slips".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: before-desk-register
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Why did Print ask for the edition seal again?
+    - How do the four paired reprints compare?
+    - Can a missing release stamp count as zero days?
+  handoffKeywords: []
+  unknownAnswer: Choose a sample question about Bottleneck Analyst or use Review > Try this example to change fictional inputs. This service cannot look up real records.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Bottleneck Analyst
+    mode: simulated
+    starter:
+      label: Trace a map reprint through two desks
+      prompt: Trace a map reprint through two desks
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to trace one return, compare the two runs, or find a reason to withhold a result?
+          - id: alternative
+            text: Would you like to trace one return, compare the two runs, or find a reason to withhold a result? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: trace-return
+            label: Why did Print ask for the edition seal again?
+            next: reply-trace-return
+          - id: paired-result
+            label: How do the four paired reprints compare?
+            next: reply-paired-result
+          - id: check-coverage
+            label: Can a missing release stamp count as zero days?
+            next: reply-check-coverage
+      - id: reply-trace-return
+        role: simulation
+        prompt: Why did Print ask for the edition seal again?
+        end: true
+      - id: reply-paired-result
+        role: simulation
+        prompt: How do the four paired reprints compare?
+        end: true
+      - id: reply-check-coverage
+        role: simulation
+        prompt: Can a missing release stamp count as zero days?
+        end: true
+lab:
+  title: Audit the paper replays
+  description: Hand-count the affected jobs and elapsed job-days in the before register and ONE after packet. Enter the four totals; leave an unknown total blank. The lab checks the entries and compares them only for a complete matching cohort. It does not read or aggregate logs.
+  fields:
+    - id: packet
+      label: After packet to compare
+      type: select
+      options:
+        - value: copy
+          label: "Copy: carry the seal forward"
+        - value: plain
+          label: "Plain: replay the old slip"
+        - value: mixed
+          label: "Mixed stock: replace one job"
+        - value: two
+          label: "Two pairs: partial registers"
+        - value: torn
+          label: "Torn slip: no final stamp"
+      defaultValue: copy
+      hint: All after packets use days 11–20. The before period is days 1–10. Each exception packet is described in the after register.
+    - id: lens
+      label: Subject of the comparison
+      type: select
+      options:
+        - value: process
+          label: The desk-to-desk workflow
+        - value: profile
+          label: A person or group
+      defaultValue: process
+      hint: Only the process is in scope. Do not enter personal data.
+    - id: before-loops
+      label: "Before: jobs returned for the edition seal"
+      type: number
+      defaultValue: 3
+      min: 0
+      max: 4
+      hint: Manually count distinct jobs with the named return, not the number of transfers.
+    - id: after-loops
+      label: "After: jobs returned for the edition seal"
+      type: number
+      defaultValue: 1
+      min: 0
+      max: 4
+      hint: Tally the selected packet only.
+    - id: before-days
+      label: "Before: sum of elapsed job-days"
+      type: number
+      defaultValue: 18
+      min: 0
+      max: 36
+      hint: For each paired job subtract the intake day from the release day, then add.
+    - id: after-days
+      label: "After: sum of elapsed job-days"
+      type: number
+      defaultValue: 14
+      min: 0
+      max: 36
+      hint: Do not average before entering. Clear the total if a required endpoint is unknown.
+  checks:
+    - id: out-of-scope
+      label: A profile was requested
+      field: lens
+      operator: eq
+      value: profile
+    - id: mixed-packet
+      label: "Selected packet: mixed"
+      field: packet
+      operator: eq
+      value: mixed
+    - id: two-packet
+      label: "Selected packet: two"
+      field: packet
+      operator: eq
+      value: two
+    - id: torn-packet
+      label: "Selected packet: torn"
+      field: packet
+      operator: eq
+      value: torn
+    - id: copy-packet
+      label: "Selected packet: copy"
+      field: packet
+      operator: eq
+      value: copy
+    - id: plain-packet
+      label: "Selected packet: plain"
+      field: packet
+      operator: eq
+      value: plain
+    - id: have-before-loops
+      label: "A hand total is present: before-loops"
+      field: before-loops
+      operator: present
+    - id: have-after-loops
+      label: "A hand total is present: after-loops"
+      field: after-loops
+      operator: present
+    - id: have-before-days
+      label: "A hand total is present: before-days"
+      field: before-days
+      operator: present
+    - id: have-after-days
+      label: "A hand total is present: after-days"
+      field: after-days
+      operator: present
+    - id: base-three
+      label: Before return tally agrees with A, B and C
+      field: before-loops
+      operator: eq
+      value: 3
+    - id: base-eighteen
+      label: Before elapsed tally agrees with all four slips
+      field: before-days
+      operator: eq
+      value: 18
+    - id: copy-one
+      label: Copy return tally agrees with C only
+      field: after-loops
+      operator: eq
+      value: 1
+    - id: copy-fourteen
+      label: Copy elapsed tally agrees with its four slips
+      field: after-days
+      operator: eq
+      value: 14
+    - id: plain-three
+      label: Plain return tally agrees with A, B and C
+      field: after-loops
+      operator: eq
+      value: 3
+    - id: plain-eighteen
+      label: Plain elapsed tally agrees with its four slips
+      field: after-days
+      operator: eq
+      value: 18
+    - id: fewer-returns
+      label: Fewer affected jobs at the same denominator
+      field: after-loops
+      operator: lt
+      otherField: before-loops
+    - id: less-time
+      label: Lower elapsed total at the same denominator
+      field: after-days
+      operator: lt
+      otherField: before-days
+    - id: same-returns
+      label: Same affected-job tally
+      field: after-loops
+      operator: eq
+      otherField: before-loops
+    - id: same-time
+      label: Same elapsed total
+      field: after-days
+      operator: eq
+      otherField: before-days
+  rules:
+    - id: process-only
+      label: Do not profile a person or group
+      all:
+        - checkId: out-of-scope
+          equals: true
+      outcomeId: no-profile
+    - id: match-stock
+      label: Require the same work type and paired templates
+      all:
+        - checkId: mixed-packet
+          equals: true
+      outcomeId: unmatched
+    - id: minimum-pairs
+      label: Check for all four pairs
+      all:
+        - checkId: two-packet
+          equals: true
+      outcomeId: too-thin
+    - id: require-release
+      label: A missing release stamp cannot end the clock
+      all:
+        - checkId: torn-packet
+          equals: true
+      outcomeId: missing-endpoint
+    - id: need-entries
+      label: Blank worksheet cells are not zero
+      all: []
+      outcomeId: missing-total
+      any:
+        - checkId: have-before-loops
+          equals: false
+        - checkId: have-after-loops
+          equals: false
+        - checkId: have-before-days
+          equals: false
+        - checkId: have-after-days
+          equals: false
+    - id: audit-copy
+      label: Match the Copy slips, then compare both totals
+      all:
+        - checkId: copy-packet
+          equals: true
+        - checkId: base-three
+          equals: true
+        - checkId: base-eighteen
+          equals: true
+        - checkId: copy-one
+          equals: true
+        - checkId: copy-fourteen
+          equals: true
+        - checkId: fewer-returns
+          equals: true
+        - checkId: less-time
+          equals: true
+      outcomeId: copy-comparison
+    - id: audit-plain
+      label: Match the Plain slips, then compare both totals
+      all:
+        - checkId: plain-packet
+          equals: true
+        - checkId: base-three
+          equals: true
+        - checkId: base-eighteen
+          equals: true
+        - checkId: plain-three
+          equals: true
+        - checkId: plain-eighteen
+          equals: true
+        - checkId: same-returns
+          equals: true
+        - checkId: same-time
+          equals: true
+      outcomeId: plain-comparison
+    - id: recount
+      label: Withhold an interpretation when the manual totals disagree with the slips
+      all: []
+      outcomeId: audit-again
+  outcomes:
+    - id: copy-comparison
+      title: "Copy packet: fewer repeat requests and a shorter mean"
+      summary: "The same four standard jobs ran in days 1–10 and 11–20. Before, Print sent A, B and C back to Intake for the already accepted edition seal: the slip’s seal box was blank. After, only C came back for it. Affected jobs: {{before-loops}}/4 = 75% before; {{after-loops}}/4 = 25% after (50 percentage points lower). Mean intake-to-release: {{before-days}}/4 = 4.5 days before; {{after-days}}/4 = 3.5 days after (1 day shorter). These hand counts describe the fictional Copy replay. They do not establish causation or measure a real improvement."
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: plain-comparison
+      title: "Plain packet: both measures unchanged"
+      summary: "Same four jobs, same old form, same clock. The edition-seal loop affects A, B and C in each window: {{before-loops}}/4 = 75% before and {{after-loops}}/4 = 75% after (0 percentage-point difference). Mean duration is {{before-days}}/4 = 4.5 days before and {{after-days}}/4 = 4.5 days after (0 days difference). These are hand counts of the Plain replay, not operating results."
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: unmatched
+      title: Four jobs does not mean four pairs
+      summary: The after packet replaces standard template D with oversize foldout X. Equal totals or equal window lengths do not fix a changed cohort. Restore a comparable D run before reporting a paired difference.
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: too-thin
+      title: Only two paired histories
+      summary: Only A and B can be followed in both periods (2 of 4 required pairs). Keep their slips, but do not present a full-cohort rate or mean. The minimum is a worksheet rule, not a claim of statistical significance.
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: missing-endpoint
+      title: A clock has no endpoint
+      summary: C’s after slip stops at Print receipt on day 16, not release. A return can still be identified, but the complete four-job duration cannot be computed. Withhold the two-measure comparison; do not impute zero or drop C.
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: missing-total
+      title: A hand total is missing
+      summary: At least one worksheet total is blank. Read the slips and supply the count or elapsed sum if known; a blank is not a zero. There is no calculated comparison.
+      documentIds:
+        - paired-counting-sheet
+    - id: audit-again
+      title: Recount the selected paper packet
+      summary: The entered hand totals do not match the selected slips. Mark each affected job once, sum release day minus intake day per job, and use only the named after packet. Do not interpret a difference until the audit agrees.
+      documentIds:
+        - before-desk-register
+        - after-desk-register
+        - paired-counting-sheet
+    - id: no-profile
+      title: Process analysis only
+      summary: These exercise sheets describe a workflow, not people. No person or group profile, ranking or performance inference is produced.
+      documentIds:
+        - paired-counting-sheet
+  cases:
+    - id: paired-copy
+      title: Compare the four paired Copy slips
+      inputs:
+        lens: process
+        packet: copy
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: copy-comparison
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - 3/4 = 75%
+          - 1/4 = 25%
+          - 18/4 = 4.5 days
+          - 14/4 = 3.5 days
+          - seal box was blank
+          - do not establish causation
+    - id: paired-plain
+      title: Check the old form against its unchanged replay
+      inputs:
+        lens: process
+        packet: plain
+        before-loops: 3
+        after-loops: 3
+        before-days: 18
+        after-days: 18
+      expected:
+        outcomeId: plain-comparison
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - both measures unchanged
+          - 0 percentage-point difference
+          - 0 days difference
+    - id: mixed-stock
+      title: Four after jobs, but the fourth is different
+      inputs:
+        lens: process
+        packet: mixed
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: unmatched
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - replaces standard template D with oversize foldout X
+    - id: thin-packet
+      title: Two complete pairs are not the whole cohort
+      inputs:
+        lens: process
+        packet: two
+        before-loops: 2
+        after-loops: 0
+        before-days: 11
+        after-days: 7
+      expected:
+        outcomeId: too-thin
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - 2 of 4 required pairs
+          - do not present a full-cohort rate
+    - id: torn-stamp
+      title: Find the missing release stamp
+      inputs:
+        lens: process
+        packet: torn
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: null
+      expected:
+        outcomeId: missing-endpoint
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - Print receipt on day 16, not release
+          - do not impute zero
+    - id: unknown-entry
+      title: Leave an unknown tally blank
+      inputs:
+        lens: process
+        packet: copy
+        before-loops: null
+        after-loops: 1
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: missing-total
+        documentIds:
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - a blank is not a zero
+    - id: count-twice
+      title: Catch a forward handoff counted as a return
+      inputs:
+        lens: process
+        packet: copy
+        before-loops: 3
+        after-loops: 2
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: audit-again
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - do not match the selected slips
+          - Mark each affected job once
+    - id: wrong-clock
+      title: Catch an inclusive-day count
+      inputs:
+        lens: process
+        packet: copy
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: 18
+      expected:
+        outcomeId: audit-again
+        documentIds:
+          - before-desk-register
+          - after-desk-register
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - sum release day minus intake day per job
+    - id: decline-profile
+      title: Decline a request to rank people
+      inputs:
+        lens: profile
+        packet: copy
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: no-profile
+        documentIds:
+          - paired-counting-sheet
+        kind: answer
+        contains:
+          - No person or group profile
+    - id: closed-register
+      title: Block the comparison without the after register
+      inputs:
+        lens: process
+        packet: copy
+        before-loops: 3
+        after-loops: 1
+        before-days: 18
+        after-days: 14
+      expected:
+        outcomeId: copy-comparison
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - No draft or action was produced.
+      disabledKnowledge:
+        - after-desk-register
+implementation:
+  - title: Build this in the real service
+    description: Before any real process study, agree the unit, event definitions, clock, intake windows and completion cutoff. Verify coverage and matched work types. Compare process-level outcomes only and design a separate evaluation to test a causal hypothesis.
+  - title: What to measure
+    description: Report affected jobs / matched jobs and total intake-to-release days / matched jobs, with units and both periods. State which packet was used and why any pair was excluded. Do not use staff, demographic or resident-level measures.
+  - title: Scope of this draft
+    description: Compare only fictional process steps. Do not profile or rank a person or group, access operational logs, infer causation or claim an actual measured improvement. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

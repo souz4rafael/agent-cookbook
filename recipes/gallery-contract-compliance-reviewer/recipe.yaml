@@ -1,0 +1,1145 @@
+schemaVersion: 1
+revision: 1
+id: gallery-contract-compliance-reviewer
+status: published
+title: "Contract Compliance Reviewer: which source supports the finding?"
+summary: Two payment periods in a lantern hire draft do not agree. Compare the clauses before signature, then see why an internal exception and a legal question need different evidence and different reviewers.
+industry: Legal and procurement
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Compare two written periods only when both are present and run from the same acceptance event.
+  - Separate a drafting inconsistency, an exception to an internal standard and a conflict with a dated training provision.
+  - Retain an independently supported finding when jurisdiction, date or an external source is missing; route unanswered questions to counsel.
+sourceUrl: https://microsoft.github.io/copilot-studio-gallery/solutions/contract-compliance-reviewer/
+scenario:
+  headline: If two clauses agree, is the contract ready to sign?
+  problem: The purchasing team has received a hire agreement. Section 4 gives the authority 30 days after signed acceptance to pay, while schedule B gives it 45. The drafter can fix that contradiction without knowing the law. The question of which period is acceptable to the procurement desk or a regulator is different.
+  impact: Calling an internal standard a law sends a supplier the wrong objection. Calling two matching clauses compliant can hide an exception that still needs the policy owner's or legal reviewer's attention.
+  approach: Compare the two passages, then report each external check under its own heading. A finding identifies the passage, the basis for comparison and what a person must decide. When the governing area or applicable dated authority is unknown, leave the legal question open.
+  startSmall: Use one unsigned hire agreement, one internal standard and one dated training notice. Start with the consistency pass. Set both periods to 45 days and run both passes; then disconnect the internal playbook and compare what can still be supported.
+  potentialValue: A drafter could fix a textual discrepancy while sending only the actual policy and legal questions to the right reviewers.
+  measure: Sample pre-signature review notes. Count findings with a traceable clause and the correct basis; record unfounded legal conclusions and unresolved questions separately. Do not count a quiet review as a compliant contract.
+  boundary: The learner edits two structured payment periods, not an uploaded contract. The authority card represents an invented provision, never live law. Qualified counsel must independently verify real legal conclusions. No original document is modified.
+  sourceLabel: "Gallery: Contract Compliance Reviewer v1.0.0.1 by Adriana Trujillo | original agent, not this teaching fixture"
+  home:
+    challenge: A buyer spots two payment deadlines but needs to know whether the objection is about the wording, the desk's policy or applicable law.
+    experiment: Change clause 4 from 30 to 45 days to match schedule B. Run both reviews with the playbook selected, then remove it and see which findings survive.
+    takeaway: Support each finding with the right evidence. Agreement between two passages is not proof of policy or legal compliance.
+    scope: One unsigned fictional contract and dated teaching sources; no legal research, file upload, Word/PDF annotation or approval.
+agent:
+  name: Contract Compliance Reviewer
+  description: Prepare a first-pass finding on payment terms for a drafter or legal professional.
+  instructions: |-
+    # Review mandate and sources
+
+    Establish the requested review: internal consistency, external checks, or both. Keep the original agreement unchanged.
+    For consistency, compare section 4 and schedule B only when both periods are stated for the same acceptance event. Name the passages; never treat a blank as zero.
+    Use the desk playbook only for policy findings. For legal review, establish the governing jurisdiction and review date before using a relevant official provision. Ask when the jurisdiction is not stated. A desk rule cannot substitute for law.
+    Report each supported finding and its source separately. Keep unsupported checks unassessed. Refer conclusions to qualified counsel before anyone relies on them.
+  tone: formal
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Review mandate and sources
+
+    Establish the requested review: internal consistency, external checks, or both. Keep the original agreement unchanged.
+    For consistency, compare section 4 and schedule B only when both periods are stated for the same acceptance event. Name the passages; never treat a blank as zero.
+    Use the desk playbook only for policy findings. For legal review, establish the governing jurisdiction and review date before using a relevant official provision. Ask when the jurisdiction is not stated. A desk rule cannot substitute for law.
+    Report each supported finding and its source separately. Keep unsupported checks unassessed. Refer conclusions to qualified counsel before anyone relies on them.
+  stepByStep: |-
+    # Procedure for the review team
+
+    1. Ask which passes are needed and identify the two passages in the unsigned copy.
+    2. Check the payment trigger, unit and both values before reporting a drafting difference.
+    3. Read the selected desk standard for a policy check. Separately establish the applicable area, date and authoritative provision for a legal check.
+    4. Record the basis, location and reviewer question for each finding; never amend the contract or infer an overall pass.
+    5. If a source cannot be read, state which comparison was not assessed and what the requester must provide. Keep any independent comparison that is still supported by the signed-acceptance wording. When two terms agree, report agreement only for those terms; a policy exception or an outstanding question can still require review.
+  decisionRules: |-
+    # Evidence and decision boundaries
+
+    Missing period: ask for the text; zero is a stated value. Different periods on the same trigger: flag an internal inconsistency.
+    Internal cap exceeded: cite the playbook and refer the exception to the policy owner. Do not label this a breach of law.
+    Jurisdiction missing: ask for it. Source inapplicable, undated or unavailable: withhold the legal conclusion. Preserve any independent consistency finding.
+    Even a fully matched set of figures is not authority to sign. Counsel owns the legal review.
+    If the request covers both passes, keep the finding for each basis separate. Do not use an internal policy to fill a gap in the legal source or treat a dated provision for one area as authoritative elsewhere. For each unresolved issue identify the passage, the missing evidence and the person who can clarify it.
+  examples: |-
+    Section 4 and schedule B both say 45 days. There is no difference between those numbers. An internal cap of 30 days still needs its own policy finding.
+    The contract omits the governing area. Ask which area governs, do not choose one, and do not suppress a supported comparison between the clauses.
+editable: [name, instructions, tone, detail]
+connections:
+  - id: review-library
+    type: sharepoint
+    title: Demo review library
+    description: Connect the local library, then select the individual documents for the requested passes.
+    accountLabel: Grey Quay learning environment
+    resources: [{id: training-packet, label: Grey Quay training packet, description: Three fictional sources for a pre-signature review.}]
+    realWorldNote: The Gallery sample can search official sites and can use an organisational SharePoint source. This local library does neither.
+knowledge:
+  - {id: draft-extract, title: "D2: Lantern Hire draft, section 4 and schedule B", summary: Two editable terms measured from signed acceptance., connectionId: review-library, resourceId: training-packet, file: documents/draft-extract.txt}
+  - {id: desk-playbook, title: "P7: Grey Quay desk playbook", summary: Fictional internal standard for the written payment interval., connectionId: review-library, resourceId: training-packet, file: documents/desk-playbook.txt}
+  - {id: authority-card, title: "T12: dated training authority (invented)", summary: A fictional jurisdiction and time window for practising source selection; not actual law., connectionId: review-library, resourceId: training-packet, file: documents/authority-card.txt}
+facts:
+  - id: internal-method
+    documentId: draft-extract
+    keywords: [compare the two passages]
+    answer: Both passages concern the same payer, item, acceptance event and calendar-day unit. Two different periods therefore warrant an editorial question for the drafter.
+    detail: A matching pair resolves this comparison only; it cannot settle other drafting issues, policy or law.
+  - id: policy-method
+    documentId: desk-playbook
+    keywords: [distinguish a desk exception]
+    answer: The playbook governs the desk's internal position, not a country's law. For example, two matching periods of 45 days can agree with each other and still exceed P7.2.
+    detail: If the playbook is not connected and selected, no policy finding is supported.
+  - id: legal-method
+    documentId: authority-card
+    keywords: [establish the governing area]
+    answer: First identify the governing area and review date. If either is unknown or outside the fixture, the legal check is not assessed.
+    detail: Ask a qualified reviewer for the applicable official provision and effective version. An internal playbook, blog or a second clause is not a substitute.
+tools: []
+skills:
+  - id: internal-comparison
+    title: Internal consistency comparison
+    description: Compares two typed intervals and identifies a missing passage. It does not parse arbitrary contracts.
+    instructions: Use the same signed acceptance event and calendar-day unit; cite both locations before asking the drafter to reconcile them.
+    coverage: simulated
+  - id: source-scoped-review
+    title: Source-scoped external review
+    description: Distinguishes an internal playbook from a dated fictional authority card. No current law is researched.
+    instructions: Separate each finding by source. Withhold a legal finding if area, date or authority cannot support it. Leave the decision to counsel.
+    coverage: simulated
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: pre-signature
+    title: Before the draft goes to counsel
+    mode: simulated
+    starter: {label: "Which clauses need a second look?", prompt: "Before I send this draft for signature, which clauses need a second look?"}
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: choose-basis
+        role: assistant
+        variants:
+          - {id: direct, text: "Are you comparing the agreement with itself, the desk's standard, or an applicable legal source?"}
+          - {id: conversational, text: "Let's start with the evidence. Which question would you like the drafter to put to the reviewer?"}
+      - id: basis
+        role: user
+        choices:
+          - {id: internal, label: Compare the two clauses, acceptedTexts: [Internal consistency], next: internal-note}
+          - {id: policy, label: Check the desk standard, acceptedTexts: [Policy], next: policy-note}
+          - {id: legal, label: Ask about legal authority, acceptedTexts: [Legal compliance], next: legal-note}
+      - {id: internal-note, role: simulation, prompt: How do we compare the two passages?, end: true}
+      - {id: policy-note, role: simulation, prompt: How do we distinguish a desk exception from law?, end: true}
+      - {id: legal-note, role: simulation, prompt: Why establish the governing area before citing a rule?, end: true}
+test:
+  suggestedQuestions:
+    - How do we compare the two passages?
+    - How do we distinguish a desk exception from law?
+    - Why establish the governing area before citing a rule?
+  handoffKeywords: []
+  unknownAnswer: Choose a question about a review method, or change the periods in Review > Try this example. No contract can be uploaded or approved here.
+  missingKnowledgeAnswer: The note needed for that question has not been selected. Do not replace it with a different kind of evidence.
+  handoffBlockedAnswer: No filing, annotation or approval tool is configured.
+  handoffReadyAnswer: The reviewer must decide; no action can be executed here.
+journey:
+  - {id: connect, title: Connect the sample library, description: In Knowledge select Grey Quay training packet., tab: knowledge, completeWhen: {type: connection, connectionId: review-library}}
+  - {id: select-draft, title: Find the two payment terms, description: Add D2 and identify the shared acceptance event., tab: knowledge, completeWhen: {type: knowledge, documentId: draft-extract}}
+  - {id: select-desk, title: Add the internal position, description: Select the P7 playbook for a separate policy finding., tab: knowledge, completeWhen: {type: knowledge, documentId: desk-playbook}}
+  - {id: select-notice, title: Read the training notice, description: Select T12 and note its area and effective window., tab: knowledge, completeWhen: {type: knowledge, documentId: authority-card}}
+  - {id: run-compare, title: Compare 30 with 45, description: In Review run the internal contradiction case. Find the two cited locations., tab: activity, completeWhen: {type: case-tested, caseId: internal-30-45}}
+  - {id: read-extract, title: Open the draft citation, description: In Preview inspect D2. Matching two intervals cannot establish legal compliance., tab: activity, completeWhen: {type: citation-opened, documentId: draft-extract}}
+  - {id: both-passes, title: Isolate a policy exception, description: Run the matching 45-day clauses case. Which finding remains?, tab: activity, completeWhen: {type: case-tested, caseId: aligned-but-over-policy}}
+  - {id: evaluate, title: Compare all review cases, description: Run Evaluate with the library connected. Observe how partial source availability changes what can be assessed., tab: activity, completeWhen: {type: evaluation-passed}}
+implementation:
+  - title: Original agent and package
+    description: "Adapted from Contract Compliance Reviewer v1.0.0.1 by Adriana Trujillo. In the inspected ZIP, two skill definitions direct the reviews; their Python helpers add supplied findings to a new Word copy. The helpers do not decide what the law requires. See Recipe reference for the Gallery submission."
+  - title: Going beyond the lab
+    description: Replace or remove the upstream placeholder SharePoint folder, confirm permissible source sites for the real jurisdiction, check currency and file handling, and test with non-sensitive documents in an approved environment. A qualified legal professional must confirm the findings and omissions.
+  - title: What this exercise covers
+    description: Original fictional text, editable day counts and selected sources only. An editable local review slip is not an annotated contract. No AI inference, legal research, DOCX/PDF creation, uploads or changes to the original; no advice or authorisation to sign.
+
+lab:
+  title: One draft, three possible bases for a finding
+  description: Edit the terms as if the drafter had revised the quoted passages. Choose the review scope; the legal fixture only applies to Grey Quay during 2025. Disconnect P7 or T12 to see what can still be supported. Both external standards are fictional.
+  fields:
+    - id: pass
+      label: Requested review
+      type: select
+      defaultValue: internal
+      options:
+        - value: internal
+          label: Internal consistency only
+        - value: external
+          label: Legal and optional policy review
+        - value: both
+          label: Both reviews
+      hint: Select what the reviewer asked for; do not silently run the other pass.
+    - id: body
+      label: Section 4 period (days)
+      type: number
+      defaultValue: 30
+      min: 0
+      max: 120
+      hint: Calendar days from signed acceptance. Leave blank for an unfilled term; zero means same day.
+    - id: annex
+      label: Schedule B period (days)
+      type: number
+      defaultValue: 45
+      min: 0
+      max: 120
+      hint: Calendar days from signed acceptance. Leave blank for an unfilled term; zero means same day.
+    - id: area
+      label: Governing area in the draft
+      type: select
+      defaultValue: unstated
+      options:
+        - value: unstated
+          label: Not stated
+        - value: grey-quay
+          label: Grey Quay exercise district
+        - value: elsewhere
+          label: Another jurisdiction
+      hint: If absent, ask the requester. Do not infer an area from the title.
+    - id: date
+      label: Date for the legal review
+      type: select
+      defaultValue: within
+      options:
+        - value: within
+          label: 15 June 2025 (inside fixture window)
+        - value: outside
+          label: 15 June 2026 (outside fixture window)
+        - value: unknown
+          label: Review date unknown
+      hint: T12 is a fictional dated source; no current law is available.
+  checks:
+    - id: internal
+      label: Internal pass only
+      field: pass
+      operator: eq
+      value: internal
+    - id: both
+      label: Both passes requested
+      field: pass
+      operator: eq
+      value: both
+    - id: external
+      label: External pass only
+      field: pass
+      operator: eq
+      value: external
+    - id: known-area
+      label: Area matches T12
+      field: area
+      operator: eq
+      value: grey-quay
+    - id: unstated
+      label: Governing area not stated
+      field: area
+      operator: eq
+      value: unstated
+    - id: in-window
+      label: Review date within T12 window
+      field: date
+      operator: eq
+      value: within
+    - id: match
+      label: Both terms present and equal
+      field: body
+      operator: eq
+      otherField: annex
+    - id: conflict
+      label: Both terms present but different
+      field: body
+      operator: neq
+      otherField: annex
+    - id: has-body
+      label: Section 4 has a stated period
+      field: body
+      operator: present
+    - id: body-desk-over
+      field: body
+      label: Section 4 over 30-day exercise threshold
+      operator: gt
+      value: 30
+    - id: body-desk-within
+      field: body
+      label: Section 4 within 30-day exercise threshold
+      operator: lte
+      value: 30
+    - id: body-notice-over
+      field: body
+      label: Section 4 over 60-day exercise threshold
+      operator: gt
+      value: 60
+    - id: body-notice-within
+      field: body
+      label: Section 4 within 60-day exercise threshold
+      operator: lte
+      value: 60
+    - id: has-annex
+      label: Schedule B has a stated period
+      field: annex
+      operator: present
+    - id: annex-desk-over
+      field: annex
+      label: Schedule B over 30-day exercise threshold
+      operator: gt
+      value: 30
+    - id: annex-desk-within
+      field: annex
+      label: Schedule B within 30-day exercise threshold
+      operator: lte
+      value: 30
+    - id: annex-notice-over
+      field: annex
+      label: Schedule B over 60-day exercise threshold
+      operator: gt
+      value: 60
+    - id: annex-notice-within
+      field: annex
+      label: Schedule B within 60-day exercise threshold
+      operator: lte
+      value: 60
+  rules:
+    - id: route-internal-only
+      label: Compare only the two draft passages
+      all:
+        - checkId: internal
+          equals: true
+      outcomeId: internal-only
+    - id: route-both-notice-playbook
+      label: Both passes; applicable T12; P7 available
+      all:
+        - checkId: both
+          equals: true
+        - checkId: known-area
+          equals: true
+        - checkId: in-window
+          equals: true
+      requiresKnowledge:
+        - desk-playbook
+        - authority-card
+      outcomeId: both-notice-playbook
+    - id: route-both-notice
+      label: Both passes; applicable T12; without P7
+      all:
+        - checkId: both
+          equals: true
+        - checkId: known-area
+          equals: true
+        - checkId: in-window
+          equals: true
+      requiresKnowledge:
+        - authority-card
+      outcomeId: both-notice
+    - id: route-both-playbook
+      label: Both passes; no applicable T12; P7 available
+      all:
+        - checkId: both
+          equals: true
+      requiresKnowledge:
+        - desk-playbook
+      outcomeId: both-playbook
+    - id: route-both-draft
+      label: Both passes; no applicable T12; without P7
+      all:
+        - checkId: both
+          equals: true
+      outcomeId: both-draft
+    - id: route-external-notice-playbook
+      label: External only; applicable T12; P7 available
+      all:
+        - checkId: external
+          equals: true
+        - checkId: known-area
+          equals: true
+        - checkId: in-window
+          equals: true
+      requiresKnowledge:
+        - desk-playbook
+        - authority-card
+      outcomeId: external-notice-playbook
+    - id: route-external-notice
+      label: External only; applicable T12; without P7
+      all:
+        - checkId: external
+          equals: true
+        - checkId: known-area
+          equals: true
+        - checkId: in-window
+          equals: true
+      requiresKnowledge:
+        - authority-card
+      outcomeId: external-notice
+    - id: route-external-playbook
+      label: External only; no applicable T12; P7 available
+      all:
+        - checkId: external
+          equals: true
+      requiresKnowledge:
+        - desk-playbook
+      outcomeId: external-playbook
+    - id: route-external-draft
+      label: External only; no applicable T12; without P7
+      all: []
+      outcomeId: external-draft
+  outcomes:
+    - id: internal-only
+      title: Internal consistency | reviewer findings
+      summary: Only the two D2 passages were compared. Policy and law were not requested. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature.
+      documentIds:
+        - draft-extract
+      skillId: internal-comparison
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: conflict
+            equals: true
+          title: CONSISTENCY ISSUE | section 4 v schedule B
+          description: "Same trigger and unit, different periods: {{body}} and {{annex}} days. Ask the drafter which text governs. Source: D2, section 4 and schedule B."
+        - when:
+            checkId: match
+            equals: true
+          title: Internal comparison | section 4 v schedule B
+          description: "Both state {{body}} days. No discrepancy on this comparison only; no conclusion about the rest of the contract. Source: D2."
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Only the two D2 passages were compared. Policy and law were not requested.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: both-notice-playbook
+      title: Both reviews | reviewer findings
+      summary: Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy comparison uses the internal playbook, P7.2. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature.
+      documentIds:
+        - draft-extract
+        - desk-playbook
+        - authority-card
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: conflict
+            equals: true
+          title: CONSISTENCY ISSUE | section 4 v schedule B
+          description: "Same trigger and unit, different periods: {{body}} and {{annex}} days. Ask the drafter which text governs. Source: D2, section 4 and schedule B."
+        - when:
+            checkId: match
+            equals: true
+          title: Internal comparison | section 4 v schedule B
+          description: "Both state {{body}} days. No discrepancy on this comparison only; no conclusion about the rest of the contract. Source: D2."
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | section 4
+          description: "section 4 states {{body}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: body-desk-within
+            equals: true
+          title: Desk position | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: annex-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | schedule B
+          description: "schedule B states {{annex}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: annex-desk-within
+            equals: true
+          title: Desk position | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: body-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | section 4
+          description: "section 4 states {{body}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: body-notice-within
+            equals: true
+          title: Training provision | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+        - when:
+            checkId: annex-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | schedule B
+          description: "schedule B states {{annex}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: annex-notice-within
+            equals: true
+          title: Training provision | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy comparison uses the internal playbook, P7.2.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: both-notice
+      title: Both reviews | reviewer findings
+      summary: "Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+        - authority-card
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: conflict
+            equals: true
+          title: CONSISTENCY ISSUE | section 4 v schedule B
+          description: "Same trigger and unit, different periods: {{body}} and {{annex}} days. Ask the drafter which text governs. Source: D2, section 4 and schedule B."
+        - when:
+            checkId: match
+            equals: true
+          title: Internal comparison | section 4 v schedule B
+          description: "Both state {{body}} days. No discrepancy on this comparison only; no conclusion about the rest of the contract. Source: D2."
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | section 4
+          description: "section 4 states {{body}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: body-notice-within
+            equals: true
+          title: Training provision | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+        - when:
+            checkId: annex-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | schedule B
+          description: "schedule B states {{annex}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: annex-notice-within
+            equals: true
+          title: Training provision | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: both-playbook
+      title: Both reviews | reviewer findings
+      summary: "Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy comparison uses the internal playbook, P7.2. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+        - desk-playbook
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: conflict
+            equals: true
+          title: CONSISTENCY ISSUE | section 4 v schedule B
+          description: "Same trigger and unit, different periods: {{body}} and {{annex}} days. Ask the drafter which text governs. Source: D2, section 4 and schedule B."
+        - when:
+            checkId: match
+            equals: true
+          title: Internal comparison | section 4 v schedule B
+          description: "Both state {{body}} days. No discrepancy on this comparison only; no conclusion about the rest of the contract. Source: D2."
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | section 4
+          description: "section 4 states {{body}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: body-desk-within
+            equals: true
+          title: Desk position | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: annex-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | schedule B
+          description: "schedule B states {{annex}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: annex-desk-within
+            equals: true
+          title: Desk position | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy comparison uses the internal playbook, P7.2.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: both-draft
+      title: Both reviews | reviewer findings
+      summary: "Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: conflict
+            equals: true
+          title: CONSISTENCY ISSUE | section 4 v schedule B
+          description: "Same trigger and unit, different periods: {{body}} and {{annex}} days. Ask the drafter which text governs. Source: D2, section 4 and schedule B."
+        - when:
+            checkId: match
+            equals: true
+          title: Internal comparison | section 4 v schedule B
+          description: "Both state {{body}} days. No discrepancy on this comparison only; no conclusion about the rest of the contract. Source: D2."
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: external-notice-playbook
+      title: External review | reviewer findings
+      summary: Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy comparison uses the internal playbook, P7.2. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature.
+      documentIds:
+        - draft-extract
+        - desk-playbook
+        - authority-card
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | section 4
+          description: "section 4 states {{body}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: body-desk-within
+            equals: true
+          title: Desk position | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: annex-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | schedule B
+          description: "schedule B states {{annex}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: annex-desk-within
+            equals: true
+          title: Desk position | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: body-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | section 4
+          description: "section 4 states {{body}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: body-notice-within
+            equals: true
+          title: Training provision | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+        - when:
+            checkId: annex-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | schedule B
+          description: "schedule B states {{annex}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: annex-notice-within
+            equals: true
+          title: Training provision | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy comparison uses the internal playbook, P7.2.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: external-notice
+      title: External review | reviewer findings
+      summary: "Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+        - authority-card
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | section 4
+          description: "section 4 states {{body}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: body-notice-within
+            equals: true
+          title: Training provision | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+        - when:
+            checkId: annex-notice-over
+            equals: true
+          title: LEGAL CONFLICT (fictional provision only) | schedule B
+          description: "schedule B states {{annex}} days, above the 60-day example maximum. Basis: D2 and invented training notice T12.3. Refer the provision and passage to qualified counsel; this is not real law."
+        - when:
+            checkId: annex-notice-within
+            equals: true
+          title: Training provision | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in invented training notice T12.3. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal comparison uses only fictional T12.3 for the specified area and exercise date. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: external-playbook
+      title: External review | reviewer findings
+      summary: "Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy comparison uses the internal playbook, P7.2. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+        - desk-playbook
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+        - when:
+            checkId: body-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | section 4
+          description: "section 4 states {{body}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: body-desk-within
+            equals: true
+          title: Desk position | section 4
+          description: section 4 states {{body}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+        - when:
+            checkId: annex-desk-over
+            equals: true
+          title: ORG POLICY CONFLICT | schedule B
+          description: "schedule B states {{annex}} days, above the 30-day example maximum. Basis: D2 and internal playbook P7.2. Ask the policy owner about an edit or a documented exception. This is not a finding about law."
+        - when:
+            checkId: annex-desk-within
+            equals: true
+          title: Desk position | schedule B
+          description: schedule B states {{annex}} days; that value does not exceed the maximum in internal playbook P7.2. This is not overall approval.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy comparison uses the internal playbook, P7.2.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+    - id: external-draft
+      title: External review | reviewer findings
+      summary: "Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement. Retain the original unchanged. Send outstanding questions to a qualified reviewer, not for automatic signature."
+      documentIds:
+        - draft-extract
+      skillId: source-scoped-review
+      recommendations:
+        - when:
+            checkId: has-body
+            equals: false
+          title: Missing text | section 4
+          description: Ask for the written period before drawing a conclusion about section 4. A blank is not a zero.
+        - when:
+            checkId: has-annex
+            equals: false
+          title: Missing text | schedule B
+          description: Ask for the written period before drawing a conclusion about schedule B. A blank is not a zero.
+        - when:
+            checkId: unstated
+            equals: true
+          title: Jurisdiction needed
+          description: Ask the requester which jurisdiction governs the contract; do not guess.
+      draft:
+        title: Counsel review slip (editable working note)
+        body: |-
+          Original: Lantern Hire D2, section 4 and schedule B, both measured from signed acceptance.
+          Section 4: {{body}} days. Schedule B: {{annex}} days.
+          Requested pass: {{pass}}. Legal review not assessed: no applicable authority card is available for this area and review date. Obtain the relevant official provision before reaching a conclusion. Policy review skipped: the internal playbook is unavailable. A missing policy is not evidence of agreement.
+          Reviewer: record the location and source for each finding above. For each outstanding question, name who can supply the evidence. No signature or document change is authorised.
+  cases:
+    - id: internal-30-45
+      title: Different deadlines for one acceptance event
+      inputs:
+        pass: internal
+        body: 30
+        annex: 45
+        area: unstated
+        date: within
+      expected:
+        outcomeId: internal-only
+        kind: answer
+        documentIds:
+          - draft-extract
+        contains:
+          - CONSISTENCY ISSUE
+          - 30 and 45 days
+    - id: aligned-but-over-policy
+      title: Matching 45-day clauses, separate desk exception
+      inputs:
+        pass: both
+        body: 45
+        annex: 45
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: both-notice-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+          - authority-card
+        contains:
+          - No discrepancy on this comparison only
+          - ORG POLICY CONFLICT | section 4
+          - does not exceed the maximum in invented training notice
+    - id: no-jurisdiction
+      title: No governing area, drafting conflict still stands
+      inputs:
+        pass: both
+        body: 30
+        annex: 45
+        area: unstated
+        date: within
+      expected:
+        outcomeId: both-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+        contains:
+          - Legal review not assessed
+          - Ask the requester which jurisdiction governs
+          - CONSISTENCY ISSUE
+    - id: no-official-source
+      title: Unselected authority is not replaced by internal guidance
+      inputs:
+        pass: both
+        body: 30
+        annex: 45
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: both-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+        contains:
+          - Legal review not assessed
+          - CONSISTENCY ISSUE
+      disabledKnowledge:
+        - authority-card
+    - id: notice-only
+      title: Internal playbook absent, fictional authority still applicable
+      inputs:
+        pass: both
+        body: 30
+        annex: 75
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: both-notice
+        kind: answer
+        documentIds:
+          - draft-extract
+          - authority-card
+        contains:
+          - Policy review skipped
+          - LEGAL CONFLICT (fictional provision only) | schedule B
+          - CONSISTENCY ISSUE
+      disabledKnowledge:
+        - desk-playbook
+    - id: no-supplements
+      title: Both supplemental sources unavailable
+      inputs:
+        pass: both
+        body: 30
+        annex: 45
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: both-draft
+        kind: answer
+        documentIds:
+          - draft-extract
+        contains:
+          - Legal review not assessed
+          - Policy review skipped
+          - CONSISTENCY ISSUE
+      disabledKnowledge:
+        - desk-playbook
+        - authority-card
+    - id: date-outside
+      title: Document exists but is outside its effective window
+      inputs:
+        pass: both
+        body: 30
+        annex: 45
+        area: grey-quay
+        date: outside
+      expected:
+        outcomeId: both-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+        contains:
+          - Legal review not assessed
+          - Policy comparison uses
+    - id: other-area
+      title: Other jurisdiction, no transfer of a provision
+      inputs:
+        pass: both
+        body: 30
+        annex: 45
+        area: elsewhere
+        date: within
+      expected:
+        outcomeId: both-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+        contains:
+          - Legal review not assessed
+    - id: notice-threshold
+      title: Exactly sixty days on the fictional legal threshold
+      inputs:
+        pass: external
+        body: 60
+        annex: 60
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: external-notice-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+          - authority-card
+        contains:
+          - ORG POLICY CONFLICT | schedule B
+          - does not exceed the maximum in invented training notice
+    - id: over-notice
+      title: Above both limits, keep the categories separate
+      inputs:
+        pass: external
+        body: 30
+        annex: 61
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: external-notice-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+          - authority-card
+        contains:
+          - LEGAL CONFLICT (fictional provision only) | schedule B
+          - ORG POLICY CONFLICT | schedule B
+    - id: external-no-policy
+      title: External only without the internal playbook
+      inputs:
+        pass: external
+        body: 30
+        annex: 45
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: external-notice
+        kind: answer
+        documentIds:
+          - draft-extract
+          - authority-card
+        contains:
+          - Policy review skipped
+      disabledKnowledge:
+        - desk-playbook
+    - id: external-no-notice
+      title: External only without applicable authority
+      inputs:
+        pass: external
+        body: 30
+        annex: 45
+        area: unstated
+        date: unknown
+      expected:
+        outcomeId: external-playbook
+        kind: answer
+        documentIds:
+          - draft-extract
+          - desk-playbook
+        contains:
+          - Legal review not assessed
+          - ORG POLICY CONFLICT | schedule B
+    - id: external-no-supplements
+      title: No external comparison supported
+      inputs:
+        pass: external
+        body: 30
+        annex: 45
+        area: grey-quay
+        date: within
+      expected:
+        outcomeId: external-draft
+        kind: answer
+        documentIds:
+          - draft-extract
+        contains:
+          - Policy review skipped
+          - Legal review not assessed
+      disabledKnowledge:
+        - authority-card
+        - desk-playbook
+    - id: missing-annex
+      title: Schedule left blank
+      inputs:
+        pass: internal
+        body: 30
+        annex: null
+        area: unstated
+        date: within
+      expected:
+        outcomeId: internal-only
+        kind: answer
+        documentIds:
+          - draft-extract
+        contains:
+          - Missing text | schedule B
+          - blank is not a zero
+    - id: zero
+      title: Same-day terms are both stated
+      inputs:
+        pass: internal
+        body: 0
+        annex: 0
+        area: unstated
+        date: within
+      expected:
+        outcomeId: internal-only
+        kind: answer
+        documentIds:
+          - draft-extract
+        contains:
+          - Both state 0 days
+    - id: no-contract
+      title: Draft not selected
+      inputs:
+        pass: internal
+        body: 30
+        annex: 45
+        area: unstated
+        date: within
+      expected:
+        outcomeId: internal-only
+        kind: missing-knowledge
+        documentIds: []
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - draft-extract

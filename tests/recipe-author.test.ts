@@ -55,9 +55,9 @@ test('scaffolds validate in isolation and never add recipes to learner catalogs'
   })
 })
 
-test('Studio draft check executes expectations and supports source-free skill labs', async () => {
+test('Studio draft check executes expectations including a source-independent skill outcome', async () => {
   await fixture(async root => {
-    const destination = await scaffoldRecipe(root, 'studio', 'closure-exercise', 'customer-service-optimize')
+    const destination = await scaffoldRecipe(root, 'studio', 'notice-exercise', 'civil-protection-guide')
     const directory = join(root, 'recipe-drafts', 'studio')
     assert.ok((await checkDrafts('studio', directory)).cases! > 0)
     const file = join(destination, 'recipe.yaml')

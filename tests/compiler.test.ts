@@ -34,7 +34,7 @@ test('the published recipe compiles deterministically and preserves literal UTF-
   const root = join(project, 'recipes')
   const first = await compileRecipes(root)
   assert.deepEqual(await compileRecipes(root), first)
-  assert.equal(first.length, 5)
+  assert.equal(first.length, 28)
   const citizen = first.find(recipe => recipe.id === 'citizen-qa')!
   assert.ok(citizen)
   assert.equal(citizen.schemaVersion, 1)
@@ -334,6 +334,8 @@ test('CLI resolves its project, writes schema outside learner assets, and --chec
       cp(join(project, 'src', 'domain', 'lab-validation.ts'), join(domain, 'lab-validation.ts')),
       cp(join(project, 'src', 'domain', 'lab-types.ts'), join(domain, 'lab-types.ts')),
       cp(join(project, 'src', 'domain', 'types.ts'), join(domain, 'types.ts')),
+      cp(join(project, 'src', 'conversations', 'schema.ts'), join(workspace, 'src', 'conversations', 'schema.ts')),
+      cp(join(project, 'src', 'recipes', 'primitives.ts'), join(workspace, 'src', 'recipes', 'primitives.ts')),
       writeFile(join(workspace, 'package.json'), '{"type":"module"}'),
     ])
     const output = join(generated, 'recipes.json')

@@ -1,0 +1,5 @@
+Alderfen | Marker invoice · IV-730
+Fictional training material. Not an official service record or policy.
+
+IV-730, row 04, carries K-730 / S-MOSS / CT-73 / M4. The field “billed units” counts individual markers.
+The printed teaching example shows 10 billed. The lab field stands for that same cell in alternate snapshots; a blank means the quantity was not supplied, and an entered 0 is zero. Do not carry the printed value into an edited snapshot.

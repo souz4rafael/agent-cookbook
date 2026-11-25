@@ -27,6 +27,7 @@ export interface LabRule {
   label: string
   all: LabRequirement[]
   any?: LabRequirement[]
+  requiresKnowledge?: string[]
   outcomeId: string
 }
 export interface LabDraft { title: string; body: string }

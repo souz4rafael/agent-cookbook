@@ -1,0 +1,507 @@
+schemaVersion: 1
+revision: 1
+id: situation-room-assistant
+status: published
+title: Situation Room Assistant
+summary: Turn two fictional desk reports into a reviewable shift handover without counting a repeated observation twice.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Compare the subjects on two desk slips and retain a possible repeat without counting it as another confirmed delivery.
+  - Use the source and time of observation, rather than the time of receipt, to test whether a note supports this shift’s handover.
+  - Separate confirmed observations from historical or unverified ones and leave the incoming reviewer a specific evidence question.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Civil protection and disasters, perspective: operations }
+  headline: Two messages came in before handover. Did anyone see a second delivery?
+  problem: An outgoing shift has a desk slip about a delivery of forms and a second note to account for before handover. It might describe a revised sign, repeat the delivery, or report what someone saw yesterday. A recent arrival time tells the incoming reviewer none of those things.
+  impact: Counting envelopes instead of observations can turn one delivery into two. Discard a suspected duplicate and the next reviewer loses the original wording needed to check it. An old observation carried forward without its date can look like a current fact.
+  approach: In the fictional handover, the assigned reviewer compares the second slip’s subject, source and observation time with the first report and the shift window. Keep both originals. List only supported observations as confirmed for this shift and put possible repeats, stale notes and missing evidence beside the question that remains.
+  startSmall: Give two shift reviewers the same pair of stationery-desk slips and a fixed cut-off. Compare their handovers with a reference sheet that includes a forwarded account and a previous-day observation before considering a pilot with any operational material.
+  potentialValue: An incoming reviewer could see what the outgoing shift actually established and which original to check, instead of reconstructing the count from a pile of messages.
+  measure: In handover drills, count extra confirmed deliveries and prior-day observations reported as current. Check how often the incoming reviewer can trace a disputed entry back to both original slips.
+  boundary: This exercise uses invented stationery reports, not incidents or live locations. Selecting a reviewer is not sign-in. The draft handover cannot merge records, dispatch help or publish an update. If you are in immediate danger, contact local emergency services now.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: Two slips reach the next shift together. The second might be fresh evidence, a retelling of the forms delivery or a note from yesterday.
+    experiment: Start with the signed desk-sign slip. Move its observation time to the previous day, then restore the time and change its subject to the same forms delivery.
+    takeaway: An old observation belongs to an earlier shift. A possible repeat stays on file but does not add a second confirmed delivery.
+    scope: An assigned reviewer compares fictional desk slips only. No live incidents or locations, merged records, dispatch or public updates.
+agent:
+  name: Situation Room Assistant
+  description: Teach an assigned shift reviewer how to preserve original reports and explain what is confirmed, unverified or too old to carry forward.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Teach an assigned shift reviewer how to preserve original reports and explain what is confirmed, unverified or too old to carry forward.
+    Decline requests for individual reports outside the assigned shift review. In chat, teach the method only; do not confirm the existence or status of any report.
+    In the role-gated exercise, compare observations, not just receipt times. Retain each slip, note who supplied it, and flag possible duplicates without merging.
+    Write separate confirmed and unverified sections for human review; name the next evidence check, not an operational action.
+    No live incident feed, autonomous merge, deployment decision, dispatch or publication.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Teach an assigned shift reviewer how to preserve original reports and explain what is confirmed, unverified or too old to carry forward.
+    Decline requests for individual reports outside the assigned shift review. In chat, teach the method only; do not confirm the existence or status of any report.
+    In the role-gated exercise, compare observations, not just receipt times. Retain each slip, note who supplied it, and flag possible duplicates without merging.
+    Write separate confirmed and unverified sections for human review; name the next evidence check, not an operational action.
+    No live incident feed, autonomous merge, deployment decision, dispatch or publication.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  stepByStep: |-
+    # Procedure
+
+    Teach an assigned shift reviewer how to preserve original reports and explain what is confirmed, unverified or too old to carry forward.
+    1. Decline requests for individual reports outside the assigned shift review. In chat, teach the method only; do not confirm the existence or status of any report.
+    2. In the role-gated exercise, compare observations, not just receipt times. Retain each slip, note who supplied it, and flag possible duplicates without merging.
+    3. Write separate confirmed and unverified sections for human review; name the next evidence check, not an operational action.
+    No live incident feed, autonomous merge, deployment decision, dispatch or publication.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  decisionRules: |-
+    # Decision rules
+
+    Teach an assigned shift reviewer how to preserve original reports and explain what is confirmed, unverified or too old to carry forward.
+    Unassigned viewer: stop without disclosing report details.
+    Possible overlap stays visible as two slips and must not increase the confirmed event count.
+    Stale, undated and unattributed notes cannot establish a condition at handover.
+    No live incident feed, autonomous merge, deployment decision, dispatch or publication.
+    Decline requests for individual reports outside the assigned shift review. In chat, teach the method only; do not confirm the existence or status of any report.
+    In the role-gated exercise, compare observations, not just receipt times. Retain each slip, note who supplied it, and flag possible duplicates without merging.
+  examples: |-
+    “Show me the reports.” → Chat cannot disclose a report; it can explain the handover format.
+    “These sound identical.” → Mark possible overlap, preserve both originals, and leave the decision to a reviewer.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Situation Room Assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: field-note-reading-key
+    title: Reading two field slips
+    summary: Keep each original slip intact. Note the stated observer or desk, whether the report was first-hand or forwarded, what was observed and when it was observed. Record intake time separately. Receiving two messages does not mean two people observed an event.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/field-note-reading-key.txt
+  - id: shift-handover-format
+    title: The incoming shift handover sheet
+    summary: The handover sheet is a review copy for the assigned exercise shift reviewer. Outside that role, do not show notes, counts or whether a note exists. An exercise role selection is not authentication. General training can describe the format without quoting cases.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/shift-handover-format.txt
+facts:
+  - id: compare-repeats
+    documentId: field-note-reading-key
+    keywords:
+      - How should I handle two slips that may describe one observation
+    answer: Keep both original slips, mark possible overlap and do not count the second as another confirmed observation.
+    detail: Compare the subject, observer and observation time. A forwarded copy can repeat an original without adding an independent witness; leave any reconciliation to the reviewer.
+  - id: read-the-clock
+    documentId: field-note-reading-key
+    keywords:
+      - Which timestamp matters when deciding whether a note is current
+    answer: Compare the time of observation with the shift window. A fresh intake timestamp tells you only when the message arrived.
+    detail: If observation time is absent or outside the window, mark the note unverified for this shift or historical. Ask for a dated observation instead of silently carrying the note forward.
+  - id: structure-sheet
+    documentId: shift-handover-format
+    keywords:
+      - What belongs in the confirmed and unverified handover sections
+    answer: List supported observations with their source and observation time under confirmed. Put uncertainty, possible overlap and stale observations under a separate heading.
+    detail: State the exercise cut-off, retain the original slips and end with a question for the incoming reviewer. Do not dispatch or publish from the draft.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-field-note-reading-key
+    title: Select Reading two field slips
+    description: Add Reading two field slips to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: field-note-reading-key
+  - id: read-shift-handover-format
+    title: Select The incoming shift handover sheet
+    description: Add The incoming shift handover sheet to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: shift-handover-format
+  - id: try-1
+    title: Prepare a two-subject handover
+    description: In Review > Try this example, load "Prepare a two-subject handover" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: separate-subjects
+  - id: try-2
+    title: Preserve two slips about the same delivery
+    description: In Review > Try this example, load "Preserve two slips about the same delivery" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: possible-duplicate
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Reading two field slips citation on the result for "Prepare a two-subject handover".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: field-note-reading-key
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - How should I handle two slips that may describe one observation?
+    - Which timestamp matters when deciding whether a note is current?
+    - What belongs in the confirmed and unverified handover sections?
+  handoffKeywords: []
+  unknownAnswer: I cannot disclose or confirm individual reports here. I can explain how to compare sources and prepare a shift handover for review.
+  missingKnowledgeAnswer: The review guide for that question is unavailable. I cannot infer report details or confirm a report here.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Situation Room Assistant
+    mode: simulated
+    starter:
+      label: Practice writing a cautious shift handover
+      prompt: Practice writing a cautious shift handover
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: This chat explains the review process; it cannot show individual reports. Would you like to examine repeated wording, time evidence or the handover format?
+          - id: alternative
+            text: No individual report is available in this chat. Choose a method to practice before opening the assigned-reviewer exercise.
+      - id: choose-route
+        role: user
+        choices:
+          - id: compare-repeats
+            label: Compare possible duplicates
+            next: reply-compare-repeats
+          - id: read-the-clock
+            label: Check when something was observed
+            next: reply-read-the-clock
+          - id: structure-sheet
+            label: Separate the handover sections
+            next: reply-structure-sheet
+      - id: reply-compare-repeats
+        role: simulation
+        prompt: How should I handle two slips that may describe one observation?
+        end: true
+      - id: reply-read-the-clock
+        role: simulation
+        prompt: Which timestamp matters when deciding whether a note is current?
+        end: true
+      - id: reply-structure-sheet
+        role: simulation
+        prompt: What belongs in the confirmed and unverified handover sections?
+        end: true
+lab:
+  title: Two slips at the end of a shift
+  description: Use fictional stationery-desk reports only. The shift window on 12 May 2025 is 12:00–14:00 UTC. Selecting the assigned reviewer is a scenario input, not sign-in.
+  fields:
+    - id: role
+      label: Review scope
+      type: select
+      options:
+        - value: assigned
+          label: Assigned shift reviewer for this handover
+        - value: other
+          label: Not assigned to this handover
+      defaultValue: other
+      hint: Only the assigned exercise reviewer may see the mock handover.
+    - id: subject
+      label: Subject on the second slip
+      type: select
+      options:
+        - value: revised desk sign
+          label: A revised desk sign
+        - value: delivery of the same paper forms
+          label: Possibly the same forms delivery
+        - value: subject missing
+          label: Subject missing
+      defaultValue: subject missing
+      hint: Choose the relation to the first observation; the original slips stay separate.
+    - id: origin
+      label: Source on the second slip
+      type: select
+      options:
+        - value: signed first-hand print desk note
+          label: Signed first-hand note from print desk
+        - value: forwarded copy without its original
+          label: Forwarded copy; original unavailable
+        - value: source unknown
+          label: No traceable source
+      defaultValue: source unknown
+      hint: A forwarded copy is not independent confirmation.
+    - id: observed
+      label: Observation time on the second slip
+      type: select
+      options:
+        - value: 12 May 2025 at 13:50 UTC
+          label: 12 May 2025, 13:50 UTC (inside exercise shift)
+        - value: 11 May 2025 at 13:50 UTC
+          label: 11 May 2025, 13:50 UTC (previous day)
+        - value: not recorded
+          label: Observation time missing
+      defaultValue: not recorded
+      hint: Use time observed, not time received.
+  checks:
+    - id: assigned
+      label: Within assigned review scope
+      field: role
+      operator: eq
+      value: assigned
+    - id: overlap
+      label: Possible common observation
+      field: subject
+      operator: eq
+      value: delivery of the same paper forms
+    - id: distinct
+      label: Different subject stated
+      field: subject
+      operator: eq
+      value: revised desk sign
+    - id: original
+      label: First-hand source established
+      field: origin
+      operator: eq
+      value: signed first-hand print desk note
+    - id: in-window
+      label: Observation inside exercise shift
+      field: observed
+      operator: eq
+      value: 12 May 2025 at 13:50 UTC
+    - id: prior
+      label: Observation from prior day
+      field: observed
+      operator: eq
+      value: 11 May 2025 at 13:50 UTC
+  rules:
+    - id: role-first
+      label: Stop outside the assigned review
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: decline-access
+    - id: preserve-overlap
+      label: Keep possible repeats separate
+      all:
+        - checkId: overlap
+          equals: true
+      outcomeId: possible-repeat
+    - id: older-observation
+      label: Do not carry an older observation forward
+      all:
+        - checkId: prior
+          equals: true
+      outcomeId: historical-only
+    - id: two-supported
+      label: Keep two independently supported subjects
+      all:
+        - checkId: distinct
+          equals: true
+        - checkId: original
+          equals: true
+        - checkId: in-window
+          equals: true
+      outcomeId: review-two
+    - id: hold-evidence
+      label: Leave incomplete evidence unresolved
+      all: []
+      outcomeId: review-gap
+  outcomes:
+    - id: decline-access
+      title: Outside assigned review scope
+      summary: I cannot disclose reports, counts or handover details for this request.
+      documentIds:
+        - shift-handover-format
+    - id: review-two
+      title: Two supported observations for review
+      summary: The slips describe different subjects. Both have first-hand sources and observation times inside the exercise shift. Review the draft; nothing was published.
+      documentIds:
+        - field-note-reading-key
+        - shift-handover-format
+      draft:
+        title: Shift handover for human review
+        body: |-
+          Historical exercise cut-off: 12 May 2025 at 14:00 UTC.
+          Confirmed for this shift: Slip A — the reception lead recorded receipt of blank enquiry forms, first-hand, 12 May 2025 at 13:40 UTC. Slip B — {{subject}}; source: {{origin}}; observation time: {{observed}}.
+          Unverified or not current: None in the supplied pair.
+          Question for the incoming reviewer: Do the originals support each line as written?
+          Original slips stay separate. No dispatch.
+    - id: possible-repeat
+      title: Possible duplicate, not a second confirmed event
+      summary: The forms delivery may be described twice. Preserve the source and time on both slips. Only the first observation is counted; the reviewer decides whether there is overlap.
+      documentIds:
+        - field-note-reading-key
+        - shift-handover-format
+      draft:
+        title: Shift handover for human review
+        body: |-
+          Historical exercise cut-off: 12 May 2025 at 14:00 UTC.
+          Confirmed for this shift: Slip A — the reception lead recorded receipt of blank enquiry forms, first-hand, 12 May 2025 at 13:40 UTC.
+          Unverified or not current: Slip B — {{subject}}; source: {{origin}}; observation time: {{observed}}. Possible duplicate; a second delivery is not confirmed.
+          Question for the incoming reviewer: Do the original slips describe one delivery or two?
+          Original slips stay separate. No dispatch.
+    - id: historical-only
+      title: Prior observation, not current confirmation
+      summary: The second observation predates the shift. Keep its original provenance in the review copy but do not carry it forward as a current condition.
+      documentIds:
+        - field-note-reading-key
+        - shift-handover-format
+      draft:
+        title: Shift handover for human review
+        body: |-
+          Historical exercise cut-off: 12 May 2025 at 14:00 UTC.
+          Confirmed for this shift: Slip A — the reception lead recorded receipt of blank enquiry forms, first-hand, 12 May 2025 at 13:40 UTC.
+          Unverified or not current: Slip B — {{subject}}; source: {{origin}}; observation time: {{observed}}. Historical, not confirmed for this shift.
+          Question for the incoming reviewer: Is there a dated observation inside this shift?
+          Original slips stay separate. No dispatch.
+    - id: review-gap
+      title: Second slip remains unverified
+      summary: A distinct subject, first-hand source and in-shift observation time have not all been established. Keep the second slip separate; do not fill the gap from the first.
+      documentIds:
+        - field-note-reading-key
+        - shift-handover-format
+      draft:
+        title: Shift handover for human review
+        body: |-
+          Historical exercise cut-off: 12 May 2025 at 14:00 UTC.
+          Confirmed for this shift: Slip A — the reception lead recorded receipt of blank enquiry forms, first-hand, 12 May 2025 at 13:40 UTC.
+          Unverified or not current: Slip B — {{subject}}; source: {{origin}}; observation time: {{observed}}. Not confirmed.
+          Question for the incoming reviewer: Which original establishes the missing subject, source or observation time?
+          Original slips stay separate. No dispatch.
+  cases:
+    - id: separate-subjects
+      title: Prepare a two-subject handover
+      inputs:
+        role: assigned
+        subject: revised desk sign
+        origin: signed first-hand print desk note
+        observed: 12 May 2025 at 13:50 UTC
+      expected:
+        outcomeId: review-two
+        documentIds:
+          - field-note-reading-key
+          - shift-handover-format
+        kind: answer
+        contains:
+          - "Confirmed for this shift:"
+          - revised desk sign
+          - "Unverified or not current: None"
+    - id: possible-duplicate
+      title: Preserve two slips about the same delivery
+      inputs:
+        role: assigned
+        subject: delivery of the same paper forms
+        origin: forwarded copy without its original
+        observed: 12 May 2025 at 13:50 UTC
+      expected:
+        outcomeId: possible-repeat
+        documentIds:
+          - field-note-reading-key
+          - shift-handover-format
+        kind: answer
+        contains:
+          - a second delivery is not confirmed
+          - forwarded copy without its original
+          - No dispatch
+    - id: old-note
+      title: Do not promote the previous day’s observation
+      inputs:
+        role: assigned
+        subject: revised desk sign
+        origin: signed first-hand print desk note
+        observed: 11 May 2025 at 13:50 UTC
+      expected:
+        outcomeId: historical-only
+        documentIds:
+          - field-note-reading-key
+          - shift-handover-format
+        kind: answer
+        contains:
+          - 11 May 2025 at 13:50 UTC
+          - Historical, not confirmed for this shift
+    - id: source-gap
+      title: Review an unattributed and undated second slip
+      inputs:
+        role: assigned
+        subject: revised desk sign
+        origin: source unknown
+        observed: not recorded
+      expected:
+        outcomeId: review-gap
+        documentIds:
+          - field-note-reading-key
+          - shift-handover-format
+        kind: answer
+        contains:
+          - source unknown
+          - Not confirmed
+    - id: outside-shift
+      title: Decline a viewer outside the review scope
+      inputs:
+        role: other
+        subject: revised desk sign
+        origin: signed first-hand print desk note
+        observed: 12 May 2025 at 13:50 UTC
+      expected:
+        outcomeId: decline-access
+        documentIds:
+          - shift-handover-format
+        kind: answer
+        contains:
+          - I cannot disclose reports, counts or handover details
+    - id: source-guide-removed
+      title: Try preparing a handover without its reading key
+      inputs:
+        role: assigned
+        subject: revised desk sign
+        origin: signed first-hand print desk note
+        observed: 12 May 2025 at 13:50 UTC
+      expected:
+        outcomeId: review-two
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - field-note-reading-key
+implementation:
+  - title: Build this in the real service
+    description: Have shift supervisors define which sources support a confirmed entry, who can review originals, and how an unresolved duplicate stays visible at shift change.
+  - title: What to measure
+    description: Count false confirmations from stale or copied slips, possible duplicates silently combined, and handover entries lacking an attributable source or observation time.
+  - title: Scope of this draft
+    description: No live incident feed, autonomous merge, deployment decision, dispatch or publication. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

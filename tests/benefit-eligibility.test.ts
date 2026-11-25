@@ -40,12 +40,21 @@ function run(session: Session, id: string) {
 }
 
 test('all catalogue lab recipes derive duration from their actual guide and have revised isolated saves', () => {
-  assert.deepEqual(new Set(recipes.map(item => item.id)), new Set(['benefit-eligibility', 'citizen-qa', 'customer-service-optimize', 'document-processing-routing', 'upskilling-recommendation']))
+  const revisions: Record<string, number> = {
+    'benefit-eligibility': 2, 'citizen-qa': 3, 'document-processing-routing': 2, 'upskilling-recommendation': 2,
+    'gallery-contract-compliance-reviewer': 1, 'gallery-ai-use-case-prioritization': 1, 'gallery-accountant-document-intake': 1, 'gallery-it-service-desk': 1,
+    'benefits-guide': 1, 'social-caseworker-assistant': 1, 'entrepreneur-guide': 1, 'licensing-coordinator': 1,
+    'civil-protection-guide': 1, 'situation-room-assistant': 1, 'patient-navigator': 1, 'care-continuity-assistant': 1,
+    'compliance-guide': 1, 'inspector-copilot': 1, 'school-family-link': 1, 'school-counsellor-assistant': 1,
+    'citizen-protocol': 1, 'bottleneck-analyst': 1, 'public-servant-guide': 1, 'policy-change-tutor': 1,
+    'supplier-guide': 1, 'contract-officer-assistant': 1, 'tax-explainer': 1, 'tax-review-assistant': 1,
+  }
+  assert.deepEqual(new Set(recipes.map(item => item.id)), new Set(Object.keys(revisions)))
   for (const item of recipes) {
     assert.ok(item.lab)
     assert.equal(item.estimatedMinutes, item.journey.length)
     assert.equal(recipeDuration(item), `${item.journey.length} min`)
-    assert.equal(item.revision, item.id === 'citizen-qa' ? 3 : 2)
+    assert.equal(item.revision, revisions[item.id])
     assert.ok(item.journey.length <= 24)
   }
   assert.equal(new Set(recipes.map(storageKey)).size, recipes.length)

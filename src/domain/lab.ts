@@ -27,7 +27,7 @@ export function formatLabValue(value: LabValue): string {
   return value === null || value === '' ? 'Not provided' : typeof value === 'boolean' ? value ? 'Yes' : 'No' : String(value)
 }
 
-export function calculateLab(lab: LabDefinition, rawInputs: LabInputs, conversation = '') {
+export function calculateLab(lab: LabDefinition, rawInputs: LabInputs, conversation = '', availableDocuments: ReadonlySet<string> = new Set()) {
   const inputs = checkedLabInputs(lab, rawInputs)
   const checks: LabCheckResult[] = lab.checks.map(check => {
     const actual = inputs[check.field]
@@ -51,7 +51,8 @@ export function calculateLab(lab: LabDefinition, rawInputs: LabInputs, conversat
     if (!result) throw new Error(`Unknown check "${requirement.checkId}".`)
     return result.passed === requirement.equals
   }
-  const rule = lab.rules.find(item => item.all.every(satisfied) && (!item.any || item.any.some(satisfied)))
+  const rule = lab.rules.find(item => item.all.every(satisfied) && (!item.any || item.any.some(satisfied))
+    && (!item.requiresKnowledge || item.requiresKnowledge.every(id => availableDocuments.has(id))))
   if (!rule) throw new Error('This recipe has no matching rule. Ask its maintainer to add a fallback outcome.')
   const outcome = lab.outcomes.find(item => item.id === rule.outcomeId)
   if (!outcome) throw new Error(`Unknown outcome "${rule.outcomeId}".`)

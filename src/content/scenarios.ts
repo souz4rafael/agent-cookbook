@@ -1,27 +1,12 @@
-import type { CompiledRecipe, Recipe } from '../domain/types.ts'
+import type { CompiledRecipe, Recipe, ScenarioEditorial } from '../domain/types.ts'
 
-export interface BusinessScenario {
+export interface BusinessScenario extends ScenarioEditorial {
   id: string
   name: string
   icon: Recipe['accentIcon']
-  headline: string
   summary: string
-  problem: string
-  impact: string
-  approach: string
-  startSmall: string
-  potentialValue: string
-  measure: string
-  boundary: string
   sourceUrl: string
-  sourceLabel?: string
   recipeId?: string
-  home: {
-    challenge: string
-    experiment: string
-    takeaway: string
-    scope: string
-  }
 }
 
 export const scenarioLibraryUrl = 'https://adoption.microsoft.com/en-gb/scenario-library/government/?product=agents'
@@ -115,35 +100,26 @@ export const businessScenarios: BusinessScenario[] = [
       scope: 'Fictional benefit rules only. No entitlement decisions, refusal letters or payments are issued.',
     },
   },
-  {
-    id: 'customer-service-optimize',
-    name: 'Customer Service Optimize - closure lab',
-    icon: 'document',
-    headline: 'A closed case is not always a solved customer problem.',
-    summary: 'Help service managers distinguish confirmed resolution from silence, without turning an incomplete record into a confident conclusion.',
-    problem: 'A support representative sends a proposed fix and closes the case, but the record does not always show whether the customer accepted the resolution. Managers reviewing closure totals cannot easily distinguish confirmed outcomes from unanswered messages or incomplete evidence.',
-    impact: 'Unconfirmed closures can hide unresolved issues and contribute to repeat contacts. Treating every closed case as a successful resolution can make service reporting misleading and leave managers unsure where to focus a review.',
-    approach: 'A Copilot Studio agent can use a dedicated skill to assess supplied case evidence against configured closure scenarios, explain why a condition matched and prepare a finding for an administrator. The service team remains responsible for investigating gaps and deciding whether follow-up is appropriate.',
-    startSmall: 'Begin with one closure scenario and fictional observations. Change customer acceptance, case status and the configured rapid-closure threshold to learn when a finding changes before connecting real case data.',
-    potentialValue: 'Aim for more transparent closure reviews, better-targeted follow-up and fewer unsupported claims of successful resolution.',
-    measure: 'Track repeat contacts, the share of closures with explicit confirmation and agreement between reviewer judgements and supported findings. Keep unassessed cases separate from healthy results.',
-    boundary: 'This is a partial teaching adaptation, not the original agent runtime. Only one closure scenario executes; six other skills are references. Inputs are manually supplied observations, not extracted messages. No customer is contacted and no case is updated.',
-    sourceUrl: 'https://copilotstudio.microsoft.com/',
-    sourceLabel: 'Copilot Studio product',
-    recipeId: 'customer-service-optimize',
-    home: {
-      challenge: 'A closed case may still lack customer confirmation, hiding unresolved issues and weakening service reporting.',
-      experiment: 'Change acceptance, case status or the rapid-closure threshold and compare the resulting findings.',
-      takeaway: 'Distinguish a supported closure finding from an unassessed case or incomplete evidence.',
-      scope: 'One skill-based exercise and six reference-only skills. Fictional evidence; no model, customer contact or case updates.',
-    },
-  },
 ]
 
-export function getScenarioRecipe(scenario: BusinessScenario, recipes: CompiledRecipe[]) {
-  return recipes.find(recipe => recipe.id === scenario.recipeId && recipe.status === 'published')
+export function getScenarioRecipe(scenario: BusinessScenario, recipes: CompiledRecipe[], includeDrafts = false) {
+  return recipes.find(recipe => recipe.id === scenario.recipeId && (recipe.status === 'published' || includeDrafts))
 }
 
-export function getRecipeScenario(recipe: Pick<Recipe, 'id'>) {
-  return businessScenarios.find(scenario => scenario.recipeId === recipe.id)
+export function getRecipeScenario(recipe: Pick<Recipe, 'id' | 'scenario' | 'title' | 'summary' | 'accentIcon' | 'sourceUrl'>): BusinessScenario | undefined {
+  return recipe.scenario ? {
+    ...recipe.scenario, id: recipe.id, recipeId: recipe.id, name: recipe.title,
+    summary: recipe.summary, icon: recipe.accentIcon, sourceUrl: recipe.sourceUrl,
+    sourceLabel: recipe.scenario.sourceLabel ?? 'Recipe reference',
+  } : businessScenarios.find(scenario => scenario.recipeId === recipe.id)
+}
+
+export function getBusinessScenarios(recipes: CompiledRecipe[], includeDrafts = false): BusinessScenario[] {
+  const stories = new Map(businessScenarios.map(scenario => [scenario.id, scenario]))
+  for (const recipe of recipes) {
+    if (!recipe.scenario || (recipe.status === 'draft' && !includeDrafts)) continue
+    const story = getRecipeScenario(recipe)
+    if (story) stories.set(story.id, story)
+  }
+  return [...stories.values()]
 }

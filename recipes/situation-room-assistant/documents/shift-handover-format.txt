@@ -1,0 +1,12 @@
+Alderfen | The incoming shift handover sheet
+Fictional training material. Not an official service record or policy.
+
+The handover sheet is a review copy for the assigned exercise shift reviewer. Outside that role, do not show notes, counts or whether a note exists. An exercise role selection is not authentication. General training can describe the format without quoting cases.
+
+Put the exercise cut-off on the sheet. Under “Confirmed for this shift”, list each supported observation, with its original slip, source and observation time. Under “Unverified or not current”, keep copied, stale, incomplete or possibly overlapping material visibly separate. If there are no items for a section, say so; silence is not confirmation.
+
+End with one answerable question, such as whether an original is available or whether two entries describe the same observation. The incoming reviewer decides what to keep. This sheet does not change a source record, dispatch resources or publish a situation update.
+
+List supported observations with their source and observation time under confirmed. Put uncertainty, possible overlap and stale observations under a separate heading.
+
+State the exercise cut-off, retain the original slips and end with a question for the incoming reviewer. Do not dispatch or publish from the draft.

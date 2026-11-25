@@ -1,0 +1,7 @@
+Alderfen | Reed-mat milestone register · MR-41
+Fictional training material. Not an official service record or policy.
+
+MR-41 tells a reader which RM-41/B line to read; it does not set the date. Each marker below is an alternate training snapshot.
+OPEN: no packing list logged; D1 is next. LIST-LOGGED: the receiving desk recorded the D1 list, so read C2 next.
+LIST-RETURNED: slip CS-14 marks the bundle identifier on D1 for correction. Return a corrected list with the slip; do not skip ahead to C2.
+No marker means progress is unknown, not that the supplier has failed to deliver.

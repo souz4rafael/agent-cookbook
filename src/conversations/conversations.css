@@ -1,0 +1,28 @@
+.conversation-controls, .conversation-replies { font-size: 14px; line-height: 1.5; text-align: left; }
+.conversation-controls button, .conversation-controls select, .conversation-replies button {
+  font: inherit; color: inherit; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 6px; padding: 8px 12px;
+}
+.conversation-controls button, .conversation-replies button { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.conversation-controls button:focus-visible, .conversation-controls select:focus-visible, .conversation-replies button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.conversation-controls p, .conversation-replies p { margin: 8px 0 12px; }
+.conversation-note { font-size: 12px; }
+.conversation-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-block: 12px; }
+.conversation-heading { justify-content: space-between; }
+.conversation-variants { margin-block: 12px; }
+.conversation-variants label { display: block; margin-block: 12px; }
+.conversation-variants select { display: block; width: 100%; margin-top: 4px; }
+.conversation-notice { padding: 8px 12px; border: 1px solid currentColor; border-radius: 6px; }
+.conversation-options { margin-block: 16px; font-size: 12px; }
+.conversation-controls .conversation-bubbles, .conversation-replies .conversation-bubbles {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 16px; max-width: 760px;
+}
+.conversation-controls .conversation-bubbles > button, .conversation-replies .conversation-bubbles > button {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
+  max-width: 100%; padding: 8px 13px; border: 1px solid var(--cp-border); border-radius: 20px;
+  background: var(--cp-surface); color: var(--cp-text-muted, var(--cp-muted)); font-size: 11px;
+  line-height: 1.5; text-align: left; overflow-wrap: anywhere;
+}
+.conversation-bubbles > button > svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--cp-text-soft, var(--cp-faint)); }
+.conversation-controls .conversation-bubbles > button:hover, .conversation-replies .conversation-bubbles > button:hover {
+  background: var(--cp-accent-soft, var(--cp-hover)); border-color: var(--cp-accent, var(--cp-focus)); color: var(--cp-link, var(--cp-text));
+}

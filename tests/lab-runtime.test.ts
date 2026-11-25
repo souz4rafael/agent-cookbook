@@ -139,7 +139,9 @@ for (const recipe of recipes) {
   })
 
   if (recipe.knowledge.length) test(`${recipe.id}: missing sources suppress drafts and expected checks fail for a broken configuration`, () => {
-    const testCase = recipe.lab!.cases.find(item => item.expected.kind === 'handoff-ready')!
+    const testCase = recipe.lab!.cases.find(item => item.expected.kind === 'handoff-ready') ??
+      recipe.lab!.cases.find(item => item.expected.kind === 'answer' && item.expected.documentIds.length && !item.disabledKnowledge?.length)!
+    assert.ok(testCase)
     let session = configured(recipe)
     session = selectKnowledge(recipe, session, testCase.expected.documentIds[0], false)
     const result = respondLab(recipe, session, testCase.inputs)

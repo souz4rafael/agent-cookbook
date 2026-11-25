@@ -1,0 +1,12 @@
+Alderfen | Regional bulletin archive: reading the edition line
+Fictional training material. Not an official service record or policy.
+
+This archive is a historical publishing exercise, not an alert feed.
+
+Issuer: Alderfen Regional Civil Protection Desk (fictional). Coverage: Alderfen municipality. Archive date: 14 May 2025. The first exercise bulletin was issued at 09:00 UTC; the desk filed a replacement at 10:10 UTC. The recorded exercise window ended at 12:00 UTC that day. Both editions are historical. The filing time says when the desk issued the notice, not how long the information remains true.
+
+Read the publisher and coverage line on the issuing authority's own channel. Look for an explicit replacement or withdrawal, the time zone and the validity window. A screenshot can retain an old heading after the original has changed. If a check fails, say which evidence is missing rather than choosing the version that looks newest. For a real local update, use the official current local emergency management channel.
+
+If you are in immediate danger, contact local emergency services now. In the historical Alderfen exercise on 14 May 2025, the Regional Civil Protection Desk replaced the 09:00 UTC edition at 10:10 UTC. Neither is a current alert.
+
+The exercise window ended at 12:00 UTC that day. Check the issuer, coverage, issue time and later revisions on the authority's own channel. For current local alerts and shelter information, use the official channels of your local emergency management authority.

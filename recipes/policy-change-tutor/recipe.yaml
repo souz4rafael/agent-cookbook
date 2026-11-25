@@ -1,0 +1,711 @@
+schemaVersion: 1
+revision: 1
+id: policy-change-tutor
+status: published
+title: Policy change practice tutor
+summary: Practise the 12 June cutover for a faded park sign at bay B7. Choose an action as the intake clerk or works planner and get feedback on that choice, not just a policy summary.
+industry: Government and public services
+difficulty: beginner
+accentIcon: learning
+learningGoals:
+  - Try the bay-only answer on cards received on 11 and 12 June. Use the receipt stamp, not the common review date, to explain the different feedback.
+  - On a revised B7 card with no side, choose the intake question. Switch to planning and retry by returning the same card rather than guessing a sign.
+  - Distinguish a stated canal side from a blank or unreadable box. Explain when planning can queue the practice card and when the tutor needs clarification before scoring.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: The public servant journey
+    perspective: operations
+  headline: Two signs share bay B7. When is the bay code enough?
+  problem: On 13 June a planner opens a report about a faded sign at bay B7. One sign faces the canal and another faces the garden. Yesterday the location note changed. To know whether a side is missing, the planner needs the date intake received the report, not the date it reached their desk.
+  impact: Applying the new note by review date would send an older report back for information it never needed. Guessing the side on a newer report could point the planner to the wrong sign.
+  approach: Choose a desk action before reading the tutor’s feedback. The bay code alone fits a card received before 12 June 2032. From that date, intake asks for a missing side or records the one supplied. Planning returns the same incomplete card to intake or uses both labels to queue the practice card.
+  startSmall: Try the bay-only action as an intake clerk on the 11 June card. Move the receipt stamp forward one day without changing the answer. Read why the tutor asks for a retry, then choose the question that would resolve the missing side.
+  potentialValue: Staff can rehearse a change at the point where it affects their own desk, without asking a resident twice or opening a second report for the same sign.
+  measure: Compare the feedback for the same answer across the cutover, then across desks on the same revised card. Check that an unreadable receipt stamp prompts clarification and that leaving the move unchosen does not count as a wrong answer.
+  boundary: The location note, roles and cards are fictional. Choosing to ask, return or queue is a practice answer. It does not contact a resident, edit a report, dispatch work, publish policy or assess an employee.
+  sourceLabel: "Microsoft Learn: authoring instructions in Copilot Studio (product reference)"
+  home:
+    challenge: Two signs stand at B7. A planner reviewing a faded-sign report after the rule changes needs to know whether the bay alone was enough when it arrived.
+    experiment: Try the same bay-only answer with an 11 June stamp and a 12 June stamp. On the later card, swap intake for planning and retry the missing-side decision.
+    takeaway: The receipt date selects the rule. Under the revision, intake asks which side; planning returns the same incomplete card rather than opening another.
+    scope: The B7 report and both editions are invented. Returning or queuing a card gives feedback on a choice; no report changes and no work is dispatched.
+agent:
+  name: Policy change practice tutor
+  description: Teach the fictional Park Sign Location Note by giving a learner a service card, a desk role and a decision to practise. Score the choice against the edition in force on receipt.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Teach the fictional Park Sign Location Note by giving a learner a service card, a desk role and a decision to practise. Score the choice against the edition in force on receipt.
+    Set the scene: two signs share bay B7. The sample report specifies the bay but may omit which side of the path. Use the date the report was received, not the later date a planner reads it.
+    Ask the learner to choose a desk action before revealing feedback. Identify whether the choice fits, explain why and invite a second run with one changed input.
+    Before 12 June, either desk uses the earlier bay-only routine. From 12 June, intake asks for a missing side or records one supplied; planning returns the same incomplete card or queues a complete practice card.
+    This is coaching on a fictional public exercise. Never publish policy, edit a service card, contact a resident, dispatch work or grade an employee.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Teach the fictional Park Sign Location Note by giving a learner a service card, a desk role and a decision to practise. Score the choice against the edition in force on receipt.
+    Set the scene: two signs share bay B7. The sample report specifies the bay but may omit which side of the path. Use the date the report was received, not the later date a planner reads it.
+    Ask the learner to choose a desk action before revealing feedback. Identify whether the choice fits, explain why and invite a second run with one changed input.
+    Before 12 June, either desk uses the earlier bay-only routine. From 12 June, intake asks for a missing side or records one supplied; planning returns the same incomplete card or queues a complete practice card.
+    This is coaching on a fictional public exercise. Never publish policy, edit a service card, contact a resident, dispatch work or grade an employee.
+  stepByStep: |-
+    # Procedure
+
+    Teach the fictional Park Sign Location Note by giving a learner a service card, a desk role and a decision to practise. Score the choice against the edition in force on receipt.
+    1. Set the scene: two signs share bay B7. The sample report specifies the bay but may omit which side of the path. Use the date the report was received, not the later date a planner reads it.
+    2. Ask the learner to choose a desk action before revealing feedback. Identify whether the choice fits, explain why and invite a second run with one changed input.
+    3. Before 12 June, either desk uses the earlier bay-only routine. From 12 June, intake asks for a missing side or records one supplied; planning returns the same incomplete card or queues a complete practice card.
+    This is coaching on a fictional public exercise. Never publish policy, edit a service card, contact a resident, dispatch work or grade an employee.
+  decisionRules: |-
+    # Decision rules
+
+    Teach the fictional Park Sign Location Note by giving a learner a service card, a desk role and a decision to practise. Score the choice against the edition in force on receipt.
+    Unknown receipt date or role: ask the learner to complete the exercise card. A missing source prevents scoring. An unchosen answer is not an incorrect answer.
+    Feedback must state the learner’s desk, the applicable routine and a next move. For a mistaken choice, explain what to try and let the learner retry; do not claim any change took effect.
+    This is coaching on a fictional public exercise. Never publish policy, edit a service card, contact a resident, dispatch work or grade an employee.
+    Set the scene: two signs share bay B7. The sample report specifies the bay but may omit which side of the path. Use the date the report was received, not the later date a planner reads it.
+  examples: |-
+    11 June intake with no side: choosing the bay-only routine fits. Change just the receipt date to 12 June: the same answer now needs a retry.
+    On 12 June, an intake clerk asks for the missing side; a planner looking at the same incomplete card returns it to intake instead. Change only the role and try both choices.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Policy change practice tutor.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: sign-cutover
+    title: "Park Sign Location Note: two editions"
+    summary: This fictional learning notice covers routine reports of faded park signs. Two signs may stand on opposite sides of the same path bay.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/sign-cutover.txt
+  - id: sign-practice
+    title: "B7 sign report: learner exercise"
+    summary: "Practice report: “The lettering on a sign at bay B7 has faded.” One sign faces the canal and the other faces the garden. There is only one service card for this report."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/sign-practice.txt
+facts:
+  - id: receipt-date
+    documentId: sign-cutover
+    keywords:
+      - Does the receipt date or review date set the sign routine
+    answer: Use the date the report was received. The revised routine starts with reports received on 12 June 2032, not reports first reviewed that day.
+    detail: For a report received on 11 June, the earlier bay-only routine remains in use even when someone reads it after the change.
+  - id: desk-duties
+    documentId: sign-cutover
+    keywords:
+      - Who clarifies a missing side on the revised sign card
+    answer: Intake asks which side of the bay is meant. Planning returns an incomplete card to intake on the same reference rather than guessing or opening a duplicate.
+    detail: For a side already supplied, intake records it with the bay code and planning uses both labels in the practice queue.
+  - id: try-practice
+    documentId: sign-practice
+    keywords:
+      - How can I practise the B7 service case
+    answer: Open Review and load the B7 example. Read the role, receipt stamp and side box, choose a desk action, then run it to see the feedback.
+    detail: Keep the same answer and switch only the receipt date from 11 to 12 June. Try another run with the role swapped and explain what changed.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-sign-cutover
+    title: "Select Park Sign Location Note: two editions"
+    description: "Add Park Sign Location Note: two editions to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: sign-cutover
+  - id: read-sign-practice
+    title: "Select B7 sign report: learner exercise"
+    description: "Add B7 sign report: learner exercise to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: sign-practice
+  - id: try-1
+    title: "B7 received on 11 June: test the bay-only move"
+    description: 'In Review > Try this example, load "B7 received on 11 June: test the bay-only move" and run it. Identify the input that explains this result.'
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: pre-change
+  - id: try-2
+    title: "B7 received one day later: try the identical move"
+    description: 'In Review > Try this example, load "B7 received one day later: try the identical move" and run it. Identify the input that explains this result.'
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: cutover-day
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Park Sign Location Note: two editions citation on the result for "B7 received on 11 June: test the bay-only move".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: sign-cutover
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Does the receipt date or review date set the sign routine?
+    - Who clarifies a missing side on the revised sign card?
+    - How can I practise the B7 service case?
+  handoffKeywords: []
+  unknownAnswer: Choose a sample question about Policy change practice tutor or use Review > Try this example to change fictional inputs. This service cannot look up real records.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Policy change practice tutor
+    mode: simulated
+    starter:
+      label: Explain the cutover, then let me try a service card.
+      prompt: Explain the cutover, then let me try a service card.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like the date rule, the desk responsibilities, or the practice-card instructions?
+          - id: alternative
+            text: Would you like the date rule, the desk responsibilities, or the practice-card instructions? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: receipt-date
+            label: Which date selects the edition?
+            next: reply-receipt-date
+          - id: desk-duties
+            label: Compare intake and planning under the revision
+            next: reply-desk-duties
+          - id: try-practice
+            label: Try the same answer on two dates
+            next: reply-try-practice
+      - id: reply-receipt-date
+        role: simulation
+        prompt: Does the receipt date or review date set the sign routine?
+        end: true
+      - id: reply-desk-duties
+        role: simulation
+        prompt: Who clarifies a missing side on the revised sign card?
+        end: true
+      - id: reply-try-practice
+        role: simulation
+        prompt: How can I practise the B7 service case?
+        end: true
+lab:
+  title: Your move at bay B7
+  description: "Report: “The lettering on a sign at bay B7 has faded.” Two signs share the bay. Read the card as the named desk and select your own next move before running it."
+  fields:
+    - id: role
+      label: Your practice role
+      type: select
+      options:
+        - value: intake
+          label: Intake clerk
+        - value: planning
+          label: Works planner
+        - value: unknown
+          label: Role not specified
+      defaultValue: intake
+      hint: These are learning roles on a public exercise, not access to a staff record.
+    - id: received
+      label: Receipt stamp on this service card
+      type: select
+      options:
+        - value: june-11
+          label: 11 June 2032
+        - value: june-12
+          label: 12 June 2032
+        - value: june-13
+          label: 13 June 2032
+        - value: unknown
+          label: Stamp unreadable
+      defaultValue: june-11
+      hint: All cards are reviewed on 13 June; only the receipt stamp varies.
+    - id: side
+      label: What the report says after “bay B7”
+      type: select
+      options:
+        - value: blank
+          label: No side given
+        - value: canal
+          label: Canal side
+        - value: unreadable
+          label: Cannot read the box
+      defaultValue: blank
+      hint: Unreadable is not the same as a confirmed blank.
+    - id: move
+      label: Which action would you take?
+      type: select
+      options:
+        - value: bay
+          label: Use the bay code under the earlier routine
+        - value: ask
+          label: Ask which side and keep the intake card open
+        - value: record
+          label: Record the supplied side beside the bay code
+        - value: return
+          label: Return the same card to intake for the side
+        - value: queue
+          label: Queue practice work with the bay and supplied side
+        - value: skip
+          label: I have not chosen yet
+      defaultValue: bay
+      hint: Replace the loaded answer to test your own choice; no work is dispatched.
+  checks:
+    - id: no-stamp
+      label: Receipt stamp unreadable
+      field: received
+      operator: eq
+      value: unknown
+    - id: before
+      label: Card predates the cutover
+      field: received
+      operator: eq
+      value: june-11
+    - id: intake-desk
+      label: Acting as intake
+      field: role
+      operator: eq
+      value: intake
+    - id: planning-desk
+      label: Acting as planning
+      field: role
+      operator: eq
+      value: planning
+    - id: no-role
+      label: No practice role
+      field: role
+      operator: eq
+      value: unknown
+    - id: side-blank
+      label: Report does not give a side
+      field: side
+      operator: eq
+      value: blank
+    - id: side-shown
+      label: Canal side supplied
+      field: side
+      operator: eq
+      value: canal
+    - id: not-attempted
+      label: No move chosen
+      field: move
+      operator: eq
+      value: skip
+    - id: chose-bay
+      label: "Learner: Use the bay code under the earlier routine"
+      field: move
+      operator: eq
+      value: bay
+    - id: chose-ask
+      label: "Learner: Ask which side and keep the intake card open"
+      field: move
+      operator: eq
+      value: ask
+    - id: chose-record
+      label: "Learner: Record the supplied side beside the bay code"
+      field: move
+      operator: eq
+      value: record
+    - id: chose-return
+      label: "Learner: Return the same card to intake for the side"
+      field: move
+      operator: eq
+      value: return
+    - id: chose-queue
+      label: "Learner: Queue practice work with the bay and supplied side"
+      field: move
+      operator: eq
+      value: queue
+  rules:
+    - id: get-stamp
+      label: Do not teach the wrong edition
+      all:
+        - checkId: no-stamp
+          equals: true
+      outcomeId: clarify-card
+    - id: get-role
+      label: Do not assume a desk role
+      all:
+        - checkId: no-role
+          equals: true
+      outcomeId: clarify-card
+    - id: get-choice
+      label: Invite an actual attempt
+      all:
+        - checkId: not-attempted
+          equals: true
+      outcomeId: choose-move
+    - id: prior-fits
+      label: "Choice fits: Use the earlier routine"
+      all:
+        - checkId: before
+          equals: true
+        - checkId: chose-bay
+          equals: true
+      outcomeId: prior-fits
+    - id: prior-retry
+      label: "Coach the learner: Use the earlier routine"
+      all:
+        - checkId: before
+          equals: true
+      outcomeId: prior-retry
+    - id: ask-side-fits
+      label: "Choice fits: Ask one intake question"
+      all:
+        - checkId: intake-desk
+          equals: true
+        - checkId: side-blank
+          equals: true
+        - checkId: chose-ask
+          equals: true
+      outcomeId: ask-side-fits
+    - id: ask-side-retry
+      label: "Coach the learner: Ask one intake question"
+      all:
+        - checkId: intake-desk
+          equals: true
+        - checkId: side-blank
+          equals: true
+      outcomeId: ask-side-retry
+    - id: note-side-fits
+      label: "Choice fits: Record the supplied side"
+      all:
+        - checkId: intake-desk
+          equals: true
+        - checkId: side-shown
+          equals: true
+        - checkId: chose-record
+          equals: true
+      outcomeId: note-side-fits
+    - id: note-side-retry
+      label: "Coach the learner: Record the supplied side"
+      all:
+        - checkId: intake-desk
+          equals: true
+        - checkId: side-shown
+          equals: true
+      outcomeId: note-side-retry
+    - id: return-card-fits
+      label: "Choice fits: Return the same card to intake"
+      all:
+        - checkId: planning-desk
+          equals: true
+        - checkId: side-blank
+          equals: true
+        - checkId: chose-return
+          equals: true
+      outcomeId: return-card-fits
+    - id: return-card-retry
+      label: "Coach the learner: Return the same card to intake"
+      all:
+        - checkId: planning-desk
+          equals: true
+        - checkId: side-blank
+          equals: true
+      outcomeId: return-card-retry
+    - id: queue-card-fits
+      label: "Choice fits: Use the two location labels"
+      all:
+        - checkId: planning-desk
+          equals: true
+        - checkId: side-shown
+          equals: true
+        - checkId: chose-queue
+          equals: true
+      outcomeId: queue-card-fits
+    - id: queue-card-retry
+      label: "Coach the learner: Use the two location labels"
+      all:
+        - checkId: planning-desk
+          equals: true
+        - checkId: side-shown
+          equals: true
+      outcomeId: queue-card-retry
+    - id: unreadable-side
+      label: Do not score an unclear revised card
+      all: []
+      outcomeId: clarify-card
+  outcomes:
+    - id: clarify-card
+      title: Clarify the exercise card first
+      summary: Confirm the receipt date, desk role and any unreadable side box needed by that edition. Do not infer the receipt stamp from the review date or score this attempt.
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: choose-move
+      title: Choose a move before checking the answer
+      summary: No attempt to score yet. Read the receipt stamp and your desk role, pick a next action and run the card again.
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: prior-fits
+      title: "Correct: Use the earlier routine"
+      summary: "Desk: {{role}}. Earlier routine. The card was received before 12 June 2032. For either desk, bay B7 is sufficient under the earlier routine. A later review date does not move the card to the new edition. Change one clue and try another move."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: prior-retry
+      title: "Try again: Use the earlier routine"
+      summary: "Desk: {{role}}. Earlier routine. The card was received before 12 June 2032. For either desk, bay B7 is sufficient under the earlier routine. A later review date does not move the card to the new edition. Pick the move that matches that responsibility and run the same card again."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: ask-side-fits
+      title: "Correct: Ask one intake question"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At intake, ask “Is the sign on the canal side or the garden side of bay B7?” Keep this card open; do not guess a side or create a second report. Change one clue and try another move."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: ask-side-retry
+      title: "Try again: Ask one intake question"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At intake, ask “Is the sign on the canal side or the garden side of bay B7?” Keep this card open; do not guess a side or create a second report. Pick the move that matches that responsibility and run the same card again."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: note-side-fits
+      title: "Correct: Record the supplied side"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At intake, record B7 and canal side together on this card. The resident has already supplied the side; there is no reason to ask again. Change one clue and try another move."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: note-side-retry
+      title: "Try again: Record the supplied side"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At intake, record B7 and canal side together on this card. The resident has already supplied the side; there is no reason to ask again. Pick the move that matches that responsibility and run the same card again."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: return-card-fits
+      title: "Correct: Return the same card to intake"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At planning, return the same card to intake for the missing side. Do not choose a side, open a duplicate or place the practice work in the queue yet. Change one clue and try another move."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: return-card-retry
+      title: "Try again: Return the same card to intake"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At planning, return the same card to intake for the missing side. Do not choose a side, open a duplicate or place the practice work in the queue yet. Pick the move that matches that responsibility and run the same card again."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: queue-card-fits
+      title: "Correct: Use the two location labels"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At planning, queue the practice work with B7 and canal side on the existing card. Planning uses the supplied location; it does not need to ask intake to obtain it again. Change one clue and try another move."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+    - id: queue-card-retry
+      title: "Try again: Use the two location labels"
+      summary: "Desk: {{role}}. Revised routine: receipt on or after 12 June. At planning, queue the practice work with B7 and canal side on the existing card. Planning uses the supplied location; it does not need to ask intake to obtain it again. Pick the move that matches that responsibility and run the same card again."
+      documentIds:
+        - sign-cutover
+        - sign-practice
+  cases:
+    - id: pre-change
+      title: "B7 received on 11 June: test the bay-only move"
+      inputs:
+        role: intake
+        received: june-11
+        side: blank
+        move: bay
+      expected:
+        outcomeId: prior-fits
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - "Correct:"
+          - bay B7 is sufficient
+    - id: cutover-day
+      title: "B7 received one day later: try the identical move"
+      inputs:
+        role: intake
+        received: june-12
+        side: blank
+        move: bay
+      expected:
+        outcomeId: ask-side-retry
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - "Try again:"
+          - canal side or the garden side
+    - id: intake-retry
+      title: Intake retries by asking which side
+      inputs:
+        role: intake
+        received: june-12
+        side: blank
+        move: ask
+      expected:
+        outcomeId: ask-side-fits
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - "Correct:"
+          - Keep this card open
+    - id: desk-swap
+      title: A planner tries the intake clerk’s answer
+      inputs:
+        role: planning
+        received: june-12
+        side: blank
+        move: ask
+      expected:
+        outcomeId: return-card-retry
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - "Try again:"
+          - return the same card to intake
+    - id: planner-returns
+      title: The planner returns the incomplete card to intake
+      inputs:
+        role: planning
+        received: june-12
+        side: blank
+        move: return
+      expected:
+        outcomeId: return-card-fits
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - "Correct:"
+          - return the same card to intake
+    - id: already-supplied
+      title: Intake records the side already on the card
+      inputs:
+        role: intake
+        received: june-12
+        side: canal
+        move: record
+      expected:
+        outcomeId: note-side-fits
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - record B7 and canal side together
+    - id: queue-complete
+      title: The planner uses both labels from the report
+      inputs:
+        role: planning
+        received: june-13
+        side: canal
+        move: queue
+      expected:
+        outcomeId: queue-card-fits
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - queue the practice work with B7 and canal side
+    - id: missing-stamp
+      title: Do not score by the date the planner opened it
+      inputs:
+        role: intake
+        received: unknown
+        side: blank
+        move: bay
+      expected:
+        outcomeId: clarify-card
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - Do not infer the receipt stamp
+    - id: smudged-side
+      title: A revised card has an unreadable side box
+      inputs:
+        role: intake
+        received: june-12
+        side: unreadable
+        move: bay
+      expected:
+        outcomeId: clarify-card
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - any unreadable side box
+    - id: no-attempt
+      title: The learner has not chosen a move yet
+      inputs:
+        role: intake
+        received: june-12
+        side: blank
+        move: skip
+      expected:
+        outcomeId: choose-move
+        documentIds:
+          - sign-cutover
+          - sign-practice
+        kind: answer
+        contains:
+          - No attempt to score yet
+    - id: notice-unavailable
+      title: The cutover notice cannot be selected
+      inputs:
+        role: intake
+        received: june-11
+        side: blank
+        move: bay
+      expected:
+        outcomeId: prior-fits
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - sign-cutover
+implementation:
+  - title: Build this in the real service
+    description: Version controlled training notes should quote the effective date, trigger and desk responsibilities confirmed by the policy owner. Keep the practice environment separate from policy publication, employee assessment and the operational works queue.
+  - title: What to measure
+    description: For fictional first and retry attempts, compare correct edition selection at the cutoff and correct desk actions within each edition. Break out “not attempted” and unknown-date cards instead of counting them as wrong.
+  - title: Scope of this draft
+    description: This is coaching on a fictional public exercise. Never publish policy, edit a service card, contact a resident, dispatch work or grade an employee. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

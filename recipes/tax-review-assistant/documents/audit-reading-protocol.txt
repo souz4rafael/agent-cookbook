@@ -1,0 +1,19 @@
+Alderfen | Audit reading protocol · AR-11
+Fictional training material. Not an official service record or policy.
+
+AR-11 separates three questions: what was declared, what was posted, and what basis was used. It contains no taxpayer rows.
+§1: require the audit assignment and a common case key. Verify the seasonal period on each source; a posting date alone is not a period.
+§2: identify a posted journal entry and a signed basis note. Leave pending, absent and recorded zero distinct. Check like units before comparing.
+§3: record equal or different amounts, not a liability. Refer unresolved evidence to the auditor without inferring motive or imposing a charge.
+
+Use the declaration period and the allocation period on the payment row. Read the period on the justification too; the day money was entered is not enough.
+
+If the periods differ, request a like-period source rather than offsetting one season against another.
+
+Mark it pending and leave reconciliation open. A pending amount is not a posted amount; a missing row is not a posted zero.
+
+Look for a confirmed posting tied to the same case and period before comparing it with the declaration.
+
+State the declared amount, the posted amount and what the justification says about their basis. Ask the auditor to resolve the difference.
+
+A numerical mismatch alone establishes neither wrongdoing nor an assessed amount.

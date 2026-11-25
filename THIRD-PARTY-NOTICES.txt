@@ -25,5 +25,12 @@ Other recipe fixtures are fictional teaching material. Source/reference URLs
 describe their inspiration or real-product implementation context; they do not
 make the simulator an official service.
 
+The four Gallery exercises are independent educational adaptations of samples at
+https://microsoft.github.io/copilot-studio-gallery/ . Each recipe folder includes
+a SOURCE.txt crediting the original author and version and distinguishing the
+inspected sample from what runs locally. The Gallery repository is MIT-licensed:
+https://github.com/microsoft/copilot-studio-gallery/blob/main/LICENSE .
+No upstream solution ZIP or executable helper is included in these exercises.
+
 This notice records provenance; it does not grant additional rights to third-party
 materials or substitute for their applicable licenses.

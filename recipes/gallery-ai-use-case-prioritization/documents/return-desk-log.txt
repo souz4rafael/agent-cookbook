@@ -1,0 +1,12 @@
+Mothlight Prop Library
+The clock on the return desk
+
+The library lends stage props to touring plays. A crate can come back marked “moon dial” when the catalogue calls the prop a “paper clock”. A returns clerk suggests a match; a second clerk checks it before the prop goes back on the shelf. The team wants to spend less of its shift sorting out names without putting the wrong label on the next loan.
+
+The practice log covers one two-hour return shift, not a week of work. Its clock has just one purpose: count the minutes the first clerk spent resolving names. In the worked example the clock reads 18 minutes. These are minutes spent today, not minutes an assistant would save. A fair comparison would time both a clerk using the alias list and a clerk checking suggested matches, and count mistaken matches as well.
+
+A blank clock box means nobody timed the work. Ask: how many of the 120 minutes in the last return shift did the clerk spend resolving names?
+Do not enter zero for a blank or borrow the 18 minutes from the worked example. Leave the impact question open until someone supplies an observation.
+
+A recorded zero means the clerk spent no time resolving names on that shift. Put the time-saving claim aside; a different benefit would need evidence of its own.
+One quiet shift does not tell us that the problem never occurs. Compare another observed shift before treating either zero or 18 as typical.

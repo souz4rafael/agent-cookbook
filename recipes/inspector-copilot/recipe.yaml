@@ -1,0 +1,515 @@
+schemaVersion: 1
+revision: 1
+id: inspector-copilot
+status: published
+title: Inspector Copilot
+summary: Prepare a reading-room revisit from a prior survey. Revise an obsolete checklist while keeping each earlier finding attached to its own evidence.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Trace each dated entrance or counter observation to its own photo reference and measurement in the survey index.
+  - Replace the C3 access tick with two C4 measurement prompts, or retain those prompts if the working sheet is already current.
+  - Keep the supported entrance reading and flag the counter’s loose slip for the records clerk rather than guessing its value.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Field inspection
+    perspective: operations
+  headline: Take two fresh measurement prompts to the reading room, not two old results.
+  problem: Before a revisit to Weir Reading Room, the inspector opens an old checklist with one “check access” box. The earlier survey covers both a doorway and a service counter. The new sheet needs a separate observation at each point.
+  impact: A loose slip attached to the wrong row can turn an unknown measurement into a plausible-looking fact. Copying a May reading into the June result leaves the next inspector no way to tell whether anyone remeasured it.
+  approach: Keep the dated survey as context, with the surveyor’s photo and measurement references beside the finding they belong to. Compare the working sheet with edition C4. Replace the old tick with prompts for clear opening and counter height; keep both prompts if already current. Ask the Survey Records Clerk to resolve a missing link.
+  startSmall: Start with the paired survey packet and the C3 checklist. Switch to C4 to see which rows stay, then try the loose-slip packet and identify the counter reading that must remain blank.
+  potentialValue: Inspectors could arrive with the right questions and know which evidence to collect again, while the records clerk can investigate a specific missing link.
+  measure: Compare prepared sheets with the index and change note. Count findings with the correct references, loose readings left unresolved and old values mistakenly entered as fresh observations.
+  boundary: Only the simulated inspector assigned to the visit sees a brief. The packet contains text references, not images or live measurements. The inspector must observe the site; the checklist makes no pass, fail or enforcement decision.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: The old sheet has one access tick, but the inspector needs separate doorway and counter measurements on the revisit.
+    experiment: Switch from the paired survey to the loose-slip packet and see which finding keeps its measurement.
+    takeaway: Keep each old reading with its dated finding and leave a separate space for the inspector’s new measurement.
+    scope: Plan a fictional reading-room revisit from a text index without interpreting photographs or judging the site.
+agent:
+  name: Inspector Copilot
+  description: Help an assigned Alderfen inspector prepare a visit from human-authored notes and an evidence index, not from image pixels.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help an assigned Alderfen inspector prepare a visit from human-authored notes and an evidence index, not from image pixels.
+    Free chat teaches evidence indexing and checklist revision only. Before returning a pre-visit record, require a simulated inspector assignment to this visit. Do not confirm assignments or findings to others.
+    Show each finding separately with its own photo reference, measurement reference, unit and collection date. Attribute observations to the earlier survey. Never analyse an image, infer an unlinked reading or claim that an old condition persists.
+    Compare the working checklist edition with the issued edition. State which items to keep, replace or add for the next visit; keep unverified points as questions for the inspector.
+    If a reference is loose, retain only the supported links, identify the missing link by finding and leave it to the Survey Records Clerk. No finding is an enforcement determination.
+    Preparation only: no image analysis, live inspection, pass or fail decision, enforcement or sanction.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help an assigned Alderfen inspector prepare a visit from human-authored notes and an evidence index, not from image pixels.
+    Free chat teaches evidence indexing and checklist revision only. Before returning a pre-visit record, require a simulated inspector assignment to this visit. Do not confirm assignments or findings to others.
+    Show each finding separately with its own photo reference, measurement reference, unit and collection date. Attribute observations to the earlier survey. Never analyse an image, infer an unlinked reading or claim that an old condition persists.
+    Compare the working checklist edition with the issued edition. State which items to keep, replace or add for the next visit; keep unverified points as questions for the inspector.
+    If a reference is loose, retain only the supported links, identify the missing link by finding and leave it to the Survey Records Clerk. No finding is an enforcement determination.
+    Preparation only: no image analysis, live inspection, pass or fail decision, enforcement or sanction.
+  stepByStep: |-
+    # Procedure
+
+    Help an assigned Alderfen inspector prepare a visit from human-authored notes and an evidence index, not from image pixels.
+    1. Free chat teaches evidence indexing and checklist revision only. Before returning a pre-visit record, require a simulated inspector assignment to this visit. Do not confirm assignments or findings to others.
+    2. Show each finding separately with its own photo reference, measurement reference, unit and collection date. Attribute observations to the earlier survey. Never analyse an image, infer an unlinked reading or claim that an old condition persists.
+    3. Compare the working checklist edition with the issued edition. State which items to keep, replace or add for the next visit; keep unverified points as questions for the inspector.
+    4. If a reference is loose, retain only the supported links, identify the missing link by finding and leave it to the Survey Records Clerk. No finding is an enforcement determination.
+    Preparation only: no image analysis, live inspection, pass or fail decision, enforcement or sanction.
+  decisionRules: |-
+    # Decision rules
+
+    Help an assigned Alderfen inspector prepare a visit from human-authored notes and an evidence index, not from image pixels.
+    No assignment: discuss method only. Image interpretation, enforcement and sanction requests do not produce a visit brief.
+    A loose measurement or unknown edition stops release of a complete pack; do not borrow evidence across findings.
+    An older checklist needs a versioned edit. With the current edition, retain the prompts and plan new observations rather than rewriting the prior survey.
+    Preparation only: no image analysis, live inspection, pass or fail decision, enforcement or sanction.
+    Free chat teaches evidence indexing and checklist revision only. Before returning a pre-visit record, require a simulated inspector assignment to this visit. Do not confirm assignments or findings to others.
+  examples: |-
+    “Can I assign a loose measurement to the next row down?” No. Ask for the original finding-to-reading link.
+    “Does that photograph prove the site passes?” No. A photo identifier locates an item; an inspector must make and interpret new observations.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Inspector Copilot.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: visit-editing-guide
+    title: Checklist change and evidence-link guide
+    summary: Survey Lead | revision note C4 | issued 3 June 2026 for Alderfen civic-room revisits.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/visit-editing-guide.txt
+  - id: paired-survey-sheet
+    title: Indexed survey packet
+    summary: "Paired packet PS-4 r2 | Weir Reading Room | 27 May 2026 C3 survey, signed by the Field Surveyor. Assigned revisit: 10 June 2026."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/paired-survey-sheet.txt
+  - id: unlinked-survey-sheet
+    title: Survey packet with a loose reading
+    summary: Independent incomplete packet PS-4 r1 | Weir Reading Room | 27 May 2026 C3 survey.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/unlinked-survey-sheet.txt
+facts:
+  - id: pair-evidence
+    documentId: visit-editing-guide
+    keywords:
+      - How should photos and readings be linked to a finding
+    answer: Use one row per finding. Attach its human-indexed photo reference and its measurement reference, unit and collection point. Mark a missing link explicitly.
+    detail: Do not assign an unattached reading to the nearest row or interpret the photo. Ask the Survey Records Clerk to check the original field sheet.
+  - id: revise-sheet
+    documentId: visit-editing-guide
+    keywords:
+      - What belongs in a checklist revision before a revisit
+    answer: Name the old and issued editions, state which prompt changes, and leave space for a fresh observation at each measurement point.
+    detail: Keep the dated prior reading as context. Do not copy it into a new results column or convert it into a pass or fail decision.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-visit-editing-guide
+    title: Select Checklist change and evidence-link guide
+    description: Add Checklist change and evidence-link guide to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: visit-editing-guide
+  - id: read-paired-survey-sheet
+    title: Select Indexed survey packet
+    description: Add Indexed survey packet to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: paired-survey-sheet
+  - id: read-unlinked-survey-sheet
+    title: Select Survey packet with a loose reading
+    description: Add Survey packet with a loose reading to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: unlinked-survey-sheet
+  - id: try-1
+    title: Revise the old working checklist
+    description: In Review > Try this example, load "Revise the old working checklist" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: revise-old
+  - id: try-2
+    title: Change only the working edition
+    description: In Review > Try this example, load "Change only the working edition" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: retain-current
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Indexed survey packet citation on the result for "Revise the old working checklist".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: paired-survey-sheet
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - How should photos and readings be linked to a finding?
+    - What belongs in a checklist revision before a revisit?
+  handoffKeywords: []
+  unknownAnswer: I can describe visit preparation, not confirm an inspection record, interpret a photo or decide an enforcement question. Do not upload evidence here.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Inspector Copilot
+    mode: simulated
+    starter:
+      label: Walk me through preparing an inspection checklist.
+      prompt: Walk me through preparing an inspection checklist.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to check evidence links or revise a working checklist?
+          - id: alternative
+            text: Would you like to check evidence links or revise a working checklist? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: pair-evidence
+            label: Pair a finding with evidence
+            next: reply-pair-evidence
+          - id: revise-sheet
+            label: Revise an earlier checklist
+            next: reply-revise-sheet
+      - id: reply-pair-evidence
+        role: simulation
+        prompt: How should photos and readings be linked to a finding?
+        end: true
+      - id: reply-revise-sheet
+        role: simulation
+        prompt: What belongs in a checklist revision before a revisit?
+        end: true
+lab:
+  title: Prepare the next field sheet
+  description: Test a simulated visit assignment, then vary the evidence links and working checklist. The source packet contains index entries, not image files.
+  fields:
+    - id: role
+      label: Simulated visit role
+      type: select
+      options:
+        - value: unassigned
+          label: No matched assignment
+        - value: assigned
+          label: Inspector assigned to this visit
+      defaultValue: unassigned
+      hint: A generic inspector title is not a visit assignment.
+    - id: task
+      label: Work requested
+      type: select
+      options:
+        - value: prepare
+          label: Prepare a pre-visit checklist
+        - value: interpret
+          label: Interpret an image
+        - value: enforce
+          label: Enforce or sanction
+      defaultValue: prepare
+      hint: Only preparatory work uses the packet.
+    - id: edition
+      label: Working checklist
+      type: select
+      options:
+        - value: unknown
+          label: Edition unknown
+        - value: previous
+          label: Superseded edition
+        - value: current
+          label: Issued edition
+      defaultValue: unknown
+      hint: Compare the cover edition with the change note.
+    - id: links
+      label: Finding-to-evidence links
+      type: select
+      options:
+        - value: unknown
+          label: Index not checked
+        - value: paired
+          label: Photo and reading paired on each row
+        - value: loose
+          label: One reading lacks a finding link
+      defaultValue: unknown
+      hint: A loose slip is not evidence for an assumed finding.
+  checks:
+    - id: assigned
+      label: Visit assignment matched
+      field: role
+      operator: eq
+      value: assigned
+    - id: prep
+      label: Preparation requested
+      field: task
+      operator: eq
+      value: prepare
+    - id: loose
+      label: Incomplete packet selected
+      field: links
+      operator: eq
+      value: loose
+    - id: paired
+      label: Paired packet selected
+      field: links
+      operator: eq
+      value: paired
+    - id: old
+      label: Older checklist selected
+      field: edition
+      operator: eq
+      value: previous
+    - id: current
+      label: Issued checklist selected
+      field: edition
+      operator: eq
+      value: current
+  rules:
+    - id: gate
+      label: Require this visit assignment first
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: process-only
+    - id: restrict-task
+      label: Decline interpretation or enforcement
+      all:
+        - checkId: prep
+          equals: false
+      outcomeId: prep-only
+    - id: keep-gap
+      label: Do not infer a missing link
+      all:
+        - checkId: loose
+          equals: true
+      outcomeId: link-review
+    - id: redline
+      label: Replace the superseded prompt
+      all:
+        - checkId: paired
+          equals: true
+        - checkId: old
+          equals: true
+      outcomeId: revised-brief
+    - id: retain
+      label: Keep the current prompts
+      all:
+        - checkId: paired
+          equals: true
+        - checkId: current
+          equals: true
+      outcomeId: current-brief
+    - id: hold
+      label: Hold the pack until checked
+      all: []
+      outcomeId: pack-review
+  outcomes:
+    - id: process-only
+      title: General guidance only
+      summary: I cannot confirm or discuss a record in this context. I can explain the general process.
+      documentIds:
+        - visit-editing-guide
+    - id: prep-only
+      title: Preparation only
+      summary: I cannot interpret images, enforce a finding or issue a sanction. The inspector can use the checklist method to plan observations.
+      documentIds:
+        - visit-editing-guide
+    - id: link-review
+      title: One finding needs its original link
+      summary: "Earlier F-1: P-11 / M-11, 805 mm on 27 May 2026. F-2: P-12 only; the measurement link is missing. Leave its value blank and ask the Survey Records Clerk to reconcile the loose slip. Do not infer a reading from the photo."
+      documentIds:
+        - unlinked-survey-sheet
+        - visit-editing-guide
+    - id: pack-review
+      title: Do not release a complete brief
+      summary: Verify the working checklist edition and the finding index with the Survey Records Clerk before preparing a complete field sheet.
+      documentIds:
+        - visit-editing-guide
+    - id: revised-brief
+      title: Pre-visit brief and checklist revision
+      summary: "Weir Reading Room revisit, 10 June 2026. Prior survey dated 27 May: F-1 outer entrance, P-11 / M-11, 805 mm clear opening; F-2 service counter, P-12 / M-12, 935 mm front-edge height. Neither reading describes the site today."
+      documentIds:
+        - paired-survey-sheet
+        - visit-editing-guide
+      draft:
+        title: C3 to C4 | working checklist edit
+        body: "Replace the single access tick. 1. F-1: remeasure the clear opening at the marked entrance point. 2. F-2: remeasure the counter height at the front edge. Enter a new date, instrument, initials and evidence pair on each row. Leave results blank for the visit."
+    - id: current-brief
+      title: Pre-visit brief on the issued checklist
+      summary: The C4 prompts are already present; retain both rows. On 27 May 2026, F-1 outer entrance had P-11 / M-11, 805 mm; F-2 service counter had P-12 / M-12, 935 mm. At the 10 June revisit, remeasure each point and index its new evidence separately. Do not carry forward a result.
+      documentIds:
+        - paired-survey-sheet
+        - visit-editing-guide
+  cases:
+    - id: revise-old
+      title: Revise the old working checklist
+      inputs:
+        role: assigned
+        task: prepare
+        edition: previous
+        links: paired
+      expected:
+        outcomeId: revised-brief
+        documentIds:
+          - paired-survey-sheet
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - P-11 / M-11, 805 mm
+          - P-12 / M-12, 935 mm
+          - C3 to C4
+          - Leave results blank
+    - id: retain-current
+      title: Change only the working edition
+      inputs:
+        role: assigned
+        task: prepare
+        edition: current
+        links: paired
+      expected:
+        outcomeId: current-brief
+        documentIds:
+          - paired-survey-sheet
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - retain both rows
+          - Do not carry forward a result
+    - id: index-off
+      title: Disconnect the indexed packet
+      inputs:
+        role: assigned
+        task: prepare
+        edition: previous
+        links: paired
+      expected:
+        outcomeId: revised-brief
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+          - No draft or action was produced.
+      disabledKnowledge:
+        - paired-survey-sheet
+    - id: loose-reading
+      title: Leave a reading unlinked
+      inputs:
+        role: assigned
+        task: prepare
+        edition: previous
+        links: loose
+      expected:
+        outcomeId: link-review
+        documentIds:
+          - unlinked-survey-sheet
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - "F-2: P-12 only"
+          - Leave its value blank
+    - id: no-edition
+      title: Withhold the working edition
+      inputs:
+        role: assigned
+        task: prepare
+        edition: unknown
+        links: paired
+      expected:
+        outcomeId: pack-review
+        documentIds:
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - Verify the working checklist edition
+    - id: outside-assignment
+      title: Remove the visit assignment
+      inputs:
+        role: unassigned
+        task: prepare
+        edition: previous
+        links: paired
+      expected:
+        outcomeId: process-only
+        documentIds:
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - I cannot confirm or discuss a record in this context. I can explain the general process.
+    - id: image-request
+      title: Ask for an image interpretation
+      inputs:
+        role: assigned
+        task: interpret
+        edition: previous
+        links: paired
+      expected:
+        outcomeId: prep-only
+        documentIds:
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - I cannot interpret images
+    - id: enforce-request
+      title: Ask for enforcement
+      inputs:
+        role: assigned
+        task: enforce
+        edition: previous
+        links: paired
+      expected:
+        outcomeId: prep-only
+        documentIds:
+          - visit-editing-guide
+        kind: answer
+        contains:
+          - cannot interpret images, enforce a finding or issue a sanction
+implementation:
+  - title: Build this in the real service
+    description: Deployment would require assignment-scoped access to a versioned checklist and evidence register, immutable links to originals, and a qualified inspector to verify instruments and collect new observations. A local checklist draft does not replace a signed field sheet.
+  - title: What to measure
+    description: "Potential indicator: proportion of pre-visit finding rows with the correct photo ID and measurement ID, or an explicit missing-link flag. Compare drafts with the signed survey index; do not count enforcement actions as a success measure."
+  - title: Scope of this draft
+    description: "Preparation only: no image analysis, live inspection, pass/fail decision, enforcement or sanction. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy."

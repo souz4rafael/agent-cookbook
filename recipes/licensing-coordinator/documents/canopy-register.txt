@@ -1,0 +1,8 @@
+Alderfen | Canopy application: desk register exercise
+Fictional training material. Not an official service record or policy.
+
+One synthetic covered-market application has two desks that rely on the same frontage drawing.
+
+Markets reads the frontage drawing to identify the run of stalls under the canopy. Street Use reads that same sheet for the frontage adjoining the public path. In the split-copy fixture, Markets cites C2 and Street Use cites C3. The frontage line is marked differently. Neither the issue number nor either desk’s preference establishes what the applicant meant. A single draft request should cite both copies and ask for one dated, signed frontage drawing that explicitly replaces them.
+
+The thread selector distinguishes no request, an open request awaiting a verified replacement, a custodian-verified C4, and unknown thread status. An unsigned attachment stays on the open thread. Only the verified fixture includes the custodian's check of the application, sheet and signed C4. The desk selectors represent alternative register snapshots, including a desk already citing C4. When a register entry is unreadable, resolve that entry before proposing recipients. These cards provide references only; no attachment is transferred and neither desk acknowledges receipt in this exercise.

@@ -1,0 +1,18 @@
+Alderfen | Two counters: public and case scope
+Fictional training material. Not an official service record or policy.
+
+At the public counter anyone may read the intake card. It describes what to prepare, never who has applied. A new draft starts here and cannot carry over a previous case.
+
+Case scope is narrower: in the structured exercise only, a simulated holder match is bound to the selected practice slip. A visitor, an unmatched claim, or a holder matched to a different slip has no case-read permission. A scope switch is not an identity check. The paper colours select teaching variants, not people, credentials or record numbers.
+
+The ownership question has no lookup route, including for a matched holder. Use one neutral refusal for all ownership questions and unauthorised progress questions. Do not vary the wording, citation or action based on a paper colour, a guessed identity or whether anything was found. Public guidance and access rules are the only sources suitable for unverified chat.
+
+Permission to read one practice slip does not grant permission to create, alter or close anything. A new public-intake draft is a separate exercise; cancellation, missing evidence and a disabled create tool do not produce a receipt.
+
+Chat cannot verify a holder or look up a request. Open Review > Try this example to practise checking case scope and a simulated holder match before reading any progress details.
+
+A typed claim of ownership is not a match. The lab asks separately what the visitor wants, which counter is in scope and whether the supplied exercise permission covers the selected slip.
+
+I can’t confirm or disclose private record information. Review > Try this example demonstrates this privacy rule with invented inputs.
+
+The same public policy applies to an ownership question in every scope. There is no ownership lookup in this exercise.

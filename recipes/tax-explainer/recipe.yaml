@@ -1,0 +1,620 @@
+schemaVersion: 1
+revision: 1
+id: tax-explainer
+status: published
+title: Alderfen tax explainer
+summary: Explain a fictional covered-stall charge in plain English. Distinguish asking for time to pay, correcting a fact and challenging the basis of a notice.
+industry: Government and public services
+difficulty: beginner
+accentIcon: citizen
+learningGoals:
+  - Explain which market bays the seasonal tariff covers and what their upkeep charge pays for, without reading the tariff as an account balance.
+  - Match a request for time to pay, a wrong bay count and a dispute about the charging rule to the right desk and supporting information.
+  - Use the stage on a verified reader’s own card to explain which routes apply before and after issue; use public guidance when the account match is unconfirmed.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Tax and revenue
+    perspective: guidance
+  headline: Does the stallholder need time to pay, a correction or a review?
+  problem: A market trader reads the seasonal charge for a covered bay. The leaflet explains why the charge exists, but the trader thinks the bay count is wrong. A neighbour with the right count needs time to pay instead. Both need a next step, not another reading of the rate.
+  impact: A trader who challenges the charging rule to fix a register error may reach the wrong desk without the extract needed to correct the count. Another may believe a payment plan is in place when the Plan Desk has yet to consider the request.
+  approach: The public tariff explains upkeep of the market roof and drains. The route list explains who handles payment schedules, register corrections and challenges to the charging rule. Only in a verified reader’s own example does the guide use the notice card to say which routes apply at its stage.
+  startSmall: Begin with one seasonal tariff and its three request routes. Follow a disputed bay count from the leaflet to the Notice Desk, then use the example card to see why a factual correction need not wait for an issued notice.
+  potentialValue: Traders could approach the right desk with a register extract, proposed schedule or reason for review, leaving staff more time to consider the request itself.
+  measure: Ask readers to choose a desk and name what to bring for each of the three questions. Check whether they can tell a request for instalments from an approved payment plan.
+  boundary: The tariff explains a charge, not what a person still owes. Only the responsible desk can agree a plan, amend a notice or decide a challenge. The exercise neither looks up a real account nor files a request.
+  sourceLabel: "Microsoft Learn: authoring Copilot Studio instructions (not the source of the fictional tariff or notice routes)"
+  home:
+    challenge: A wrong bay count and a disagreement with the market charge can sound like the same complaint, but they need different evidence and different desks.
+    experiment: On your issued notice, switch from a wrong bay count to a disputed rule. Instead of a register extract for Notice Desk C2, the guide asks for the tariff clause and reasons for Review Clerk R3.
+    takeaway: Choose a request route by what the trader wants reviewed and check whether that route is open on a working card or only on an issued notice.
+    scope: A fictional market tariff and training notice. You can explore how to ask for instalments, not check a balance or secure a payment plan.
+agent:
+  name: Alderfen tax explainer
+  description: Explain the Alderfen covered-stall charge and its published request routes. The public leaflet does not require an account.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Explain the Alderfen covered-stall charge and its published request routes. The public leaflet does not require an account.
+    Use only the tariff and official fictional route list in chat. Do not confirm an account, its stage or its balance.
+    In the example, personal notice details require simulated account authority and an exact account match. Otherwise stay with the public leaflet.
+    Distinguish a working card from an issued notice. Explain how to make a request; do not decide eligibility, settle a challenge or change an amount.
+    Public guidance is available without account access. Only the authorised own-account lab view can describe a fictional notice stage. No balance changes here.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Explain the Alderfen covered-stall charge and its published request routes. The public leaflet does not require an account.
+    Use only the tariff and official fictional route list in chat. Do not confirm an account, its stage or its balance.
+    In the example, personal notice details require simulated account authority and an exact account match. Otherwise stay with the public leaflet.
+    Distinguish a working card from an issued notice. Explain how to make a request; do not decide eligibility, settle a challenge or change an amount.
+    Public guidance is available without account access. Only the authorised own-account lab view can describe a fictional notice stage. No balance changes here.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  stepByStep: |-
+    # Procedure
+
+    Explain the Alderfen covered-stall charge and its published request routes. The public leaflet does not require an account.
+    1. Use only the tariff and official fictional route list in chat. Do not confirm an account, its stage or its balance.
+    2. In the example, personal notice details require simulated account authority and an exact account match. Otherwise stay with the public leaflet.
+    3. Distinguish a working card from an issued notice. Explain how to make a request; do not decide eligibility, settle a challenge or change an amount.
+    Public guidance is available without account access. Only the authorised own-account lab view can describe a fictional notice stage. No balance changes here.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  decisionRules: |-
+    # Decision rules
+
+    Explain the Alderfen covered-stall charge and its published request routes. The public leaflet does not require an account.
+    Public reader or no verified own-account match → public charge and routes only.
+    Missing stage → explain the routes without guessing which applies now. Working card → describe a pre-issue factual correction, not a challenge already opened.
+    Issued notice → explain the requested listed route. Availability of a route is not acceptance of a request.
+    Public guidance is available without account access. Only the authorised own-account lab view can describe a fictional notice stage. No balance changes here.
+    Use only the tariff and official fictional route list in chat. Do not confirm an account, its stage or its balance.
+  examples: |-
+    “Can I pay over time?” → Describe how to request instalments, not a payment plan already granted.
+    “That is not my bay” concerns a fact; “I disagree with the charging rule” concerns the basis. Neither question changes the charge.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Alderfen tax explainer.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: covered-stall-tariff
+    title: Public covered-stall tariff · LT-4
+    summary: LT-4 is Alderfen’s fictional seasonal market tariff. Crowns are training units, not a real currency or a real tax rate.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/covered-stall-tariff.txt
+  - id: notice-route-list
+    title: Public notice route list · NR-8
+    summary: NR-8 is the official route list within this fictional scheme; there is no live form or service.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/notice-route-list.txt
+  - id: stall-notice-card
+    title: Seasonal notice card · NC-62
+    summary: Training card NC-62 identifies one active covered bay, B-16, in the Copper Rain season. Use only in a verified own-account simulation.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/stall-notice-card.txt
+facts:
+  - id: charge-basis
+    documentId: covered-stall-tariff
+    keywords:
+      - What does the covered-stall charge pay for
+    answer: It pays for upkeep of the shared market roof and drains. The fictional tariff sets 24 crowns per active covered bay per season; it does not cover open-air pitches.
+    detail: A tariff explains the rule, not the bays registered to any particular account or its outstanding balance.
+  - id: request-plan
+    documentId: notice-route-list
+    keywords:
+      - How do I ask for instalments
+    answer: For an issued notice, the listed instalment route is Plan Desk P1. Quote the notice reference and propose a payment schedule for the desk to consider.
+    detail: Asking is not approval. The desk must review the request; the leaflet does not determine eligibility or change a balance.
+  - id: fact-or-basis
+    documentId: notice-route-list
+    keywords:
+      - How is a factual correction different from a challenge
+    answer: For a wrong bay count or season, use Notice Desk C2 and identify the register fact to correct. To dispute the charging basis on an issued notice, give the Review Clerk your reasons through R3.
+    detail: A correction can be raised on a working card. A challenge to the basis is an issued-notice route. Neither submission revises a balance on its own.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-covered-stall-tariff
+    title: Select Public covered-stall tariff · LT-4
+    description: Add Public covered-stall tariff · LT-4 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: covered-stall-tariff
+  - id: read-notice-route-list
+    title: Select Public notice route list · NR-8
+    description: Add Public notice route list · NR-8 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: notice-route-list
+  - id: read-stall-notice-card
+    title: Select Seasonal notice card · NC-62
+    description: Add Seasonal notice card · NC-62 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: stall-notice-card
+  - id: try-1
+    title: Explain the charge, not the balance
+    description: In Review > Try this example, load "Explain the charge, not the balance" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: why-issued
+  - id: try-2
+    title: Distinguish a working card from an issued notice
+    description: In Review > Try this example, load "Distinguish a working card from an issued notice" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: working-not-appealable
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Seasonal notice card · NC-62 citation on the result for "Explain the charge, not the balance".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: stall-notice-card
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - What does the covered-stall charge pay for?
+    - How do I ask for instalments?
+    - How is a factual correction different from a challenge?
+  handoffKeywords: []
+  unknownAnswer: I can explain the public charge and the three listed routes. I cannot identify an account, its stage or what anyone owes from a chat question.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Alderfen tax explainer
+    mode: simulated
+    starter:
+      label: Help me read the market charge leaflet.
+      prompt: Help me read the market charge leaflet.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Do you want the charge basis, the instalment route, or the difference between a correction and a challenge?
+          - id: alternative
+            text: Do you want the charge basis, the instalment route, or the difference between a correction and a challenge? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: charge-basis
+            label: Why this charge?
+            next: reply-charge-basis
+          - id: request-plan
+            label: Time to pay
+            next: reply-request-plan
+          - id: fact-or-basis
+            label: Correction or challenge?
+            next: reply-fact-or-basis
+      - id: reply-charge-basis
+        role: simulation
+        prompt: What does the covered-stall charge pay for?
+        end: true
+      - id: reply-request-plan
+        role: simulation
+        prompt: How do I ask for instalments?
+        end: true
+      - id: reply-fact-or-basis
+        role: simulation
+        prompt: How is a factual correction different from a challenge?
+        end: true
+lab:
+  title: Read the leaflet or the notice?
+  description: The public tariff is the same for everyone. To practise a stage-specific answer, select verified authority and the matching training account.
+  fields:
+    - id: access
+      label: Reading authority
+      type: select
+      options:
+        - value: public
+          label: Public leaflet only
+        - value: own
+          label: Authorised own-account view
+        - value: denied
+          label: Access denied
+        - value: unknown
+          label: Authority unknown
+      defaultValue: public
+      hint: Only an authorised reader can see a personal stage.
+    - id: account
+      label: Account match
+      type: select
+      options:
+        - value: matched
+          label: Confirmed own account
+        - value: other
+          label: Different account
+        - value: unknown
+          label: Not established
+      defaultValue: unknown
+      hint: A notice reference in a question is not proof of account authority.
+    - id: stage
+      label: Notice stage on the card
+      type: select
+      options:
+        - value: working
+          label: Working card
+        - value: issued
+          label: Issued notice
+        - value: absent
+          label: No stage supplied
+      defaultValue: absent
+      hint: A missing stage is neither working nor issued.
+    - id: question
+      label: What is the reader asking?
+      type: select
+      options:
+        - value: basis
+          label: Explain the charge
+        - value: plan
+          label: Ask about instalments
+        - value: correct
+          label: Correct a register fact
+        - value: challenge
+          label: Challenge the basis
+      defaultValue: basis
+      hint: Choose a route by the purpose of the request.
+  checks:
+    - id: public-only
+      label: Public leaflet requested
+      field: access
+      operator: eq
+      value: public
+    - id: authorised
+      label: Account authority verified
+      field: access
+      operator: eq
+      value: own
+    - id: own-account
+      label: Requested account matches
+      field: account
+      operator: eq
+      value: matched
+    - id: working
+      label: Card marked working
+      field: stage
+      operator: eq
+      value: working
+    - id: issued
+      label: Notice marked issued
+      field: stage
+      operator: eq
+      value: issued
+    - id: basis
+      label: Reader asks why
+      field: question
+      operator: eq
+      value: basis
+    - id: plan
+      label: Reader asks for time to pay
+      field: question
+      operator: eq
+      value: plan
+    - id: correct
+      label: Reader disputes a fact
+      field: question
+      operator: eq
+      value: correct
+    - id: challenge
+      label: Reader disputes the rule
+      field: question
+      operator: eq
+      value: challenge
+  rules:
+    - id: leaflet-first
+      label: Use public sources for a leaflet request
+      all:
+        - checkId: public-only
+          equals: true
+      outcomeId: public-leaflet
+    - id: require-authority
+      label: Require account authority
+      all:
+        - checkId: authorised
+          equals: false
+      outcomeId: public-only-view
+    - id: require-account
+      label: Require an own-account match
+      all:
+        - checkId: own-account
+          equals: false
+      outcomeId: public-only-view
+    - id: not-issued
+      label: Explain a working card without suggesting an issued notice
+      all:
+        - checkId: working
+          equals: true
+      outcomeId: working-card
+    - id: explain-basis
+      label: Read the charge basis
+      all:
+        - checkId: issued
+          equals: true
+        - checkId: basis
+          equals: true
+      outcomeId: notice-basis
+    - id: explain-plan
+      label: Identify the instalment request route
+      all:
+        - checkId: issued
+          equals: true
+        - checkId: plan
+          equals: true
+      outcomeId: notice-plan
+    - id: explain-correction
+      label: Identify the factual correction route
+      all:
+        - checkId: issued
+          equals: true
+        - checkId: correct
+          equals: true
+      outcomeId: notice-correction
+    - id: explain-challenge
+      label: Identify the basis challenge route
+      all:
+        - checkId: issued
+          equals: true
+        - checkId: challenge
+          equals: true
+      outcomeId: notice-challenge
+    - id: no-stage
+      label: Do not infer a notice stage
+      all: []
+      outcomeId: stage-unavailable
+  outcomes:
+    - id: public-leaflet
+      title: Public covered-stall leaflet
+      summary: LT-4 sets a seasonal upkeep charge of 24 crowns per active covered bay. The public guide lists Plan Desk P1 for instalments, Notice Desk C2 for corrections and Review Clerk R3 for challenges. These are request routes, not guaranteed outcomes.
+      documentIds:
+        - covered-stall-tariff
+        - notice-route-list
+    - id: public-only-view
+      title: Public guidance only
+      summary: No account details are available in this view. The fictional tariff is 24 crowns per active covered bay per season. The public guide lists Plan Desk P1 for instalments, Notice Desk C2 for corrections and Review Clerk R3 for challenges. These are request routes, not guaranteed outcomes.
+      documentIds:
+        - covered-stall-tariff
+        - notice-route-list
+    - id: working-card
+      title: Working card, not an issued notice
+      summary: NC-62 is a working card in this snapshot. Give Notice Desk C2 the disputed bay or season and a register extract to request a factual correction. Plan Desk P1 and Review Clerk R3 are listed for issued notices, not this stage. No balance is changed.
+      documentIds:
+        - stall-notice-card
+        - notice-route-list
+    - id: notice-basis
+      title: Basis of the issued notice
+      summary: NC-62 lists one active covered bay for Copper Rain. LT-4 clause 1 sets 24 crowns for that bay for the season. That explains the charge, not the outstanding balance.
+      documentIds:
+        - stall-notice-card
+        - covered-stall-tariff
+    - id: notice-plan
+      title: "Instalments: ask the Plan Desk"
+      summary: For issued notice NC-62, use Plan Desk P1. Quote the reference and propose a schedule. The desk decides; eligibility is not guaranteed and no balance has changed.
+      documentIds:
+        - stall-notice-card
+        - notice-route-list
+    - id: notice-correction
+      title: "Wrong fact: ask the Notice Desk"
+      summary: For NC-62, use Notice Desk C2. Name the bay count or season you think is wrong and include the register extract. The desk reviews it; this explanation does not amend the notice.
+      documentIds:
+        - stall-notice-card
+        - notice-route-list
+    - id: notice-challenge
+      title: "Disputed basis: ask the Review Clerk"
+      summary: For issued notice NC-62, use Review Clerk R3. Quote the disputed tariff clause and give your reasons. No challenge has been filed and the balance is unchanged.
+      documentIds:
+        - stall-notice-card
+        - notice-route-list
+    - id: stage-unavailable
+      title: No stage-specific answer
+      summary: The notice stage is not supplied. Do not assume that a notice has been issued. The public guide lists Plan Desk P1 for instalments, Notice Desk C2 for corrections and Review Clerk R3 for challenges. These are request routes, not guaranteed outcomes.
+      documentIds:
+        - notice-route-list
+  cases:
+    - id: why-issued
+      title: Explain the charge, not the balance
+      inputs:
+        access: own
+        account: matched
+        stage: issued
+        question: basis
+      expected:
+        outcomeId: notice-basis
+        documentIds:
+          - stall-notice-card
+          - covered-stall-tariff
+        kind: answer
+        contains:
+          - one active covered bay
+          - 24 crowns
+          - not the outstanding balance
+    - id: working-not-appealable
+      title: Distinguish a working card from an issued notice
+      inputs:
+        access: own
+        account: matched
+        stage: working
+        question: challenge
+      expected:
+        outcomeId: working-card
+        documentIds:
+          - stall-notice-card
+          - notice-route-list
+        kind: answer
+        contains:
+          - working card
+          - Notice Desk C2
+          - not this stage
+    - id: instalment-request
+      title: An instalment enquiry is not approval
+      inputs:
+        access: own
+        account: matched
+        stage: issued
+        question: plan
+      expected:
+        outcomeId: notice-plan
+        documentIds:
+          - stall-notice-card
+          - notice-route-list
+        kind: answer
+        contains:
+          - Plan Desk P1
+          - eligibility is not guaranteed
+    - id: wrong-count
+      title: Ask to correct a register fact
+      inputs:
+        access: own
+        account: matched
+        stage: issued
+        question: correct
+      expected:
+        outcomeId: notice-correction
+        documentIds:
+          - stall-notice-card
+          - notice-route-list
+        kind: answer
+        contains:
+          - Notice Desk C2
+          - include the register extract
+    - id: tariff-dispute
+      title: Dispute the rule rather than the count
+      inputs:
+        access: own
+        account: matched
+        stage: issued
+        question: challenge
+      expected:
+        outcomeId: notice-challenge
+        documentIds:
+          - stall-notice-card
+          - notice-route-list
+        kind: answer
+        contains:
+          - Review Clerk R3
+          - balance is unchanged
+    - id: missing-stage
+      title: No stage on the card
+      inputs:
+        access: own
+        account: matched
+        stage: absent
+        question: basis
+      expected:
+        outcomeId: stage-unavailable
+        documentIds:
+          - notice-route-list
+        kind: answer
+        contains:
+          - notice stage is not supplied
+    - id: directory-off
+      title: Withhold an ungrounded route
+      inputs:
+        access: own
+        account: matched
+        stage: issued
+        question: plan
+      expected:
+        outcomeId: notice-plan
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - NR-8
+      disabledKnowledge:
+        - notice-route-list
+    - id: just-leaflet
+      title: Read without an account
+      inputs:
+        access: public
+        account: unknown
+        stage: issued
+        question: basis
+      expected:
+        outcomeId: public-leaflet
+        documentIds:
+          - covered-stall-tariff
+          - notice-route-list
+        kind: answer
+        contains:
+          - Public covered-stall leaflet
+          - request routes
+    - id: no-authority
+      title: Denied personal view still offers the public leaflet
+      inputs:
+        access: denied
+        account: matched
+        stage: issued
+        question: basis
+      expected:
+        outcomeId: public-only-view
+        documentIds:
+          - covered-stall-tariff
+          - notice-route-list
+        kind: answer
+        contains:
+          - No account details are available
+          - Plan Desk P1
+    - id: other-account
+      title: Authority for one account cannot open another
+      inputs:
+        access: own
+        account: other
+        stage: working
+        question: basis
+      expected:
+        outcomeId: public-only-view
+        documentIds:
+          - covered-stall-tariff
+          - notice-route-list
+        kind: answer
+        contains:
+          - No account details are available
+implementation:
+  - title: Build this in the real service
+    description: Publish the leaflet independently of account tools. In a real service, verify the user’s authority for the account before reading a notice and check that the route directory is current.
+  - title: What to measure
+    description: Check route choice for a timing request, an incorrect bay count and a disputed tariff clause. Test that an unverified reader sees only the public leaflet at every stage.
+  - title: Scope of this draft
+    description: Public guidance is available without account access. Only the authorised own-account lab view can describe a fictional notice stage. No balance changes here. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

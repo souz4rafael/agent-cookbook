@@ -7,7 +7,7 @@ import './MessageActions.css'
 export function MessageActions({ text, reaction, onReact }: {
   text: string
   reaction?: MessageReaction
-  onReact: (value: MessageReaction) => void
+  onReact?: (value: MessageReaction) => void
 }) {
   const [copyState, setCopyState] = useState<'idle' | 'copying' | 'copied' | 'error'>('idle')
   const [copyError, setCopyError] = useState('')
@@ -49,12 +49,12 @@ export function MessageActions({ text, reaction, onReact }: {
         <button className="message-action" type="button" aria-label="Copy message" title={copyState === 'copied' ? 'Copied' : 'Copy message'} disabled={copyState === 'copying'} onClick={() => { void copy() }}>
           {copyState === 'copied' ? <Checkmark20Regular aria-hidden="true" /> : <><MessageActionIcon name="copy" className="message-action-regular" /><MessageActionIcon name="copy" filled className="message-action-filled" /></>}
         </button>
-        <button className="message-action" type="button" aria-label="Like" title="Like" aria-pressed={reaction === 'like'} onClick={() => onReact('like')}>
+        {onReact && <><button className="message-action" type="button" aria-label="Like" title="Like" aria-pressed={reaction === 'like'} onClick={() => onReact('like')}>
           <MessageActionIcon name="like" className="message-action-regular" /><MessageActionIcon name="like" filled className="message-action-filled" />
         </button>
         <button className="message-action" type="button" aria-label="Dislike" title="Dislike" aria-pressed={reaction === 'dislike'} onClick={() => onReact('dislike')}>
           <MessageActionIcon name="dislike" className="message-action-regular" /><MessageActionIcon name="dislike" filled className="message-action-filled" />
-        </button>
+        </button></>}
         <span className="sr-only" role="status">{copyState === 'copied' ? 'Message copied to clipboard.' : ''}</span>
       </div>
       {copyError && <p className="message-copy-error" role="alert">{copyError}</p>}

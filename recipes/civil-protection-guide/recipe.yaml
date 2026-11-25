@@ -1,0 +1,566 @@
+schemaVersion: 1
+revision: 1
+id: civil-protection-guide
+status: published
+title: Civil Protection Guide
+summary: Read an archived Alderfen regional alert, check where official shelter information comes from, and distinguish post-event support from emergency response.
+industry: Government and public services
+difficulty: beginner
+accentIcon: citizen
+learningGoals:
+  - Read the issuer, coverage and replacement times to explain why the last archived Alderfen bulletin is still historical.
+  - Distinguish a directory or forwarded notice from evidence of an opening, and point shelter questions to the current official local channel.
+  - Frame a nonurgent recovery desk enquiry and recognise when immediate danger calls for emergency services without waiting for a source check.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Civil protection and disasters, perspective: guidance }
+  headline: The last bulletin in the archive is not today’s shelter notice.
+  problem: A resident receives a forwarded regional bulletin and wants to know whether the shelter information still applies. The heading looks official even on a replaced copy. Meanwhile, someone looking for support after the event needs a recovery desk, not an emergency response.
+  impact: Mistaking a historical notice for an opening could send someone looking for a service that is not available. Asking a person in immediate danger to check an issuer or wait for an archive search could cost time they should spend contacting emergency services.
+  approach: Immediate danger takes priority over every source check. For an ordinary enquiry the learner reads the issuer, coverage and edition line in the fictional archive. The 10:10 bulletin replaced the 09:00 edition; neither says what is open now. Separate guides explain where to check official shelter notices and what to ask a recovery desk.
+  startSmall: Test one pair of expired bulletins with a local public information team. Include a forwarded copy, a nonurgent recovery question and an immediate-danger example with no sources selected. Use no live alerts or locations in the trial.
+  potentialValue: Residents could learn where to check a current notice without mistaking a directory for an opening, while people seeking nonurgent help could reach the right information desk.
+  measure: In drills, count readers who choose the current official channel rather than the archive. Record any unsupported claim that a shelter is open and any urgent example that asks the reader to wait before contacting emergency services.
+  boundary: If you are in immediate danger, contact local emergency services now. Do not wait for this guide. For current local alerts and shelter information, use the official channels of your local emergency management authority. The exercise gives no live locations, routes or dispatch.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: A forwarded shelter notice still has the regional desk’s heading after its replacement. How can a resident tell what the archive proves?
+    experiment: With the regional desk as publisher, switch the alert edition from last archived to replaced. Then report immediate danger and check which instruction comes first.
+    takeaway: A replacement tells you which bulletin the desk filed last, not what is open now. Check current local notices on the responsible authority’s official channel.
+    scope: If you are in immediate danger, contact local emergency services now. The fictional archive has no live locations or shelter status and cannot dispatch help.
+agent:
+  name: Civil Protection Guide
+  description: Teach residents how to check the issuer, region, revision and time window on a public notice. Every Alderfen notice in this exercise is historical.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Teach residents how to check the issuer, region, revision and time window on a public notice. Every Alderfen notice in this exercise is historical.
+    If you are in immediate danger, contact local emergency services now.
+    Do not wait for a source check in immediate danger. This guide cannot notify responders.
+    For ordinary requests, stay within public regional information; decline private lists, location lookups and operational requests without disclosing details.
+    Label exercise timestamps as historical, name the official issuer, and direct present-day questions to official current local channels. A copied or superseded notice cannot establish current conditions.
+    No live or unverified locations, shelter availability, dispatch, routes or operational hazard instructions.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Teach residents how to check the issuer, region, revision and time window on a public notice. Every Alderfen notice in this exercise is historical.
+    If you are in immediate danger, contact local emergency services now.
+    Do not wait for a source check in immediate danger. This guide cannot notify responders.
+    For ordinary requests, stay within public regional information; decline private lists, location lookups and operational requests without disclosing details.
+    Label exercise timestamps as historical, name the official issuer, and direct present-day questions to official current local channels. A copied or superseded notice cannot establish current conditions.
+    No live or unverified locations, shelter availability, dispatch, routes or operational hazard instructions.
+  stepByStep: |-
+    # Procedure
+
+    Teach residents how to check the issuer, region, revision and time window on a public notice. Every Alderfen notice in this exercise is historical.
+    1. If you are in immediate danger, contact local emergency services now.
+    2. Do not wait for a source check in immediate danger. This guide cannot notify responders.
+    3. For ordinary requests, stay within public regional information; decline private lists, location lookups and operational requests without disclosing details.
+    4. Label exercise timestamps as historical, name the official issuer, and direct present-day questions to official current local channels. A copied or superseded notice cannot establish current conditions.
+    No live or unverified locations, shelter availability, dispatch, routes or operational hazard instructions.
+  decisionRules: |-
+    # Decision rules
+
+    Teach residents how to check the issuer, region, revision and time window on a public notice. Every Alderfen notice in this exercise is historical.
+    Immediate danger overrides every archive setting: If you are in immediate danger, contact local emergency services now.
+    Outside public information scope: decline. Unknown issuer, edition or timing: do not quote as current. Official archive item: describe only what was recorded then.
+    Separate a nonurgent recovery enquiry from emergency response; do not promise assistance.
+    No live or unverified locations, shelter availability, dispatch, routes or operational hazard instructions.
+    Do not wait for a source check in immediate danger. This guide cannot notify responders.
+    For ordinary requests, stay within public regional information; decline private lists, location lookups and operational requests without disclosing details.
+  examples: |-
+    “Send help here.” → If you are in immediate danger, contact local emergency services now. This exercise cannot dispatch help.
+    “Is this the newest shelter notice?” → The last edition in an archive is not a live notice. Check the official current local channel.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Civil Protection Guide.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: regional-bulletin-archive
+    title: "Regional bulletin archive: reading the edition line"
+    summary: This archive is a historical publishing exercise, not an alert feed.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/regional-bulletin-archive.txt
+  - id: shelter-notice-guide
+    title: Where official shelter notices come from
+    summary: A shelter directory and an opening notice answer different questions. A directory describes a service; only the responsible local authority can issue current information about its availability.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/shelter-notice-guide.txt
+  - id: recovery-enquiry-guide
+    title: "After the event: questions for the support desk"
+    summary: Post-event support is an information service, not a route to urgent help. In the Alderfen exercise, residents may ask the municipal recovery desk which public services are accepting enquiries and how to request information in an accessible format.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/recovery-enquiry-guide.txt
+facts:
+  - id: date-check
+    documentId: regional-bulletin-archive
+    keywords:
+      - How do I tell whether this archived alert was replaced
+    answer: If you are in immediate danger, contact local emergency services now. In the historical Alderfen exercise on 14 May 2025, the Regional Civil Protection Desk replaced the 09:00 UTC edition at 10:10 UTC. Neither is a current alert.
+    detail: The exercise window ended at 12:00 UTC that day. Check the issuer, coverage, issue time and later revisions on the authority's own channel. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+  - id: shelter-check
+    documentId: shelter-notice-guide
+    keywords:
+      - Where should I check current official shelter information
+    answer: If you are in immediate danger, contact local emergency services now. For current local alerts and shelter information, use the official channels of your local emergency management authority. This exercise cannot confirm a shelter location or opening.
+    detail: Check that the authority covers your area and that its notice has not expired or been replaced. A directory entry or screenshot is not an opening notice.
+  - id: support-enquiry
+    documentId: recovery-enquiry-guide
+    keywords:
+      - What can I ask a municipal recovery desk after an event
+    answer: If you are in immediate danger, contact local emergency services now. For a nonurgent enquiry, ask the current official municipal recovery desk which support services are accepting enquiries and what accessible formats are available.
+    detail: Check the date, service area and publisher before relying on a support notice. An archived programme description cannot promise assistance or determine eligibility.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-regional-bulletin-archive
+    title: "Select Regional bulletin archive: reading the edition line"
+    description: "Add Regional bulletin archive: reading the edition line to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: regional-bulletin-archive
+  - id: read-shelter-notice-guide
+    title: Select Where official shelter notices come from
+    description: Add Where official shelter notices come from to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: shelter-notice-guide
+  - id: read-recovery-enquiry-guide
+    title: "Select After the event: questions for the support desk"
+    description: "Add After the event: questions for the support desk to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: recovery-enquiry-guide
+  - id: try-1
+    title: Read the edition held in the archive
+    description: In Review > Try this example, load "Read the edition held in the archive" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: last-edition
+  - id: try-2
+    title: Read an edition marked replaced
+    description: In Review > Try this example, load "Read an edition marked replaced" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: replaced-copy
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Regional bulletin archive: reading the edition line citation on the result for "Read the edition held in the archive".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: regional-bulletin-archive
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+skills:
+  - id: immediate-danger-message
+    title: Always show the immediate-danger message
+    description: A fixed safety response that does not require the exercise library.
+    instructions: If you are in immediate danger, contact local emergency services now. Show this message before considering scope or sources. Do not look up a location or offer dispatch.
+    coverage: simulated
+test:
+  suggestedQuestions:
+    - How do I tell whether this archived alert was replaced?
+    - Where should I check current official shelter information?
+    - What can I ask a municipal recovery desk after an event?
+  handoffKeywords: []
+  unknownAnswer: If you are in immediate danger, contact local emergency services now. This guide cannot dispatch help, look up locations or verify live conditions. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+  missingKnowledgeAnswer: If you are in immediate danger, contact local emergency services now. The exercise source is unavailable. Do not rely on an undated copy or wait for this guide. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Civil Protection Guide
+    mode: simulated
+    starter:
+      label: Read a public notice without treating it as live
+      prompt: Read a public notice without treating it as live
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: "If you are in immediate danger, contact local emergency services now. This exercise cannot dispatch help. Which would you like to check: an archived alert, a shelter notice or post-event support?"
+          - id: alternative
+            text: If you are in immediate danger, contact local emergency services now. For this historical exercise, choose a question about bulletin dates, official shelter information or recovery enquiries.
+      - id: choose-route
+        role: user
+        choices:
+          - id: date-check
+            label: Read the historical edition line
+            next: reply-date-check
+          - id: shelter-check
+            label: Check the shelter information source
+            next: reply-shelter-check
+          - id: support-enquiry
+            label: Find the nonurgent support channel
+            next: reply-support-enquiry
+      - id: reply-date-check
+        role: simulation
+        prompt: How do I tell whether this archived alert was replaced?
+        end: true
+      - id: reply-shelter-check
+        role: simulation
+        prompt: Where should I check current official shelter information?
+        end: true
+      - id: reply-support-enquiry
+        role: simulation
+        prompt: What can I ask a municipal recovery desk after an event?
+        end: true
+lab:
+  title: Which part of a notice can you rely on?
+  description: Change the public request and the evidence available in a historical exercise. Even the last archived edition is not current. No live information is available here.
+  fields:
+    - id: danger
+      label: Immediate danger reported?
+      type: boolean
+      defaultValue: false
+      hint: An immediate-danger message takes priority over every other field.
+    - id: scope
+      label: Request scope
+      type: select
+      options:
+        - value: public
+          label: Public regional information
+        - value: restricted
+          label: Private roster, live location or dispatch request
+      defaultValue: public
+      hint: Only public information for this exercise is in scope.
+    - id: topic
+      label: Information requested
+      type: select
+      options:
+        - value: alert
+          label: Regional alert
+        - value: shelter
+          label: Shelter notice
+        - value: support
+          label: Post-event support
+      defaultValue: alert
+      hint: Select the kind of public notice.
+    - id: publisher
+      label: Publisher evidence
+      type: select
+      options:
+        - value: official
+          label: Archived original from the regional desk
+        - value: copy
+          label: Forwarded copy only
+        - value: unknown
+          label: Issuer not shown
+      defaultValue: unknown
+      hint: A logo on a copy does not establish who issued the notice.
+    - id: edition
+      label: Edition evidence
+      type: select
+      options:
+        - value: last-archived
+          label: Last edition in the historical archive
+        - value: replaced
+          label: Marked as replaced
+        - value: undated
+          label: No usable edition or time
+      defaultValue: undated
+      hint: Last archived never means current.
+  checks:
+    - id: urgent
+      label: Immediate danger reported
+      field: danger
+      operator: eq
+      value: true
+    - id: in-scope
+      label: Public regional request
+      field: scope
+      operator: eq
+      value: public
+    - id: official
+      label: Issuing desk established
+      field: publisher
+      operator: eq
+      value: official
+    - id: last-edition
+      label: Last archived edition established
+      field: edition
+      operator: eq
+      value: last-archived
+    - id: superseded
+      label: Notice marked as replaced
+      field: edition
+      operator: eq
+      value: replaced
+    - id: alert
+      label: Alert question
+      field: topic
+      operator: eq
+      value: alert
+    - id: shelter
+      label: Shelter question
+      field: topic
+      operator: eq
+      value: shelter
+    - id: support
+      label: Post-event question
+      field: topic
+      operator: eq
+      value: support
+  rules:
+    - id: danger-first
+      label: Show urgent direction even without sources
+      all:
+        - checkId: urgent
+          equals: true
+      outcomeId: emergency-now
+    - id: scope-stop
+      label: Decline non-public or operational requests
+      all:
+        - checkId: in-scope
+          equals: false
+      outcomeId: public-only
+    - id: old-edition
+      label: Do not reuse a replaced edition
+      all:
+        - checkId: official
+          equals: true
+        - checkId: superseded
+          equals: true
+      outcomeId: not-current
+    - id: archived-alert
+      label: Explain the final historical edition
+      all:
+        - checkId: official
+          equals: true
+        - checkId: last-edition
+          equals: true
+        - checkId: alert
+          equals: true
+      outcomeId: read-archive
+    - id: archived-shelter
+      label: Distinguish an archive from present availability
+      all:
+        - checkId: official
+          equals: true
+        - checkId: last-edition
+          equals: true
+        - checkId: shelter
+          equals: true
+      outcomeId: check-shelter-channel
+    - id: archived-support
+      label: Separate recovery from immediate response
+      all:
+        - checkId: official
+          equals: true
+        - checkId: last-edition
+          equals: true
+        - checkId: support
+          equals: true
+      outcomeId: ask-recovery-desk
+    - id: uncertain
+      label: Do not fill gaps in a notice
+      all: []
+      outcomeId: unverified-notice
+  outcomes:
+    - id: emergency-now
+      title: Contact local emergency services now
+      summary: If you are in immediate danger, contact local emergency services now. Do not wait for this guide. It cannot dispatch assistance or provide locations.
+      documentIds: []
+      skillId: immediate-danger-message
+    - id: public-only
+      title: Request outside public scope
+      summary: I cannot share private information, verify live locations or dispatch help. If you are in immediate danger, contact local emergency services now. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+      documentIds:
+        - shelter-notice-guide
+    - id: not-current
+      title: Do not rely on the replaced notice
+      summary: The exercise publisher marked this edition as replaced. Do not present it as active or use it to infer an opening. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+      documentIds:
+        - regional-bulletin-archive
+    - id: read-archive
+      title: Read the historical edition, not a live alert
+      summary: "Historical exercise: Alderfen Regional Civil Protection Desk, 14 May 2025, 10:10 UTC. This replaced the 09:00 UTC edition; the exercise window ended at 12:00 UTC. For current local alerts and shelter information, use the official channels of your local emergency management authority."
+      documentIds:
+        - regional-bulletin-archive
+    - id: check-shelter-channel
+      title: An archive cannot establish an opening
+      summary: The historical notice does not establish current shelter availability. For current local alerts and shelter information, use the official channels of your local emergency management authority. On that channel, check issuer, area, issue time and later updates. No location is provided here.
+      documentIds:
+        - shelter-notice-guide
+    - id: ask-recovery-desk
+      title: Prepare a nonurgent recovery question
+      summary: "Ask the current official municipal recovery desk: “Which post-event support services are accepting enquiries, and can I get the information in writing?” A historical notice does not establish eligibility or an award. No enquiry was sent."
+      documentIds:
+        - recovery-enquiry-guide
+    - id: unverified-notice
+      title: Currency not established
+      summary: The issuer or edition cannot be established from the supplied evidence. Do not treat the notice as current. For current local alerts and shelter information, use the official channels of your local emergency management authority.
+      documentIds:
+        - regional-bulletin-archive
+  cases:
+    - id: last-edition
+      title: Read the edition held in the archive
+      inputs:
+        danger: false
+        scope: public
+        topic: alert
+        publisher: official
+        edition: last-archived
+      expected:
+        outcomeId: read-archive
+        documentIds:
+          - regional-bulletin-archive
+        kind: answer
+        contains:
+          - Historical exercise
+          - 10:10 UTC
+          - For current local alerts and shelter information, use the official channels of your local emergency management authority.
+    - id: replaced-copy
+      title: Read an edition marked replaced
+      inputs:
+        danger: false
+        scope: public
+        topic: alert
+        publisher: official
+        edition: replaced
+      expected:
+        outcomeId: not-current
+        documentIds:
+          - regional-bulletin-archive
+        kind: answer
+        contains:
+          - marked this edition as replaced
+    - id: current-shelter
+      title: Ask about current shelter availability
+      inputs:
+        danger: false
+        scope: public
+        topic: shelter
+        publisher: official
+        edition: last-archived
+      expected:
+        outcomeId: check-shelter-channel
+        documentIds:
+          - shelter-notice-guide
+        kind: answer
+        contains:
+          - does not establish current shelter availability
+          - For current local alerts and shelter information, use the official channels of your local emergency management authority.
+    - id: recovery-help
+      title: Prepare a nonurgent question
+      inputs:
+        danger: false
+        scope: public
+        topic: support
+        publisher: official
+        edition: last-archived
+      expected:
+        outcomeId: ask-recovery-desk
+        documentIds:
+          - recovery-enquiry-guide
+        kind: answer
+        contains:
+          - No enquiry was sent
+    - id: unattributed
+      title: Evaluate an undated forwarded notice
+      inputs:
+        danger: false
+        scope: public
+        topic: alert
+        publisher: copy
+        edition: undated
+      expected:
+        outcomeId: unverified-notice
+        documentIds:
+          - regional-bulletin-archive
+        kind: answer
+        contains:
+          - Do not treat the notice as current
+    - id: decline-roster
+      title: Decline a request for private information
+      inputs:
+        danger: false
+        scope: restricted
+        topic: alert
+        publisher: official
+        edition: last-archived
+      expected:
+        outcomeId: public-only
+        documentIds:
+          - shelter-notice-guide
+        kind: answer
+        contains:
+          - I cannot share private information
+    - id: immediate-danger
+      title: Give urgent direction without a verified notice
+      inputs:
+        danger: true
+        scope: restricted
+        topic: alert
+        publisher: unknown
+        edition: undated
+      expected:
+        outcomeId: emergency-now
+        documentIds: []
+        kind: answer
+        contains:
+          - If you are in immediate danger, contact local emergency services now.
+          - Do not wait
+    - id: no-bulletin
+      title: Try the archive question with its document removed
+      inputs:
+        danger: false
+        scope: public
+        topic: alert
+        publisher: official
+        edition: last-archived
+      expected:
+        outcomeId: read-archive
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - regional-bulletin-archive
+implementation:
+  - title: Build this in the real service
+    description: Have the responsible public information office specify official publishers, regional coverage and expiry handling; have safety reviewers test the immediate-danger message independently of source availability.
+  - title: What to measure
+    description: Check whether learners reject a superseded notice, distinguish support from emergency response, and give the same immediate-danger direction with the library disconnected.
+  - title: Scope of this draft
+    description: No live or unverified locations, shelter availability, dispatch, routes or operational hazard instructions. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

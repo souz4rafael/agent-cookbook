@@ -1,0 +1,6 @@
+Alderfen | Marker contract line · CT-73
+Fictional training material. Not an official service record or policy.
+
+Case key K-730; supplier S-MOSS; contract CT-73, line M4 (path markers, unit: each).
+Clause 7.2: for the quantity check, compare the invoice row for M4 with units on a signed acceptance entry for this case, supplier and line. A dispatch tally cannot replace acceptance. M3 uses another specification.
+Clause 7.3: send any difference to the assigned employee for review. Agreement of counts alone does not settle price, tax, condition or payment.

@@ -1,0 +1,590 @@
+schemaVersion: 1
+revision: 1
+id: school-counsellor-assistant
+status: published
+title: School Counsellor Assistant
+summary: Review the entries behind an attendance alert, list what is still unknown and add a follow-up owner and date only from an agreed review note.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: learning
+learningGoals:
+  - Report what the signed morning session marks establish and identify the missing student account separately.
+  - Compare an unsigned session line with a later signed correction and explain what each does to the two-entry alert.
+  - Use the agreement linked to the reconciled extract to record an owner role and date; leave both unset for an offer or a superseded alert.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: School attendance and engagement
+    perspective: operations
+  headline: Check the two mornings behind the alert before planning a support conversation.
+  problem: A counsellor sees a two-entry attendance alert. One version of the register lacks the signed sheet for the second morning; a later correction marks that student present that morning. Even two confirmed morning marks would not explain what happened during the rest of either day.
+  impact: A support conversation can start from a tally the school itself has corrected. Carrying a date from the old review into the new note can also make it look as though the student and carer agreed to an arrangement nobody discussed with them.
+  approach: Have the assigned counsellor read the selected register version at session level. State which marks are supported, what changed and whose account is missing. Only the reconciled two-entry version has a matching agreement card; use its owner role and date only when the participants have confirmed both.
+  startSmall: Compare the reconciled extract with a meeting offer and then with confirmed terms. Keep confirmation selected and switch to the signed correction for 8 October; the second mark changes to present and the old follow-up drops out.
+  potentialValue: A counsellor could open a discussion with the right dates and an honest question for the student, rather than asking them to explain a mark that no longer stands.
+  measure: Compare notes against the signed version. Count stale alerts repeated, unrecorded reasons presented as facts and follow-up dates carried over without a matching agreement.
+  boundary: The exercise shows a confidential note for a simulated assigned counsellor, not a live student alert. The student’s account is theirs to give. The note does not predict attendance, assign risk or discipline, edit the register or book a meeting.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: A two-morning alert and its follow-up can outlive the register entry that prompted them.
+    experiment: Keep the agreement confirmed but apply the 8 October correction to see why the owner and date disappear.
+    takeaway: A signed mark establishes a session entry, not its cause, and a follow-up agreement belongs to the version it cites.
+    scope: Review fictional extracts and an agreement card without scoring a student, editing attendance or booking a meeting.
+agent:
+  name: School Counsellor Assistant
+  description: Help the assigned Alderfen school counsellor prepare an evidence note. An alert opens a question about the register, not a conclusion about a student.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help the assigned Alderfen school counsellor prepare an evidence note. An alert opens a question about the register, not a conclusion about a student.
+    Explain only the review process in chat. Require the simulated counsellor assigned to this review before showing even a single attendance entry; deny other roles without confirming or denying that a student has an alert.
+    Check session dates against the signed register and its amendment status. State what the entries actually show, what changed, and which information is still missing. A register mark does not supply a reason.
+    Separate agreement to meet from confirmation of the register or agreement about a cause. Record a named professional role as owner and a follow-up date only when the participants have confirmed those terms. Otherwise leave both unset.
+    Use minimal factual language. Do not predict attendance, infer motives, rank risk, label a student, recommend discipline or issue sanctions.
+    No prediction, student label, risk score, sanction, register edit or appointment booking. This is a confidential draft for human review.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help the assigned Alderfen school counsellor prepare an evidence note. An alert opens a question about the register, not a conclusion about a student.
+    Explain only the review process in chat. Require the simulated counsellor assigned to this review before showing even a single attendance entry; deny other roles without confirming or denying that a student has an alert.
+    Check session dates against the signed register and its amendment status. State what the entries actually show, what changed, and which information is still missing. A register mark does not supply a reason.
+    Separate agreement to meet from confirmation of the register or agreement about a cause. Record a named professional role as owner and a follow-up date only when the participants have confirmed those terms. Otherwise leave both unset.
+    Use minimal factual language. Do not predict attendance, infer motives, rank risk, label a student, recommend discipline or issue sanctions.
+    No prediction, student label, risk score, sanction, register edit or appointment booking. This is a confidential draft for human review.
+  stepByStep: |-
+    # Procedure
+
+    Help the assigned Alderfen school counsellor prepare an evidence note. An alert opens a question about the register, not a conclusion about a student.
+    1. Explain only the review process in chat. Require the simulated counsellor assigned to this review before showing even a single attendance entry; deny other roles without confirming or denying that a student has an alert.
+    2. Check session dates against the signed register and its amendment status. State what the entries actually show, what changed, and which information is still missing. A register mark does not supply a reason.
+    3. Separate agreement to meet from confirmation of the register or agreement about a cause. Record a named professional role as owner and a follow-up date only when the participants have confirmed those terms. Otherwise leave both unset.
+    4. Use minimal factual language. Do not predict attendance, infer motives, rank risk, label a student, recommend discipline or issue sanctions.
+    No prediction, student label, risk score, sanction, register edit or appointment booking. This is a confidential draft for human review.
+  decisionRules: |-
+    # Decision rules
+
+    Help the assigned Alderfen school counsellor prepare an evidence note. An alert opens a question about the register, not a conclusion about a student.
+    Require a matched assignment first. Refuse scoring, labelling and sanctions regardless of the apparent quality of the record.
+    An incomplete or corrected extract takes precedence over a proposed or previously agreed plan. Report the evidence gap or correction; do not recycle an appointment.
+    For reconciled attendance evidence, show the known entries and unknown context. Add the owner role and date only if the review agreement is confirmed.
+    No prediction, student label, risk score, sanction, register edit or appointment booking. This is a confidential draft for human review.
+    Explain only the review process in chat. Require the simulated counsellor assigned to this review before showing even a single attendance entry; deny other roles without confirming or denying that a student has an alert.
+  examples: |-
+    “The alert says two sessions. Why were they missed?” Identify the exact entries and state that the reason was not recorded; do not guess.
+    “A worker suggested Friday. Put it in the follow-up box.” Leave it blank until the participants confirm both a responsible role and the date.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for School Counsellor Assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: support-review-method
+    title: Counsellor’s attendance-review method
+    summary: Pastoral Practice Lead | method 1.4 | 30 September 2026.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/support-review-method.txt
+  - id: register-reconciliation
+    title: Reconciled attendance extract
+    summary: Confidential fictional teaching extract AC-7 v2 | Larch Quay School | reconciled by the Register Clerk, 9 October 2026.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/register-reconciliation.txt
+  - id: register-gap-slip
+    title: Incomplete attendance extract
+    summary: Confidential fictional alternative AC-7 v1 | Register Clerk working copy | 8 October 2026.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/register-gap-slip.txt
+  - id: register-correction
+    title: Superseding attendance correction
+    summary: Confidential fictional correction AC-7 v3 | signed 12 October 2026 by the Register Clerk after a session-sheet check.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/register-correction.txt
+  - id: review-agreement
+    title: Confirmed follow-up card
+    summary: Confidential fictional support review | read-back A2 | 12 October 2026 | linked only to AC-7 v2.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/review-agreement.txt
+facts:
+  - id: mark-or-reason
+    documentId: support-review-method
+    keywords:
+      - What can an attendance alert establish before a support review
+    answer: It points to session marks that need checking. Read the signed entries and any amendments; report the session and mark, not an assumed explanation or full-day absence.
+    detail: If an entry or the student’s account is missing, say which is missing. A provisional count is not evidence of a pattern and cannot support a prediction.
+  - id: owner-and-date
+    documentId: support-review-method
+    keywords:
+      - When may a counsellor add an owner role and a follow-up date
+    answer: Record the professional role and date only when the participants have agreed to both for this review. An offer of a meeting is not confirmation.
+    detail: If either part is unconfirmed or the agreement is withdrawn, leave both fields unset. Do not book a meeting or treat the note as a direction to discipline anyone.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-support-review-method
+    title: Select Counsellor’s attendance-review method
+    description: Add Counsellor’s attendance-review method to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: support-review-method
+  - id: read-register-reconciliation
+    title: Select Reconciled attendance extract
+    description: Add Reconciled attendance extract to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: register-reconciliation
+  - id: read-register-gap-slip
+    title: Select Incomplete attendance extract
+    description: Add Incomplete attendance extract to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: register-gap-slip
+  - id: read-register-correction
+    title: Select Superseding attendance correction
+    description: Add Superseding attendance correction to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: register-correction
+  - id: read-review-agreement
+    title: Select Confirmed follow-up card
+    description: Add Confirmed follow-up card to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: review-agreement
+  - id: try-1
+    title: Record the confirmed support follow-up
+    description: In Review > Try this example, load "Record the confirmed support follow-up" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: confirmed-review
+  - id: try-2
+    title: Change confirmation to an offer
+    description: In Review > Try this example, load "Change confirmation to an offer" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: offer-only
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Reconciled attendance extract citation on the result for "Record the confirmed support follow-up".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: register-reconciliation
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - What can an attendance alert establish before a support review?
+    - When may a counsellor add an owner role and a follow-up date?
+  handoffKeywords: []
+  unknownAnswer: I can explain how an attendance review works, but cannot confirm a student, an alert or an appointment here. Please do not enter student details.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: School Counsellor Assistant
+    mode: simulated
+    starter:
+      label: Explain how to review an attendance alert without opening a case.
+      prompt: Explain how to review an attendance alert without opening a case.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to check the evidence behind an alert or the conditions for adding a follow-up?
+          - id: alternative
+            text: Would you like to check the evidence behind an alert or the conditions for adding a follow-up? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: mark-or-reason
+            label: Separate a mark from a reason
+            next: reply-mark-or-reason
+          - id: owner-and-date
+            label: Check the follow-up agreement
+            next: reply-owner-and-date
+      - id: reply-mark-or-reason
+        role: simulation
+        prompt: What can an attendance alert establish before a support review?
+        end: true
+      - id: reply-owner-and-date
+        role: simulation
+        prompt: When may a counsellor add an owner role and a follow-up date?
+        end: true
+lab:
+  title: Reconcile before planning a follow-up
+  description: Match the simulated counsellor to the review, then compare register status and agreement. The exercise exposes no live alerts and creates no appointment.
+  fields:
+    - id: role
+      label: Simulated review assignment
+      type: select
+      options:
+        - value: unmatched
+          label: Unmatched staff member or other requester
+        - value: matched
+          label: Counsellor assigned to this specific review
+      defaultValue: unmatched
+      hint: A school staff title does not grant access to this review.
+    - id: purpose
+      label: Requested use
+      type: select
+      options:
+        - value: review
+          label: Prepare an evidence note
+        - value: predict
+          label: Predict attendance or label the student
+        - value: sanction
+          label: Decide a sanction
+      defaultValue: review
+      hint: Support review is the only supported use.
+    - id: register
+      label: Evidence variant
+      type: select
+      options:
+        - value: unknown
+          label: Version not established
+        - value: partial
+          label: A signed session entry is missing
+        - value: reconciled
+          label: Session entries reconciled
+        - value: corrected
+          label: A later correction removes the alert
+      defaultValue: unknown
+      hint: Use only the version selected for this run.
+    - id: agreement
+      label: Owner and date agreement
+      type: select
+      options:
+        - value: unknown
+          label: No confirmation
+        - value: offered
+          label: Offered but not jointly accepted
+        - value: confirmed
+          label: Participants confirmed the role and date
+        - value: withdrawn
+          label: Confirmation withdrawn
+      defaultValue: unknown
+      hint: A meeting offer does not establish either field.
+  checks:
+    - id: assigned
+      label: Specific review assignment matched
+      field: role
+      operator: eq
+      value: matched
+    - id: review
+      label: Evidence review requested
+      field: purpose
+      operator: eq
+      value: review
+    - id: amended
+      label: Superseding correction selected
+      field: register
+      operator: eq
+      value: corrected
+    - id: gap
+      label: Incomplete source selected
+      field: register
+      operator: eq
+      value: partial
+    - id: complete
+      label: Reconciled source selected
+      field: register
+      operator: eq
+      value: reconciled
+    - id: agreed
+      label: Role and date both confirmed
+      field: agreement
+      operator: eq
+      value: confirmed
+  rules:
+    - id: gate
+      label: Match the counsellor to this review first
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: process-only
+    - id: limit-use
+      label: Decline prediction or sanctions
+      all:
+        - checkId: review
+          equals: false
+      outcomeId: support-only
+    - id: apply-correction
+      label: Use the correction before any plan
+      all:
+        - checkId: amended
+          equals: true
+      outcomeId: corrected-alert
+    - id: report-gap
+      label: Keep the evidence gap visible
+      all:
+        - checkId: gap
+          equals: true
+      outcomeId: entry-gap
+    - id: record-agreement
+      label: Add only confirmed arrangements
+      all:
+        - checkId: complete
+          equals: true
+        - checkId: agreed
+          equals: true
+      outcomeId: agreed-review
+    - id: no-agreement
+      label: Hold both arrangement fields
+      all:
+        - checkId: complete
+          equals: true
+        - checkId: agreed
+          equals: false
+      outcomeId: evidence-only
+    - id: no-version
+      label: Hold the note for source verification
+      all: []
+      outcomeId: version-review
+  outcomes:
+    - id: process-only
+      title: General guidance only
+      summary: I cannot confirm or discuss a record in this context. I can explain the general process.
+      documentIds:
+        - support-review-method
+    - id: support-only
+      title: Stay within a support review
+      summary: I cannot predict attendance, label a student or decide a sanction. I can explain how to check register evidence for a support conversation.
+      documentIds:
+        - support-review-method
+    - id: corrected-alert
+      title: Use the corrected register
+      summary: AC-7 v3 supersedes the two-entry alert. The 8 October AM entry was corrected to present; only the 6 October AM mark remains. Its reason is not recorded. Do not carry forward an owner or follow-up date from the earlier review.
+      documentIds:
+        - register-correction
+        - support-review-method
+    - id: entry-gap
+      title: The second session is not verified
+      summary: "AC-7 v1 confirms the 6 October AM mark only. Missing: the signed session sheet for 8 October AM and the student’s account. Keep the two-entry tally unconfirmed. Owner and follow-up date: unset."
+      documentIds:
+        - register-gap-slip
+        - support-review-method
+    - id: version-review
+      title: Register version not established
+      summary: Check the signed register version and any amendment before quoting an alert. Keep the evidence, owner and follow-up date unset.
+      documentIds:
+        - support-review-method
+    - id: evidence-only
+      title: Attendance evidence without an agreed follow-up
+      summary: "AC-7 v2: the 6 and 8 October 2026 AM entries show not present at morning registration. Missing: the student’s account and the reason for either mark. No current agreement confirms the arrangements. Owner and follow-up date: unset."
+      documentIds:
+        - register-reconciliation
+        - support-review-method
+    - id: agreed-review
+      title: Evidence note with agreed follow-up
+      summary: "AC-7 v2: the 6 and 8 October 2026 AM entries show not present at morning registration. Missing: the student’s account and the reason for either mark. At the 12 October read-back the participants confirmed both arrangements. Owner role: Attendance Support Counsellor. Follow-up date: 16 October 2026. No appointment was booked."
+      documentIds:
+        - register-reconciliation
+        - review-agreement
+        - support-review-method
+  cases:
+    - id: confirmed-review
+      title: Record the confirmed support follow-up
+      inputs:
+        role: matched
+        purpose: review
+        register: reconciled
+        agreement: confirmed
+      expected:
+        outcomeId: agreed-review
+        documentIds:
+          - register-reconciliation
+          - review-agreement
+          - support-review-method
+        kind: answer
+        contains:
+          - 6 and 8 October 2026 AM
+          - "Missing: the student’s account"
+          - "Owner role: Attendance Support Counsellor"
+          - "Follow-up date: 16 October 2026"
+    - id: offer-only
+      title: Change confirmation to an offer
+      inputs:
+        role: matched
+        purpose: review
+        register: reconciled
+        agreement: offered
+      expected:
+        outcomeId: evidence-only
+        documentIds:
+          - register-reconciliation
+          - support-review-method
+        kind: answer
+        contains:
+          - not present at morning registration
+          - "Owner and follow-up date: unset"
+    - id: agreement-off
+      title: Disconnect the agreement source
+      inputs:
+        role: matched
+        purpose: review
+        register: reconciled
+        agreement: confirmed
+      expected:
+        outcomeId: agreed-review
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+          - No draft or action was produced.
+      disabledKnowledge:
+        - review-agreement
+    - id: missing-sheet
+      title: Remove the signed second session sheet
+      inputs:
+        role: matched
+        purpose: review
+        register: partial
+        agreement: confirmed
+      expected:
+        outcomeId: entry-gap
+        documentIds:
+          - register-gap-slip
+          - support-review-method
+        kind: answer
+        contains:
+          - "Missing: the signed session sheet for 8 October AM"
+          - tally unconfirmed
+          - "Owner and follow-up date: unset"
+    - id: use-correction
+      title: Apply the superseding correction
+      inputs:
+        role: matched
+        purpose: review
+        register: corrected
+        agreement: confirmed
+      expected:
+        outcomeId: corrected-alert
+        documentIds:
+          - register-correction
+          - support-review-method
+        kind: answer
+        contains:
+          - 8 October AM entry was corrected to present
+          - Do not carry forward an owner or follow-up date
+    - id: withdraw-agreement
+      title: Withdraw the arrangement
+      inputs:
+        role: matched
+        purpose: review
+        register: reconciled
+        agreement: withdrawn
+      expected:
+        outcomeId: evidence-only
+        documentIds:
+          - register-reconciliation
+          - support-review-method
+        kind: answer
+        contains:
+          - No current agreement
+          - "Owner and follow-up date: unset"
+    - id: no-extract
+      title: Leave the register version unknown
+      inputs:
+        role: matched
+        purpose: review
+        register: unknown
+        agreement: confirmed
+      expected:
+        outcomeId: version-review
+        documentIds:
+          - support-review-method
+        kind: answer
+        contains:
+          - before quoting an alert
+          - follow-up date unset
+    - id: unassigned-staff
+      title: Use an unmatched school staff role
+      inputs:
+        role: unmatched
+        purpose: review
+        register: reconciled
+        agreement: confirmed
+      expected:
+        outcomeId: process-only
+        documentIds:
+          - support-review-method
+        kind: answer
+        contains:
+          - I cannot confirm or discuss a record in this context. I can explain the general process.
+    - id: refuse-prediction
+      title: Request a student prediction or label
+      inputs:
+        role: matched
+        purpose: predict
+        register: reconciled
+        agreement: confirmed
+      expected:
+        outcomeId: support-only
+        documentIds:
+          - support-review-method
+        kind: answer
+        contains:
+          - I cannot predict attendance, label a student
+    - id: refuse-sanction
+      title: Request a sanction
+      inputs:
+        role: matched
+        purpose: sanction
+        register: reconciled
+        agreement: confirmed
+      expected:
+        outcomeId: support-only
+        documentIds:
+          - support-review-method
+        kind: answer
+        contains:
+          - or decide a sanction
+implementation:
+  - title: Build this in the real service
+    description: A real school would enforce case-level counsellor assignment, reconcile signed register amendments and capture revocable agreement for a role and date. Attendance evidence and meeting arrangements need separate access and retention controls. No live school record or calendar is connected here.
+  - title: What to measure
+    description: "Potential indicator: audit the percentage of notes with dated register evidence and an explicit information gap. Separately count owner/date pairs recorded without confirmed agreement; the target for that count is zero."
+  - title: Scope of this draft
+    description: No prediction, student label, risk score, sanction, register edit or appointment booking. This is a confidential draft for human review. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

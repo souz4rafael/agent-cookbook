@@ -1,0 +1,15 @@
+Alderfen | Before register: the edition-seal return
+Fictional training material. Not an official service record or policy.
+
+Window one covers exercise days 1–10 inclusive. A, B, C and D are four dummy, standard single-sheet map reprint templates. Each visits Intake and then Print. These are job shapes, not resident identifiers. Each “release” below ends that job’s clock.
+
+A — Day 1 Intake accepts edition seal; day 2 Print finds the seal box blank and returns the job to Intake for the edition seal; day 3 Intake copies the same seal; day 4 Print receives it; day 6 Print releases the sheet.
+B — Day 2 Intake accepts edition seal; day 3 Print returns the blank seal box to Intake for that seal; day 5 Intake copies the same seal; day 6 Print receives it; day 8 Print releases the sheet.
+C — Day 3 Intake accepts edition seal; day 4 Print returns the blank seal box to Intake for that seal; day 5 Intake copies the same seal; day 6 Print receives it; day 7 Print releases the sheet.
+D — Day 4 Intake accepts edition seal; day 5 Print reads the seal on the slip; day 7 Print releases the sheet without a return.
+
+The Intake register and the paper travelling to Print are distinct. In the first three jobs the register already showed acceptance, but the outgoing slip’s seal box was empty. Print asked for the same edition seal again, not a different map or a new approval. A forward transfer back to Print finishes the correction; it is not another return.
+
+Intake had accepted the edition seal on job A on day 1. On day 2 Print saw a blank seal box on its own slip and returned the job to Intake for the same seal. The requirement was repeated because the acceptance did not travel with the packet.
+
+On day 3 Intake copied the same seal and on day 4 Print received it. Count one affected job, not two handoffs or two approvals. The before register also shows job D reaching release without this return.

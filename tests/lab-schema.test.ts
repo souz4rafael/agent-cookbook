@@ -123,6 +123,23 @@ test('full input maps reject missing, extra, wrongly typed, oversized, and out-o
   }
 })
 
+test('optional source gates refer to known, cited documents and cannot gate the final fallback', () => {
+  const withGate = structuredClone(recipe)
+  withGate.lab!.rules[0].requiresKnowledge = ['policy']
+  assert.ok(compiledRecipeSchema.safeParse(withGate).success)
+  for (const sources of [[], ['missing'], ['policy','policy']]) {
+    const invalid = structuredClone(withGate)
+    invalid.lab!.rules[0].requiresKnowledge = sources
+    assert.equal(compiledRecipeSchema.safeParse(invalid).success, false)
+  }
+  const uncited = structuredClone(withGate)
+  uncited.knowledge.push({...uncited.knowledge[0], id:'other-policy'})
+  uncited.lab!.rules[0].requiresKnowledge = ['other-policy']
+  assert.equal(compiledRecipeSchema.safeParse(uncited).success, false)
+  withGate.lab!.rules.at(-1)!.requiresKnowledge = ['policy']
+  assert.equal(compiledRecipeSchema.safeParse(withGate).success, false)
+})
+
 test('defaults, field metadata, and all comparison variants are validated', () => {
   const mutations: ((value: LabDefinition) => void)[] = [
     value => { value.fields[0].defaultValue = -1 },

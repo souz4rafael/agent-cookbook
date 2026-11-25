@@ -1,0 +1,5 @@
+Alderfen | Landing declaration · LD-27
+Fictional training material. Not an official service record or policy.
+
+Declaration LD-27 is the declarant’s line for landing case LK-27, season Siltfall 4. Column G is the gross seasonal amount in crowns, not a remittance.
+In the printed exercise G reads 84. Read the editable declared amount for the selected snapshot. A blank cell supplies no amount, not an amount of zero.

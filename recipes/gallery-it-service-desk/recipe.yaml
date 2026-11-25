@@ -1,0 +1,465 @@
+schemaVersion: 1
+revision: 1
+id: gallery-it-service-desk
+status: published
+title: "IT service desk: the empty shift board"
+summary: A print-room employee opens Foldline and sees no cards. Find out whose work is affected and when the list is needed. Offer a matching article, ask for a missing fact, or prepare a short note for a colleague to review.
+industry: Employee IT support
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Distinguish the reach of an interruption from its urgency. Explain why one desk facing a handover now can need human attention before a familiar fix is tried.
+  - Tell a missing observation from a negative one. Ask one question without turning an unknown reach or an unreported view check into an answer.
+  - Check whether a cited article fits the screen the employee described. Stop after one unsuccessful view check rather than inventing another fix.
+  - Inspect a handoff with no identifying details, recognize a blocked action, and distinguish a note on screen from a confirmed local ticket.
+sourceUrl: https://microsoft.github.io/copilot-studio-gallery/solutions/it-service-desk-assistant/
+scenario:
+  headline: The shift board looks empty. Can the employee wait for a view check?
+  problem: Before a print-room handover, an employee looks for the next job card on the fictional Foldline board. “Nothing is showing” could mean one reader opened an empty Pinned view, or every desk has lost sight of the next job.
+  impact: Repeating a view tip at a whole-shift stoppage costs time. Sending every empty view to the desk also has a cost. A reviewer needs to know whose work is waiting and when it must resume, not the name of the person who noticed it.
+  approach: Ask about reach and timing separately. Use the shelf article only for its precise screen and only before the check has been tried. Otherwise ask for the next missing observation or offer human review.
+  startSmall: Hold the screen, timing and prior check fixed. Change Affected work from One desk to Whole shift. Compare the article on the first run with the four observations on the review slip on the second.
+  potentialValue: An employee with a narrow display question gets a step they can try. When time or reach matters more, the next colleague can see why the article was set aside without asking for logs or personal details.
+  measure: Compare the first response when only reach changes, and again when only timing changes. Check which source supports each route. Count new local tickets after preparing a note, cancelling it and separately confirming it.
+  boundary: All reports and articles are invented. No accounts, network or device checks, real employee data or external ITSM calls are used. A note becomes a local simulated ticket only through the host's separate confirmation.
+  sourceLabel: "Copilot Studio Gallery: IT Service Desk Assistant, Sapan Patel, v1.0.0.0"
+  home:
+    challenge: An empty shift board can be a harmless view choice for one reader or a blocker for the whole print room. The screen alone cannot decide.
+    experiment: Change Affected work from One desk to Whole shift without changing Handover timing. Watch the empty-view article give way to a review slip.
+    takeaway: Judge reach and urgency separately, ask for what is missing, and give a reviewer observations rather than an unverified diagnosis.
+    scope: Work with an invented shift board and fixed choices. Only the host can record a local simulated ticket after review; no IT system receives it.
+agent:
+  name: Foldline support desk
+  description: Help a print-room employee decide what to do about an unreadable shift board, using the reported reach, timing, screen and last view check.
+  instructions: |-
+    # Shift-board support mandate
+
+    Purpose: Help an employee read the fictional Foldline shift board or prepare a brief for a human. Use only reported observations. Never request identities, credentials, device details, logs or screenshots, or suggest system or network checks.
+    Triage: A whole shift affected or a handover due now takes precedence, even if other facts are unknown. Offer human review. Otherwise ask about one missing fact at a time: affected work, timing, then screen. For an empty Pinned view, ask whether the view check was tried if that is unknown.
+    Guidance: For one desk that can wait, offer the selected shelf article only if Pinned is empty and the check is untried. Ask what appeared; don't assume success. An unsuccessful check or a different screen needs a human, not a guessed fix.
+    Handoff: Respect advice only. If a note is requested, include just the screen, affected work, timing, view-check result and request for a next step. Mark unknowns. Withhold unsupported guidance. An unavailable tool permits no creation. Show the note and destination for separate host confirmation; cancelling creates nothing. Never dispatch externally or promise a repair.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Shift-board support mandate
+
+    Purpose: Help an employee read the fictional Foldline shift board or prepare a brief for a human. Use only reported observations. Never request identities, credentials, device details, logs or screenshots, or suggest system or network checks.
+    Triage: A whole shift affected or a handover due now takes precedence, even if other facts are unknown. Offer human review. Otherwise ask about one missing fact at a time: affected work, timing, then screen. For an empty Pinned view, ask whether the view check was tried if that is unknown.
+    Guidance: For one desk that can wait, offer the selected shelf article only if Pinned is empty and the check is untried. Ask what appeared; don't assume success. An unsuccessful check or a different screen needs a human, not a guessed fix.
+    Handoff: Respect advice only. If a note is requested, include just the screen, affected work, timing, view-check result and request for a next step. Mark unknowns. Withhold unsupported guidance. An unavailable tool permits no creation. Show the note and destination for separate host confirmation; cancelling creates nothing. Never dispatch externally or promise a repair.
+  stepByStep: |-
+    # First-contact procedure
+
+    1. Listen for four observations about Foldline: which screen, who is affected in broad terms, when the list is needed, and what happened with the view check. Never ask for identifying details, secrets, logs or screenshots. Do not inspect systems or networks.
+    2. If the whole shift is affected or the handover is due now, offer human review. Leave the rest unknown if necessary. Otherwise ask the first unanswered question about affected work, timing or screen. For empty Pinned, also clarify an unreported view check.
+    3. If one desk can wait and has not tried the view check for empty Pinned, cite the matching article and ask if the card appeared. Stop there. An unmatched screen or a failed check goes to human review. Do not invent evidence or a repair.
+    4. If the employee wants advice only, stop. Otherwise show a short note with the four observations, any unknowns, the requested next step and the local destination. Do not act without the required sources and tool. A human can cancel or confirm in the host; only confirmation records a local ticket. Never send the note to an external desk.
+  decisionRules: |-
+    # Support and escalation rules
+
+    Whole shift affected OR handover due now: offer human review first, without declaring an outage. Unknowns stay unknown.
+    Neither signal established: ask for the first missing fact in order of affected work, timing, screen. For empty Pinned with one desk that can wait, clarify any unknown prior check.
+    One desk + can wait + empty Pinned + not tried: cite the shelf article, suggest its read-only check and ask what appeared. No matching screen or no improvement: offer review, not another fix.
+    Required evidence absent: do not supply that result. Advice only: stop without a note. Note requested: include just screen, affected work, timing, view-check result and a question for the reviewer. Never include identity, secrets, logs, screenshots or machine details; do not run diagnostics.
+    Missing tool: no ticket. Available tool: show the note and local destination; only separate host confirmation records a ticket. Cancel means no change. Do not dispatch, infer a cause or promise service.
+  examples: |-
+    “Pinned is empty; I don't know who else is affected.” Ask whether the interruption is at one desk or across the shift. Don't suggest a fix yet.
+    “Just my desk; the handover can wait. I haven't tried another view.” Offer the shelf article. A suggested check is not a confirmed resolution.
+    “Just my desk, but the handover starts now.” Offer a short note for review without waiting for a view check. Showing or editing that note does not create a ticket.
+editable: [name, description, instructions, tone, detail]
+connections:
+  - id: print-room-shelf
+    type: sharepoint
+    title: Print-room reference shelf
+    description: Select the local shelf containing the intake card, the display article and the review-slip guide.
+    accountLabel: Foldline learning room
+    resources:
+      - id: support-cards
+        label: Foldline support cards
+        description: Three fictional desk documents; each must be selected before its guidance can be used.
+    realWorldNote: The shelf is a local source selector. It neither signs in to SharePoint nor invokes the gallery's Dataverse knowledge tool.
+  - id: print-room-desk
+    type: service-desk
+    title: Print-room review desk
+    description: Choose the fictional destination for a reviewed slip. Choosing it does not file anything.
+    accountLabel: Foldline learning room
+    resources:
+      - id: shift-review
+        label: Shift-board review tray
+        description: Holds local simulated tickets, not messages to a technician.
+    realWorldNote: This destination exists in the exercise only. There is no external incident queue or dispatch connection.
+knowledge:
+  - id: first-contact
+    title: First-contact card
+    summary: How to separate reach from timing and how to ask for the next missing observation.
+    connectionId: print-room-shelf
+    resourceId: support-cards
+    file: documents/first-contact-card.txt
+  - id: shelf-note
+    title: When Pinned looks empty
+    summary: One read-only view check for a single desk that can wait. It is not a general fix for a blank page.
+    connectionId: print-room-shelf
+    resourceId: support-cards
+    file: documents/empty-pinned-view.txt
+  - id: review-slip
+    title: A slip a colleague could use
+    summary: What belongs in a handoff, what to leave unknown and when a local ticket can be recorded.
+    connectionId: print-room-shelf
+    resourceId: support-cards
+    file: documents/review-slip.txt
+facts:
+  - id: reach-question
+    documentId: first-contact
+    keywords: [what if reach is unknown]
+    answer: Is one desk affected, or is the whole shift unable to use the board?
+    detail: An unreported reach is not evidence that only one desk is affected.
+  - id: narrow-view
+    documentId: shelf-note
+    keywords: [pinned is empty at one desk that can wait and the check is untried]
+    answer: In the fictional Foldline board, switch from Pinned to All cards and look for the current shift card. Does it appear there?
+    detail: This changes only what the reader sees.
+  - id: urgent-handover
+    documentId: review-slip
+    keywords: [what if one desk needs the list now]
+    answer: For a handover due now, offer human review even if only one desk is affected.
+    detail: Use the reported timing; do not turn it into an outage diagnosis.
+  - id: shift-interruption
+    documentId: review-slip
+    keywords: [what if the whole shift is affected]
+    answer: For a whole-shift report, offer human review even if the handover can wait.
+    detail: Leave any unreported facts marked as such.
+tools:
+  - id: record-shift-ticket
+    type: create-case
+    title: Record a local shift-board ticket
+    description: Make the reviewed slip eligible for a simulated ticket in the Shift-board review tray. The host asks separately before creating one.
+    connectionId: print-room-desk
+    resourceId: shift-review
+    requiredKnowledge: [first-contact, review-slip]
+    realWorldNote: No connector executes. An approved note becomes one local record, not a dispatched incident or notice.
+journey:
+  - id: select-intake
+    title: Find the first-contact card
+    description: Connect Foldline support cards in Knowledge. Select First-contact card and check which two observations can each justify human review.
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: first-contact}
+  - id: select-article
+    title: Add the limited display article
+    description: Select When Pinned looks empty. Look for the screen it does not cover.
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: shelf-note}
+  - id: select-slip
+    title: Add the review-slip guide
+    description: Select A slip a colleague could use. Compare its four observations with the details the desk specifically does not need.
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: review-slip}
+  - id: arm-local-tool
+    title: Compare a blocked note with an available action
+    description: Run Whole shift can wait before enabling the tool. Read the note and the blocked-action message. Then connect Shift-board review tray in Tools and enable Record a local shift-board ticket.
+    tab: tools
+    completeWhen: {type: tool, toolId: record-shift-ticket}
+  - id: single-desk-run
+    title: Try the article's narrow case
+    description: In Review, run One desk can wait. Inspect the article suggestion; no ticket or claim of resolution should appear.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: one-desk-can-wait}
+  - id: open-article
+    title: Check what the article actually says
+    description: Open the When Pinned looks empty citation on that answer. Identify what the employee would need to observe before calling it resolved.
+    tab: activity
+    completeWhen: {type: citation-opened, documentId: shelf-note}
+  - id: missing-run
+    title: Withhold the article when reach is unknown
+    description: Run Reach not reported. Compare the question with the previous article. No one reported that the whole shift was fine.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: missing-reach}
+  - id: shift-run
+    title: Set aside the tip when the whole shift is affected
+    description: Run Whole shift can wait again. Check the destination and the four observations. The offer is not a ticket.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: whole-shift-can-wait}
+  - id: confirm-slip
+    title: See exactly when the ticket exists
+    description: Open the host review dialog on the whole-shift slip and cancel. Check that no record was added. Reopen the offer, inspect the note and confirm once. Look for the new local receipt, not an external ticket number.
+    tab: handoff
+    completeWhen: {type: action-confirmed, toolId: record-shift-ticket, outcomeId: review-note}
+  - id: evaluate-routes
+    title: Check the counterexamples
+    description: Run Evaluate with the cards and tool selected. Compare unknown reach, high urgency, missing sources and the deliberately disabled tool. Evaluation itself records no ticket.
+    tab: activity
+    completeWhen: {type: evaluation-passed}
+test:
+  suggestedQuestions:
+    - What if reach is unknown?
+    - Pinned is empty at one desk that can wait and the check is untried. What can I look at?
+    - What if one desk needs the list now?
+    - What if the whole shift is affected?
+  handoffKeywords: []
+  unknownAnswer: This desk can explain the Foldline practice reports, not inspect a device or look up an employee. Choose a suggested question about the shift board.
+  missingKnowledgeAnswer: The reference for this question is not selected. I can't support an answer from the report alone.
+  handoffBlockedAnswer: The local ticket tool is unavailable. No ticket has been recorded or dispatched.
+  handoffReadyAnswer: The slip is ready to review, not filed. Only the host's separate confirmation records a local ticket.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: first-call
+    title: Take the first Foldline call
+    mode: simulated
+    starter:
+      label: My shift cards have disappeared
+      prompt: Pinned is empty on the practice Foldline board. I haven't tried another view. What should I do?
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: ask-reach
+        role: assistant
+        text: Before we try another view, how much of the print room is affected? I only need the reach, not anyone's name.
+      - id: choose-reach
+        role: user
+        choices:
+          - {id: unknown, label: I don't know yet, next: clarify-reach}
+          - {id: single, label: Just my desk, next: ask-timing}
+          - {id: shift, label: The whole shift cannot see the list, next: shift-reply}
+      - id: clarify-reach
+        role: simulation
+        prompt: What if reach is unknown?
+        end: true
+      - id: ask-timing
+        role: assistant
+        text: Can the handover wait, or does this desk need the list now?
+      - id: choose-timing
+        role: user
+        choices:
+          - {id: later, label: It can wait, next: article-reply}
+          - {id: now, label: The handover is due now, next: urgent-reply}
+      - id: article-reply
+        role: simulation
+        prompt: Pinned is empty at one desk that can wait and the check is untried. What can I look at?
+        end: true
+      - id: urgent-reply
+        role: simulation
+        prompt: What if one desk needs the list now?
+        end: true
+      - id: shift-reply
+        role: simulation
+        prompt: What if the whole shift is affected?
+        end: true
+implementation:
+  - title: What was inspected
+    description: "IT Service Desk Assistant by Sapan Patel, v1.0.0.0, in the official Copilot Studio Gallery. The ZIP manifest names publisher IT Support Solutions. The bot instructions and three inline skills describe first contact, guided support and escalation. This draft adapts the decisions, not the playbooks."
+  - title: Canvas versus executable definition
+    description: "In Workflows/workflow.json the seven-node canvas depicts intake, classification, search, a resolution decision and its two routes. The separate executable definition captures an HTTP request with Compose, then returns 501 NotImplemented with isPlaceholder: true. It cannot perform the search, dispatch an incident or notify an employee."
+  - title: Reference connectors, not connected services
+    description: "The ZIP declares ITKnowledgeBaseMCP (Dataverse InvokeMCP) and DispatchITSMTicket (ITSM CreateIncident), both with invoker authentication. Neither runs here. Three original local documents replace the lookup; one simulated create-case tool replaces the dispatch concept, not its integration."
+  - title: How to read the exercise
+    description: The guided paths use exact practice replies and check the selected document at the final turn. Change the supplied observations in the separate lab for causal tests. Editing instruction prose does not alter those rules. Chat, guided replies and Evaluate cannot approve a ticket.
+  - title: Check the action boundary
+    description: With a required source removed there is no supported result. With sources present but the tool off, the slip remains readable and creation is blocked. With the tool on, inspect or edit the fictional note in the host and cancel or confirm. Only confirmation adds a browser-local record.
+  - title: Outside this adaptation
+    description: There are no identity recovery steps, network tests, machine changes, identifiers, diagnostic logs, production priorities or external transfers. Before considering any real use, a service owner would need to validate the decision policy, article ownership, permitted fields and human review responsibility.
+lab:
+  title: What should the first desk do?
+  description: Keep the report fictional and unresolved. Change one observation at a time. For a human-review route, Advice only stops before a note; Prepare a review slip shows what a colleague would need. Neither choice approves a ticket.
+  fields:
+    - id: screen
+      label: Screen report
+      type: select
+      defaultValue: Pinned is empty
+      hint: A blank card page and an empty Pinned view do not mean the same thing.
+      options:
+        - {value: Pinned is empty, label: Pinned is empty}
+        - {value: card page stays blank, label: Card page stays blank}
+        - {value: not reported, label: Screen not described}
+    - id: reach
+      label: Affected work
+      type: select
+      defaultValue: one desk
+      hint: State the reach in broad terms. Do not identify anyone or guess how many people were affected.
+      options:
+        - {value: one desk, label: One desk}
+        - {value: whole shift, label: Whole shift}
+        - {value: not reported, label: Reach not reported}
+    - id: timing
+      label: Handover timing
+      type: select
+      defaultValue: can wait
+      hint: How soon is the board needed for the work? This is independent of reach.
+      options:
+        - {value: can wait, label: Can wait}
+        - {value: due now, label: Due now}
+        - {value: not reported, label: Timing not reported}
+    - id: prior
+      label: Last view check
+      type: select
+      defaultValue: not tried
+      hint: Distinguish an untried check, a check with no improvement, and not knowing whether one was tried.
+      options:
+        - {value: not tried, label: Not tried}
+        - {value: no change, label: Tried changing view; no change}
+        - {value: not reported, label: No result reported}
+    - id: preference
+      label: If human review is indicated
+      type: select
+      defaultValue: prepare
+      hint: This choice applies only to drafting. The host asks separately about recording the local ticket.
+      options:
+        - {value: prepare, label: Prepare a review slip}
+        - {value: advice, label: Advice only}
+  checks:
+    - {id: shift-wide, label: The whole shift is affected, field: reach, operator: eq, value: whole shift}
+    - {id: due-now, label: The handover is due now, field: timing, operator: eq, value: due now}
+    - {id: unknown-reach, label: Reach is unreported, field: reach, operator: eq, value: not reported}
+    - {id: unknown-timing, label: Timing is unreported, field: timing, operator: eq, value: not reported}
+    - {id: unknown-screen, label: Screen is unreported, field: screen, operator: eq, value: not reported}
+    - {id: pinned, label: Pinned is empty, field: screen, operator: eq, value: Pinned is empty}
+    - {id: untried, label: The view check is untried, field: prior, operator: eq, value: not tried}
+    - {id: unknown-check, label: No view-check result was reported, field: prior, operator: eq, value: not reported}
+    - {id: wants-slip, label: A review slip was requested, field: preference, operator: eq, value: prepare}
+  rules:
+    - id: known-blocker-with-slip
+      label: Wide impact or a handover due now takes priority
+      all: [{checkId: wants-slip, equals: true}]
+      any: [{checkId: shift-wide, equals: true}, {checkId: due-now, equals: true}]
+      outcomeId: review-note
+    - id: known-blocker-without-slip
+      label: Offer advice about human review without drafting
+      all: [{checkId: wants-slip, equals: false}]
+      any: [{checkId: shift-wide, equals: true}, {checkId: due-now, equals: true}]
+      outcomeId: review-advice
+    - id: ask-reach-first
+      label: Clarify reach before suggesting an article
+      all: [{checkId: unknown-reach, equals: true}]
+      outcomeId: ask-reach
+    - id: ask-timing-next
+      label: Clarify when the board is needed
+      all: [{checkId: unknown-timing, equals: true}]
+      outcomeId: ask-timing
+    - id: identify-screen
+      label: Ask what the employee saw
+      all: [{checkId: unknown-screen, equals: true}]
+      outcomeId: ask-screen
+    - id: check-history
+      label: Do not equate an unknown check with an untried one
+      all: [{checkId: pinned, equals: true}, {checkId: unknown-check, equals: true}]
+      outcomeId: ask-prior
+    - id: use-shelf-note
+      label: Give the one matching article for an untried check
+      all: [{checkId: pinned, equals: true}, {checkId: untried, equals: true}]
+      outcomeId: article
+    - id: unresolved-with-slip
+      label: Prepare a slip for an unmatched screen or unsuccessful check
+      all: [{checkId: wants-slip, equals: true}]
+      outcomeId: review-note
+    - id: stop-at-advice
+      label: End with a review recommendation only
+      all: []
+      outcomeId: review-advice
+  outcomes:
+    - id: ask-reach
+      title: Ask about reach
+      summary: Is one desk affected, or is the whole shift unable to use the board? A missing answer is not a low-impact report.
+      documentIds: [first-contact]
+    - id: ask-timing
+      title: Ask about timing
+      summary: Can this desk wait for the list, or does the handover need it now?
+      documentIds: [first-contact]
+    - id: ask-screen
+      title: Ask which screen
+      summary: Is Pinned empty, or does the card page itself stay blank? The display article covers only one of these.
+      documentIds: [first-contact]
+    - id: ask-prior
+      title: Check before repeating a suggestion
+      summary: Has anyone at this desk already tried changing the view? An unreported check tells us nothing about its result.
+      documentIds: [first-contact]
+    - id: article
+      title: Try the empty-view article
+      summary: Switch from Pinned to All cards and look for the current shift card. Does it appear there? This is a read-only view change, not a confirmed fix. If it still looks empty, set Last view check to Tried changing view; no change and run again.
+      documentIds: [first-contact, shelf-note]
+    - id: review-advice
+      title: Recommend a person, not another view check
+      summary: A colleague should review this report. Advice only was selected, so no slip is prepared and no ticket action is offered.
+      documentIds: [first-contact, review-slip]
+    - id: review-note
+      title: Prepare the shift-board slip
+      summary: Set the article aside. Read the four observations below and leave anything not reported as unknown. The note is not a ticket. If the action is available, review the local destination and cancel or confirm in the host. Nothing goes to an external desk.
+      documentIds: [first-contact, review-slip]
+      toolId: record-shift-ticket
+      draft:
+        title: Foldline board | Shift-board review tray
+        body: |-
+          Screen: {{screen}}
+          Affected work: {{reach}}
+          Handover: {{timing}}
+          Last view check: {{prior}}
+          For the reviewer: What is the next support step for this shift?
+  cases:
+    - id: one-desk-can-wait
+      title: One desk can wait
+      inputs: {screen: Pinned is empty, reach: one desk, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: article, kind: answer, documentIds: [first-contact, shelf-note], contains: [Switch from Pinned to All cards, not a confirmed fix]}
+    - id: missing-reach
+      title: Reach not reported
+      inputs: {screen: Pinned is empty, reach: not reported, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: ask-reach, kind: answer, documentIds: [first-contact], contains: [Is one desk affected]}
+    - id: missing-timing
+      title: One desk with no timing yet
+      inputs: {screen: Pinned is empty, reach: one desk, timing: not reported, prior: not tried, preference: prepare}
+      expected: {outcomeId: ask-timing, kind: answer, documentIds: [first-contact], contains: [does the handover need it now]}
+    - id: missing-screen
+      title: Known reach and timing but no screen report
+      inputs: {screen: not reported, reach: one desk, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: ask-screen, kind: answer, documentIds: [first-contact], contains: [does the card page itself stay blank]}
+    - id: missing-history
+      title: An unknown check is not an untried check
+      inputs: {screen: Pinned is empty, reach: one desk, timing: can wait, prior: not reported, preference: prepare}
+      expected: {outcomeId: ask-prior, kind: answer, documentIds: [first-contact], contains: [already tried changing the view]}
+    - id: whole-shift-can-wait
+      title: Whole shift can wait
+      inputs: {screen: Pinned is empty, reach: whole shift, timing: can wait, prior: not tried, preference: prepare}
+      expected:
+        outcomeId: review-note
+        kind: handoff-ready
+        toolId: record-shift-ticket
+        documentIds: [first-contact, review-slip]
+        contains: ["Screen: Pinned is empty", "Affected work: whole shift", "Handover: can wait", "Last view check: not tried", The note is not a ticket, cancel or confirm in the host]
+    - id: one-desk-due-now
+      title: Only timing changes at one desk
+      inputs: {screen: Pinned is empty, reach: one desk, timing: due now, prior: not tried, preference: prepare}
+      expected: {outcomeId: review-note, kind: handoff-ready, toolId: record-shift-ticket, documentIds: [first-contact, review-slip], contains: ["Affected work: one desk", "Handover: due now"]}
+    - id: partial-urgent
+      title: Time-critical even with other facts unknown
+      inputs: {screen: not reported, reach: not reported, timing: due now, prior: not reported, preference: prepare}
+      expected: {outcomeId: review-note, kind: handoff-ready, toolId: record-shift-ticket, documentIds: [first-contact, review-slip], contains: ["Affected work: not reported", "Handover: due now", "Last view check: not reported"]}
+    - id: unmatched-screen
+      title: The shelf note does not cover a blank page
+      inputs: {screen: card page stays blank, reach: one desk, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: review-note, kind: handoff-ready, toolId: record-shift-ticket, documentIds: [first-contact, review-slip], contains: ["Screen: card page stays blank", "Last view check: not tried"]}
+    - id: check-unsuccessful
+      title: A failed check is not a reason to repeat the tip
+      inputs: {screen: Pinned is empty, reach: one desk, timing: can wait, prior: no change, preference: prepare}
+      expected: {outcomeId: review-note, kind: handoff-ready, toolId: record-shift-ticket, documentIds: [first-contact, review-slip], contains: ["Last view check: no change", "For the reviewer: What is the next support step"]}
+    - id: no-slip-requested
+      title: Whole shift wants advice only
+      inputs: {screen: Pinned is empty, reach: whole shift, timing: can wait, prior: not tried, preference: advice}
+      expected: {outcomeId: review-advice, kind: answer, documentIds: [first-contact, review-slip], contains: [no slip is prepared]}
+    - id: stop-after-check
+      title: A failed check without permission to prepare a slip
+      inputs: {screen: Pinned is empty, reach: one desk, timing: can wait, prior: no change, preference: advice}
+      expected: {outcomeId: review-advice, kind: answer, documentIds: [first-contact, review-slip], contains: [no ticket action is offered]}
+    - id: article-removed
+      title: Familiar symptom without the article
+      disabledKnowledge: [shelf-note]
+      inputs: {screen: Pinned is empty, reach: one desk, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: article, kind: missing-knowledge, documentIds: [], contains: [When Pinned looks empty, No draft or action was produced]}
+    - id: slip-removed
+      title: Broad impact without the slip guide
+      disabledKnowledge: [review-slip]
+      inputs: {screen: Pinned is empty, reach: whole shift, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: review-note, kind: missing-knowledge, documentIds: [], contains: [A slip a colleague could use, No draft or action was produced]}
+    - id: tool-disabled
+      title: Readable note but no action to confirm
+      disabledTools: [record-shift-ticket]
+      inputs: {screen: Pinned is empty, reach: whole shift, timing: can wait, prior: not tried, preference: prepare}
+      expected: {outcomeId: review-note, kind: handoff-blocked, documentIds: [first-contact, review-slip], contains: ["Action blocked:", "Affected work: whole shift", "Last view check: not tried"]}

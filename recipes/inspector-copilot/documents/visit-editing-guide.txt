@@ -1,0 +1,14 @@
+Alderfen | Checklist change and evidence-link guide
+Fictional training material. Not an official service record or policy.
+
+Survey Lead | revision note C4 | issued 3 June 2026 for Alderfen civic-room revisits.
+C3 combined “check access” into one tick. C4 replaces it with two prompts: record clear opening at the entrance in millimetres, and record service counter height in millimetres. Record the point measured, date, instrument reference and the inspector's initials on each new row.
+Keep one finding ID per row. A human-indexed photo ID locates an earlier item, while a measurement ID identifies a particular value, unit and collection point. Do not match unattached items by position or filename. Ask the Survey Records Clerk for the original link. Neither the change note nor the historic evidence sets a pass/fail threshold.
+
+Use one row per finding. Attach its human-indexed photo reference and its measurement reference, unit and collection point. Mark a missing link explicitly.
+
+Do not assign an unattached reading to the nearest row or interpret the photo. Ask the Survey Records Clerk to check the original field sheet.
+
+Name the old and issued editions, state which prompt changes, and leave space for a fresh observation at each measurement point.
+
+Keep the dated prior reading as context. Do not copy it into a new results column or convert it into a pass or fail decision.

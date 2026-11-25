@@ -1,0 +1,673 @@
+schemaVersion: 1
+revision: 1
+id: licensing-coordinator
+status: published
+title: Licensing version coordinator
+summary: Markets and Street Use are reading different canopy drawings for one covered-market application. Draft one correction request, then practise routing the verified replacement only to desks that still hold an older copy.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Check authority for both desk registers and identify an unreadable entry before proposing recipients.
+  - Cite C2 and C3 in one frontage correction request, or keep the existing thread open while its return is unverified.
+  - Compare verified C4 with each register and explain why both desks, one desk or neither belongs in the routing draft.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Starting and licensing a business, perspective: operations }
+  headline: Two desks disagree about one canopy. The applicant needs one question, not two.
+  problem: Markets is looking at the row of stalls on drawing C2. Street Use is checking the adjoining path on C3. The canopy frontage differs between the sheets, and a higher revision number does not tell either desk which line the applicant intended.
+  impact: If each desk asks for its own correction, the applicant can end up answering two versions of the same question. Even after a signed replacement arrives, one review may continue against an old drawing while the other desk gets a copy it already has.
+  approach: In the exercise, check authority for both registers and read the single correction thread. Where the copies conflict and no request is open, draft one question naming both sheets. Once the custodian verifies C4, compare each desk’s entry with C4 and prepare a routing draft only for desks still using an older reference.
+  startSmall: Pilot the procedure on one drawing type shared by two desks. Have their custodian mark a set of practice returns as verified or still open, then ask coordinators to name the recipients before anyone considers connecting a register.
+  potentialValue: Applicants could answer one clear correction request, and coordinators could see which desk still needs the replacement without interrupting a desk already working from it.
+  measure: Count duplicate requests per drawing conflict. On verified returns, compare the proposed recipients with the custodian’s list, counting both missed desks and unnecessary copies.
+  boundary: This is version coordination, not a compliance finding or a licence. A reviewer can confirm a draft for a local simulated receipt; that does not deliver a drawing, update a register or prove either desk acknowledged it.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: Markets cites C2 and Street Use cites C3 for the same frontage. Neither drawing number settles where the canopy should end.
+    experiment: Start with Markets on C2 and Street Use on C3. Change the correction thread from no request to verified C4, then set Markets to C4. Which desk still needs the new reference?
+    takeaway: Conflicting copies call for one correction thread; a verified return calls for a separate check of each desk’s register.
+    scope: Two fictional registers and a local review receipt only. Nothing is sent to a desk or applicant, and no licence is granted.
+agent:
+  name: Licensing version coordinator
+  description: Help an authorised coordinator reconcile versions of one fictional canopy application across the Markets and Street Use desks.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help an authorised coordinator reconcile versions of one fictional canopy application across the Markets and Street Use desks.
+    Verify simulated scope for this application, both desk registers and coordination of the correction. Otherwise show no register details. Never treat an applicant name or desk title as authority.
+    Compare the labelled copies and check the single correction thread. If both desk entries are legible, conflict and no request is open, draft one neutral request for a dated, signed replacement of the frontage drawing. Keep both earlier references.
+    An open thread or unsigned return is not authority to use a version. Only the custodian-verified C4 return can support a routing draft. Name just the desks that need the pointer and ask for acknowledgement.
+    Offer a local create-case tool for review of the routing draft. Confirmation is separate. A simulated receipt does not send a correction or drawing, change a desk register, or grant a licence.
+    Coordinate version review only. Do not determine compliance, grant a licence, distribute a real application or claim that a desk has been notified.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help an authorised coordinator reconcile versions of one fictional canopy application across the Markets and Street Use desks.
+    Verify simulated scope for this application, both desk registers and coordination of the correction. Otherwise show no register details. Never treat an applicant name or desk title as authority.
+    Compare the labelled copies and check the single correction thread. If both desk entries are legible, conflict and no request is open, draft one neutral request for a dated, signed replacement of the frontage drawing. Keep both earlier references.
+    An open thread or unsigned return is not authority to use a version. Only the custodian-verified C4 return can support a routing draft. Name just the desks that need the pointer and ask for acknowledgement.
+    Offer a local create-case tool for review of the routing draft. Confirmation is separate. A simulated receipt does not send a correction or drawing, change a desk register, or grant a licence.
+    Coordinate version review only. Do not determine compliance, grant a licence, distribute a real application or claim that a desk has been notified.
+  stepByStep: |-
+    # Procedure
+
+    Help an authorised coordinator reconcile versions of one fictional canopy application across the Markets and Street Use desks.
+    1. Verify simulated scope for this application, both desk registers and coordination of the correction. Otherwise show no register details. Never treat an applicant name or desk title as authority.
+    2. Compare the labelled copies and check the single correction thread. If both desk entries are legible, conflict and no request is open, draft one neutral request for a dated, signed replacement of the frontage drawing. Keep both earlier references.
+    3. An open thread or unsigned return is not authority to use a version. Only the custodian-verified C4 return can support a routing draft. Name just the desks that need the pointer and ask for acknowledgement.
+    4. Offer a local create-case tool for review of the routing draft. Confirmation is separate. A simulated receipt does not send a correction or drawing, change a desk register, or grant a licence.
+    Coordinate version review only. Do not determine compliance, grant a licence, distribute a real application or claim that a desk has been notified.
+  decisionRules: |-
+    # Decision rules
+
+    Help an authorised coordinator reconcile versions of one fictional canopy application across the Markets and Street Use desks.
+    Scope first; unreadable register line next. Do not choose a copy by its larger number. Never open a second correction thread to chase the first.
+    If C4 is verified, compare each desk with C4 independently. If both already reference it, do not propose redistribution. If the desk copies merely agree without verification, do not certify them.
+    Coordinate version review only. Do not determine compliance, grant a licence, distribute a real application or claim that a desk has been notified.
+    Verify simulated scope for this application, both desk registers and coordination of the correction. Otherwise show no register details. Never treat an applicant name or desk title as authority.
+  examples: |-
+    Markets cites C2 and Street Use cites C3 with no open thread: propose one request for the applicant to identify the controlling frontage drawing.
+    C4 is verified and Markets already cites C4: prepare a review draft for Street Use only. A local receipt is not evidence of delivery.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Licensing version coordinator.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+  - id: review-queue
+    type: service-desk
+    title: Demo review queue
+    description: Stage a verified revision and the affected desk list for coordinator review. Separate local confirmation can create a fictional receipt, not a message to a desk.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: team-review
+        label: Drawing coordination review
+        description: Stage a verified revision and the affected desk list for coordinator review. Separate local confirmation can create a fictional receipt, not a message to a desk.
+    realWorldNote: This queue records a fictional receipt in the browser after explicit confirmation; it does not connect to an operational service.
+knowledge:
+  - id: version-control
+    title: "Public procedure: one correction thread"
+    summary: The unit of correction is the application drawing, not the number of departments that spotted the discrepancy.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/version-control.txt
+  - id: canopy-register
+    title: "Canopy application: desk register exercise"
+    summary: One synthetic covered-market application has two desks that rely on the same frontage drawing.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/canopy-register.txt
+facts:
+  - id: single-thread
+    documentId: version-control
+    keywords:
+      - Why use one drawing correction thread
+    answer: One thread lets both desks refer to the same question and the same eventual replacement. If a correction is already open, do not draft a second request.
+    detail: Keep the conflicting references and identify the feature in dispute. Ask for one dated, signed replacement through the existing procedure, not a separate answer for each desk.
+  - id: verified-copy
+    documentId: version-control
+    keywords:
+      - Does the highest drawing number prove it is current
+    answer: No. The custodian must verify the application, drawing and signed revision before its pointer can be proposed for routing.
+    detail: Compare the verified pointer against each authorised desk register. A desk already using it does not need another copy, and matching pointers do not establish compliance.
+tools:
+  - id: stage-plan-review
+    type: create-case
+    title: Create a simulated drawing-review case
+    description: Stage a verified revision and the affected desk list for coordinator review. Separate local confirmation can create a fictional receipt, not a message to a desk.
+    connectionId: review-queue
+    resourceId: team-review
+    requiredKnowledge:
+      - version-control
+      - canopy-register
+    realWorldNote: Only the local confirmation dialog can create a simulated receipt. No live work is routed.
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-version-control
+    title: "Select Public procedure: one correction thread"
+    description: "Add Public procedure: one correction thread to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: version-control
+  - id: read-canopy-register
+    title: "Select Canopy application: desk register exercise"
+    description: "Add Canopy application: desk register exercise to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: canopy-register
+  - id: enable-review
+    title: Enable Create a simulated drawing-review case
+    description: Connect the Drawing coordination review queue and enable its review tool. Enabling it does not create a request.
+    tab: tools
+    completeWhen:
+      type: tool
+      toolId: stage-plan-review
+  - id: try-1
+    title: C2 and C3 with no open correction
+    description: In Review > Try this example, load "C2 and C3 with no open correction" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: split-drawings
+  - id: try-2
+    title: Same desks, now with a verified C4 return
+    description: In Review > Try this example, load "Same desks, now with a verified C4 return" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: returned-correction
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Public procedure: one correction thread citation on the result for "C2 and C3 with no open correction".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: version-control
+  - id: confirm-routing
+    title: Confirm one review packet
+    description: Run the verified corrected-drawing example again. Review the version and affected desks, then confirm one local review receipt. No applicant or department is contacted.
+    tab: activity
+    completeWhen:
+      type: action-confirmed
+      toolId: stage-plan-review
+      outcomeId: joint-review
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Why use one drawing correction thread?
+    - Does the highest drawing number prove it is current?
+  handoffKeywords: []
+  unknownAnswer: I can explain the public version-control procedure. I cannot confirm an application or show a register in chat.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Licensing version coordinator
+    mode: simulated
+    starter:
+      label: Show me how to reconcile two desk copies.
+      prompt: Show me how to reconcile two desk copies.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to practise asking for one correction or recognising a verified replacement?
+          - id: alternative
+            text: Would you like to practise asking for one correction or recognising a verified replacement? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: single-thread
+            label: Why not send two separate correction requests?
+            next: reply-single-thread
+          - id: verified-copy
+            label: When may a replacement be proposed for routing?
+            next: reply-verified-copy
+      - id: reply-single-thread
+        role: simulation
+        prompt: Why use one drawing correction thread?
+        end: true
+      - id: reply-verified-copy
+        role: simulation
+        prompt: Does the highest drawing number prove it is current?
+        end: true
+lab:
+  title: Follow the frontage drawing, not the largest suffix
+  description: Compare two desk register entries with the status of the single correction thread. Test what changes when only one desk has adopted the verified revision.
+  fields:
+    - id: mandate
+      label: Simulated coordination authority
+      type: select
+      options:
+        - value: both
+          label: Verified for this application, both registers and correction routing
+        - value: one
+          label: One desk only
+        - value: unknown
+          label: Authority not verified
+      defaultValue: both
+      hint: No real account is checked. Selecting a desk role alone would not confer this scope.
+    - id: markets
+      label: "Markets register: frontage drawing"
+      type: select
+      options:
+        - value: C2
+          label: "C2: earlier copy"
+        - value: C3
+          label: "C3: other desk copy"
+        - value: C4
+          label: "C4: replacement reference"
+        - value: unknown
+          label: Register line unreadable
+      defaultValue: C2
+      hint: Read the register label, not the date on an inbox attachment.
+    - id: streets
+      label: "Street Use register: frontage drawing"
+      type: select
+      options:
+        - value: C2
+          label: "C2: earlier copy"
+        - value: C3
+          label: "C3: other desk copy"
+        - value: C4
+          label: "C4: replacement reference"
+        - value: unknown
+          label: Register line unreadable
+      defaultValue: C3
+      hint: A register can still point to an earlier copy after a replacement is verified.
+    - id: thread
+      label: Single correction thread
+      type: select
+      options:
+        - value: none
+          label: "Checked: no request open"
+        - value: open
+          label: Open; no verified return
+        - value: verified
+          label: Custodian verified replacement C4
+        - value: unknown
+          label: Thread status unknown
+      defaultValue: none
+      hint: A return without the custodian check is still open, not verified.
+  checks:
+    - id: full-scope
+      label: Exact coordination scope verified
+      field: mandate
+      operator: eq
+      value: both
+    - id: market-gap
+      label: Markets line unreadable
+      field: markets
+      operator: eq
+      value: unknown
+    - id: street-gap
+      label: Street Use line unreadable
+      field: streets
+      operator: eq
+      value: unknown
+    - id: no-thread
+      label: No open request after checking
+      field: thread
+      operator: eq
+      value: none
+    - id: waiting
+      label: Open thread, no verified return
+      field: thread
+      operator: eq
+      value: open
+    - id: signed
+      label: Replacement verified
+      field: thread
+      operator: eq
+      value: verified
+    - id: desk-match
+      label: Desk labels match each other
+      field: markets
+      operator: eq
+      otherField: streets
+    - id: market-current
+      label: Markets already cites C4
+      field: markets
+      operator: eq
+      value: C4
+    - id: street-current
+      label: Street Use already cites C4
+      field: streets
+      operator: eq
+      value: C4
+  rules:
+    - id: protect-registers
+      label: Require scope for both desks first
+      all:
+        - checkId: full-scope
+          equals: false
+      outcomeId: access-stop
+    - id: missing-markets
+      label: Resolve unreadable Markets entry
+      all:
+        - checkId: market-gap
+          equals: true
+      outcomeId: inventory-hold
+    - id: missing-street
+      label: Resolve unreadable Street Use entry
+      all:
+        - checkId: street-gap
+          equals: true
+      outcomeId: inventory-hold
+    - id: all-current
+      label: Both references already current
+      all:
+        - checkId: signed
+          equals: true
+        - checkId: market-current
+          equals: true
+        - checkId: street-current
+          equals: true
+      outcomeId: no-resend
+    - id: streets-lags
+      label: Only Street Use still uses an old reference
+      all:
+        - checkId: signed
+          equals: true
+        - checkId: market-current
+          equals: true
+        - checkId: street-current
+          equals: false
+      outcomeId: street-review
+    - id: markets-lags
+      label: Only Markets still uses an old reference
+      all:
+        - checkId: signed
+          equals: true
+        - checkId: market-current
+          equals: false
+        - checkId: street-current
+          equals: true
+      outcomeId: market-review
+    - id: both-lag
+      label: Both desks still use old references
+      all:
+        - checkId: signed
+          equals: true
+        - checkId: market-current
+          equals: false
+        - checkId: street-current
+          equals: false
+      outcomeId: joint-review
+    - id: already-open
+      label: Do not duplicate an unresolved correction
+      all:
+        - checkId: waiting
+          equals: true
+      outcomeId: same-thread
+    - id: split-no-thread
+      label: Draft a single correction across the two desks
+      all:
+        - checkId: no-thread
+          equals: true
+        - checkId: desk-match
+          equals: false
+      outcomeId: one-request
+    - id: otherwise-hold
+      label: No basis to choose or redistribute a version
+      all: []
+      outcomeId: hold-version
+  outcomes:
+    - id: access-stop
+      title: No register review
+      summary: Use the authorised coordination route. No application information can be provided.
+      documentIds:
+        - version-control
+    - id: inventory-hold
+      title: Complete the register comparison first
+      summary: Ask the register owner to verify the unreadable line. Do not choose a version or propose recipients from an incomplete inventory.
+      documentIds:
+        - version-control
+        - canopy-register
+    - id: one-request
+      title: Draft one correction request
+      summary: "One request for coordinator review: “Markets cites {{markets}} and Street Use cites {{streets}}. Which frontage drawing controls? Please return one dated, signed drawing identifying the copies it replaces.” Keep both references on one thread. This draft has not been sent."
+      documentIds:
+        - version-control
+        - canopy-register
+    - id: same-thread
+      title: Keep the correction on the existing thread
+      summary: The single request remains open. Record both register references for review; do not start a second request or route an unsigned attachment.
+      documentIds:
+        - version-control
+        - canopy-register
+    - id: joint-review
+      title: Prepare C4 review for Markets and Street Use
+      summary: The custodian has verified C4 on the correction thread. Propose the verified C4 pointer to both desks. Prepare a review case, not a licence decision.
+      documentIds:
+        - version-control
+        - canopy-register
+      toolId: stage-plan-review
+      draft:
+        title: Canopy drawing C4 | Markets and Street Use
+        body: "For coordinator confirmation only. Verified replacement: C4, on the existing canopy correction thread. Register before review: Markets {{markets}}; Street Use {{streets}}. Affected desks: Markets and Street Use. Propose the verified C4 pointer to both desks. Retain the earlier references and request acknowledgement before closing the discrepancy. No notice or licence is issued."
+    - id: street-review
+      title: Prepare C4 review for Street Use
+      summary: The custodian has verified C4 on the correction thread. Propose the verified C4 pointer to Street Use only; Markets already cites C4. Prepare a review case, not a licence decision.
+      documentIds:
+        - version-control
+        - canopy-register
+      toolId: stage-plan-review
+      draft:
+        title: Canopy drawing C4 | Street Use
+        body: "For coordinator confirmation only. Verified replacement: C4, on the existing canopy correction thread. Register before review: Markets {{markets}}; Street Use {{streets}}. Affected desks: Street Use. Propose the verified C4 pointer to Street Use only; Markets already cites C4. Retain the earlier references and request acknowledgement before closing the discrepancy. No notice or licence is issued."
+    - id: market-review
+      title: Prepare C4 review for Markets
+      summary: The custodian has verified C4 on the correction thread. Propose the verified C4 pointer to Markets only; Street Use already cites C4. Prepare a review case, not a licence decision.
+      documentIds:
+        - version-control
+        - canopy-register
+      toolId: stage-plan-review
+      draft:
+        title: Canopy drawing C4 | Markets
+        body: "For coordinator confirmation only. Verified replacement: C4, on the existing canopy correction thread. Register before review: Markets {{markets}}; Street Use {{streets}}. Affected desks: Markets. Propose the verified C4 pointer to Markets only; Street Use already cites C4. Retain the earlier references and request acknowledgement before closing the discrepancy. No notice or licence is issued."
+    - id: no-resend
+      title: No replacement pointer needed
+      summary: Both desk registers already cite the verified C4. Check any outstanding acknowledgement on the existing thread rather than sending another copy. This is not a licence decision.
+      documentIds:
+        - version-control
+        - canopy-register
+    - id: hold-version
+      title: Hold for a custodian check
+      summary: Confirm the correction thread and its controlling revision before proposing any action. Matching desk labels are not custodian verification; do not certify a copy or grant a licence.
+      documentIds:
+        - version-control
+        - canopy-register
+  cases:
+    - id: split-drawings
+      title: C2 and C3 with no open correction
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: none
+      expected:
+        outcomeId: one-request
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: answer
+        contains:
+          - Markets cites C2 and Street Use cites C3
+          - one dated, signed drawing
+    - id: returned-correction
+      title: Same desks, now with a verified C4 return
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: verified
+      expected:
+        outcomeId: joint-review
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: handoff-ready
+        contains:
+          - "Affected desks: Markets and Street Use"
+          - "Verified replacement: C4"
+        toolId: stage-plan-review
+    - id: open-already
+      title: An unsigned attachment arrives on an open thread
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: open
+      expected:
+        outcomeId: same-thread
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: answer
+        contains:
+          - do not start a second request
+    - id: street-only
+      title: Markets has adopted the verified pointer
+      inputs:
+        mandate: both
+        markets: C4
+        streets: C3
+        thread: verified
+      expected:
+        outcomeId: street-review
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: handoff-ready
+        contains:
+          - to Street Use only
+        toolId: stage-plan-review
+    - id: market-only
+      title: Street Use has adopted the verified pointer
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C4
+        thread: verified
+      expected:
+        outcomeId: market-review
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: handoff-ready
+        contains:
+          - to Markets only
+        toolId: stage-plan-review
+    - id: both-done
+      title: Both desks already cite C4
+      inputs:
+        mandate: both
+        markets: C4
+        streets: C4
+        thread: verified
+      expected:
+        outcomeId: no-resend
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: answer
+        contains:
+          - rather than sending another copy
+    - id: unreadable
+      title: A verified return but an unreadable desk line
+      inputs:
+        mandate: both
+        markets: C2
+        streets: unknown
+        thread: verified
+      expected:
+        outcomeId: inventory-hold
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: answer
+        contains:
+          - incomplete inventory
+    - id: thread-unknown
+      title: Nobody has checked the correction thread
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: unknown
+      expected:
+        outcomeId: hold-version
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: answer
+        contains:
+          - Confirm the correction thread
+    - id: partial-scope
+      title: One-desk scope is insufficient even for a verified return
+      inputs:
+        mandate: one
+        markets: C2
+        streets: C3
+        thread: verified
+      expected:
+        outcomeId: access-stop
+        documentIds:
+          - version-control
+        kind: answer
+        contains:
+          - No application information can be provided
+    - id: queue-unavailable
+      title: The drawing-review tool is switched off
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: verified
+      expected:
+        outcomeId: joint-review
+        documentIds:
+          - version-control
+          - canopy-register
+        kind: handoff-blocked
+        contains:
+          - Action blocked
+      disabledTools:
+        - stage-plan-review
+    - id: register-unavailable
+      title: The register cannot ground a routing proposal
+      inputs:
+        mandate: both
+        markets: C2
+        streets: C3
+        thread: verified
+      expected:
+        outcomeId: joint-review
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - canopy-register
+implementation:
+  - title: Build this in the real service
+    description: Separate the custodian who verifies the controlling drawing from the coordinator who prepares the routing record. Enforce application and desk scope server-side; deduplicate on the application and correction thread, and retain the revision history.
+  - title: What to measure
+    description: Check proposed recipient sets against the desks still holding old copies. Count duplicate correction drafts per open thread, unverified revisions offered for routing and any licence-decision language.
+  - title: Scope of this draft
+    description: Coordinate version review only. Do not determine compliance, grant a licence, distribute a real application or claim that a desk has been notified. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

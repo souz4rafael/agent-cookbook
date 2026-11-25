@@ -1,4 +1,5 @@
 import type { EvaluationAssertion, LabDefinition, LabDraft, LabInputs, LabResponse, LearningEvidence } from './lab-types.ts'
+import type { ConversationDefinition } from '../conversations/schema.ts'
 
 export type Tone = 'friendly' | 'formal'
 export type Detail = 'concise' | 'detailed'
@@ -80,6 +81,20 @@ export interface GuideStep {
   completeWhen: GuideCondition
 }
 
+export interface ScenarioEditorial {
+  group?: { journey: string; perspective: 'guidance' | 'operations' }
+  headline: string
+  problem: string
+  impact: string
+  approach: string
+  startSmall: string
+  potentialValue: string
+  measure: string
+  boundary: string
+  sourceLabel?: string
+  home: { challenge: string; experiment: string; takeaway: string; scope: string }
+}
+
 export interface Recipe {
   schemaVersion: 1
   revision: number
@@ -92,6 +107,7 @@ export interface Recipe {
   estimatedMinutes?: number
   accentIcon: 'citizen' | 'document' | 'learning' | 'benefit'
   learningGoals: string[]
+  scenario?: ScenarioEditorial
   sourceUrl: string
   agent: AgentProfile
   instructionStyles?: InstructionStyles
@@ -118,6 +134,7 @@ export interface Recipe {
   }
   implementation: { title: string; description: string }[]
   lab?: LabDefinition
+  conversations?: ConversationDefinition[]
 }
 
 export interface CompiledRecipe extends Recipe {

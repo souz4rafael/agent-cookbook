@@ -1,0 +1,496 @@
+schemaVersion: 1
+revision: 1
+id: social-caseworker-assistant
+status: published
+title: Social caseworker review assistant
+summary: An assigned technician compares a Bridge Room contact history with a booking slip. Prepare a note that distinguishes the resident’s stated preference, the desk’s evidence, and the question a person still needs to resolve.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Check the technician’s assignment, case and purpose before including contact or desk details in a brief.
+  - Attribute the resident’s preference to the contact card and recognise the later handover as a retelling, not a second witness.
+  - Tell a draft slip from a verified one with a blank or conflicting period, and identify which question the reviewer still needs to ask.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Social benefits, perspective: operations }
+  headline: The resident said afternoon. What does the desk slip actually confirm?
+  problem: A technician takes over a Bridge Room appointment enquiry. The contact card records the resident’s preferred period, the handover repeats it, and a separate desk slip proposes a time. On a quick read, three entries can look like three people agreeing on a booking.
+  impact: A copied preference can acquire more weight than the resident’s original words. If a draft proposal is treated as a commitment, the next technician may pass on a time nobody agreed to or ask the resident to resolve a gap only the desk can fill.
+  approach: The exercise checks the simulated assignment before showing case details. A review brief traces the preference back to the contact card and labels the desk’s proposal separately. Only two stated periods and a current, desk-verified slip support a comparison; otherwise the brief names what to verify.
+  startSmall: Try one appointment type with synthetic contact cards and desk slips. Ask two assigned reviewers to work the same examples independently, including one draft slip and one verified slip with a blank period, before considering any use of case records.
+  potentialValue: A technician could pick up a handover knowing whose statement to check and why, without asking a resident to repeat a preference already on file.
+  measure: Time how long reviewers take to identify the outstanding question. Compare their choice of source to clarify, and count briefs that incorrectly turn matching periods into a confirmed booking.
+  boundary: The Bridge Room cards are fictional and the assignment selector is not authentication. Chat explains the public method only. No resident is contacted, no booking or record changes, and the assigned technician retains responsibility for review.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: A handover repeats a resident’s afternoon preference, but the planning desk has written its own proposed period on a separate slip.
+    experiment: With an afternoon contact card and a verified slip, move the desk period to morning. Then mark the slip as draft and compare the reviewer’s next question.
+    takeaway: Two stated periods can disagree. A draft needs its source checked first, and even matching periods do not confirm a booking.
+    scope: Only the simulated assigned technician sees the fictional brief. The exercise neither contacts the resident nor changes an appointment.
+agent:
+  name: Social caseworker review assistant
+  description: Prepare a source-labelled review brief for the technician assigned to the simulated Bridge Room appointment case; never decide which service a person should receive.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Prepare a source-labelled review brief for the technician assigned to the simulated Bridge Room appointment case; never decide which service a person should receive.
+    Keep free chat to the public note-writing method. Only use the structured fixture after the simulated scope is verified for this case, this technician and preparation of this brief.
+    Read the contact entry and the later handover in order. The handover repeats the contact entry; it is not independent evidence. Record separately what the desk slip proposes and whether the desk verified that copy.
+    Compare morning with morning or afternoon with afternoon only when both periods are known and the slip is current. Name the gap or quote the conflicting source labels; do not infer a motive, contact the resident or change a booking.
+    Only an assigned technician reviews the fictional brief. Do not disclose case information without scope, decide a service, rank a resident, or change a case record.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Prepare a source-labelled review brief for the technician assigned to the simulated Bridge Room appointment case; never decide which service a person should receive.
+    Keep free chat to the public note-writing method. Only use the structured fixture after the simulated scope is verified for this case, this technician and preparation of this brief.
+    Read the contact entry and the later handover in order. The handover repeats the contact entry; it is not independent evidence. Record separately what the desk slip proposes and whether the desk verified that copy.
+    Compare morning with morning or afternoon with afternoon only when both periods are known and the slip is current. Name the gap or quote the conflicting source labels; do not infer a motive, contact the resident or change a booking.
+    Only an assigned technician reviews the fictional brief. Do not disclose case information without scope, decide a service, rank a resident, or change a case record.
+  stepByStep: |-
+    # Procedure
+
+    Prepare a source-labelled review brief for the technician assigned to the simulated Bridge Room appointment case; never decide which service a person should receive.
+    1. Keep free chat to the public note-writing method. Only use the structured fixture after the simulated scope is verified for this case, this technician and preparation of this brief.
+    2. Read the contact entry and the later handover in order. The handover repeats the contact entry; it is not independent evidence. Record separately what the desk slip proposes and whether the desk verified that copy.
+    3. Compare morning with morning or afternoon with afternoon only when both periods are known and the slip is current. Name the gap or quote the conflicting source labels; do not infer a motive, contact the resident or change a booking.
+    Only an assigned technician reviews the fictional brief. Do not disclose case information without scope, decide a service, rank a resident, or change a case record.
+  decisionRules: |-
+    # Decision rules
+
+    Prepare a source-labelled review brief for the technician assigned to the simulated Bridge Room appointment case; never decide which service a person should receive.
+    Missing verification or assignment to a different case: stop before consulting case materials. A job title is not authorisation.
+    An unverified slip is a provenance question. A blank time is an evidence gap. A conflict between two stated periods is a clarification question, not proof that either source is wrong.
+    Only an assigned technician reviews the fictional brief. Do not disclose case information without scope, decide a service, rank a resident, or change a case record.
+    Keep free chat to the public note-writing method. Only use the structured fixture after the simulated scope is verified for this case, this technician and preparation of this brief.
+  examples: |-
+    If a contact entry says afternoon and a current slip says morning, name both sources, then ask the assigned technician to verify the intended appointment period.
+    If there is no confirmed assignment, explain the access requirement without confirming that a case, contact entry or booking exists.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Social caseworker review assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: review-method
+    title: "Public method: writing a review brief"
+    summary: A review brief is a working note for a human technician; it is not a finding or a booking instruction.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/review-method.txt
+  - id: bridge-room-cards
+    title: "Bridge Room: fictional handover and desk cards"
+    summary: These synthetic source cards model alternate copies of the same appointment history for a technician’s exercise. They contain no resident identifiers.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/bridge-room-cards.txt
+facts:
+  - id: scope
+    documentId: review-method
+    keywords:
+      - What is the scope check for a case review
+    answer: Verify the technician’s assignment to the specific case and the permitted purpose. A job title or membership of the same service is not enough.
+    detail: If scope cannot be verified, give only the access requirement. Do not confirm that a file or appointment exists.
+  - id: sources
+    documentId: review-method
+    keywords:
+      - How should a brief record conflicting accounts
+    answer: Attribute each statement to its source and leave the difference visible as a question for the assigned reviewer.
+    detail: A handover that repeats a contact entry does not provide independent corroboration. A blank field is missing information, not an adverse finding.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-review-method
+    title: "Select Public method: writing a review brief"
+    description: "Add Public method: writing a review brief to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: review-method
+  - id: read-bridge-room-cards
+    title: "Select Bridge Room: fictional handover and desk cards"
+    description: "Add Bridge Room: fictional handover and desk cards to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: bridge-room-cards
+  - id: try-1
+    title: An assigned technician compares two afternoon entries
+    description: In Review > Try this example, load "An assigned technician compares two afternoon entries" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: aligned-window
+  - id: try-2
+    title: Only the desk period moves to morning
+    description: In Review > Try this example, load "Only the desk period moves to morning" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: different-window
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Public method: writing a review brief citation on the result for "An assigned technician compares two afternoon entries".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: review-method
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - What is the scope check for a case review?
+    - How should a brief record conflicting accounts?
+  handoffKeywords: []
+  unknownAnswer: I can explain the public brief-writing method. I cannot confirm that a person, case or appointment exists. Use the fictional scoped exercise to practise.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Social caseworker review assistant
+    mode: simulated
+    starter:
+      label: Practise writing a review brief without opening a file.
+      prompt: Practise writing a review brief without opening a file.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Which part of the public review method should we practise?
+          - id: alternative
+            text: Which part of the public review method should we practise? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: scope
+            label: What does a reviewer need before opening a case?
+            next: reply-scope
+          - id: sources
+            label: Keep statements and evidence separate
+            next: reply-sources
+      - id: reply-scope
+        role: simulation
+        prompt: What is the scope check for a case review?
+        end: true
+      - id: reply-sources
+        role: simulation
+        prompt: How should a brief record conflicting accounts?
+        end: true
+lab:
+  title: Two periods and one provenance mark
+  description: Practise the case-review policy on prewritten source cards. Change only the time on the desk slip, then change only its provenance; those are different reasons for review.
+  fields:
+    - id: clearance
+      label: Simulated assignment and purpose
+      type: select
+      options:
+        - value: assigned
+          label: "Verified: assigned technician, this fixture, brief preparation"
+        - value: elsewhere
+          label: Technician assigned elsewhere
+        - value: unverified
+          label: Assignment or purpose not verified
+      defaultValue: assigned
+      hint: A learning input, not a login or real access grant.
+    - id: intake
+      label: Period on the contact card
+      type: select
+      options:
+        - value: morning
+          label: Morning
+        - value: afternoon
+          label: Afternoon
+        - value: absent
+          label: Not recorded
+      defaultValue: afternoon
+      hint: A reported preference. Never enter a name or free text.
+    - id: slip
+      label: Period on the desk slip
+      type: select
+      options:
+        - value: morning
+          label: Morning
+        - value: afternoon
+          label: Afternoon
+        - value: absent
+          label: Not recorded
+      defaultValue: afternoon
+      hint: A desk proposal, not a statement by the resident.
+    - id: stamp
+      label: Slip provenance
+      type: select
+      options:
+        - value: current
+          label: Current copy verified by planning desk
+        - value: draft
+          label: Marked draft
+        - value: unknown
+          label: No usable mark
+      defaultValue: current
+      hint: A draft and a current blank slip are different evidence problems.
+  checks:
+    - id: permitted
+      label: Assignment and purpose verified
+      field: clearance
+      operator: eq
+      value: assigned
+    - id: verified
+      label: Current copy verified
+      field: stamp
+      operator: eq
+      value: current
+    - id: intake-blank
+      label: Contact period missing
+      field: intake
+      operator: eq
+      value: absent
+    - id: slip-blank
+      label: Desk period missing
+      field: slip
+      operator: eq
+      value: absent
+    - id: same-period
+      label: Contact and desk periods match
+      field: intake
+      operator: eq
+      otherField: slip
+  rules:
+    - id: deny-first
+      label: Stop without case-specific disclosure
+      all:
+        - checkId: permitted
+          equals: false
+      outcomeId: no-access
+    - id: source-check
+      label: Establish which slip can be used
+      all:
+        - checkId: verified
+          equals: false
+      outcomeId: verify-copy
+    - id: complete-match
+      label: Two known periods agree
+      all:
+        - checkId: intake-blank
+          equals: false
+        - checkId: slip-blank
+          equals: false
+        - checkId: same-period
+          equals: true
+      outcomeId: brief
+    - id: complete-conflict
+      label: Two known periods differ
+      all:
+        - checkId: intake-blank
+          equals: false
+        - checkId: slip-blank
+          equals: false
+        - checkId: same-period
+          equals: false
+      outcomeId: contrast
+    - id: leave-open
+      label: Do not compare missing periods
+      all: []
+      outcomeId: gap
+  outcomes:
+    - id: no-access
+      title: Scope not verified
+      summary: Use the authorised assignment route. No case information can be provided.
+      documentIds:
+        - review-method
+    - id: brief
+      title: Draft note for technician review
+      summary: "Day 2 contact: preference {{intake}}. Day 3 handover: repeats the day 2 entry. Day 4 current desk slip: proposal {{slip}}. The periods agree; this does not confirm a booking. Technician: check with the resident before treating the proposal as agreed."
+      documentIds:
+        - review-method
+        - bridge-room-cards
+    - id: contrast
+      title: Leave the two accounts visible
+      summary: "Day 2 contact: {{intake}}. Day 3 handover repeats it. Day 4 desk-verified slip: {{slip}}. The periods differ. Question for the assigned technician: which period is currently intended? Preserve both sources and do not move the appointment."
+      documentIds:
+        - review-method
+        - bridge-room-cards
+    - id: verify-copy
+      title: Establish which copy is current
+      summary: The contact history is not verification of a desk slip. Ask the planning desk custodian for the current, verified copy before comparing periods. Leave the proposal unresolved.
+      documentIds:
+        - review-method
+        - bridge-room-cards
+    - id: gap
+      title: A comparison is not yet possible
+      summary: Leave missing periods unfilled. The assigned technician needs the missing source entry, not a guess copied from the other card.
+      documentIds:
+        - review-method
+        - bridge-room-cards
+      recommendations:
+        - when:
+            checkId: intake-blank
+            equals: true
+          title: Contact entry
+          description: Clarify the stated preference rather than repeating the desk proposal.
+        - when:
+            checkId: slip-blank
+            equals: true
+          title: Desk slip
+          description: Ask the planning desk to clarify its proposed period.
+  cases:
+    - id: aligned-window
+      title: An assigned technician compares two afternoon entries
+      inputs:
+        clearance: assigned
+        intake: afternoon
+        slip: afternoon
+        stamp: current
+      expected:
+        outcomeId: brief
+        documentIds:
+          - review-method
+          - bridge-room-cards
+        kind: answer
+        contains:
+          - preference afternoon
+          - proposal afternoon
+          - does not confirm a booking
+    - id: different-window
+      title: Only the desk period moves to morning
+      inputs:
+        clearance: assigned
+        intake: afternoon
+        slip: morning
+        stamp: current
+      expected:
+        outcomeId: contrast
+        documentIds:
+          - review-method
+          - bridge-room-cards
+        kind: answer
+        contains:
+          - "Day 2 contact: afternoon"
+          - "desk-verified slip: morning"
+          - periods differ
+    - id: superseded-slip
+      title: A different period appears only on a draft
+      inputs:
+        clearance: assigned
+        intake: afternoon
+        slip: morning
+        stamp: draft
+      expected:
+        outcomeId: verify-copy
+        documentIds:
+          - review-method
+          - bridge-room-cards
+        kind: answer
+        contains:
+          - current, verified copy
+    - id: blank-slip
+      title: A current copy lacks its proposed period
+      inputs:
+        clearance: assigned
+        intake: afternoon
+        slip: absent
+        stamp: current
+      expected:
+        outcomeId: gap
+        documentIds:
+          - review-method
+          - bridge-room-cards
+        kind: answer
+        contains:
+          - Ask the planning desk to clarify
+    - id: both-blank
+      title: Two empty time fields are not agreement
+      inputs:
+        clearance: assigned
+        intake: absent
+        slip: absent
+        stamp: current
+      expected:
+        outcomeId: gap
+        documentIds:
+          - review-method
+          - bridge-room-cards
+        kind: answer
+        contains:
+          - Clarify the stated preference
+          - Ask the planning desk to clarify
+    - id: different-case
+      title: A technician is assigned elsewhere
+      inputs:
+        clearance: elsewhere
+        intake: afternoon
+        slip: afternoon
+        stamp: current
+      expected:
+        outcomeId: no-access
+        documentIds:
+          - review-method
+        kind: answer
+        contains:
+          - No case information can be provided
+    - id: no-scope
+      title: An assignment claim cannot be verified
+      inputs:
+        clearance: unverified
+        intake: afternoon
+        slip: absent
+        stamp: current
+      expected:
+        outcomeId: no-access
+        documentIds:
+          - review-method
+        kind: answer
+        contains:
+          - Use the authorised assignment route
+    - id: source-absent
+      title: The desk and handover cards are unavailable
+      inputs:
+        clearance: assigned
+        intake: afternoon
+        slip: afternoon
+        stamp: current
+      expected:
+        outcomeId: brief
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - bridge-room-cards
+implementation:
+  - title: Build this in the real service
+    description: Enforce identity, case assignment and purpose outside the model. Show source timestamps and versions to authorised staff, retain the technician’s edits separately and require human sign-off on any subsequent action.
+  - title: What to measure
+    description: For reviewer-labelled packets, count correctly attributed source pairs and conflicts preserved as open questions. In wrong-scope tests check separately for any case detail or case-specific citation.
+  - title: Scope of this draft
+    description: Only an assigned technician reviews the fictional brief. Do not disclose case information without scope, decide a service, rank a resident, or change a case record. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

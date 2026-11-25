@@ -1,0 +1,506 @@
+schemaVersion: 1
+revision: 1
+id: benefits-guide
+status: published
+title: Family travel benefit guide
+summary: A family has kept last term’s route card. Read its sample renewal invitation, work out which evidence to prepare, and distinguish a receipt enquiry from a challenge to a written decision.
+industry: Government and public services
+difficulty: beginner
+accentIcon: benefit
+learningGoals:
+  - Use the invitation’s issue date to explain when last term’s route card gives way to a slip showing the first and last travel dates.
+  - Ask for a dated invitation when the edition is unclear, or ask the issuing desk about alternatives when the listed evidence is missing.
+  - Use the letter heading to find the enquiry route on a receipt or the review route and time limit on a disputed decision.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Social benefits, perspective: guidance }
+  headline: Last term’s route card is still in the drawer. Is it what this letter asks for?
+  problem: A family renewing school travel support knows what it sent last term. A new invitation asks for different evidence, but an older invitation may still be on the kitchen table. The date the family opens the envelope does not tell them which list to follow.
+  impact: Sending the familiar card against the wrong invitation can mean a second request and another wait. Later, a family chasing a receipt needs a different answer from one disputing a written decision; sending both back to the evidence checklist costs them time.
+  approach: In the fictional exercise, read the heading first. For an invitation, cite the change leaflet and compare its issue date with the evidence the family has. For a receipt or decision, use the letter key to explain where to ask about progress or find the notice’s own review instructions.
+  startSmall: For a service pilot, have the issuing desk check two editions of one renewal invitation and the receipt and decision headings. Ask families to find their next step on blank examples before offering the guide alongside real letters.
+  potentialValue: Families could prepare the right enclosure on the first attempt and recognise when the useful next step is an enquiry rather than another bundle of paperwork.
+  measure: Compare requests to replace an incorrect enclosure per 100 renewals before and during a pilot. On sample letters, record how often readers find the right enquiry or review route without prompting.
+  boundary: The Schoolday Travel Benefit and its October 2031 change are invented. The guide reads sample wording, not a child’s travel record. It cannot determine eligibility, check delivery, send evidence or lodge an appeal.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: A family has last term’s route card, but two renewal invitations on the table ask for different proof.
+    experiment: Keep the route card selected and switch the invitation’s issue date from September to October 2031. Which invitation asks for both travel dates?
+    takeaway: The invitation date tells you what to prepare. A receipt tells you where to ask about progress; a decision tells you how to challenge it.
+    scope: Sample letters only. No family record is opened, no evidence is sent and no benefit or appeal is decided.
+agent:
+  name: Family travel benefit guide
+  description: Help a family understand a fictional change to the Schoolday Travel Benefit evidence rule, using the public leaflet and sample letters only.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help a family understand a fictional change to the Schoolday Travel Benefit evidence rule, using the public leaflet and sample letters only.
+    Start with the heading on the paper. An invitation asks for evidence, a receipt confirms delivery only, and a decision notice has a separate review panel.
+    For an invitation, use its issue date, not the date the family reads it. Explain the before-and-after evidence lists side by side. Ask for no names, route details, account numbers or files.
+    Describe the smallest useful next step. For a status enquiry use the receipt instructions. For a disagreement explain how the family can follow the review or appeal instructions on its own notice.
+    Give public guidance only. Do not look up a family, assess eligibility, calculate an award, submit evidence or file an appeal.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help a family understand a fictional change to the Schoolday Travel Benefit evidence rule, using the public leaflet and sample letters only.
+    Start with the heading on the paper. An invitation asks for evidence, a receipt confirms delivery only, and a decision notice has a separate review panel.
+    For an invitation, use its issue date, not the date the family reads it. Explain the before-and-after evidence lists side by side. Ask for no names, route details, account numbers or files.
+    Describe the smallest useful next step. For a status enquiry use the receipt instructions. For a disagreement explain how the family can follow the review or appeal instructions on its own notice.
+    Give public guidance only. Do not look up a family, assess eligibility, calculate an award, submit evidence or file an appeal.
+  stepByStep: |-
+    # Procedure
+
+    Help a family understand a fictional change to the Schoolday Travel Benefit evidence rule, using the public leaflet and sample letters only.
+    1. Start with the heading on the paper. An invitation asks for evidence, a receipt confirms delivery only, and a decision notice has a separate review panel.
+    2. For an invitation, use its issue date, not the date the family reads it. Explain the before-and-after evidence lists side by side. Ask for no names, route details, account numbers or files.
+    3. Describe the smallest useful next step. For a status enquiry use the receipt instructions. For a disagreement explain how the family can follow the review or appeal instructions on its own notice.
+    Give public guidance only. Do not look up a family, assess eligibility, calculate an award, submit evidence or file an appeal.
+  decisionRules: |-
+    # Decision rules
+
+    Help a family understand a fictional change to the Schoolday Travel Benefit evidence rule, using the public leaflet and sample letters only.
+    Written decision takes the notice route even if the invitation date is unknown. A receipt calls for an enquiry, not another evidence submission.
+    On or after 1 October 2031, the example asks for a term slip showing the first and last travel dates; before then the route card is the listed evidence. If the invitation cannot be dated, ask for its edition before advising.
+    Give public guidance only. Do not look up a family, assess eligibility, calculate an award, submit evidence or file an appeal.
+    Start with the heading on the paper. An invitation asks for evidence, a receipt confirms delivery only, and a decision notice has a separate review panel.
+  examples: |-
+    “It is the October invitation and we only have a route card.” Explain what the new slip needs to show and how to ask about an alternative; do not say the family has lost its benefit.
+    “We disagree with the reason on a decision.” Point to that notice’s review panel; a delivery receipt is not an appeal.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Family travel benefit guide.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: travel-change
+    title: "Schoolday travel: two invitation editions"
+    summary: Compare what counts as evidence of the travel period, not who qualifies for help.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/travel-change.txt
+  - id: letter-key
+    title: "Letter key: invitation, receipt or decision?"
+    summary: The heading determines the next route. Do not treat every letter as a decision.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/letter-key.txt
+facts:
+  - id: edition
+    documentId: travel-change
+    keywords:
+      - Which date changes the travel evidence list
+    answer: Use the invitation’s issue date. Before 1 October 2031 the sample lists the route card; from that date it lists a term slip showing the first and last travel dates.
+    detail: If the family cannot tell which edition it has, ask the issuing desk for a dated copy rather than guessing from when the letter arrived.
+  - id: receipt
+    documentId: letter-key
+    keywords:
+      - What is a delivery receipt for
+    answer: Keep the receipt and use the enquiry route printed on it to ask about progress. A receipt is not a decision.
+    detail: There is no need to paste a reference or a copy of the receipt into chat. Use the private channel specified by the issuing desk.
+  - id: challenge
+    documentId: letter-key
+    keywords:
+      - Where does a family find the appeal route
+    answer: The written decision has a review or appeal panel. Check its route and time limit, then identify the reason the family disputes.
+    detail: If that panel is unreadable, ask the issuing desk promptly for an accessible copy and clarification. This guide cannot lodge an appeal or predict the outcome.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-travel-change
+    title: "Select Schoolday travel: two invitation editions"
+    description: "Add Schoolday travel: two invitation editions to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: travel-change
+  - id: read-letter-key
+    title: "Select Letter key: invitation, receipt or decision?"
+    description: "Add Letter key: invitation, receipt or decision? to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: letter-key
+  - id: try-1
+    title: The October invitation and last term’s card
+    description: In Review > Try this example, load "The October invitation and last term’s card" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: october-card
+  - id: try-2
+    title: Same card, September invitation
+    description: In Review > Try this example, load "Same card, September invitation" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: september-card
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Schoolday travel: two invitation editions citation on the result for "The October invitation and last term’s card".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: travel-change
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Which date changes the travel evidence list?
+    - What is a delivery receipt for?
+    - Where does a family find the appeal route?
+  handoffKeywords: []
+  unknownAnswer: Choose a sample question about Family travel benefit guide or use Review > Try this example to change fictional inputs. This service cannot look up real records.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Family travel benefit guide
+    mode: simulated
+    starter:
+      label: Help a family read a sample travel letter.
+      prompt: Help a family read a sample travel letter.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Which part of the public leaflet would help the family?
+          - id: alternative
+            text: Which part of the public leaflet would help the family? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: edition
+            label: Compare the two renewal invitations
+            next: reply-edition
+          - id: receipt
+            label: Follow up after sending a document
+            next: reply-receipt
+          - id: challenge
+            label: Understand how to challenge a decision
+            next: reply-challenge
+      - id: reply-edition
+        role: simulation
+        prompt: Which date changes the travel evidence list?
+        end: true
+      - id: reply-receipt
+        role: simulation
+        prompt: What is a delivery receipt for?
+        end: true
+      - id: reply-challenge
+        role: simulation
+        prompt: Where does a family find the appeal route?
+        end: true
+lab:
+  title: What should the family do with this paper?
+  description: Use only the three descriptions on the practice card. Keep the enclosure fixed and change the invitation edition to see what changed. Then switch the type of paper.
+  fields:
+    - id: invitation
+      label: Issue date on the renewal invitation
+      type: select
+      options:
+        - value: old
+          label: Through 30 September 2031
+        - value: new
+          label: 1 October 2031 or later
+        - value: unknown
+          label: Date not visible
+      defaultValue: new
+      hint: Not the date of delivery. This field does not date a receipt or a decision.
+    - id: enclosure
+      label: Evidence the family has to hand
+      type: select
+      options:
+        - value: route-card
+          label: Last term’s route card
+        - value: term-slip
+          label: Term slip with both dates
+        - value: unclear
+          label: No usable document described
+      defaultValue: route-card
+      hint: Choose an example type; do not enter personal travel information.
+    - id: paper
+      label: Paper the family wants help with
+      type: select
+      options:
+        - value: invitation
+          label: Evidence invitation
+        - value: receipt
+          label: Delivery receipt
+        - value: decision
+          label: Written decision the family disputes
+        - value: unknown
+          label: Heading missing
+      defaultValue: invitation
+      hint: A receipt and a decision have different routes.
+  checks:
+    - id: invited
+      label: This is an invitation
+      field: paper
+      operator: eq
+      value: invitation
+    - id: received
+      label: This is a receipt
+      field: paper
+      operator: eq
+      value: receipt
+    - id: disputed
+      label: This is a disputed written decision
+      field: paper
+      operator: eq
+      value: decision
+    - id: later
+      label: Later edition
+      field: invitation
+      operator: eq
+      value: new
+    - id: earlier
+      label: Earlier edition
+      field: invitation
+      operator: eq
+      value: old
+    - id: card
+      label: Route card to hand
+      field: enclosure
+      operator: eq
+      value: route-card
+    - id: slip
+      label: Dated term slip to hand
+      field: enclosure
+      operator: eq
+      value: term-slip
+  rules:
+    - id: decision-route
+      label: Read the review panel first
+      all:
+        - checkId: disputed
+          equals: true
+      outcomeId: review-panel
+    - id: receipt-route
+      label: Track delivery rather than resubmit
+      all:
+        - checkId: received
+          equals: true
+      outcomeId: enquire
+    - id: later-packed
+      label: Both date labels available
+      all:
+        - checkId: invited
+          equals: true
+        - checkId: later
+          equals: true
+        - checkId: slip
+          equals: true
+      outcomeId: prepare-slip
+    - id: later-gap
+      label: Later evidence still needed
+      all:
+        - checkId: invited
+          equals: true
+        - checkId: later
+          equals: true
+      outcomeId: seek-slip
+    - id: earlier-packed
+      label: Earlier evidence to hand
+      all:
+        - checkId: invited
+          equals: true
+        - checkId: earlier
+          equals: true
+        - checkId: card
+          equals: true
+      outcomeId: prepare-card
+    - id: earlier-gap
+      label: Earlier evidence not to hand
+      all:
+        - checkId: invited
+          equals: true
+        - checkId: earlier
+          equals: true
+      outcomeId: seek-card
+    - id: unidentified
+      label: Do not infer an edition or route
+      all: []
+      outcomeId: clarify-letter
+  outcomes:
+    - id: seek-slip
+      title: Check the two travel dates
+      summary: The later invitation calls for a term slip showing the first and last travel dates. A route card alone does not show that period. If the slip is unavailable, ask the issuing desk about an alternative.
+      documentIds:
+        - travel-change
+    - id: prepare-card
+      title: Use the earlier evidence list
+      summary: For the earlier invitation, the route card is the listed evidence. Follow the return instructions on that invitation; this does not decide the benefit.
+      documentIds:
+        - travel-change
+    - id: prepare-slip
+      title: Prepare the dated term slip
+      summary: Check that both dates are legible on the term slip and follow the return instructions on the invitation. Do not share the slip here.
+      documentIds:
+        - travel-change
+    - id: seek-card
+      title: Check the earlier invitation
+      summary: The earlier list names the route card, not the later term slip. Ask the issuing desk about an alternative if the card cannot be supplied.
+      documentIds:
+        - travel-change
+    - id: enquire
+      title: Use the receipt to follow up
+      summary: Use the enquiry route printed on the receipt to ask about progress. Do not send a duplicate bundle. A receipt does not tell you whether the family will receive a benefit.
+      documentIds:
+        - letter-key
+    - id: review-panel
+      title: Start with the reasons on the decision
+      summary: Use the review or appeal panel on the decision, note the stated time limit and identify the reason disputed. If the panel is missing, ask the issuer promptly for a complete copy.
+      documentIds:
+        - letter-key
+    - id: clarify-letter
+      title: Identify the paper before choosing a list
+      summary: Ask the issuing desk to confirm the heading and, for an invitation, its issue date. Do not infer a deadline, a decision or an evidence requirement from an unidentified letter.
+      documentIds:
+        - letter-key
+        - travel-change
+  cases:
+    - id: october-card
+      title: The October invitation and last term’s card
+      inputs:
+        invitation: new
+        enclosure: route-card
+        paper: invitation
+      expected:
+        outcomeId: seek-slip
+        documentIds:
+          - travel-change
+        kind: answer
+        contains:
+          - first and last travel dates
+    - id: september-card
+      title: Same card, September invitation
+      inputs:
+        invitation: old
+        enclosure: route-card
+        paper: invitation
+      expected:
+        outcomeId: prepare-card
+        documentIds:
+          - travel-change
+        kind: answer
+        contains:
+          - route card is the listed evidence
+    - id: october-slip
+      title: Both dates are on the term slip
+      inputs:
+        invitation: new
+        enclosure: term-slip
+        paper: invitation
+      expected:
+        outcomeId: prepare-slip
+        documentIds:
+          - travel-change
+        kind: answer
+        contains:
+          - both dates are legible
+    - id: earlier-no-card
+      title: No route card for the earlier invitation
+      inputs:
+        invitation: old
+        enclosure: unclear
+        paper: invitation
+      expected:
+        outcomeId: seek-card
+        documentIds:
+          - travel-change
+        kind: answer
+        contains:
+          - Ask the issuing desk about an alternative
+    - id: receipt-only
+      title: The family wants an update, not a second application
+      inputs:
+        invitation: new
+        enclosure: route-card
+        paper: receipt
+      expected:
+        outcomeId: enquire
+        documentIds:
+          - letter-key
+        kind: answer
+        contains:
+          - enquiry route printed on the receipt
+    - id: disputed-notice
+      title: The family disputes a reason on the decision
+      inputs:
+        invitation: unknown
+        enclosure: route-card
+        paper: decision
+      expected:
+        outcomeId: review-panel
+        documentIds:
+          - letter-key
+        kind: answer
+        contains:
+          - review or appeal panel
+          - stated time limit
+    - id: date-missing
+      title: An invitation has no legible issue date
+      inputs:
+        invitation: unknown
+        enclosure: route-card
+        paper: invitation
+      expected:
+        outcomeId: clarify-letter
+        documentIds:
+          - letter-key
+          - travel-change
+        kind: answer
+        contains:
+          - confirm the heading
+    - id: missing-leaflet
+      title: The change leaflet is not selected
+      inputs:
+        invitation: new
+        enclosure: route-card
+        paper: invitation
+      expected:
+        outcomeId: seek-slip
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - travel-change
+implementation:
+  - title: Build this in the real service
+    description: Have the service owner sign off each public leaflet and its effective-date trigger. Keep the resident-facing guide separate from any authenticated benefits service or appeals intake.
+  - title: What to measure
+    description: In labelled practice letters, count correct evidence lists by invitation edition and correct enquiry-versus-review routes by document type. Track any award assertion separately as an error.
+  - title: Scope of this draft
+    description: Give public guidance only. Do not look up a family, assess eligibility, calculate an award, submit evidence or file an appeal. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

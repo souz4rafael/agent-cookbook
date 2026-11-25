@@ -1,0 +1,416 @@
+schemaVersion: 1
+revision: 1
+id: gallery-accountant-document-intake
+status: published
+title: Paper Quay invoice reconciliation
+summary: Explain a bindery's July net from five intake rows. Compare a test-inclusive figure, then trace a missing credit to the supplier's return allowance.
+industry: Finance and accounting
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Show invoices before credit, the signed credit and the net in USD. Identify the resend, training charge and euro invoice by row.
+  - Demonstrate why including T-09 changes a comparison by exactly USD 36.00 without changing the trade payable.
+  - Trace a blank credit through its filename to the page and section that supports its value. Distinguish that read from approval to correct a register.
+sourceUrl: https://microsoft.github.io/copilot-studio-gallery/solutions/accountant-document-intake/
+scenario:
+  headline: Five intake rows arrived. How much belongs in the bindery's USD close?
+  problem: A cover-board invoice came in twice, alongside a training charge, a supplier credit and an invoice in euros. The accountant needs a figure another colleague can reproduce without reading every file again.
+  impact: Counting a resend would add a whole invoice. Adding the face value of the return as a charge would make the bindery appear to owe more for sending boards back.
+  approach: Start with the extraction register and its notes. Use one copy per purchase, separate currencies and show the credit on its own line. If the credit cell is blank, follow the row to the allowance on the supplier's second page.
+  startSmall: Use the full capture and change only whether T-09 is included. Then switch to the partial capture. Can you still support the net, or only the subtotal before credit?
+  potentialValue: A reviewer can see which document to reopen and which rows explain a difference between two figures.
+  measure: Give a second reviewer just the answer and its citations. Can they reproduce the USD net, name the exclusions and locate the evidence for the credit?
+  boundary: Five fictional rows, two alternative captures of one batch and a text facsimile. The accountant owns any correction. No real extraction, arbitrary sum, file save or payment is performed.
+  sourceLabel: "Copilot Studio Gallery: Accountant Document Intake & Q&A, v1.0 by Adriana Trujillo"
+  home:
+    challenge: Which of five rows belong in the USD payable when an invoice was resent, a charge is marked TEST and the supplier issued a credit?
+    experiment: Include T-09 to see the net comparison rise by USD 36.00. Switch to the partial capture and see why the subtotal alone cannot settle the net.
+    takeaway: Account for each excluded row and the sign of a credit, and know when the register needs evidence from a specific page.
+    scope: One fictional bindery packet. Reading its register or its credit note cannot approve a correction or change a payable.
+agent:
+  name: Paper Quay closing desk
+  description: Help an accountant explain the July USD close from the intake register and locate missing credit evidence.
+  instructions: |-
+    # Reconciliation mandate
+
+    Task: Explain the bindery's USD net for the packet the accountant selected. Read the stored rows and their derivation notes first; do not combine alternative captures.
+    Basis: Count PQ-48 once. Keep euros separate. Exclude the marked training row unless asked for a test-inclusive comparison; label that figure as a what-if, not a payable.
+    Answer: Show the subtotal before credit, the signed allowance and the net. Name the excluded rows, their amounts and reasons. Apply the allowance once as a reduction.
+    Evidence: If CN-12's amount is blank, report only the supported subtotal and identify the originating page and section. If that section is supplied, cite it and distinguish its printed value from the stored field. Do not treat a blank as zero.
+    Authority: Read and explain only. A correction is a separate request: show the row, current and proposed values and evidence, then seek confirmation and the required write approval. Do not change a row or save a file.
+  tone: formal
+  detail: detailed
+instructionStyles:
+  structured: |-
+    # Reconciliation mandate
+
+    Task: Explain the bindery's USD net for the packet the accountant selected. Read the stored rows and their derivation notes first; do not combine alternative captures.
+    Basis: Count PQ-48 once. Keep euros separate. Exclude the marked training row unless asked for a test-inclusive comparison; label that figure as a what-if, not a payable.
+    Answer: Show the subtotal before credit, the signed allowance and the net. Name the excluded rows, their amounts and reasons. Apply the allowance once as a reduction.
+    Evidence: If CN-12's amount is blank, report only the supported subtotal and identify the originating page and section. If that section is supplied, cite it and distinguish its printed value from the stored field. Do not treat a blank as zero.
+    Authority: Read and explain only. A correction is a separate request: show the row, current and proposed values and evidence, then seek confirmation and the required write approval. Do not change a row or save a file.
+  stepByStep: |-
+    # Reconciliation procedure
+
+    1. Choose the July register named in the question. Read its rows and notes; the two captures describe the same packet.
+    2. Keep the first PQ-48 and set aside the copy and the EUR invoice. Leave T-09 out of trade figures; include it only in a requested what-if.
+    3. Find CN-12. If its amount is missing, identify the known subtotal and withhold the net. Follow its filename to the originating section. Cite any value read there as source evidence, not a stored correction.
+    4. When the credit is known, show the USD subtotal, signed credit and net; apply the credit once. List the amounts and reasons for exclusions.
+    5. Stop at the read. A request to correct data needs a separate preview of the old value, proposed value and evidence, explicit confirmation and write approval. Do not write or save anything.
+  decisionRules: |-
+    # Evidence and inclusion rules
+
+    Complete register -> answer from this capture and its notes; never add in the other capture.
+    Same invoice resent -> one purchase. Different currency -> separate figure. TEST -> leave out unless explicitly included in a comparison, never present that comparison as trade debt.
+    Known allowance -> show invoices before credit, signed credit as a reduction, then net. State each exclusion with currency, amount and reason.
+    Blank allowance -> no net and no zero substitute. Point to the source section. With the identified page in hand, cite the printed allowance and explain its effect without changing the stored value.
+    Correction or save -> outside this read. A separate request, preview with current and proposed values and evidence, confirmation and write approval would be needed.
+  examples: |-
+    “What does Hinge Mill's resend add?” Nothing to the trade net: the same USD 684.50 invoice is already counted.
+    “The supplier printed 54.50 without a minus sign.” Read the label. An allowance in the buyer's favour reduces the payable; a blank register field alone supports no credit amount.
+editable: [name, instructions, tone, detail]
+connections:
+  - id: bindery-library
+    type: sharepoint
+    title: Bindery evidence library
+    description: Choose the local July packet to make its register captures and return advice available.
+    accountLabel: Paper Quay training desk
+    resources:
+      - id: july-packet
+        label: July close packet
+        description: Two alternative register snapshots and the supplier page for CN-12.
+    realWorldNote: This selector exposes fictional text only. It does not authenticate to SharePoint or read a Dataverse table.
+knowledge:
+  - id: full-register
+    title: July register, full capture
+    summary: All five intake rows, the resend and test flags, and the signed credit recorded for the trade close.
+    connectionId: bindery-library
+    resourceId: july-packet
+    file: documents/full-register.txt
+  - id: partial-register
+    title: July register, partial capture
+    summary: An alternate reading of the same packet. Row 04 retains its filename and heading but has no credit amount.
+    connectionId: bindery-library
+    resourceId: july-packet
+    file: documents/partial-register.txt
+  - id: credit-page
+    title: CN-12 supplier return advice
+    summary: A text facsimile of the original credit note, including its Return allowance section on page 2.
+    connectionId: bindery-library
+    resourceId: july-packet
+    file: documents/cn-12-source.txt
+facts:
+  - id: read-full-net
+    documentId: full-register
+    keywords: [full register trade net, full trade net]
+    answer: The full register gives USD 684.50 in invoices and a signed credit of USD -54.50, for a trade net of USD 630.00. Leave out the PQ-48 copy, T-09 and the EUR invoice E-14.
+    detail: Row 02 would add USD 684.50 a second time. Row 03 would add USD 36.00 of test data. Row 05 stays at EUR 82.00 in a separate currency group.
+  - id: explain-test-delta
+    documentId: full-register
+    keywords: [test-inclusive comparison, include the training row]
+    answer: "Include T-09 only in the what-if: USD 720.50 before credit, USD -54.50 in credit, and USD 666.00 net. The trade net remains USD 630.00."
+    detail: Only the test row changes sides. The duplicate stays out and no EUR amount enters either USD figure.
+  - id: trace-blank-credit
+    documentId: partial-register
+    keywords: [trace the blank credit, partial register]
+    answer: The partial register has no credit amount. Follow row 04 to CN-12.pdf, page 2, Return allowance, before reporting a USD net.
+    detail: Ask for a legible copy of that section if it cannot be read. A blank amount is not a zero credit.
+  - id: read-allowance
+    documentId: credit-page
+    keywords: [printed allowance, read the supplier page]
+    answer: CN-12.pdf, page 2, Return allowance shows USD 54.50 in the buyer's favour. Its signed effect on PQ-48 is USD -54.50, not another charge.
+    detail: The ten boards at USD 5.45 explain the printed allowance; the line calculation and its total are the same credit, not two credits.
+  - id: separate-write
+    documentId: partial-register
+    keywords: [authorize a correction, write approval]
+    answer: Reading the allowance does not authorize a ledger correction. Identify the row, old and proposed values, and source; a write needs a separate request and confirmation.
+    detail: This desk exercise makes no change to either register or to the supplier document.
+tools: []
+skills:
+  - id: read-stored-rows
+    title: Read the extraction register
+    description: Use the current capture to explain a net or identify an unsupported credit.
+    instructions: Read row notes first. Separate the USD test comparison from the trade figure; if row 04 has no amount, give only a subtotal and the locator for the original.
+    coverage: simulated
+  - id: consult-allowance
+    title: Consult the originating section
+    description: Resolve the missing field for this answer using the supplied facsimile, without backfilling the stored row.
+    instructions: Match CN-12 to PQ-48, locate page 2 and give the allowance its sign from the buyer's perspective.
+    coverage: simulated
+  - id: controlled-write
+    title: Approved corrections in the gallery solution
+    description: Reference only. A reader's request for an explanation is not a request to write back.
+    instructions: A proposed change needs its own request, a preview of the exact change, the accountant's confirmation and the platform's write approval.
+    coverage: reference
+journey:
+  - id: connect-packet
+    title: Find the July close packet
+    description: In Knowledge, choose July close packet in the bindery library. No sign-in is needed.
+    tab: knowledge
+    completeWhen: {type: connection, connectionId: bindery-library}
+  - id: select-full
+    title: Select the full register
+    description: Select July register, full capture. Which two row numbers describe the same purchase?
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: full-register}
+  - id: select-partial
+    title: Select the alternate capture
+    description: Select July register, partial capture. Look at the amount cell on row 04; do not join the two registers.
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: partial-register}
+  - id: select-page
+    title: Make the return advice available
+    description: Select CN-12 supplier return advice. Having the file available does not mean you need it for a complete register.
+    tab: knowledge
+    completeWhen: {type: knowledge, documentId: credit-page}
+  - id: try-trade
+    title: Reconcile the USD trade rows
+    description: In Review, run the full capture with Trade rows only. Check the three omitted rows against the invoice subtotal.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: trade-from-register}
+  - id: try-test
+    title: Change one inclusion decision
+    description: Keep the full capture and include T-09 in a what-if. Run again. Explain the USD 36.00 difference without counting the resend.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: comparison-from-register}
+  - id: try-blank
+    title: Stop on a missing credit
+    description: Switch back to trade rows and choose Partial register only. Run it and distinguish the supported subtotal from an unknown net.
+    tab: activity
+    completeWhen: {type: case-tested, caseId: trade-missing-credit}
+  - id: inspect-page
+    title: Follow row 04 to its source
+    description: Change the evidence to Partial register plus supplier page and run again. Open the CN-12 citation and find the label that determines the sign on page 2.
+    tab: activity
+    completeWhen: {type: citation-opened, documentId: credit-page}
+  - id: evaluate
+    title: Test what happens without a source
+    description: Run the evaluation with all three documents selected. Compare the table-only case with the unavailable-page case. Why does just one need the original?
+    tab: activity
+    completeWhen: {type: evaluation-passed}
+test:
+  suggestedQuestions:
+    - What is the full register trade net?
+    - What changes in the test-inclusive comparison?
+    - How do I trace the blank credit?
+    - What does the printed allowance mean?
+    - Does a source read authorize a correction?
+  handoffKeywords: []
+  unknownAnswer: I can explain the five-row July packet, not calculate a new batch or change a ledger. Ask for the full trade net, the printed allowance or the test-inclusive comparison.
+  missingKnowledgeAnswer: I do not have the selected evidence for that answer. Connect the July close packet and select the matching register or supplier advice.
+  handoffBlockedAnswer: There is no write destination on this desk. No row or file was changed.
+  handoffReadyAnswer: Reading is the last step here. No correction or save is offered.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: choose-evidence
+    title: Which evidence answers the close question?
+    mode: simulated
+    starter:
+      label: Walk through the July close
+      prompt: Help me decide what to read for the July close.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: desk-question
+        role: assistant
+        text: You can start from a complete register, trace a blank credit, or ask what the original says. Which answer do you need?
+      - id: choose-read
+        role: user
+        choices:
+          - {id: full, label: Explain the full trade net, next: run-full}
+          - {id: partial, label: Find the missing evidence, next: run-partial}
+          - {id: original, label: Read the supplier page, next: run-original}
+          - {id: correction, label: Does that permit a correction?, next: run-authority}
+      - {id: run-full, role: simulation, prompt: "What is the full register trade net?", end: true}
+      - {id: run-partial, role: simulation, prompt: "How do I trace the blank credit?", end: true}
+      - {id: run-original, role: simulation, prompt: "What does the printed allowance mean?", end: true}
+      - {id: run-authority, role: simulation, prompt: "Does a source read authorize a correction?", end: true}
+implementation:
+  - title: Gallery reference and local adaptation
+    description: "Accountant Document Intake & Q&A, v1.0 by Adriana Trujillo (Copilot Studio Gallery, MIT). This desk adapts the ZIP's table-first read and original-file fallback. The bindery, its rows and the learner exercises are new."
+  - title: What runs here
+    description: Six fixed combinations pair one inclusion decision with one evidence state. Local rules return the supported figures and citations; they do not parse an upload, execute SQL or calculate arbitrary sums. The guided questions read named fixtures rather than changing the lab inputs.
+  - title: What stays in the reference
+    description: The gallery workflow ingests files into Dataverse, and separate tools can read or write as the user. This draft connects to neither service. In a real implementation, review access, preview the exact correction and require confirmation and write approval separately from reading.
+lab:
+  title: Close the five-row July packet
+  description: Choose a register and an inclusion basis. The figures on the five rows are fixed. Run once for trade, then include the training row. Try the partial capture first without, then with, the supplier page.
+  fields:
+    - id: evidence
+      label: Evidence on the desk
+      type: select
+      defaultValue: full
+      hint: The two registers are alternative captures of one batch. Add the supplier page only to investigate the partial capture.
+      options:
+        - {value: full, label: Full register only}
+        - {value: partial, label: Partial register only}
+        - {value: source, label: Partial register plus supplier page}
+    - id: basis
+      label: USD calculation basis
+      type: select
+      defaultValue: trade
+      hint: Both bases count the original invoice once and keep E-14 in euros. Only the treatment of the test row changes.
+      options:
+        - {value: trade, label: Trade rows only}
+        - {value: comparison, label: Include T-09 in a what-if}
+  checks:
+    - {id: lacks-credit, label: Partial capture without the page, field: evidence, operator: eq, value: partial}
+    - {id: has-page, label: Partial capture with the supplier page, field: evidence, operator: eq, value: source}
+    - {id: include-test, label: Test row requested for comparison, field: basis, operator: eq, value: comparison}
+  rules:
+    - id: partial-comparison
+      label: A test-inclusive subtotal cannot supply a missing credit
+      all: [{checkId: lacks-credit, equals: true}, {checkId: include-test, equals: true}]
+      outcomeId: comparison-open
+    - id: partial-trade
+      label: Withhold the trade net until the credit has evidence
+      all: [{checkId: lacks-credit, equals: true}]
+      outcomeId: trade-open
+    - id: source-comparison
+      label: Use the page for the credit and include T-09 only in the comparison
+      all: [{checkId: has-page, equals: true}, {checkId: include-test, equals: true}]
+      outcomeId: comparison-with-page
+    - id: source-trade
+      label: Complete the trade reading with the original allowance
+      all: [{checkId: has-page, equals: true}]
+      outcomeId: trade-with-page
+    - id: full-comparison
+      label: Price the test-inclusive comparison from the full register
+      all: [{checkId: include-test, equals: true}]
+      outcomeId: comparison-stored
+    - id: full-trade
+      label: Use the full register for the ordinary trade close
+      all: []
+      outcomeId: trade-stored
+  outcomes:
+    - id: trade-stored
+      title: Trade net from the full register
+      summary: |-
+        PQ-48 before credit: USD 684.50. Stored CN-12 credit: USD -54.50. Trade net: USD 630.00.
+        Excluded: PQ-48-copy (USD 684.50, resend of the counted invoice); T-09 (USD 36.00, marked TEST); E-14 (EUR 82.00, outside USD). The full register supplies the sign and the amount; no source page is needed.
+      documentIds: [full-register]
+      skillId: read-stored-rows
+    - id: comparison-stored
+      title: What if the test row were included?
+      summary: |-
+        PQ-48 (USD 684.50) plus T-09 (USD 36.00) gives USD 720.50 before credit. Stored CN-12 credit: USD -54.50. Comparison net: USD 666.00.
+        T-09 accounts for the entire USD 36.00 difference from the trade net of USD 630.00; it is not a purchase. Excluded: PQ-48-copy (USD 684.50, resend) and E-14 (EUR 82.00, outside USD).
+      documentIds: [full-register]
+      skillId: read-stored-rows
+    - id: trade-open
+      title: The register supports a subtotal, not a trade net
+      summary: |-
+        PQ-48 before credit: USD 684.50. Trade net: unknown. Row 04 has a blank CN-12 amount, not a zero credit. Do not settle on USD 684.50.
+        Excluded: PQ-48-copy (USD 684.50, resend); T-09 (USD 36.00, marked TEST); E-14 (EUR 82.00, outside USD). The credit is unresolved, not excluded.
+        Follow row 04 to CN-12.pdf, page 2, Return allowance. If the section is unreadable, ask for a legible copy.
+      documentIds: [partial-register]
+      skillId: read-stored-rows
+    - id: comparison-open
+      title: Adding T-09 does not fill the credit cell
+      summary: |-
+        PQ-48 (USD 684.50) plus T-09 (USD 36.00) gives USD 720.50 before credit. Comparison net: unknown. Row 04 has a blank CN-12 amount, not a zero credit; USD 720.50 is neither a net nor a payable.
+        Excluded: PQ-48-copy (USD 684.50, resend) and E-14 (EUR 82.00, outside USD). Only the test-inclusive subtotal is USD 36.00 higher.
+        Follow row 04 to CN-12.pdf, page 2, Return allowance. If the section is unreadable, ask for a legible copy.
+      documentIds: [partial-register]
+      skillId: read-stored-rows
+    - id: trade-with-page
+      title: Trade net supported by the return advice
+      summary: |-
+        The partial register supports PQ-48 at USD 684.50 before credit. CN-12.pdf, page 2, Return allowance shows USD 54.50 in the buyer's favour. Signed credit: USD -54.50. Trade net: USD 630.00.
+        Excluded: PQ-48-copy (USD 684.50, resend); T-09 (USD 36.00, marked TEST); E-14 (EUR 82.00, outside USD). The credit came from the page, not the amount cell. Row 04 remains blank; no correction was made.
+      documentIds: [partial-register, credit-page]
+      skillId: consult-allowance
+    - id: comparison-with-page
+      title: Test-inclusive comparison supported by the return advice
+      summary: |-
+        The partial register supports PQ-48 (USD 684.50) plus T-09 (USD 36.00), or USD 720.50 before credit. CN-12.pdf, page 2, Return allowance shows USD 54.50 in the buyer's favour. Signed credit: USD -54.50. Comparison net: USD 666.00.
+        The trade net is USD 630.00; the USD 36.00 difference is test data, not a payable. Excluded: PQ-48-copy (USD 684.50, resend) and E-14 (EUR 82.00, outside USD). Row 04 remains blank; no correction was made.
+      documentIds: [partial-register, credit-page]
+      skillId: consult-allowance
+  cases:
+    - id: trade-from-register
+      title: Close on the full register
+      inputs: {evidence: full, basis: trade}
+      expected:
+        outcomeId: trade-stored
+        kind: answer
+        documentIds: [full-register]
+        contains: ['PQ-48 before credit: USD 684.50', 'Stored CN-12 credit: USD -54.50', 'Trade net: USD 630.00', 'PQ-48-copy (USD 684.50', 'T-09 (USD 36.00, marked TEST)', 'E-14 (EUR 82.00, outside USD)']
+    - id: comparison-from-register
+      title: Add only the training row
+      inputs: {evidence: full, basis: comparison}
+      expected:
+        outcomeId: comparison-stored
+        kind: answer
+        documentIds: [full-register]
+        contains: ['T-09 (USD 36.00)', 'USD 720.50 before credit', 'Stored CN-12 credit: USD -54.50', 'Comparison net: USD 666.00', 'trade net of USD 630.00', 'PQ-48-copy (USD 684.50, resend)', 'E-14 (EUR 82.00, outside USD)']
+    - id: trade-missing-credit
+      title: Withhold a net on a blank credit
+      inputs: {evidence: partial, basis: trade}
+      expected:
+        outcomeId: trade-open
+        kind: answer
+        documentIds: [partial-register]
+        contains: ['PQ-48 before credit: USD 684.50', 'Trade net: unknown', 'not a zero credit', 'T-09 (USD 36.00, marked TEST)', 'CN-12.pdf, page 2, Return allowance']
+    - id: comparison-missing-credit
+      title: The what-if still has a missing credit
+      inputs: {evidence: partial, basis: comparison}
+      expected:
+        outcomeId: comparison-open
+        kind: answer
+        documentIds: [partial-register]
+        contains: ['USD 720.50 before credit', 'Comparison net: unknown', 'not a zero credit', 'PQ-48-copy (USD 684.50, resend)', 'E-14 (EUR 82.00, outside USD)', 'CN-12.pdf, page 2, Return allowance']
+    - id: trade-from-page
+      title: Verify the allowance without correcting the ledger
+      inputs: {evidence: source, basis: trade}
+      expected:
+        outcomeId: trade-with-page
+        kind: answer
+        documentIds: [partial-register, credit-page]
+        contains: ['USD 684.50 before credit', 'CN-12.pdf, page 2, Return allowance', 'Signed credit: USD -54.50', 'Trade net: USD 630.00', 'T-09 (USD 36.00, marked TEST)', 'Row 04 remains blank']
+    - id: comparison-from-page
+      title: Read the same allowance on the comparison basis
+      inputs: {evidence: source, basis: comparison}
+      expected:
+        outcomeId: comparison-with-page
+        kind: answer
+        documentIds: [partial-register, credit-page]
+        contains: ['USD 720.50 before credit', 'CN-12.pdf, page 2, Return allowance', 'Signed credit: USD -54.50', 'Comparison net: USD 666.00', 'trade net is USD 630.00', 'E-14 (EUR 82.00, outside USD)', 'Row 04 remains blank']
+    - id: original-not-needed
+      title: The complete register stands on its own
+      inputs: {evidence: full, basis: trade}
+      disabledKnowledge: [partial-register, credit-page]
+      expected:
+        outcomeId: trade-stored
+        kind: answer
+        documentIds: [full-register]
+        contains: ['Trade net: USD 630.00', 'no source page is needed']
+    - id: no-full-register
+      title: Other documents cannot impersonate the full capture
+      inputs: {evidence: full, basis: trade}
+      disabledKnowledge: [full-register]
+      expected:
+        outcomeId: trade-stored
+        kind: missing-knowledge
+        documentIds: []
+        contains: ['Run blocked', 'July register, full capture', 'No draft or action was produced']
+    - id: no-supplier-page
+      title: A stored filename is not the original page
+      inputs: {evidence: source, basis: trade}
+      disabledKnowledge: [credit-page]
+      expected:
+        outcomeId: trade-with-page
+        kind: missing-knowledge
+        documentIds: []
+        contains: ['Run blocked', 'CN-12 supplier return advice', 'No draft or action was produced']
+    - id: no-partial-register
+      title: The supplier page alone cannot establish the batch net
+      inputs: {evidence: source, basis: comparison}
+      disabledKnowledge: [partial-register]
+      expected:
+        outcomeId: comparison-with-page
+        kind: missing-knowledge
+        documentIds: []
+        contains: ['Run blocked', 'July register, partial capture', 'No draft or action was produced']

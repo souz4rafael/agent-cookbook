@@ -118,7 +118,9 @@ for (const recipe of recipes) {
     assert.equal(estimate.count, recipe.lab!.cases.length)
     assert.deepEqual(estimate.range, sumCreditRanges(planned.map(row => estimateResponses([row.response]).range)))
     assert.ok(estimate.range.min > 0)
-    assert.ok(estimate.groups.some(group => group.profile === 'medium' && group.count > 0))
+    for (const group of estimate.groups) {
+      assert.equal(group.count, planned.filter(row => classifyCreditResponse(row.response).profile === group.profile).length)
+    }
     const changed = updateProfile(recipe, run, { detail: run.profile.detail === 'concise' ? 'detailed' : 'concise' })
     const restored = decodeSession(recipe, JSON.stringify(changed))
     assert.equal(restored.warning, null)

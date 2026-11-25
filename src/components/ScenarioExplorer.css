@@ -11,6 +11,10 @@
 .scenario-hero-meta { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 20px; color: var(--cp-text-muted); font-size: 12px; }
 .scenario-hero-meta > span { display: inline-flex; gap: 6px; align-items: center; }
 .scenario-hero-meta svg { color: var(--cp-success); }
+.scenario-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; font-size: 13px; }
+.scenario-filter label { font-weight: 600; }
+.scenario-filter select { max-width: 100%; padding: 7px 10px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 6px; color: var(--cp-text); font: inherit; }
+.scenario-filter span { color: var(--cp-text-muted); font-size: 12px; }
 .scenario-shortcuts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 28px 0 32px; }
 .scenario-shortcuts > button { display: flex; align-items: center; gap: 10px; padding: 14px; border: 1px solid var(--cp-border); border-radius: 12px; background: var(--cp-surface); text-align: left; font-size: 12px; line-height: 1.5; }
 .scenario-shortcuts > button > svg:first-child { color: var(--cp-accent); }

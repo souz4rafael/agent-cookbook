@@ -1,0 +1,7 @@
+Alderfen | Reed-mat supply schedule · RM-41/B
+Fictional training material. Not an official service record or policy.
+
+Signed edition B, simulated contract RM-41, supplier key REED-04. These dates are fixed calendar dates in the exercise, not dates calculated from today.
+Line D1, clause 3.1: provide a bundle packing list to the receiving desk by 12 May 2031. The list states the batch marks used on the reed mats.
+Line C2, clause 3.4: once the list is logged, supply the fibre-origin certificate for those marks by 19 May 2031.
+Clause 5.2: a correction to D1 cites the original entry; the D1 date still applies unless a signed replacement schedule says otherwise.

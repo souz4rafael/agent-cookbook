@@ -1,10 +1,18 @@
 import { z } from 'zod'
 import { labDefinitionSchema, labReferenceIssues } from './lab-validation.ts'
 import type { CompiledRecipe, Recipe } from './types.ts'
+import { conversationsSchema } from '../conversations/schema.ts'
 
 const id = z.string().min(1).max(80).regex(/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/, 'Use a lower-case identifier with words separated by hyphens.')
 const shortText = z.string().min(1).max(600).refine((value) => value.trim().length > 0, 'Text cannot contain only whitespace.')
 const title = z.string().min(1).max(140).refine((value) => value.trim().length > 0, 'The title cannot contain only whitespace.')
+const homeText = z.string().trim().min(21).max(200)
+const scenarioSchema = z.strictObject({
+  group: z.strictObject({ journey: title, perspective: z.enum(['guidance', 'operations']) }).optional(),
+  headline: title, problem: shortText, impact: shortText, approach: shortText, startSmall: shortText,
+  potentialValue: shortText, measure: shortText, boundary: shortText, sourceLabel: title.optional(),
+  home: z.strictObject({ challenge: homeText, experiment: homeText, takeaway: homeText, scope: homeText }),
+})
 const answer = z.string().min(1).max(4_000).refine((value) => value.trim().length > 0, 'The answer cannot contain only whitespace.')
 const keyword = z.string().min(1).max(100).refine((value) => /[\p{L}\p{N}]/u.test(value), 'A keyword must contain letters or numbers.')
 const editableKey = z.enum(['name', 'description', 'instructions', 'tone', 'detail'])
@@ -84,6 +92,7 @@ const recipeFields = {
   estimatedMinutes: z.number().int().min(1).max(180).optional(),
   accentIcon: z.enum(['citizen', 'document', 'learning', 'benefit']),
   learningGoals: z.array(shortText).min(1).max(12),
+  scenario: scenarioSchema.optional(),
   sourceUrl: z.url().max(2_000).refine((value) => {
     try {
       const url = new URL(value)
@@ -141,6 +150,7 @@ const recipeFields = {
   }),
   implementation: z.array(z.strictObject({ title, description: shortText })).min(1).max(12),
   lab: labDefinitionSchema.optional(),
+  conversations: conversationsSchema.optional(),
 }
 
 type ReferenceIssue = { path: (string | number)[]; message: string }

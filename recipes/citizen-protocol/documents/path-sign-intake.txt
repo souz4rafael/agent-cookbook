@@ -1,0 +1,18 @@
+Alderfen | Path Sign counter: the public intake card
+Fictional training material. Not an official service record or policy.
+
+Use this card to prepare a fictional request for a faded sign or a missing arrow on a printed practice map. It is a checklist, not a way to find an existing request.
+
+On the training map, point to the preprinted Willow Bend tile. Tick one sign issue. Mark the sign on the tile’s sketch card so the map reader knows which symbol to inspect. The new-request exercise supplies that marked practice sketch. Do not supply a street address, name, identity number, photograph or attachment.
+
+A new request starts with a blank intake sheet even if the visitor has used the counter before. The draft carries only the tile, sign issue, practice sketch and proposed destination: Path Sign Intake. Check those entries and correct any error before deciding whether to confirm. Do not include a previous conversation or a holder’s progress slip.
+
+“Run example” prepares the paper for review; it does not submit it. In Preview choose “Review action with this draft”. The confirmation dialog names the destination and lets the learner edit the summary, cancel, or confirm. Only the host’s successful “Confirm simulated request” creates a local case and supplies its SIM receipt. A receipt records local creation, not a repair, dispatch or official acknowledgement.
+
+Use the Willow Bend practice tile, tick faded lettering or missing arrow, and include the marked practice sketch card. No identity details or real address belong on the public checklist.
+
+Reading the public card does not open a request. In Review > Try this example, choose the public checklist to see what a visitor may learn without a holder match.
+
+Open Review > Try this example and choose a new public-intake request. Run the example to see an editable draft for Path Sign Intake. Nothing has been created at that point.
+
+Only the host’s separate confirmation records a local case and returns its SIM receipt. Cancelling creates nothing. No external queue receives the draft.

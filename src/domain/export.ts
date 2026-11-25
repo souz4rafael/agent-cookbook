@@ -61,7 +61,7 @@ export function createImplementationBrief(recipe: CompiledRecipe, session: Sessi
       'Inputs and rules below are learning fixtures, not a deployable Copilot Studio package.',
       ...recipe.lab.fields.map(field => `Input: ${field.id} (${field.type}) - ${field.label}. ${field.hint}`),
       ...recipe.lab.checks.map(check => `Check: ${check.id} - ${check.field} ${check.operator} ${check.otherField ? `field ${check.otherField}` : JSON.stringify(check.value ?? null)}`),
-      ...recipe.lab.rules.map(rule => `Rule: ${rule.id} -> ${rule.outcomeId}; all=${JSON.stringify(rule.all)}; any=${JSON.stringify(rule.any ?? [])}`),
+      ...recipe.lab.rules.map(rule => `Rule: ${rule.id} -> ${rule.outcomeId}; all=${JSON.stringify(rule.all)}; any=${JSON.stringify(rule.any ?? [])}${rule.requiresKnowledge ? `; selected sources=${rule.requiresKnowledge.join(', ')}` : ''}`),
       ...recipe.lab.cases.map(testCase => `Acceptance case: ${testCase.id} - ${testCase.title}; expected=${JSON.stringify(testCase.expected)}`),
       'Inputs entered during this session, conversation context and reviewed drafts are not exported.',
     ] : []),

@@ -1,0 +1,12 @@
+Alderfen | B7 sign report: learner exercise
+Fictional training material. Not an official service record or policy.
+
+Practice report: “The lettering on a sign at bay B7 has faded.” One sign faces the canal and the other faces the garden. There is only one service card for this report.
+
+Read the receipt stamp: 11, 12 or 13 June 2032. Choose intake clerk or works planner and decide the next move before running the example. In one version the side box is empty; in another it already says canal side. Reopening the report on 13 June never changes its receipt date. No personal details are part of the exercise.
+
+Try the same bay-only answer on 11 June and 12 June. Then try the same incomplete card on both desks: intake can ask the resident which sign was meant, while planning returns the existing card to intake. Finally try a complete card at planning. Use the feedback to say which clue changed your choice. “Queue” and “return” describe possible learner answers; neither sends work or edits a report.
+
+Open Review and load the B7 example. Read the role, receipt stamp and side box, choose a desk action, then run it to see the feedback.
+
+Keep the same answer and switch only the receipt date from 11 to 12 June. Try another run with the role swapped and explain what changed.

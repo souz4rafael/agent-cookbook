@@ -1,0 +1,518 @@
+schemaVersion: 1
+revision: 1
+id: supplier-guide
+status: published
+title: Alderfen supplier guide
+summary: Read a reed-mat supply schedule alongside its milestone register to find the next document, its due date and the correction route.
+industry: Government and public services
+difficulty: beginner
+accentIcon: document
+learningGoals:
+  - Use the last register marker to choose a schedule line, then cite the signed edition for the item and its due date.
+  - Identify the slip, desk and original line for a returned packing list, and explain why the return does not extend the deadline.
+  - Distinguish an unmatched supplier folder, which permits only public guidance, from an incomplete folder that needs a signed schedule or register marker.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Procurement and contracts
+    perspective: guidance
+  headline: After the packing list goes in, what does the supplier owe next?
+  problem: A reed-mat supplier has sent a packing list and is preparing a certificate showing where the fibre came from. Both documents appear on the signed schedule. What the supplier needs to know is whether the receiving desk logged the list or sent it back to correct a bundle identifier.
+  impact: A supplier who skips straight to the certificate may leave the wrong batch identifier on file. If they start a fresh delivery instead, the receiving desk has to work out which entry the correction belongs to.
+  approach: In the supplier’s own matched folder, the guide uses the last register marker to choose a line and the signed schedule to give its date. A logged list points to the certificate. A returned list points back to the packing list and the Repairs Desk slip, not to a new deadline.
+  startSmall: Start with one supplier folder and the signed reed-mat schedule. Read the two dated lines alongside the register, then remove the marker and see why the receiving desk must clarify progress before anyone quotes a date.
+  potentialValue: Suppliers could prepare the right document on the first attempt, and the receiving desk could trace a correction to the original delivery without a second round of questions.
+  measure: Check whether suppliers can name the next item and cite its dated line. For returned lists, count corrections linked to the original entry and note any answer that promises a later date.
+  boundary: The folder match is simulated. An unverified reader gets only the public guide. The supplier decides what to submit; the guide cannot lodge a slip, grant an extension or inspect another supplier’s contract.
+  sourceLabel: "Microsoft Learn: authoring Copilot Studio instructions (not the source of the fictional contract terms)"
+  home:
+    challenge: A supplier has sent the packing list. The certificate may be next, but only if the receiving desk logged the list rather than returning it.
+    experiment: In the matched folder, switch LIST-LOGGED to LIST-RETURNED. The next step changes from the certificate due 19 May to a packing list correction on slip CS-14, still due 12 May.
+    takeaway: Use the register for progress and the signed schedule for dates, including the date that still applies to a returned list.
+    scope: One fictional supplier folder. You can trace a correction to the Repairs Desk, but nothing is submitted and no deadline changes.
+agent:
+  name: Alderfen supplier guide
+  description: Help a supplier read the next obligation in its own fictional Alderfen contract.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help a supplier read the next obligation in its own fictional Alderfen contract.
+    In chat, explain how to read the folder. Do not identify a supplier, open a contract or infer a milestone from a question.
+    In the lab, require simulated supplier permission and the matching supplier folder. Read the signed edition and the register together.
+    Name the next item, scheduled date and Repairs Desk route. A returned item is not a new deadline.
+    This is a simulated own-contract view, not legal advice. It cannot file a correction, change a deadline or show another supplier’s records.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help a supplier read the next obligation in its own fictional Alderfen contract.
+    In chat, explain how to read the folder. Do not identify a supplier, open a contract or infer a milestone from a question.
+    In the lab, require simulated supplier permission and the matching supplier folder. Read the signed edition and the register together.
+    Name the next item, scheduled date and Repairs Desk route. A returned item is not a new deadline.
+    This is a simulated own-contract view, not legal advice. It cannot file a correction, change a deadline or show another supplier’s records.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  stepByStep: |-
+    # Procedure
+
+    Help a supplier read the next obligation in its own fictional Alderfen contract.
+    1. In chat, explain how to read the folder. Do not identify a supplier, open a contract or infer a milestone from a question.
+    2. In the lab, require simulated supplier permission and the matching supplier folder. Read the signed edition and the register together.
+    3. Name the next item, scheduled date and Repairs Desk route. A returned item is not a new deadline.
+    This is a simulated own-contract view, not legal advice. It cannot file a correction, change a deadline or show another supplier’s records.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  decisionRules: |-
+    # Decision rules
+
+    Help a supplier read the next obligation in its own fictional Alderfen contract.
+    No verified own-contract scope → provide only the public folder guide.
+    No signed edition or no register marker → stop before giving a date.
+    Start → packing list; list logged → origin certificate; list returned → use its correction slip.
+    This is a simulated own-contract view, not legal advice. It cannot file a correction, change a deadline or show another supplier’s records.
+    In chat, explain how to read the folder. Do not identify a supplier, open a contract or infer a milestone from a question.
+    In the lab, require simulated supplier permission and the matching supplier folder. Read the signed edition and the register together.
+    Name the next item, scheduled date and Repairs Desk route. A returned item is not a new deadline.
+  examples: |-
+    “Tell me what my competitor owes.” → Explain folder scope without confirming that a contract exists.
+    A logged packing list advances the next item; a returned packing list stays on the original item.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Alderfen supplier guide.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: supplier-folder-guide
+    title: Supplier folder guide · FG-6
+    summary: FG-6 is the public reading guide, not a list of suppliers. A supplier may see only its own matched folder in this exercise.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/supplier-folder-guide.txt
+  - id: reed-mat-schedule
+    title: Reed-mat supply schedule · RM-41/B
+    summary: Signed edition B, simulated contract RM-41, supplier key REED-04. These dates are fixed calendar dates in the exercise, not dates calculated from today.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/reed-mat-schedule.txt
+  - id: milestone-register
+    title: Reed-mat milestone register · MR-41
+    summary: MR-41 tells a reader which RM-41/B line to read; it does not set the date. Each marker below is an alternate training snapshot.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/milestone-register.txt
+facts:
+  - id: find-item
+    documentId: supplier-folder-guide
+    keywords:
+      - How do I find which deliverable comes next
+    answer: Find the signed edition first. Use the last register marker to choose a line, then read the item and its due date from that line.
+    detail: A blank marker is a reason to ask the receiving desk for the register, not to guess that the first item is late.
+  - id: repair-entry
+    documentId: supplier-folder-guide
+    keywords:
+      - What should accompany a corrected submission
+    answer: Keep the original receipt. Send the Repairs Desk a Correction Slip naming the schedule line, its revision and the entry being replaced.
+    detail: Keep the existing due date unless a signed replacement schedule supplies another. A correction receipt is not an extension.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-supplier-folder-guide
+    title: Select Supplier folder guide · FG-6
+    description: Add Supplier folder guide · FG-6 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: supplier-folder-guide
+  - id: read-reed-mat-schedule
+    title: Select Reed-mat supply schedule · RM-41/B
+    description: Add Reed-mat supply schedule · RM-41/B to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: reed-mat-schedule
+  - id: read-milestone-register
+    title: Select Reed-mat milestone register · MR-41
+    description: Add Reed-mat milestone register · MR-41 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: milestone-register
+  - id: try-1
+    title: Read the first delivery line
+    description: In Review > Try this example, load "Read the first delivery line" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: opening-list
+  - id: try-2
+    title: Move from the list to its certificate
+    description: In Review > Try this example, load "Move from the list to its certificate" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: certificate-next
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Reed-mat supply schedule · RM-41/B citation on the result for "Read the first delivery line".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: reed-mat-schedule
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - How do I find which deliverable comes next?
+    - What should accompany a corrected submission?
+  handoffKeywords: []
+  unknownAnswer: I can explain how to read a schedule or correct an entry, but chat cannot identify anyone’s next obligation.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Alderfen supplier guide
+    mode: simulated
+    starter:
+      label: Help me read a supplier folder.
+      prompt: Help me read a supplier folder.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: "Where are you stuck: finding the next item, or correcting a returned one?"
+          - id: alternative
+            text: "Where are you stuck: finding the next item, or correcting a returned one? Choose the closest example."
+      - id: choose-route
+        role: user
+        choices:
+          - id: find-item
+            label: Find the next item
+            next: reply-find-item
+          - id: repair-entry
+            label: Correct a returned item
+            next: reply-repair-entry
+      - id: reply-find-item
+        role: simulation
+        prompt: How do I find which deliverable comes next?
+        end: true
+      - id: reply-repair-entry
+        role: simulation
+        prompt: What should accompany a corrected submission?
+        end: true
+lab:
+  title: Follow one supplier folder
+  description: Set the simulated permission and folder match first. Then switch the last marker without changing the signed timetable.
+  fields:
+    - id: permission
+      label: Supplier view permission
+      type: select
+      options:
+        - value: verified
+          label: Verified for the simulation
+        - value: denied
+          label: Denied
+        - value: unknown
+          label: Not verified
+      defaultValue: unknown
+      hint: Permission applies to an own-contract view only.
+    - id: folder
+      label: Supplier-to-contract match
+      type: select
+      options:
+        - value: own
+          label: Own contract confirmed
+        - value: different
+          label: Different supplier
+        - value: unresolved
+          label: Match not established
+      defaultValue: unresolved
+      hint: A folder label alone does not establish ownership.
+    - id: edition
+      label: Schedule edition
+      type: select
+      options:
+        - value: signed
+          label: Current signed edition
+        - value: unclear
+          label: Signed edition unavailable
+      defaultValue: signed
+      hint: Do not use a working copy to give a date.
+    - id: marker
+      label: Last register marker
+      type: select
+      options:
+        - value: start
+          label: OPEN
+        - value: logged
+          label: LIST-LOGGED
+        - value: returned
+          label: LIST-RETURNED
+        - value: blank
+          label: No marker
+      defaultValue: start
+      hint: Each marker is a separate fictional snapshot.
+  checks:
+    - id: may-read
+      label: Supplier permission verified
+      field: permission
+      operator: eq
+      value: verified
+    - id: own-contract
+      label: Folder belongs to supplier
+      field: folder
+      operator: eq
+      value: own
+    - id: signed-copy
+      label: Signed schedule available
+      field: edition
+      operator: eq
+      value: signed
+    - id: before-list
+      label: No list logged yet
+      field: marker
+      operator: eq
+      value: start
+    - id: after-list
+      label: List logged
+      field: marker
+      operator: eq
+      value: logged
+    - id: needs-repair
+      label: List returned
+      field: marker
+      operator: eq
+      value: returned
+  rules:
+    - id: verify-permission
+      label: Check supplier permission first
+      all:
+        - checkId: may-read
+          equals: false
+      outcomeId: no-folder-view
+    - id: verify-owner
+      label: Require own-contract scope
+      all:
+        - checkId: own-contract
+          equals: false
+      outcomeId: no-folder-view
+    - id: verify-edition
+      label: Stop on an uncertain edition
+      all:
+        - checkId: signed-copy
+          equals: false
+      outcomeId: incomplete-folder
+    - id: read-slip
+      label: Read a returned-item marker first
+      all:
+        - checkId: needs-repair
+          equals: true
+      outcomeId: repair-list
+    - id: read-certificate
+      label: Advance after the logged list
+      all:
+        - checkId: after-list
+          equals: true
+      outcomeId: origin-certificate
+    - id: read-delivery
+      label: Read the opening milestone
+      all:
+        - checkId: before-list
+          equals: true
+      outcomeId: packing-list
+    - id: no-date
+      label: "No supported marker: give no date"
+      all: []
+      outcomeId: incomplete-folder
+  outcomes:
+    - id: packing-list
+      title: "Next: bundle packing list"
+      summary: MR-41 points to RM-41/B line D1, clause 3.1. Give the receiving desk the bundle packing list by 12 May 2031. For an error, send the Repairs Desk a Correction Slip quoting D1 and edition B.
+      documentIds:
+        - reed-mat-schedule
+        - milestone-register
+        - supplier-folder-guide
+    - id: origin-certificate
+      title: "Next: fibre-origin certificate"
+      summary: MR-41 records the list. RM-41/B line C2, clause 3.4 now calls for the fibre-origin certificate by 19 May 2031. To correct it, quote C2 and edition B on a Repairs Desk Correction Slip.
+      documentIds:
+        - reed-mat-schedule
+        - milestone-register
+        - supplier-folder-guide
+    - id: repair-list
+      title: Correct the packing list before the certificate
+      summary: Return the corrected bundle identifier with slip CS-14 to the Repairs Desk, quoting RM-41/B line D1. Clause 5.2 keeps the D1 date of 12 May 2031; the return does not extend it.
+      documentIds:
+        - reed-mat-schedule
+        - milestone-register
+        - supplier-folder-guide
+    - id: incomplete-folder
+      title: No dated next item
+      summary: Ask the receiving desk for the signed edition and the current register marker. Until both are available, the next item and its date are unknown.
+      documentIds:
+        - supplier-folder-guide
+    - id: no-folder-view
+      title: Public guide only
+      summary: No contract details are available in this view. The public guide explains how schedules and Correction Slips work.
+      documentIds:
+        - supplier-folder-guide
+  cases:
+    - id: opening-list
+      title: Read the first delivery line
+      inputs:
+        permission: verified
+        folder: own
+        edition: signed
+        marker: start
+      expected:
+        outcomeId: packing-list
+        documentIds:
+          - reed-mat-schedule
+          - milestone-register
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - bundle packing list by 12 May 2031
+          - Repairs Desk
+    - id: certificate-next
+      title: Move from the list to its certificate
+      inputs:
+        permission: verified
+        folder: own
+        edition: signed
+        marker: logged
+      expected:
+        outcomeId: origin-certificate
+        documentIds:
+          - reed-mat-schedule
+          - milestone-register
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - fibre-origin certificate by 19 May 2031
+          - C2
+    - id: returned-marker
+      title: Repair the returned list
+      inputs:
+        permission: verified
+        folder: own
+        edition: signed
+        marker: returned
+      expected:
+        outcomeId: repair-list
+        documentIds:
+          - reed-mat-schedule
+          - milestone-register
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - slip CS-14
+          - 12 May 2031
+          - does not extend
+    - id: empty-marker
+      title: No register marker
+      inputs:
+        permission: verified
+        folder: own
+        edition: signed
+        marker: blank
+      expected:
+        outcomeId: incomplete-folder
+        documentIds:
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - next item and its date are unknown
+    - id: unsigned-copy
+      title: Ignore the marker on an uncertain edition
+      inputs:
+        permission: verified
+        folder: own
+        edition: unclear
+        marker: logged
+      expected:
+        outcomeId: incomplete-folder
+        documentIds:
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - signed edition
+    - id: register-off
+      title: Selected schedule without the register
+      inputs:
+        permission: verified
+        folder: own
+        edition: signed
+        marker: start
+      expected:
+        outcomeId: packing-list
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - MR-41
+      disabledKnowledge:
+        - milestone-register
+    - id: other-folder
+      title: Different supplier folder
+      inputs:
+        permission: verified
+        folder: different
+        edition: signed
+        marker: returned
+      expected:
+        outcomeId: no-folder-view
+        documentIds:
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - No contract details are available
+    - id: supplier-denied
+      title: Denied even when the folder matches
+      inputs:
+        permission: denied
+        folder: own
+        edition: signed
+        marker: start
+      expected:
+        outcomeId: no-folder-view
+        documentIds:
+          - supplier-folder-guide
+        kind: answer
+        contains:
+          - Public guide only
+implementation:
+  - title: Build this in the real service
+    description: Separate the public folder guide from supplier folders. A real service would enforce the supplier-to-contract entitlement at the source, not trust a folder name entered in chat.
+  - title: What to measure
+    description: Check whether learners can cite the marker and the dated clause separately, and whether a correction preserves the original due date.
+  - title: Scope of this draft
+    description: This is a simulated own-contract view, not legal advice. It cannot file a correction, change a deadline or show another supplier’s records. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

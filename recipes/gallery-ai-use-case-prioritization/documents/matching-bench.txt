@@ -1,0 +1,15 @@
+Mothlight Prop Library
+Notes from the matching bench
+
+The bench tests two quite different jobs. In one, every company uses the same short list of alternate names. A clerk can read the substitute name straight off a card. Start with that lookup; adding an agent would give the clerk a second answer to check without giving them any new evidence.
+
+In the other job, “moon dial” could be either a paper clock or a painted disc. A scene note about a ticking sound helps distinguish them. Comparing the scene note with two entries might merit an assistant trial. The assistant would suggest; the clerk would still decide. A good trial includes awkward examples where neither entry fits.
+
+Delivery is a separate question. If both entries live in one catalogue, set aside a few practice cards for a comparison. If they live in two catalogues, first find out who maintains their cross-reference and how a retired label is marked. A plausible match does not solve that maintenance problem.
+
+A pencil slip can be thrown away before the catalogue changes. A suggestion that rewrites the shared label could reach every subsequent loan. Hold the rewrite for a controls review even if the clock shows a busy shift.
+Ask who can catch a wrong match before it reaches another clerk. If the brief does not say what the suggestion can change, ask where it will appear; do not assume pencil-only access.
+
+Desk order: stop if the maker withdraws. Otherwise check where a bad match would travel, then check the clock. With an observed cost, test whether the list already solves the job. If context matters, check how many catalogues must agree. Only a pencil slip backed by a positive observation, a need for scene context and one catalogue goes forward for a comparison with the list.
+
+These are workshop choices about the next question to ask. They do not assign points, select a portfolio winner or authorize a rollout.

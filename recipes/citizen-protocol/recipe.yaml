@@ -1,0 +1,857 @@
+schemaVersion: 1
+revision: 1
+id: citizen-protocol
+status: published
+title: Citizen Protocol
+summary: At the Alderfen Path Sign counter, answer a public intake question, read a simulated holder’s desk slip, or decline a private inquiry without giving anything away. Prepare a new request and see what changes only after local confirmation.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: citizen
+learningGoals:
+  - Use the public card for intake advice. For progress, check both case scope and the simulated holder match before explaining who acts next on the selected slip.
+  - Compare the replies to a visitor and a matched holder asking who owns a record. Neither reply should reveal whether a record exists.
+  - Review the tile, sign issue, sketch and destination on a fresh intake draft. Distinguish cancelling with no action from confirming a browser-local request.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Citizen requests and process improvement
+    perspective: guidance
+  headline: Tell a visitor what to bring without revealing who filed a request.
+  problem: At the Path Sign counter, anyone can ask what to bring for a missing arrow on the Willow Bend map. Asking whether the desk is waiting for a sketch on an existing request sounds similar, but the answer belongs to the holder of that slip.
+  impact: Even saying that a sketch is missing can confirm that a request exists. For the holder, the distinction matters in a different way. One slip asks them to supply the sketch by day 6; another asks the desk to review it on day 8 and needs nothing from the holder.
+  approach: Answer the public question from the intake card. In the lab, select case scope and a matching fictional holder to read one slip. An ownership question gets the same neutral refusal regardless of the match. To start a new request, return to public intake and review a fresh draft without copying the slip.
+  startSmall: Compare the blue and ochre slips for a matched holder at the case counter. Identify who owes the next step on each. Keep the blue slip selected but change the simulated permission to one for a different slip. Check what the reply now withholds.
+  potentialValue: A visitor can prepare the right materials without a case lookup, while a holder can tell an action they owe from an internal review date rather than mistaking it for a repair promise.
+  measure: Check who is named to act on each readable slip and whether an unreadable slip stays unknown. Compare the refusals across holder settings. Try cancelling a new draft before confirming a fresh one and check which run produces a local receipt.
+  boundary: Paper colours and holder matches are teaching controls, not credentials or access to private records. Chat cannot verify anyone. Only separate confirmation creates a browser-local case and SIM receipt; nothing is filed with a service or sent for repair.
+  sourceLabel: "Microsoft Learn: authoring instructions in Copilot Studio (product reference)"
+  home:
+    challenge: Anyone can ask what to bring to the Path Sign counter. Even a hint about a missing sketch on an existing request could disclose private progress.
+    experiment: At the case counter, read the blue slip with a matching holder. Change only the match to another slip and compare the replies.
+    takeaway: The intake checklist is public. Only a matching holder in case scope gets the slip’s next step; nobody gets an answer about who owns a record.
+    scope: The slips and permissions are invented. A separate new intake draft stays local and produces a SIM receipt only if you confirm it.
+agent:
+  name: Citizen Protocol
+  description: Help a learner use the fictional Path Sign counter without treating chat, a paper colour or a claim of ownership as proof of access.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help a learner use the fictional Path Sign counter without treating chat, a paper colour or a claim of ownership as proof of access.
+    Give the public checklist without consulting a desk slip. For an ownership inquiry, use the same neutral refusal in every scope. Never give a record identifier, stage, due date, next action or existence signal in that refusal.
+    Free-text chat cannot verify a holder. Keep its answers general. For progress, use Review > Try this example: require Case scope and the simulated holder match for the selected exercise. Read only the selected slip. A desk checkpoint is not a promise to the holder.
+    A new request is separate from looking up progress. Show a minimal editable local create-case draft and destination. Review or edit the draft, then confirm separately in the host dialog. Cancel means no action. Only a successful confirmation produces the host’s local SIM receipt; never supply an example number.
+    If a required source is absent, withhold the result. If the tool is unavailable, do not offer an alternative channel or call the draft a receipt.
+    Use only invented map tiles and exercise slips. No real identities, addresses, documents or case records; no live authentication, filing or publication.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help a learner use the fictional Path Sign counter without treating chat, a paper colour or a claim of ownership as proof of access.
+    Give the public checklist without consulting a desk slip. For an ownership inquiry, use the same neutral refusal in every scope. Never give a record identifier, stage, due date, next action or existence signal in that refusal.
+    Free-text chat cannot verify a holder. Keep its answers general. For progress, use Review > Try this example: require Case scope and the simulated holder match for the selected exercise. Read only the selected slip. A desk checkpoint is not a promise to the holder.
+    A new request is separate from looking up progress. Show a minimal editable local create-case draft and destination. Review or edit the draft, then confirm separately in the host dialog. Cancel means no action. Only a successful confirmation produces the host’s local SIM receipt; never supply an example number.
+    If a required source is absent, withhold the result. If the tool is unavailable, do not offer an alternative channel or call the draft a receipt.
+    Use only invented map tiles and exercise slips. No real identities, addresses, documents or case records; no live authentication, filing or publication.
+  stepByStep: |-
+    # Procedure
+
+    Help a learner use the fictional Path Sign counter without treating chat, a paper colour or a claim of ownership as proof of access.
+    1. Give the public checklist without consulting a desk slip. For an ownership inquiry, use the same neutral refusal in every scope. Never give a record identifier, stage, due date, next action or existence signal in that refusal.
+    2. Free-text chat cannot verify a holder. Keep its answers general. For progress, use Review > Try this example: require Case scope and the simulated holder match for the selected exercise. Read only the selected slip. A desk checkpoint is not a promise to the holder.
+    3. A new request is separate from looking up progress. Show a minimal editable local create-case draft and destination. Review or edit the draft, then confirm separately in the host dialog. Cancel means no action. Only a successful confirmation produces the host’s local SIM receipt; never supply an example number.
+    4. If a required source is absent, withhold the result. If the tool is unavailable, do not offer an alternative channel or call the draft a receipt.
+    Use only invented map tiles and exercise slips. No real identities, addresses, documents or case records; no live authentication, filing or publication.
+  decisionRules: |-
+    # Decision rules
+
+    Help a learner use the fictional Path Sign counter without treating chat, a paper colour or a claim of ownership as proof of access.
+    Who owns a record? Decline identically for everyone. A progress question without both case scope and a matching simulated holder gets the same refusal. Never validate a guess.
+    Public checklist questions need no case access. A matched holder in the Review lab can read the current desk, stage, due point and next actor from the selected exercise slip only.
+    A new public-intake request may produce a draft, not a receipt. A missing source blocks the run; a disabled tool blocks creation. Stop on cancellation. Only the host can return a SIM receipt after separate confirmation.
+    Use only invented map tiles and exercise slips. No real identities, addresses, documents or case records; no live authentication, filing or publication.
+  examples: |-
+    “Where is my request?” in chat → do not read a slip. Direct the learner to the simulated access decision in Review.
+    A holder asks who owns a record → give the neutral refusal, just as for a visitor. Do not say that you found anything.
+    A learner edits the mock sign issue, then cancels → nothing is created. Showing the destination was not consent.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Citizen Protocol.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+  - id: review-queue
+    type: service-desk
+    title: Demo review queue
+    description: Prepare the fictional map tile, sign issue and supplied sketch for review in Path Sign Intake. The host creates a browser-local case only on separate confirmation.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: team-review
+        label: Path Sign Intake
+        description: Prepare the fictional map tile, sign issue and supplied sketch for review in Path Sign Intake. The host creates a browser-local case only on separate confirmation.
+    realWorldNote: This queue records a fictional receipt in the browser after explicit confirmation; it does not connect to an operational service.
+knowledge:
+  - id: path-sign-intake
+    title: "Path Sign counter: the public intake card"
+    summary: Use this card to prepare a fictional request for a faded sign or a missing arrow on a printed practice map. It is a checklist, not a way to find an existing request.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/path-sign-intake.txt
+  - id: two-counter-boundary
+    title: "Two counters: public and case scope"
+    summary: At the public counter anyone may read the intake card. It describes what to prepare, never who has applied. A new draft starts here and cannot carry over a previous case.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/two-counter-boundary.txt
+  - id: practice-desk-slips
+    title: Reading the three practice desk slips
+    summary: Read these invented slips only as material for a matched-holder case-scope exercise. Colours select paper examples, not record IDs. All day numbers are exercise days, not calendar deadlines. “Due” names a particular actor and task; it is not necessarily a completion date.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/practice-desk-slips.txt
+facts:
+  - id: prepare-intake
+    documentId: path-sign-intake
+    keywords:
+      - What goes on the public intake checklist
+    answer: Use the Willow Bend practice tile, tick faded lettering or missing arrow, and include the marked practice sketch card. No identity details or real address belong on the public checklist.
+    detail: Reading the public card does not open a request. In Review > Try this example, choose the public checklist to see what a visitor may learn without a holder match.
+  - id: ask-progress
+    documentId: two-counter-boundary
+    keywords:
+      - Where is my request
+    answer: Chat cannot verify a holder or look up a request. Open Review > Try this example to practise checking case scope and a simulated holder match before reading any progress details.
+    detail: A typed claim of ownership is not a match. The lab asks separately what the visitor wants, which counter is in scope and whether the supplied exercise permission covers the selected slip.
+  - id: ask-owner
+    documentId: two-counter-boundary
+    keywords:
+      - Who owns this record
+    answer: I can’t confirm or disclose private record information. Review > Try this example demonstrates this privacy rule with invented inputs.
+    detail: The same public policy applies to an ownership question in every scope. There is no ownership lookup in this exercise.
+  - id: start-intake
+    documentId: path-sign-intake
+    keywords:
+      - Can I create a new path sign request
+    answer: Open Review > Try this example and choose a new public-intake request. Run the example to see an editable draft for Path Sign Intake. Nothing has been created at that point.
+    detail: Only the host’s separate confirmation records a local case and returns its SIM receipt. Cancelling creates nothing. No external queue receives the draft.
+tools:
+  - id: create-path-sign-request
+    type: create-case
+    title: Create a local path sign request
+    description: Prepare the fictional map tile, sign issue and supplied sketch for review in Path Sign Intake. The host creates a browser-local case only on separate confirmation.
+    connectionId: review-queue
+    resourceId: team-review
+    requiredKnowledge:
+      - path-sign-intake
+      - two-counter-boundary
+    realWorldNote: Only the local confirmation dialog can create a simulated receipt. No live work is routed.
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-path-sign-intake
+    title: "Select Path Sign counter: the public intake card"
+    description: "Add Path Sign counter: the public intake card to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: path-sign-intake
+  - id: read-two-counter-boundary
+    title: "Select Two counters: public and case scope"
+    description: "Add Two counters: public and case scope to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: two-counter-boundary
+  - id: read-practice-desk-slips
+    title: Select Reading the three practice desk slips
+    description: Add Reading the three practice desk slips to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: practice-desk-slips
+  - id: enable-review
+    title: Enable Create a local path sign request
+    description: Connect the Path Sign Intake queue and enable its review tool. Enabling it does not create a request.
+    tab: tools
+    completeWhen:
+      type: tool
+      toolId: create-path-sign-request
+  - id: try-1
+    title: Read the public checklist
+    description: In Review > Try this example, load "Read the public checklist" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: public-card
+  - id: try-2
+    title: Read the holder’s authority checkpoint
+    description: In Review > Try this example, load "Read the holder’s authority checkpoint" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: authority-turn
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Path Sign counter: the public intake card citation on the result for "Read the public checklist".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: path-sign-intake
+  - id: confirm-intake
+    title: Confirm the reviewed intake
+    description: Run the public intake offer, review the wording, cancel once, then run it again and confirm one local path-sign request. No real municipal service receives it.
+    tab: activity
+    completeWhen:
+      type: action-confirmed
+      toolId: create-path-sign-request
+      outcomeId: draft-intake
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - What goes on the public intake checklist?
+    - Where is my request?
+    - Who owns this record?
+    - Can I create a new path sign request?
+  handoffKeywords: []
+  unknownAnswer: This chat gives public guidance only. It cannot establish identity, look up progress or file a request.
+  missingKnowledgeAnswer: The selected source for this exercise is unavailable. I can’t supply a case detail or infer an answer from the question.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Citizen Protocol
+    mode: simulated
+    starter:
+      label: Visit the Path Sign counter
+      prompt: Visit the Path Sign counter
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Do you need the public checklist, a progress explanation, the privacy rule, or a new request?
+          - id: alternative
+            text: Which Path Sign counter question would you like to try with fictional inputs?
+      - id: choose-route
+        role: user
+        choices:
+          - id: prepare-intake
+            label: What goes on the public intake checklist?
+            next: reply-prepare-intake
+          - id: ask-progress
+            label: Where is my request?
+            next: reply-ask-progress
+          - id: ask-owner
+            label: Who owns this record?
+            next: reply-ask-owner
+          - id: start-intake
+            label: Can I create a new path sign request?
+            next: reply-start-intake
+      - id: reply-prepare-intake
+        role: simulation
+        prompt: What goes on the public intake checklist?
+        end: true
+      - id: reply-ask-progress
+        role: simulation
+        prompt: Where is my request?
+        end: true
+      - id: reply-ask-owner
+        role: simulation
+        prompt: Who owns this record?
+        end: true
+      - id: reply-start-intake
+        role: simulation
+        prompt: Can I create a new path sign request?
+        end: true
+lab:
+  title: Which counter can answer?
+  description: Select a question and scope. Access is a supplied classroom condition, not a log-in. Paper colours select invented evidence; they are never lookup keys. For a new request, choose a sign issue and whether to prepare the draft. Running never confirms it.
+  fields:
+    - id: question
+      label: Question at the counter
+      type: select
+      options:
+        - value: checklist
+          label: What should I bring?
+        - value: progress
+          label: Where is my request?
+        - value: owner
+          label: Who owns this record?
+        - value: new
+          label: Start a new request
+      defaultValue: checklist
+      hint: An ownership inquiry never becomes a progress or intake request.
+    - id: scope
+      label: Counter scope
+      type: select
+      options:
+        - value: public
+          label: Public intake
+        - value: case
+          label: Case progress
+      defaultValue: public
+      hint: Case scope and a matching holder are both needed for a progress answer.
+    - id: access
+      label: Simulated access
+      type: select
+      options:
+        - value: visitor
+          label: Public visitor
+        - value: claim
+          label: Unverified claim
+        - value: other
+          label: Verified for a different slip
+        - value: matched
+          label: Verified holder of the selected slip
+      defaultValue: visitor
+      hint: A made-up permission supplied by the exercise. Do not enter identity data.
+    - id: paper
+      label: Practice paper
+      type: select
+      options:
+        - value: ochre
+          label: Ochre
+        - value: blue
+          label: Blue
+        - value: green
+          label: Green
+        - value: unreadable
+          label: Unreadable
+      defaultValue: ochre
+      hint: Selects the evidence for a permitted progress question only.
+    - id: issue
+      label: "New request: sign issue"
+      type: select
+      options:
+        - value: faded lettering
+          label: Faded lettering
+        - value: missing arrow
+          label: Missing arrow
+      defaultValue: faded lettering
+      hint: The fixed Willow Bend practice tile and its marked sketch are supplied.
+    - id: choice
+      label: "New request: draft choice"
+      type: select
+      options:
+        - value: review
+          label: Prepare for review
+        - value: cancel
+          label: Cancel preparation
+      defaultValue: review
+      hint: Preparing is not confirmation. The host has a separate Cancel or Confirm decision.
+  checks:
+    - id: ownership
+      label: Ownership question
+      field: question
+      operator: eq
+      value: owner
+    - id: progress
+      label: Progress requested
+      field: question
+      operator: eq
+      value: progress
+    - id: case-scope
+      label: Case counter selected
+      field: scope
+      operator: eq
+      value: case
+    - id: holder-match
+      label: Exercise permission matches
+      field: access
+      operator: eq
+      value: matched
+    - id: list
+      label: Public checklist requested
+      field: question
+      operator: eq
+      value: checklist
+    - id: new-intake
+      label: New intake requested
+      field: question
+      operator: eq
+      value: new
+    - id: cancelled
+      label: Draft preparation declined
+      field: choice
+      operator: eq
+      value: cancel
+    - id: ochre-paper
+      label: Practice paper is ochre
+      field: paper
+      operator: eq
+      value: ochre
+    - id: blue-paper
+      label: Practice paper is blue
+      field: paper
+      operator: eq
+      value: blue
+    - id: green-paper
+      label: Practice paper is green
+      field: paper
+      operator: eq
+      value: green
+  rules:
+    - id: never-identify
+      label: Decline an ownership lookup in either scope
+      all:
+        - checkId: ownership
+          equals: true
+      outcomeId: no-disclosure
+    - id: public-cannot-read
+      label: Keep public scope separate from progress
+      all:
+        - checkId: progress
+          equals: true
+        - checkId: case-scope
+          equals: false
+      outcomeId: no-disclosure
+    - id: require-binding
+      label: Require a match to this exercise slip
+      all:
+        - checkId: progress
+          equals: true
+        - checkId: holder-match
+          equals: false
+      outcomeId: no-disclosure
+    - id: give-checklist
+      label: Use the public intake card only
+      all:
+        - checkId: list
+          equals: true
+      outcomeId: public-checklist
+    - id: stop-draft
+      label: Stop if preparation is declined
+      all:
+        - checkId: new-intake
+          equals: true
+        - checkId: cancelled
+          equals: true
+      outcomeId: cancelled-intake
+    - id: blank-intake
+      label: Prepare a new public-intake draft
+      all:
+        - checkId: new-intake
+          equals: true
+        - checkId: case-scope
+          equals: false
+        - checkId: cancelled
+          equals: false
+      outcomeId: draft-intake
+    - id: separate-counters
+      label: Do not turn a case view into a new filing
+      all:
+        - checkId: new-intake
+          equals: true
+        - checkId: case-scope
+          equals: true
+      outcomeId: public-start
+    - id: read-ochre
+      label: Read the permitted ochre slip
+      all:
+        - checkId: progress
+          equals: true
+        - checkId: case-scope
+          equals: true
+        - checkId: holder-match
+          equals: true
+        - checkId: ochre-paper
+          equals: true
+      outcomeId: waiting-authority
+    - id: read-blue
+      label: Read the permitted blue slip
+      all:
+        - checkId: progress
+          equals: true
+        - checkId: case-scope
+          equals: true
+        - checkId: holder-match
+          equals: true
+        - checkId: blue-paper
+          equals: true
+      outcomeId: missing-sketch
+    - id: read-green
+      label: Read the permitted green slip
+      all:
+        - checkId: progress
+          equals: true
+        - checkId: case-scope
+          equals: true
+        - checkId: holder-match
+          equals: true
+        - checkId: green-paper
+          equals: true
+      outcomeId: complete
+    - id: no-readable-slip
+      label: Withhold details without readable evidence
+      all: []
+      outcomeId: no-reading
+  outcomes:
+    - id: public-checklist
+      title: "Public scope: intake checklist"
+      summary: Use the Willow Bend practice tile, select the sign issue (faded lettering or missing arrow), and include the marked sketch card. Leave names and real locations off the card. Reading the checklist does not create a request.
+      documentIds:
+        - path-sign-intake
+    - id: no-disclosure
+      title: Private inquiry
+      summary: I can’t confirm or disclose private record information.
+      documentIds:
+        - two-counter-boundary
+    - id: waiting-authority
+      title: "Case scope: waiting for authority review"
+      summary: The request is at the Map Authority desk. The marked sketch is already attached. Day 8 is the authority’s review checkpoint, not a promised repair date. The holder need not send anything; check again after the checkpoint if still waiting.
+      documentIds:
+        - practice-desk-slips
+        - two-counter-boundary
+    - id: missing-sketch
+      title: "Case scope: waiting for a document"
+      summary: The request is at the Intake desk. The holder needs to add the missing marked sketch card by day 6. Intake can then route the packet; no authority review date has been set.
+      documentIds:
+        - practice-desk-slips
+        - two-counter-boundary
+    - id: complete
+      title: "Case scope: complete"
+      summary: The reply reached the Reply shelf on day 5. No deadline or required next action remains. The holder may read the reply; this is not confirmation of a repair.
+      documentIds:
+        - practice-desk-slips
+        - two-counter-boundary
+    - id: no-reading
+      title: The exercise slip is unreadable
+      summary: No stage, due point or next action can be read from the supplied paper. Do not borrow the details of another example.
+      documentIds:
+        - practice-desk-slips
+        - two-counter-boundary
+    - id: public-start
+      title: Create from the public counter
+      summary: A new intake starts on a blank public form, not from a case view. No case data was copied and no draft was prepared.
+      documentIds:
+        - two-counter-boundary
+    - id: cancelled-intake
+      title: Draft preparation cancelled
+      summary: No draft, action or receipt. Cancelling in the separate confirmation dialog also leaves the request uncreated.
+      documentIds:
+        - path-sign-intake
+    - id: draft-intake
+      title: "New public intake: draft, not a receipt"
+      summary: Check the tile, sign issue, sketch and destination. If the create tool is available, open the review dialog. Cancel to stop, or confirm the corrected summary to receive the host-generated local SIM receipt.
+      documentIds:
+        - path-sign-intake
+        - two-counter-boundary
+      toolId: create-path-sign-request
+      draft:
+        title: Review the new path sign request
+        body: |-
+          Destination: Path Sign Intake
+          Practice map tile: Willow Bend
+          Sign issue: {{issue}}
+          Enclosure: marked practice sketch card (supplied)
+          Requested work: inspect the sign symbol on the practice map.
+  cases:
+    - id: public-card
+      title: Read the public checklist
+      inputs:
+        question: checklist
+        scope: public
+        access: visitor
+        paper: ochre
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: public-checklist
+        documentIds:
+          - path-sign-intake
+        kind: answer
+        contains:
+          - marked sketch card
+          - does not create a request
+    - id: authority-turn
+      title: Read the holder’s authority checkpoint
+      inputs:
+        question: progress
+        scope: case
+        access: matched
+        paper: ochre
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: waiting-authority
+        documentIds:
+          - practice-desk-slips
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - Map Authority desk
+          - Day 8
+          - need not send anything
+    - id: holder-turn
+      title: Find what the holder must supply
+      inputs:
+        question: progress
+        scope: case
+        access: matched
+        paper: blue
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: missing-sketch
+        documentIds:
+          - practice-desk-slips
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - Intake desk
+          - missing marked sketch card by day 6
+    - id: finished-slip
+      title: Distinguish completion from a new deadline
+      inputs:
+        question: progress
+        scope: case
+        access: matched
+        paper: green
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: complete
+        documentIds:
+          - practice-desk-slips
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - Reply shelf on day 5
+          - No deadline or required next action
+    - id: public-owner
+      title: Decline a visitor’s ownership question
+      inputs:
+        question: owner
+        scope: public
+        access: visitor
+        paper: unreadable
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - I can’t confirm or disclose private record information.
+    - id: matched-owner
+      title: Decline the same question from a matched holder
+      inputs:
+        question: owner
+        scope: case
+        access: matched
+        paper: blue
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - I can’t confirm or disclose private record information.
+    - id: wrong-scope
+      title: A matching holder is still at the public counter
+      inputs:
+        question: progress
+        scope: public
+        access: matched
+        paper: green
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - I can’t confirm or disclose private record information.
+    - id: different-slip
+      title: A verification belongs to a different slip
+      inputs:
+        question: progress
+        scope: case
+        access: other
+        paper: blue
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - I can’t confirm or disclose private record information.
+    - id: claim-only
+      title: A claim alone is not verification
+      inputs:
+        question: progress
+        scope: case
+        access: claim
+        paper: ochre
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - I can’t confirm or disclose private record information.
+    - id: inspect-draft
+      title: Prepare a new request for local review
+      inputs:
+        question: new
+        scope: public
+        access: visitor
+        paper: ochre
+        issue: missing arrow
+        choice: review
+      expected:
+        outcomeId: draft-intake
+        documentIds:
+          - path-sign-intake
+          - two-counter-boundary
+        kind: handoff-ready
+        contains:
+          - draft, not a receipt
+          - "Destination: Path Sign Intake"
+          - "Sign issue: missing arrow"
+        toolId: create-path-sign-request
+    - id: cancel-draft
+      title: Cancel the new request
+      inputs:
+        question: new
+        scope: public
+        access: visitor
+        paper: ochre
+        issue: faded lettering
+        choice: cancel
+      expected:
+        outcomeId: cancelled-intake
+        documentIds:
+          - path-sign-intake
+        kind: answer
+        contains:
+          - No draft, action or receipt
+    - id: fresh-start
+      title: Do not copy a case into a new intake
+      inputs:
+        question: new
+        scope: case
+        access: matched
+        paper: blue
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: public-start
+        documentIds:
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - No case data was copied
+    - id: unreadable-paper
+      title: Withhold unsupported progress
+      inputs:
+        question: progress
+        scope: case
+        access: matched
+        paper: unreadable
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: no-reading
+        documentIds:
+          - practice-desk-slips
+          - two-counter-boundary
+        kind: answer
+        contains:
+          - No stage, due point or next action can be read
+    - id: offline-tool
+      title: A disabled tool cannot issue a receipt
+      inputs:
+        question: new
+        scope: public
+        access: visitor
+        paper: ochre
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: draft-intake
+        documentIds:
+          - path-sign-intake
+          - two-counter-boundary
+        kind: handoff-blocked
+        contains:
+          - "Action blocked:"
+          - "Sign issue: faded lettering"
+      disabledTools:
+        - create-path-sign-request
+    - id: no-intake-source
+      title: Do not draft without the intake card
+      inputs:
+        question: new
+        scope: public
+        access: visitor
+        paper: ochre
+        issue: missing arrow
+        choice: review
+      expected:
+        outcomeId: draft-intake
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - No draft or action was produced.
+      disabledKnowledge:
+        - path-sign-intake
+    - id: no-slip-source
+      title: Do not report a stage without its source
+      inputs:
+        question: progress
+        scope: case
+        access: matched
+        paper: green
+        issue: faded lettering
+        choice: review
+      expected:
+        outcomeId: complete
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - No draft or action was produced.
+      disabledKnowledge:
+        - practice-desk-slips
+implementation:
+  - title: Build this in the real service
+    description: A real service would need separate public and case APIs. Enforce authenticated, record-scoped authorisation on the server before reading any case fields. Recheck create permission and consent on write; distinguish a successful receipt from a draft or uncertain result.
+  - title: What to measure
+    description: "In the simulator, compare denied replies across visitor and matched-holder inputs: they should be identical. Count a request only in the host’s local case history after confirmation, not when Preview offers a draft."
+  - title: Scope of this draft
+    description: Use only invented map tiles and exercise slips. No real identities, addresses, documents or case records; no live authentication, filing or publication. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

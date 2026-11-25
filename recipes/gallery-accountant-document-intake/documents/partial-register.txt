@@ -1,0 +1,15 @@
+Paper Quay Bindery | July intake register | partial capture
+Alternate extraction of the same five rows, not a second batch to combine with the full register.
+
+01  Hinge Mill | PQ-48 | PQ-48.pdf | USD 684.50 | Invoice for cover boards; footer legible.
+02  Hinge Mill | PQ-48 | PQ-48-copy.pdf | USD 684.50 | Resend of row 01; same date and total, no new goods.
+03  Hinge Mill | T-09 | T-09.csv | USD 36.00 | Marked TEST by the sender; not a purchase.
+04  Hinge Mill | CN-12 | CN-12.pdf | USD | signed amount: [blank] | Partial. The header links the credit to PQ-48. The extractor read the heading on page 2 but missed the allowance amount.
+05  Foldline Type | E-14 | E-14.pdf | EUR 82.00 | Keep separate from USD.
+
+The USD trade subtotal before credit is 684.50; the test-inclusive subtotal is 720.50. Neither is a net. Do not look up the other capture to fill the blank.
+The partial register has no credit amount. Follow row 04 to CN-12.pdf, page 2, Return allowance, before reporting a USD net.
+Ask for a legible copy of that section if it cannot be read. A blank amount is not a zero credit.
+
+Reading the allowance does not authorize a ledger correction. Identify the row, old and proposed values, and source; a write needs a separate request and confirmation.
+This desk exercise makes no change to either register or to the supplier document.

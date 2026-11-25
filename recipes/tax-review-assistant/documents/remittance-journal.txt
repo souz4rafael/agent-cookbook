@@ -1,0 +1,6 @@
+Alderfen | Remittance journal · RJ-44
+Fictional training material. Not an official service record or policy.
+
+RJ-44 links a remittance row to LK-27. Use its allocation period, not the calendar day on which the row was entered.
+The printed posted row for Siltfall 4 is 60 crowns. The editable paid amount and posting status represent alternate journal snapshots. PENDING is an unsettled entry, POSTED is a recorded amount, and NO ROW supplies no payment evidence.
+One alternate row is allocated to Siltfall 3 rather than Siltfall 4. Do not put that row against the current declaration.

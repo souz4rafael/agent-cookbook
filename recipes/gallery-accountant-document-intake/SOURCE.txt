@@ -1,0 +1,29 @@
+Source record for gallery-accountant-document-intake
+
+Gallery listing: Accountant Document Intake & Q&A
+Author: Adriana Trujillo (adrianatruji)
+Catalog version: 1.0
+Listing: https://microsoft.github.io/copilot-studio-gallery/solutions/accountant-document-intake/
+Catalog: https://microsoft.github.io/copilot-studio-gallery/solutions.json
+ZIP inspected: https://microsoft.github.io/copilot-studio-gallery/bundles/accountant-document-intake.zip
+Catalog download: https://github.com/microsoft/copilot-studio-gallery/releases/download/gallery-bundles-cf267093eb49265a46df4636735f36ce634f23a8-1/accountant-document-intake-60b46f33cfd9cfe602c593af604a1bb5e54fb556420067396b4fcef1e32d0cb4.zip
+Both downloads: 43,729 bytes; SHA-256 60b46f33cfd9cfe602c593af604a1bb5e54fb556420067396b4fcef1e32d0cb4
+Inspected 2026-11-25: 21 ZIP entries inventoried, selected text members read in memory under size limits. Nothing from the bundle was installed, executed, extracted to disk or imported.
+
+What the archive contains
+solution.xml: the solution is AccountantDocumentIntake, version 1.0, Managed=0. This version identifies the reference, not the draft's content revision.
+Workflows/DocumentExtraction-EC16F4A6-D161-C9EE-4774-E93A104070A9.json: a SharePoint new-file trigger watches the Monthly Docs folder. A folder or an Office lock filename terminates the run before content retrieval. Extract receives file content; its status distinguishes Full (1) from Partial (2). A false isSourceDocument stops generated outputs from becoming ledger rows. Create_Accounting_Extraction_Row maps figures, status, transformation and outlier notes to cr900_accountings, with the trigger filename and a UTC ingestion time.
+bots/Default_Accountant_QA_Assistant_1ac50a/bot.xml and bots/Default_Accountant_QA_Assistant_1ac50a/configuration.json: the bot is Accountant Q&A Assistant. Its configuration puts the Accounting table first and directs unresolved questions to the original, with currency and source location preserved.
+botcomponents/Default_Accountant_QA_Assistant_1ac50a.skill.query-accounting-data/data: discover the schema before querying; consider the candidate rows and notes rather than trusting a raw sum. Keep one of a duplicate pair, identify test rows, separate credit from gross due, and explain exclusions.
+botcomponents/Default_Accountant_QA_Assistant_1ac50a.skill.ad-hoc-source-document-analysis_LVp/data: trace a row through its stored filename, cite a page, sheet or section, and distinguish what the file establishes from what the row said. An ambiguous filename is not permission to silently choose a different file.
+botcomponents/Default_Accountant_QA_Assistant_1ac50a.skill.write-back-changes/data: a request to change a row starts a preview of the change, not an immediate write. The accountant's confirmation and the connector's approval are separate.
+botcomponents/Default_Accountant_QA_Assistant_1ac50a.tool.accounting-dataverse-read_DhK6sx/data and botcomponents/Default_Accountant_QA_Assistant_1ac50a.tool.accounting-dataverse-write_8hQZ7Y/data: separate invoker tools; the write allowlist has create_record and update_record and requires approval.
+botcomponents/Default_Accountant_QA_Assistant_1ac50a.tool.source-documents-sharepoint-read_VUOd8X/data and botcomponents/Default_Accountant_QA_Assistant_1ac50a.tool.source-documents-sharepoint-save_wTS08x/data: file reads are separate from folder/file creation; the latter tool requires approval. Neither write tool lists delete.
+
+Adaptation boundary
+Implemented locally: two alternative stored captures of the same five fictional rows, one credit-note facsimile, source-gated questions, and six fixed reconciliation inputs (two inclusion choices by three evidence states). Complete captures need only their register. A partial capture cannot settle the net without the original section. Changing scope is a comparison, not a reclassification of a stored record.
+Reference only: ingestion, file recognition, the Accounting table and SQL, runtime schema discovery, MCP connections, generative reading, write previews and approvals. The local SharePoint selector only makes fictional text available. No write tool is registered.
+
+License reviewed: MIT, copyright (c) 2026 Microsoft Corporation.
+https://raw.githubusercontent.com/microsoft/copilot-studio-gallery/cf267093eb49265a46df4636735f36ce634f23a8/LICENSE
+The terms permit reuse, modification and redistribution subject to retaining the copyright and permission notices in copies or substantial portions; the software carries no warranty or liability undertaking. This draft describes the observed design. It does not redistribute the ZIP, its code, its skill instructions or its documentation. The business story, figures, fixtures, rules and learner text are original.

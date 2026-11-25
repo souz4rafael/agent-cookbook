@@ -11,7 +11,13 @@ applicable law or the GitHub Terms of Service provide otherwise. GitHub viewing
 and forking rights remain unchanged. See LICENSE.txt before copying this project.
 
 Explore three product-inspired learning experiences:
-- Copilot Studio: five recipes with editable fictional inputs and local evaluation.
+- Copilot Studio: 28 recipes with editable fictional inputs and local evaluation.
+  Four are the original public-service exercises. Twenty form ten public-sector
+  journeys, with a service guide and an operational exercise for each journey.
+  Four are teaching adaptations of Copilot Studio Gallery samples: Contract
+  Compliance Reviewer, AI Use Case Prioritization, Accountant Document Intake
+  & Q&A, and IT Service Desk Assistant. Find them under Explore business scenarios.
+  Open Preview > Guided conversations to try their scripted dialogue.
 - Copilot: a scripted chat playground and the RLE Starter agent-builder recipe.
 - Microsoft Foundry: an agent catalog, manifest details and local named drafts.
 

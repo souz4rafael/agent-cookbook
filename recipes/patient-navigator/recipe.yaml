@@ -1,0 +1,573 @@
+schemaVersion: 1
+revision: 1
+id: patient-navigator
+status: published
+title: Patient Navigator
+summary: Practice explaining the administrative next step in an existing plan, what the referral desk has actually recorded, and how to ask about a scheduling barrier.
+industry: Government and public services
+difficulty: beginner
+accentIcon: citizen
+learningGoals:
+  - Explain who acts next under the written plan and what an intake receipt actually confirms.
+  - Turn a travel or communication barrier into a question the person can ask before accepting a proposed time.
+  - Compare a listed supporter with and without permission and explain why only one can hear the plan-specific answer.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Continuity of care
+    perspective: guidance
+  headline: The referral arrived, but is there a time to turn up?
+  problem: A person leaves with a plan that says the scheduling desk will offer a follow-up time. The referral sheet says “received”. They need to know whether to wait for an offer, reply to one or start arranging transport.
+  impact: If a receipt sounds like a booking, someone may arrange a journey for a time nobody has agreed. A supporter calling to untangle the paperwork can face a different question altogether about what the desk may share.
+  approach: Read the two lines separately with the person or their permitted supporter. Say what the plan asks the desk to do, then what the referral entry shows so far. If the proposed time is hard to reach, give the person a question they can use rather than implying the time has changed.
+  startSmall: Read the receipt-only example first. Switch to a proposed time and choose the travel barrier, then the need for written options. Compare what the person could ask in each case.
+  potentialValue: People could leave with a clearer idea of whose reply to expect and what to ask, without having to tell their clinical story to resolve a scheduling question.
+  measure: Ask readers to say who acts next and whether a time is confirmed. Count how often a receipt or an offer is mistaken for a booking.
+  boundary: Chat can explain the reading method to anyone, not confirm a record. Role and permission are fictional choices. The scheduling desk confirms times, and the team that wrote an unclear plan must explain it; the navigator neither books nor gives clinical advice.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: A referral receipt leaves someone wondering whether to wait for an offer or arrange a journey.
+    experiment: Switch the receipt to a time offer and choose a travel barrier to see a question about a time the person can reach.
+    takeaway: Name what the desk will do next without turning a receipt or an unaccepted offer into an appointment.
+    scope: Read fictional plan and referral entries without looking up health records or changing a booking.
+agent:
+  name: Patient Navigator
+  description: Explain an existing plan in plain language without interpreting clinical content or treating a referral acknowledgement as an appointment.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Explain an existing plan in plain language without interpreting clinical content or treating a referral acknowledgement as an appointment.
+    Do not confirm whether a person has a plan or referral in chat. Teach only the reading method there. Never ask for identifying information.
+    In the exercise, stop unless the role and permission both allow this explanation. A chosen supporter also needs permission for this conversation.
+    Read the existing administrative step, then the recorded referral state. Separate both from the question the person might ask. A proposed time is not confirmation.
+    No personal health identifiers, record lookup, diagnosis, treatment advice, appointment booking or rescheduling.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Explain an existing plan in plain language without interpreting clinical content or treating a referral acknowledgement as an appointment.
+    Do not confirm whether a person has a plan or referral in chat. Teach only the reading method there. Never ask for identifying information.
+    In the exercise, stop unless the role and permission both allow this explanation. A chosen supporter also needs permission for this conversation.
+    Read the existing administrative step, then the recorded referral state. Separate both from the question the person might ask. A proposed time is not confirmation.
+    No personal health identifiers, record lookup, diagnosis, treatment advice, appointment booking or rescheduling.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  stepByStep: |-
+    # Procedure
+
+    Explain an existing plan in plain language without interpreting clinical content or treating a referral acknowledgement as an appointment.
+    1. Do not confirm whether a person has a plan or referral in chat. Teach only the reading method there. Never ask for identifying information.
+    2. In the exercise, stop unless the role and permission both allow this explanation. A chosen supporter also needs permission for this conversation.
+    3. Read the existing administrative step, then the recorded referral state. Separate both from the question the person might ask. A proposed time is not confirmation.
+    No personal health identifiers, record lookup, diagnosis, treatment advice, appointment booking or rescheduling.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  decisionRules: |-
+    # Decision rules
+
+    Explain an existing plan in plain language without interpreting clinical content or treating a referral acknowledgement as an appointment.
+    No scope or permission: explicitly decline without confirming any record.
+    Absent plan or conflicting referral markings: name what cannot be read and ask the responsible team to clarify.
+    When a time is only proposed, help phrase a question about the stated barrier; never book or reschedule.
+    No personal health identifiers, record lookup, diagnosis, treatment advice, appointment booking or rescheduling.
+    Do not confirm whether a person has a plan or referral in chat. Teach only the reading method there. Never ask for identifying information.
+    In the exercise, stop unless the role and permission both allow this explanation. A chosen supporter also needs permission for this conversation.
+  examples: |-
+    “Was a referral made for my relative?” → I cannot confirm anyone’s records here.
+    “Is a proposed time confirmed?” → An offer needs a separate confirmation from the scheduling service. This exercise cannot book it.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Patient Navigator.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: plan-and-referral-reading-guide
+    title: Reading a plan and a referral side by side
+    summary: A care plan and a referral entry answer different questions. The plan records what is supposed to happen. The referral entry records the last administrative event supported by the page. Neither, on its own, proves what happened afterwards.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/plan-and-referral-reading-guide.txt
+  - id: consent-and-scheduling-questions
+    title: Permission and questions about proposed times
+    summary: "A navigator can teach the general process to anyone. A plan-specific exercise is different: the person in the scenario or their listed supporter must have permission for that explanation. If the role or permission is missing, decline without saying whether any plan, appointment or referral exists. A role choice in this exercise proves no identity."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/consent-and-scheduling-questions.txt
+facts:
+  - id: read-next-step
+    documentId: plan-and-referral-reading-guide
+    keywords:
+      - How can I put a written next step into plain language
+    answer: Name who acts next, what the plan says they will do, and what reply to look for. Repeat the written step without adding a new one.
+    detail: If the step is missing or unclear, ask the team that wrote the plan to explain it. A navigator does not interpret clinical content, diagnose or recommend treatment.
+  - id: read-return
+    documentId: plan-and-referral-reading-guide
+    keywords:
+      - Does a referral receipt mean an appointment has been booked
+    answer: No. A receipt acknowledges delivery to the receiving desk. It does not establish that a time has been offered, accepted or booked.
+    detail: Read the latest supported entry separately from the intended next step. If entries conflict, ask the responsible desk to clarify instead of inferring a booking.
+  - id: ask-for-options
+    documentId: consent-and-scheduling-questions
+    keywords:
+      - What can someone ask if a proposed time does not work
+    answer: They can ask the scheduling desk whether another time or a more accessible way to review the options is available. They need not explain medical details here.
+    detail: Check whether the entry is only an offer before calling it rescheduling. Drafting a question does not send a message or change an appointment.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-plan-and-referral-reading-guide
+    title: Select Reading a plan and a referral side by side
+    description: Add Reading a plan and a referral side by side to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: plan-and-referral-reading-guide
+  - id: read-consent-and-scheduling-questions
+    title: Select Permission and questions about proposed times
+    description: Add Permission and questions about proposed times to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: consent-and-scheduling-questions
+  - id: try-1
+    title: Explain the receipt alongside the plan
+    description: In Review > Try this example, load "Explain the receipt alongside the plan" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: receipt-not-visit
+  - id: try-2
+    title: Phrase a question about travel
+    description: In Review > Try this example, load "Phrase a question about travel" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: unworkable-offer
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Reading a plan and a referral side by side citation on the result for "Explain the receipt alongside the plan".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: plan-and-referral-reading-guide
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - How can I put a written next step into plain language?
+    - Does a referral receipt mean an appointment has been booked?
+    - What can someone ask if a proposed time does not work?
+  handoffKeywords: []
+  unknownAnswer: I cannot confirm anyone’s plan or referral, advise on treatment, or book a visit. I can explain how to read an existing plan or phrase a question for the responsible service.
+  missingKnowledgeAnswer: The selected navigation guide is unavailable. I cannot infer a plan, confirm a referral or book a visit.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Patient Navigator
+    mode: simulated
+    starter:
+      label: Practice explaining a plan in everyday words
+      prompt: Practice explaining a plan in everyday words
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: This chat cannot look up or confirm anyone’s plan. Would you like to practice explaining an existing step, reading a referral label or asking about a scheduling barrier?
+          - id: alternative
+            text: Choose a general navigation question. Only the separate role-and-permission exercise shows a fictional plan; do not enter names or personal details.
+      - id: choose-route
+        role: user
+        choices:
+          - id: read-next-step
+            label: Explain an existing step
+            next: reply-read-next-step
+          - id: read-return
+            label: Interpret a referral label
+            next: reply-read-return
+          - id: ask-for-options
+            label: Ask about a barrier
+            next: reply-ask-for-options
+      - id: reply-read-next-step
+        role: simulation
+        prompt: How can I put a written next step into plain language?
+        end: true
+      - id: reply-read-return
+        role: simulation
+        prompt: Does a referral receipt mean an appointment has been booked?
+        end: true
+      - id: reply-ask-for-options
+        role: simulation
+        prompt: What can someone ask if a proposed time does not work?
+        end: true
+lab:
+  title: Read the plan before calling it a booking
+  description: Choose a fictional role, permission and administrative markings. Read the resulting explanation; there is no account, patient record or calendar connection.
+  fields:
+    - id: viewer
+      label: Who is asking in the scenario?
+      type: select
+      options:
+        - value: self
+          label: Person the exercise concerns
+        - value: supporter
+          label: Supporter listed for this explanation
+        - value: unlisted
+          label: Another person, not listed
+      defaultValue: unlisted
+      hint: Do not enter a name. This role is a local exercise setting.
+    - id: permission
+      label: Permission for this explanation recorded?
+      type: boolean
+      defaultValue: false
+      hint: Permission must cover the selected person and this purpose.
+    - id: plan
+      label: Existing plan step
+      type: select
+      options:
+        - value: legible
+          label: Written next step is legible
+        - value: unclear
+          label: Step missing or not legible
+      defaultValue: unclear
+      hint: Never create a replacement step.
+    - id: referral
+      label: Referral sheet marking
+      type: select
+      options:
+        - value: received
+          label: Intake receipt only
+        - value: offered
+          label: Time proposed; no acceptance
+        - value: uncertain
+          label: Conflicting or incomplete entry
+      defaultValue: uncertain
+      hint: A receipt, an offer and a booking are not interchangeable.
+    - id: barrier
+      label: Administrative barrier
+      type: select
+      options:
+        - value: none
+          label: No barrier stated
+        - value: travel
+          label: Proposed travel time does not work
+        - value: format
+          label: Needs the options in an accessible written format
+      defaultValue: none
+      hint: Select a broad category only; do not add personal details.
+  checks:
+    - id: outside
+      label: Person is outside the permitted roles
+      field: viewer
+      operator: eq
+      value: unlisted
+    - id: consent
+      label: Permission recorded for this explanation
+      field: permission
+      operator: eq
+      value: true
+    - id: written
+      label: Existing next step legible
+      field: plan
+      operator: eq
+      value: legible
+    - id: receipt
+      label: Only receipt recorded
+      field: referral
+      operator: eq
+      value: received
+    - id: offer
+      label: Offer without acceptance
+      field: referral
+      operator: eq
+      value: offered
+    - id: travel
+      label: Travel constraint selected
+      field: barrier
+      operator: eq
+      value: travel
+    - id: format
+      label: Written format requested
+      field: barrier
+      operator: eq
+      value: format
+  rules:
+    - id: outside-role
+      label: Stop for a person outside scope
+      all:
+        - checkId: outside
+          equals: true
+      outcomeId: no-disclosure
+    - id: without-consent
+      label: Stop without permission
+      all:
+        - checkId: consent
+          equals: false
+      outcomeId: no-disclosure
+    - id: missing-step
+      label: Do not invent an existing plan step
+      all:
+        - checkId: written
+          equals: false
+      outcomeId: unreadable-step
+    - id: intake-only
+      label: Separate the recorded receipt from the written plan
+      all:
+        - checkId: receipt
+          equals: true
+      outcomeId: explain-receipt
+    - id: travel-conflict
+      label: Address a travel barrier to an offered time
+      all:
+        - checkId: offer
+          equals: true
+        - checkId: travel
+          equals: true
+      outcomeId: travel-question
+    - id: accessible-offer
+      label: Address an inaccessible offer format
+      all:
+        - checkId: offer
+          equals: true
+        - checkId: format
+          equals: true
+      outcomeId: written-options
+    - id: unaccepted-offer
+      label: Describe an offer without acceptance
+      all:
+        - checkId: offer
+          equals: true
+      outcomeId: offer-only
+    - id: uncertain-entry
+      label: Do not infer a referral state
+      all: []
+      outcomeId: clarify-state
+  outcomes:
+    - id: no-disclosure
+      title: No record details can be shared
+      summary: I cannot confirm whether a plan, referral or appointment exists for this request.
+      documentIds:
+        - consent-and-scheduling-questions
+    - id: unreadable-step
+      title: Ask the plan author to clarify
+      summary: The supplied exercise page does not establish the next plan step. Ask the team that wrote it for a legible explanation. Do not invent a step or infer a booking.
+      documentIds:
+        - plan-and-referral-reading-guide
+    - id: explain-receipt
+      title: The referral desk has a receipt, not a booking
+      summary: Your fictional plan says the scheduling desk will offer a follow-up time and you can reply to that offer. The intake desk recorded receipt only. No offer or accepted time is shown. This is not a booking. Nothing has been requested or changed.
+      documentIds:
+        - plan-and-referral-reading-guide
+        - consent-and-scheduling-questions
+      recommendations:
+        - when:
+            checkId: travel
+            equals: true
+          title: Question to ask before an offer
+          description: Can I tell the desk which times are reachable by transport?
+        - when:
+            checkId: format
+            equals: true
+          title: Question about the reply
+          description: Can future time options be provided in an accessible written format?
+    - id: travel-question
+      title: Prepare a question about travel
+      summary: Your fictional plan says the scheduling desk will offer a follow-up time and you can reply to that offer. A time is proposed, not accepted. You could ask the scheduling desk, “Is another time available that I can reach by transport?” This is not a booking. Nothing has been requested or changed.
+      documentIds:
+        - plan-and-referral-reading-guide
+        - consent-and-scheduling-questions
+    - id: written-options
+      title: Ask for the offer in a usable format
+      summary: Your fictional plan says the scheduling desk will offer a follow-up time and you can reply to that offer. A time is proposed, not accepted. You could ask, “Can I review the time options in an accessible written format before I reply?” This is not a booking. Nothing has been requested or changed.
+      documentIds:
+        - plan-and-referral-reading-guide
+        - consent-and-scheduling-questions
+    - id: offer-only
+      title: A proposed time is not confirmation
+      summary: Your fictional plan says the scheduling desk will offer a follow-up time and you can reply to that offer. The referral sheet shows an offer, but no acceptance. Ask the scheduling desk how to respond to the proposal. This is not a booking. Nothing has been requested or changed.
+      documentIds:
+        - plan-and-referral-reading-guide
+    - id: clarify-state
+      title: Ask which referral entry is supported
+      summary: Your fictional plan says the scheduling desk will offer a follow-up time and you can reply to that offer. The supplied referral sheet does not establish a single state. Ask the responsible desk which entry it can confirm; do not assume there is an appointment. This is not a booking. Nothing has been requested or changed.
+      documentIds:
+        - plan-and-referral-reading-guide
+  cases:
+    - id: receipt-not-visit
+      title: Explain the receipt alongside the plan
+      inputs:
+        viewer: self
+        permission: true
+        plan: legible
+        referral: received
+        barrier: none
+      expected:
+        outcomeId: explain-receipt
+        documentIds:
+          - plan-and-referral-reading-guide
+          - consent-and-scheduling-questions
+        kind: answer
+        contains:
+          - intake desk recorded receipt only
+          - This is not a booking. Nothing has been requested or changed.
+    - id: unworkable-offer
+      title: Phrase a question about travel
+      inputs:
+        viewer: self
+        permission: true
+        plan: legible
+        referral: offered
+        barrier: travel
+      expected:
+        outcomeId: travel-question
+        documentIds:
+          - plan-and-referral-reading-guide
+          - consent-and-scheduling-questions
+        kind: answer
+        contains:
+          - A time is proposed, not accepted
+          - reach by transport?
+          - This is not a booking. Nothing has been requested or changed.
+    - id: listed-supporter
+      title: Explain an offer with permission for a supporter
+      inputs:
+        viewer: supporter
+        permission: true
+        plan: legible
+        referral: offered
+        barrier: format
+      expected:
+        outcomeId: written-options
+        documentIds:
+          - plan-and-referral-reading-guide
+          - consent-and-scheduling-questions
+        kind: answer
+        contains:
+          - accessible written format
+          - This is not a booking. Nothing has been requested or changed.
+    - id: offer-no-barrier
+      title: Distinguish an offer from acceptance
+      inputs:
+        viewer: self
+        permission: true
+        plan: legible
+        referral: offered
+        barrier: none
+      expected:
+        outcomeId: offer-only
+        documentIds:
+          - plan-and-referral-reading-guide
+        kind: answer
+        contains:
+          - an offer, but no acceptance
+    - id: conflicting-state
+      title: Leave conflicting referral markings unresolved
+      inputs:
+        viewer: self
+        permission: true
+        plan: legible
+        referral: uncertain
+        barrier: none
+      expected:
+        outcomeId: clarify-state
+        documentIds:
+          - plan-and-referral-reading-guide
+        kind: answer
+        contains:
+          - does not establish a single state
+    - id: missing-step
+      title: Do not replace an illegible plan
+      inputs:
+        viewer: self
+        permission: true
+        plan: unclear
+        referral: received
+        barrier: none
+      expected:
+        outcomeId: unreadable-step
+        documentIds:
+          - plan-and-referral-reading-guide
+        kind: answer
+        contains:
+          - Ask the team that wrote it
+    - id: unlisted-person
+      title: Decline an unlisted viewer even if permission is ticked
+      inputs:
+        viewer: unlisted
+        permission: true
+        plan: legible
+        referral: received
+        barrier: none
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - consent-and-scheduling-questions
+        kind: answer
+        contains:
+          - I cannot confirm whether
+    - id: no-permission
+      title: Decline a supporter without permission
+      inputs:
+        viewer: supporter
+        permission: false
+        plan: legible
+        referral: received
+        barrier: none
+      expected:
+        outcomeId: no-disclosure
+        documentIds:
+          - consent-and-scheduling-questions
+        kind: answer
+        contains:
+          - I cannot confirm whether
+    - id: plan-guide-removed
+      title: Try explaining the receipt without its guide
+      inputs:
+        viewer: self
+        permission: true
+        plan: legible
+        referral: received
+        barrier: none
+      expected:
+        outcomeId: explain-receipt
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - plan-and-referral-reading-guide
+implementation:
+  - title: Build this in the real service
+    description: Ask navigation staff and people who use the service to review plain-language explanations, permission boundaries and accessible ways of asking scheduling questions.
+  - title: What to measure
+    description: Check for invented next steps, disclosures outside permission and statements that incorrectly turn a receipt, proposal or draft question into a booking.
+  - title: Scope of this draft
+    description: No personal health identifiers, record lookup, diagnosis, treatment advice, appointment booking or rescheduling. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

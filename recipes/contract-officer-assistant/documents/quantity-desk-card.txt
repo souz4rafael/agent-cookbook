@@ -1,0 +1,19 @@
+Alderfen | Officer’s quantity desk card · QC-5
+Fictional training material. Not an official service record or policy.
+
+QC-5 is a method card. It grants no case access.
+Step 1: establish the employee’s assignment. Match the case key, supplier key and contract line on the invoice and signed acceptance against the current clause. A similar description is not a match.
+Step 2: read billed and accepted units, not ordered or dispatched units. Keep absent evidence distinct from an unconfirmed signature and from a recorded zero.
+Step 3: cite all three sources and describe only quantity. The employee decides whether to seek a correction or further evidence; price, tax and payment are separate checks.
+
+Match the case, supplier and contract line on the invoice and signed acceptance to the current clause. Compare the same unit of measure on both rows.
+
+A delivery description, dispatch count or similar supplier name is not a substitute for that match.
+
+No. A blank supplies no quantity. A recorded zero is a number, but it still needs a signed acceptance entry on the matched line.
+
+If the signature status is unknown, verify it before using any number.
+
+Say whether the two quantities agree or differ. Cite the invoice row, the acceptance entry and the clause that links them.
+
+Leave the next step to the employee. A quantity match does not establish price, tax or permission to pay.

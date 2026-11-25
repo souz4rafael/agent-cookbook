@@ -1,0 +1,11 @@
+Foldline print room | First-contact card
+
+Foldline is an invented shift board. Each desk reads the board before taking over the next print list. This card is for an employee who still cannot see the expected cards. There is no need to identify the employee, the desk or the device.
+
+Ask about the work, not the machine. Is one desk affected, or is the whole shift unable to use the board? An unreported reach is not evidence that only one desk is affected.
+
+Reach and timing answer different questions. One desk may need the list right now; the whole shift may notice the problem well before the handover. If the whole shift is affected OR the handover is due now, offer human review without waiting for every detail. Write "not reported" beside any unknown. Neither signal proves there is an outage.
+
+Otherwise, fill one gap at a time: first reach, then whether the handover can wait, then what the screen shows. If a single desk can wait and only Pinned is empty, ask whether the view check has been tried before recommending it. An unknown result is not a failed check.
+
+There is one matching article in this exercise. It is for an empty Pinned view, not for a card page that stays blank. If no article fits, or the one view check made no difference, offer a human a short account of what was observed. Do not improvise a second fix.

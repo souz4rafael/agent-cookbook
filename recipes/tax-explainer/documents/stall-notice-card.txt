@@ -1,0 +1,6 @@
+Alderfen | Seasonal notice card · NC-62
+Fictional training material. Not an official service record or policy.
+
+Training card NC-62 identifies one active covered bay, B-16, in the Copper Rain season. Use only in a verified own-account simulation.
+Alternate stage A, WORKING: the register facts are being checked; there is not an issued notice for a P1 or R3 request yet.
+Alternate stage B, ISSUED: the notice cites LT-4 clause 1. It records the charge basis, not payment history. If the stage field is missing, neither A nor B can be assumed.

@@ -1,0 +1,20 @@
+Alderfen | Counting sheet: pair first, then divide
+Fictional training material. Not an official service record or policy.
+
+Unit: one standard single-sheet reprint template run once in each period. Pair A with A, B with B, C with C, and D with D. Include arrivals in days 1–10 before and 11–20 after, each observed through the end of its own ten-day window. To compare both measures this classroom exercise requires all four pairs, no work-type substitutions and a release for each job. Four pairs is a teaching rule, not a statistical significance threshold.
+
+Loop rate = number of jobs with at least one Print-to-Intake return for the already accepted edition seal / number of paired jobs in that window. Mark a job once. Do not count forward transfers or requests for a different requirement. Elapsed time = release day minus intake day (not inclusive day count and not staff working time). Mean duration = sum of those elapsed days / paired jobs.
+
+Manual audit, Before against Copy: circle A, B and C before, C only after. The rates are 3/4 = 75% and 1/4 = 25%, a difference of −50 percentage points. Before durations are (6−1) + (8−2) + (7−3) + (7−4) = 18 job-days; Copy gives (14−11) + (16−12) + (17−13) + (17−14) = 14. Divide by four for means of 4.5 and 3.5 days. Plain instead yields the original 3 affected jobs and 18 job-days; both measures are unchanged.
+
+Enter these hand totals in Review. The native checks compare them to the named slips and to one another; they do not extract or aggregate event logs. Do not repair a torn slip by counting a missing release as zero or choosing the last visible desk transfer. Report why the full two-measure comparison is withheld.
+
+The candidate form and fewer returns coincide in the Copy script. The blank box explains the documented return, not the entire change in elapsed time. Release timing or an unrecorded queue could also matter. These paired replays neither establish causation nor measure an actual service improvement. There are no people, group memberships or staff productivity measures in this register.
+
+In the fictional Copy replay, jobs returned for the edition seal went from 3/4 (75%) to 1/4 (25%). Mean intake-to-release time went from 18/4 = 4.5 days to 14/4 = 3.5 days. These are manual totals from two sets of four paired paper histories.
+
+The difference is 50 percentage points fewer affected jobs and one day less in the mean for these scripted replays. The figures are an association, not proof the form caused the change or that any actual service improved.
+
+No. Without a release stamp the endpoint is unknown, even if the job reached Print. Withhold the full comparison rather than setting a duration to zero or silently dropping a job.
+
+In Review > Try this example, compare Torn slip with Two pairs: the first lacks an endpoint for a named pair; the second has only two complete pairs. Neither supplies the four complete pairs required by this worksheet.

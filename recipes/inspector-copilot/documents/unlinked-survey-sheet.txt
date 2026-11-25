@@ -1,0 +1,6 @@
+Alderfen | Survey packet with a loose reading
+Fictional training material. Not an official service record or policy.
+
+Independent incomplete packet PS-4 r1 | Weir Reading Room | 27 May 2026 C3 survey.
+F-1 has P-11 and M-11 (805 mm clear opening). F-2 has P-12 with the surveyor's “service counter” caption, but the measurement column is empty. A measurement slip in the envelope lacks a finding ID and collection point.
+The Survey Records Clerk has not reconciled this variant. Do not attribute a value to F-2, reconstruct one from the photo, or use the reconciled packet in its place.

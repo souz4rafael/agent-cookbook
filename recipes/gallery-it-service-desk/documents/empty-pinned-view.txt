@@ -1,0 +1,9 @@
+Foldline shelf note | When Pinned looks empty
+
+Use this article when one desk can wait until later, Pinned shows no cards, and the view check has not been tried. Pinned is a personal display of chosen cards, not the full shift list. An empty view does not tell us whether a card was lost.
+
+In the fictional Foldline board, switch from Pinned to All cards and look for the current shift card. Does it appear there? This changes only what the reader sees.
+
+If the card appears, read it there; no ticket is needed for that observation. If the view still looks empty, record "no change" and offer human review rather than repeating the check. Never mark a problem resolved simply because an article was shown.
+
+This article does not apply to a blank card page. It does not ask anyone to edit a board, change permissions, inspect a device or test a network.

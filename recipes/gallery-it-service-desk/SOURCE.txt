@@ -1,0 +1,42 @@
+Source record for gallery-it-service-desk
+
+Gallery entry: IT Service Desk Assistant
+Official detail / gallery attribution: https://microsoft.github.io/copilot-studio-gallery/solutions/it-service-desk-assistant/
+Published ZIP inspected: https://microsoft.github.io/copilot-studio-gallery/bundles/it-service-desk-assistant.zip
+Gallery author: Sapan Patel
+Gallery version: 1.0.0.0
+ZIP manifest: it_service_desk_assistant, version 1.0.0.0, publisher IT Support Solutions. The publisher field is distinct from the gallery author credit.
+Inspected: 2026-11-25 UTC. Published ZIP: 9,287 bytes, 17 members.
+SHA256: d5fb4097b7ad0ae6b53ee2473216b94a204b5623c487e3d41beef6792d231f40
+Method: bounded download into memory, hash of the downloaded ZIP bytes, member listing and bounded reads of text members. No extraction, execution, imports, authentication or connector calls.
+
+Evidence at the ZIP root (case as published)
+
+solution.xml
+  Manifest identity, publisher and version.
+bots/it_service_desk_assistant/configuration.json
+  The bot's static instructions, not the workflow, call for classifying an employee report, assessing its impact, asking one focused question at a time, guiding self-service and summarizing attempts for a handoff. They caution against requesting secrets. The configuration lists Teams and Microsoft 365 Copilot channels.
+botcomponents/it_service_desk_assistant.skill.identity-access-resolver/data
+botcomponents/it_service_desk_assistant.skill.vpn-network-diagnostics/data
+botcomponents/it_service_desk_assistant.skill.incident-escalation-formatter/data
+  These three inline skills cover identity recovery, connectivity troubleshooting and escalation formatting respectively. The formatter distinguishes business impact, prior attempts and review before submission. They are source inventory, not skills installed in this recipe.
+botcomponents/it_service_desk_assistant.tool.ITKnowledgeBaseMCP/data
+  A connection binding using the invoking user's connection (authMode: Invoker) for the Dataverse knowledge tool: shared_commondataserviceforapps / InvokeMCP.
+botcomponents/it_service_desk_assistant.tool.DispatchITSMTicket/data
+  An invoker connection binding for the ITSM tool: shared_itsm / CreateIncident.
+Assets/botcomponent_connectionreferenceset.xml
+  Identifies a binding for DispatchITSMTicket. A declaration or reference is not evidence of an available endpoint, authorization or successful action.
+Workflows/workflow.json
+  Canvas: trigger.metadata.associatedData.graph has seven visual nodes and six edges. It depicts intake, classification, knowledge lookup, a decision, self-service or escalation, then a shared close. This is a picture of a proposed workflow.
+  Executable definition: a manual HTTP request trigger and a Compose action to capture the supplied context, followed by a Response configured for status code 501, status NotImplemented and isPlaceholder: true. This was verified from the definition, not by sending a request. It does not implement the canvas, call either declared tool, create a ticket, return a ticket ID or deliver a notification.
+
+Fidelity guide
+
+Kept: the distinction between first-contact advice and a handoff, impact versus urgency, a single focused question, and a human inspecting the summary. The official Gallery page is the recipe source link, not a claim of a running service.
+Changed: the print room, shift board, article, desk policy, dialogue, note format, rules and expected examples are original educational fixtures. Impact and urgency are separate supplied observations rather than inferred P1-P4 ratings. Unknown is preserved; one known high-impact or time-critical signal is enough to offer review. There is no operational severity assignment.
+Implemented here: local Studio question rules retrieve selected fictional text; the separate editable lab uses ordered first-match rules. A missing required document withholds the result. A disabled ticket tool leaves an unsubmitted, readable note. Asking for advice only does not even prepare that note. The host's confirmation dialog is the only writer of a local simulated ticket; Cancel writes nothing. Guided conversations and case evaluation never create tickets.
+Not adapted: credentials or recovery procedures, device identifiers, logs, network playbooks, live knowledge search, external ITSM dispatch, Teams or other channels, delivery notifications and automatic text redaction. Source declarations and the visual canvas are reference only. The local shelf and review queue do not bind any of them.
+Review check: run the whole-shift case, inspect the four observations and cancel in the host. Check that the ticket list has not changed. Repeat, confirm the reviewed slip, and check for exactly one new local record. The lab's handoff-ready expectation tests an offer, not a completed action; the journey's action-confirmed step checks the latter.
+
+No source code, solution templates, source documents, incident CSV, binaries or gallery assets are redistributed with this draft.
+Gallery repository licence: MIT, https://github.com/microsoft/copilot-studio-gallery/blob/main/LICENSE.

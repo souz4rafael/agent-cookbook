@@ -76,13 +76,14 @@ STUDIO ADAPTER
 Source: recipes/<id>/recipe.yaml plus documents/*.txt.
 Schemas: src/domain/validation.ts and src/domain/lab-validation.ts.
 Runtime: src/domain/engine.ts, lab.ts, evaluation.ts and actions.ts.
-The business-scenario narratives are still a separate code-defined catalog in
-src/content/scenarios.ts. A new YAML recipe appears in the agent catalog, not
-automatically in Explore business scenarios. Flag that editorial mapping for
-review; do not silently create scenario-specific JSX.
+The original four business stories live in src/content/scenarios.ts. New recipes
+can supply a scenario section in their YAML, with business context, a reference
+label and home: {challenge, experiment, takeaway, scope}. A group identifies
+the journey title and its guidance or operations perspective. Home and Explore
+business scenarios use this same content; do not create recipe-specific JSX.
 Prefer citizen-qa for grounded Q&A; document-processing-routing for routing;
 benefit-eligibility for preliminary checks; upskilling-recommendation for
-recommendations; customer-service-optimize for a self-contained skill lab.
+recommendations. Use a Gallery recipe as a template for an attributed adaptation.
 
 Use schemaVersion: 1 and status: draft. Keep id equal to directory name.
 Include a causal lab with fields, checks, ordered first-match rules, a final

@@ -1,0 +1,10 @@
+Grey Quay Works | Lantern Hire, revision D2 | Fictional pre-signature review sheet
+Subject: rental of two exhibition lanterns. The applicant is checking terms before signature, not matching a delivery to an invoice.
+
+Section 4, Payment: the authority will pay within [body period] calendar days after signed acceptance of the lighting equipment.
+Schedule B, Payment timetable: the authority will pay within [schedule period] calendar days after the same signed acceptance.
+Opening fixture: section 4 says 30 days; schedule B says 45. The lab's two input fields stand in for replacement text at these exact locations. A blank field means the passage has not supplied a period. Zero means payment on the day of signed acceptance.
+
+Both passages concern the same payer, item, acceptance event and calendar-day unit. Two different periods therefore warrant an editorial question for the drafter. A matching pair resolves this comparison only; it cannot settle other drafting issues, policy or law.
+
+Section 11, Governing area: in the opening fixture the area has not been specified. Never infer it from the names of the parties. The exercise includes no other clauses and no live file uploads.

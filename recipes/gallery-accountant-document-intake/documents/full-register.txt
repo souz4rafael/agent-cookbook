@@ -1,0 +1,18 @@
+Paper Quay Bindery | July intake register | full capture
+Question on the close sheet: What is the USD net for this packet after supplier credits?
+
+These are stored extraction rows, not five purchases. All figures are in the currency shown. Blank and zero are distinct.
+
+01  Hinge Mill | PQ-48 | PQ-48.pdf | USD 684.50 | Invoice for cover boards; amount due from the invoice footer.
+02  Hinge Mill | PQ-48 | PQ-48-copy.pdf | USD 684.50 | Second delivery of row 01. Same vendor, number, date and total; the resend note says no new goods.
+03  Hinge Mill | T-09 | T-09.csv | USD 36.00 | Training row marked TEST by the sender. No goods ordered.
+04  Hinge Mill | CN-12 | CN-12.pdf | USD -54.50 | Full. The supplier granted an allowance against PQ-48. The extraction stored its effect on the payable as a negative amount.
+05  Foldline Type | E-14 | E-14.pdf | EUR 82.00 | Invoice in euros; no exchange rate on file.
+
+Close sheet, trade rows only:
+The full register gives USD 684.50 in invoices and a signed credit of USD -54.50, for a trade net of USD 630.00. Leave out the PQ-48 copy, T-09 and the EUR invoice E-14.
+Row 02 would add USD 684.50 a second time. Row 03 would add USD 36.00 of test data. Row 05 stays at EUR 82.00 in a separate currency group.
+
+Training comparison, not a payable:
+Include T-09 only in the what-if: USD 720.50 before credit, USD -54.50 in credit, and USD 666.00 net. The trade net remains USD 630.00.
+Only the test row changes sides. The duplicate stays out and no EUR amount enters either USD figure.

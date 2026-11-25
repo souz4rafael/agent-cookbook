@@ -1,0 +1,807 @@
+schemaVersion: 1
+revision: 1
+id: tax-review-assistant
+status: published
+title: Alderfen tax review assistant
+summary: Lay a landing declaration, remittance and signed justification side by side. Check scope, period and posting before describing any difference.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Match the case and season on the declaration and signed basis note to the allocation period on the remittance row, not its posting date.
+  - Distinguish a posted zero from a pending row or missing amount and identify which evidence the auditor still needs.
+  - Write a reconciliation note that cites the declared amount, the posted amount and the basis for that season, leaving any unexplained difference for review.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Tax and revenue
+    perspective: operations
+  headline: Do the landing charge declaration and the payment belong to the same season?
+  problem: An auditor sees 84 crowns on a landing declaration and 60 in the remittance journal. Before asking the declarant about the difference, the auditor has to establish which season the payment covers, whether it has posted and how the declarant arrived at the figure on the return.
+  impact: Counting a pending entry as a payment could close a review too soon. Comparing different seasons could prompt an unnecessary demand for an explanation, even though the auditor has yet to find the relevant payment row.
+  approach: For the assigned case, the assistant reads the declaration alongside the journal allocation and the signed basis note. The note says the declaration is gross and claims no carry-forward; it does not explain away a gap. Only posted figures for the same season, with the note on file, support a comparison.
+  startSmall: Work through one season with all three records on the desk. Compare 84 declared with 60 posted, then make the figures equal. Keep them equal and select the prior season to see why even an exact match cannot reconcile payments across seasons.
+  potentialValue: Auditors could separate differences worth investigating from cases that are waiting for a posting or a document, and explain to the next reviewer why each case is still open.
+  measure: Track reviews closed on a pending row, a different season or a missing basis note. For reported differences, check whether another auditor can trace both figures and the stated basis to their sources.
+  boundary: The auditor decides whether to seek another record or investigate a difference. Neither matching nor mismatching figures establish liability or intent. The lab reads no live ledger and issues no assessment or penalty.
+  sourceLabel: "Microsoft Learn: authoring Copilot Studio instructions (not the source of the fictional landing charge or audit rules)"
+  home:
+    challenge: Two amounts can match to the crown while the payment belongs to last season. An auditor needs more than equality to close the comparison.
+    experiment: With 84 crowns declared and 84 posted, switch the journal allocation to the prior season. Instead of confirming a match, the assistant asks for a row from the declaration’s season.
+    takeaway: Check the allocation period, posting status and signed basis note before calling two figures a match or asking the declarant about a difference.
+    scope: Alternate snapshots of one fictional audit case. The auditor chooses the follow-up; the comparison never labels fraud or sets a tax liability.
+agent:
+  name: Alderfen tax review assistant
+  description: Help an assigned auditor prepare a neutral three-source reconciliation note for the fictional Alderfen landing charge.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help an assigned auditor prepare a neutral three-source reconciliation note for the fictional Alderfen landing charge.
+    Teach the reading sequence in chat. Never quote individual returns, payment amounts or findings there, even when a reader supplies a reference.
+    In the lab require the assigned audit scope and a matched bundle. Verify period, posting, justification and both amounts before comparing.
+    Show the declaration, posted payment and justification side by side. Report only what reconciles or differs; the auditor decides whether to obtain more evidence.
+    A mismatch is a question for the auditor, not evidence of fraud or an assessment. No balance, penalty or tax determination is produced.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help an assigned auditor prepare a neutral three-source reconciliation note for the fictional Alderfen landing charge.
+    Teach the reading sequence in chat. Never quote individual returns, payment amounts or findings there, even when a reader supplies a reference.
+    In the lab require the assigned audit scope and a matched bundle. Verify period, posting, justification and both amounts before comparing.
+    Show the declaration, posted payment and justification side by side. Report only what reconciles or differs; the auditor decides whether to obtain more evidence.
+    A mismatch is a question for the auditor, not evidence of fraud or an assessment. No balance, penalty or tax determination is produced.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  stepByStep: |-
+    # Procedure
+
+    Help an assigned auditor prepare a neutral three-source reconciliation note for the fictional Alderfen landing charge.
+    1. Teach the reading sequence in chat. Never quote individual returns, payment amounts or findings there, even when a reader supplies a reference.
+    2. In the lab require the assigned audit scope and a matched bundle. Verify period, posting, justification and both amounts before comparing.
+    3. Show the declaration, posted payment and justification side by side. Report only what reconciles or differs; the auditor decides whether to obtain more evidence.
+    A mismatch is a question for the auditor, not evidence of fraud or an assessment. No balance, penalty or tax determination is produced.
+    Name the evidence behind the next step. If two records disagree, retain both accounts and explain what a person needs to verify. Do not treat an absent observation as a negative result or a completed decision.
+  decisionRules: |-
+    # Decision rules
+
+    Help an assigned auditor prepare a neutral three-source reconciliation note for the fictional Alderfen landing charge.
+    Unassigned or unrelated bundle → no case view. Different or unconfirmed periods → do not compare amounts.
+    Pending posting is not a missing payment or a posted zero. A missing source or justification leaves reconciliation open.
+    Only posted, like-period figures with a filed justification can be labelled mismatching or reconciled.
+    A mismatch is a question for the auditor, not evidence of fraud or an assessment. No balance, penalty or tax determination is produced.
+    Teach the reading sequence in chat. Never quote individual returns, payment amounts or findings there, even when a reader supplies a reference.
+    In the lab require the assigned audit scope and a matched bundle. Verify period, posting, justification and both amounts before comparing.
+  examples: |-
+    Equal figures on different periods do not reconcile. An unposted journal line is pending even when it carries a number.
+    When sources support different figures for the same period, state both and the basis note without attributing intent.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Alderfen tax review assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: audit-reading-protocol
+    title: Audit reading protocol · AR-11
+    summary: "AR-11 separates three questions: what was declared, what was posted, and what basis was used. It contains no taxpayer rows."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/audit-reading-protocol.txt
+  - id: landing-declaration
+    title: Landing declaration · LD-27
+    summary: Declaration LD-27 is the declarant’s line for landing case LK-27, season Siltfall 4. Column G is the gross seasonal amount in crowns, not a remittance.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/landing-declaration.txt
+  - id: remittance-journal
+    title: Remittance journal · RJ-44
+    summary: RJ-44 links a remittance row to LK-27. Use its allocation period, not the calendar day on which the row was entered.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/remittance-journal.txt
+  - id: units-justification
+    title: Signed basis note · JN-18
+    summary: "Justification JN-18, LK-27, Siltfall 4: the declaration uses gross seasonal crowns; the declarant claims no carry-forward. This describes the basis; it does not account for every difference or establish liability."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/units-justification.txt
+facts:
+  - id: pair-periods
+    documentId: audit-reading-protocol
+    keywords:
+      - Which period belongs in a reconciliation
+    answer: Use the declaration period and the allocation period on the payment row. Read the period on the justification too; the day money was entered is not enough.
+    detail: If the periods differ, request a like-period source rather than offsetting one season against another.
+  - id: read-posting
+    documentId: audit-reading-protocol
+    keywords:
+      - How should I treat a pending payment row
+    answer: Mark it pending and leave reconciliation open. A pending amount is not a posted amount; a missing row is not a posted zero.
+    detail: Look for a confirmed posting tied to the same case and period before comparing it with the declaration.
+  - id: neutral-note
+    documentId: audit-reading-protocol
+    keywords:
+      - How do I describe amounts that differ
+    answer: State the declared amount, the posted amount and what the justification says about their basis. Ask the auditor to resolve the difference.
+    detail: A numerical mismatch alone establishes neither wrongdoing nor an assessed amount.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-audit-reading-protocol
+    title: Select Audit reading protocol · AR-11
+    description: Add Audit reading protocol · AR-11 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: audit-reading-protocol
+  - id: read-landing-declaration
+    title: Select Landing declaration · LD-27
+    description: Add Landing declaration · LD-27 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: landing-declaration
+  - id: read-remittance-journal
+    title: Select Remittance journal · RJ-44
+    description: Add Remittance journal · RJ-44 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: remittance-journal
+  - id: read-units-justification
+    title: Select Signed basis note · JN-18
+    description: Add Signed basis note · JN-18 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: units-justification
+  - id: try-1
+    title: Describe a difference without assessing it
+    description: In Review > Try this example, load "Describe a difference without assessing it" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: like-period-difference
+  - id: try-2
+    title: Reconcile the edited posted amount
+    description: In Review > Try this example, load "Reconcile the edited posted amount" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: like-period-equal
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Landing declaration · LD-27 citation on the result for "Describe a difference without assessing it".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: landing-declaration
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Which period belongs in a reconciliation?
+    - How should I treat a pending payment row?
+    - How do I describe amounts that differ?
+  handoffKeywords: []
+  unknownAnswer: I can explain how an auditor compares sources, but cannot disclose a return, a payment or a finding about a particular bundle in chat.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Alderfen tax review assistant
+    mode: simulated
+    starter:
+      label: Show me how to read an audit bundle.
+      prompt: Show me how to read an audit bundle.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Do you want to check period labels, interpret a posting, or write a neutral comparison?
+          - id: alternative
+            text: Do you want to check period labels, interpret a posting, or write a neutral comparison? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: pair-periods
+            label: Check the period
+            next: reply-pair-periods
+          - id: read-posting
+            label: Pending or posted?
+            next: reply-read-posting
+          - id: neutral-note
+            label: Write the comparison
+            next: reply-neutral-note
+      - id: reply-pair-periods
+        role: simulation
+        prompt: Which period belongs in a reconciliation?
+        end: true
+      - id: reply-read-posting
+        role: simulation
+        prompt: How should I treat a pending payment row?
+        end: true
+      - id: reply-neutral-note
+        role: simulation
+        prompt: How do I describe amounts that differ?
+        end: true
+lab:
+  title: Arrange three records on the audit desk
+  description: Set the scope, then read the period and evidence states before reading the amounts. Change one cell or status at a time to see when a comparison is justified.
+  fields:
+    - id: assignment
+      label: Audit assignment
+      type: select
+      options:
+        - value: assigned
+          label: Assigned to this exercise
+        - value: denied
+          label: Access denied
+        - value: unknown
+          label: Assignment not verified
+      defaultValue: unknown
+      hint: No case details without an assigned audit view.
+    - id: bundle
+      label: Case key across sources
+      type: select
+      options:
+        - value: same
+          label: Matches assigned case
+        - value: other
+          label: Different case
+        - value: unknown
+          label: Key not confirmed
+      defaultValue: unknown
+      hint: All rows must belong to the same assigned case.
+    - id: period
+      label: Allocation period compared with declaration and note
+      type: select
+      options:
+        - value: same
+          label: Same season
+        - value: different
+          label: Journal is for the prior season
+        - value: unknown
+          label: Period label unavailable
+      defaultValue: same
+      hint: The allocation period is distinct from the posting date.
+    - id: posting
+      label: Payment evidence
+      type: select
+      options:
+        - value: posted
+          label: Posted row
+        - value: pending
+          label: Pending row
+        - value: absent
+          label: No row supplied
+      defaultValue: posted
+      hint: Digits left on screen do not make a pending or absent row posted.
+    - id: memo
+      label: Justification evidence
+      type: select
+      options:
+        - value: filed
+          label: Signed note filed
+        - value: expected
+          label: Requested, not received
+        - value: missing
+          label: No note supplied
+      defaultValue: filed
+      hint: Equal numbers cannot replace the basis note.
+    - id: declared
+      label: Declared seasonal crowns
+      type: number
+      defaultValue: 84
+      min: 0
+      max: 100000
+      hint: Read column G; clear it for an unavailable amount.
+    - id: paid
+      label: Journal amount in crowns
+      type: number
+      defaultValue: 60
+      min: 0
+      max: 100000
+      hint: Use a posted amount only; enter 0 for an explicit posted zero.
+  checks:
+    - id: assigned
+      label: Current audit assignment
+      field: assignment
+      operator: eq
+      value: assigned
+    - id: same-case
+      label: Case keys confirmed
+      field: bundle
+      operator: eq
+      value: same
+    - id: prior-season
+      label: Different allocation period
+      field: period
+      operator: eq
+      value: different
+    - id: same-period
+      label: Common period verified
+      field: period
+      operator: eq
+      value: same
+    - id: pending-row
+      label: Journal row unsettled
+      field: posting
+      operator: eq
+      value: pending
+    - id: posted-row
+      label: Journal row posted
+      field: posting
+      operator: eq
+      value: posted
+    - id: requested-note
+      label: Justification requested
+      field: memo
+      operator: eq
+      value: expected
+    - id: filed-note
+      label: Signed justification available
+      field: memo
+      operator: eq
+      value: filed
+    - id: declared-cell
+      label: Declaration amount supplied
+      field: declared
+      operator: present
+    - id: paid-cell
+      label: Journal amount supplied
+      field: paid
+      operator: present
+    - id: agree
+      label: Declared and paid amounts equal
+      field: declared
+      operator: eq
+      otherField: paid
+    - id: differ
+      label: Declared and paid amounts differ
+      field: declared
+      operator: neq
+      otherField: paid
+  rules:
+    - id: check-assignment
+      label: Require audit assignment
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: no-audit-view
+    - id: check-case
+      label: Require the assigned case key
+      all:
+        - checkId: same-case
+          equals: false
+      outcomeId: no-audit-view
+    - id: require-declaration
+      label: A blank return amount supplies no comparison
+      all:
+        - checkId: declared-cell
+          equals: false
+      outcomeId: missing-declaration
+    - id: require-payment-row
+      label: Check for a journal row before reading its period
+      all:
+        - checkId: posted-row
+          equals: false
+        - checkId: pending-row
+          equals: false
+      outcomeId: missing-payment
+    - id: separate-seasons
+      label: Set unlike periods aside
+      all:
+        - checkId: prior-season
+          equals: true
+      outcomeId: period-mismatch
+    - id: check-period
+      label: Require a verified period
+      all:
+        - checkId: same-period
+          equals: false
+      outcomeId: unverified-period
+    - id: wait-for-posting
+      label: Pending payment is not a posted figure
+      all:
+        - checkId: pending-row
+          equals: true
+      outcomeId: posting-pending
+    - id: require-paid-amount
+      label: Do not substitute zero for a blank
+      all:
+        - checkId: paid-cell
+          equals: false
+      outcomeId: missing-payment
+    - id: wait-for-note
+      label: Recognise an outstanding request
+      all:
+        - checkId: requested-note
+          equals: true
+      outcomeId: note-pending
+    - id: require-note
+      label: Require the signed justification
+      all:
+        - checkId: filed-note
+          equals: false
+      outcomeId: missing-note
+    - id: compare-like-amounts
+      label: Record reconciliation on complete evidence
+      all:
+        - checkId: agree
+          equals: true
+      outcomeId: reconciled
+    - id: report-variance
+      label: Record an unexplained numerical difference
+      all:
+        - checkId: differ
+          equals: true
+      outcomeId: amounts-differ
+    - id: leave-open
+      label: "No supported conclusion: leave the comparison open"
+      all: []
+      outcomeId: review-open
+  outcomes:
+    - id: amounts-differ
+      title: Amounts differ for the same period
+      summary: "Declaration LD-27: {{declared}} crowns. Payment RJ-44: {{paid}} crowns posted. Justification JN-18: gross seasonal amount, no carry-forward claimed. Ask the auditor to reconcile the difference. It is not a finding of fraud or an assessment."
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+        - units-justification
+    - id: reconciled
+      title: Amounts reconciled for this period
+      summary: "Declaration LD-27: {{declared}} crowns. Payment RJ-44: {{paid}} crowns posted. Justification JN-18: gross seasonal amount, no carry-forward claimed. These amounts reconcile on the filed basis for this period only. This is not a tax assessment."
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+        - units-justification
+    - id: period-mismatch
+      title: "Different periods: do not compare"
+      summary: LD-27 is for Siltfall 4; the selected RJ-44 allocation is for Siltfall 3. Obtain a Siltfall 4 allocation before reconciling, even if the numbers look equal.
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+    - id: unverified-period
+      title: Period not verified
+      summary: Obtain the period labels before comparing. A posting date does not establish an allocation period.
+      documentIds:
+        - audit-reading-protocol
+    - id: posting-pending
+      title: Payment posting pending
+      summary: LD-27 declares {{declared}} crowns. The corresponding RJ-44 row is pending, not posted. Wait for a posted row; neither a shortfall nor reconciliation can yet be established.
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+    - id: note-pending
+      title: Justification requested
+      summary: "Declaration: {{declared}} crowns. Posted payment: {{paid}} crowns. Justification: requested, not received. Leave the comparison open until the auditor has the signed basis note."
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+        - audit-reading-protocol
+    - id: missing-note
+      title: Justification missing
+      summary: "Declaration: {{declared}} crowns. Posted payment: {{paid}} crowns. Justification: no note supplied. Ask for the basis note rather than treating the numbers alone as a completed review."
+      documentIds:
+        - landing-declaration
+        - remittance-journal
+        - audit-reading-protocol
+    - id: missing-declaration
+      title: Declaration amount unavailable
+      summary: There is no declared amount to compare. Obtain the completed declaration rather than reading a blank as zero.
+      documentIds:
+        - audit-reading-protocol
+    - id: missing-payment
+      title: Posted amount unavailable
+      summary: No usable posted amount is supplied. Ask for a journal row with a posted figure; do not infer non-payment from missing evidence.
+      documentIds:
+        - audit-reading-protocol
+    - id: no-audit-view
+      title: Process guidance only
+      summary: No audit details are available in this view. The public protocol explains the reading sequence.
+      documentIds:
+        - audit-reading-protocol
+    - id: review-open
+      title: Audit comparison open
+      summary: The evidence does not support a reconciliation note. Refer the unresolved sources to the auditor.
+      documentIds:
+        - audit-reading-protocol
+  cases:
+    - id: like-period-difference
+      title: Describe a difference without assessing it
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 60
+      expected:
+        outcomeId: amounts-differ
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+          - units-justification
+        kind: answer
+        contains:
+          - "LD-27: 84 crowns"
+          - "RJ-44: 60 crowns posted"
+          - "JN-18: gross seasonal amount"
+          - not a finding of fraud or an assessment
+    - id: like-period-equal
+      title: Reconcile the edited posted amount
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 84
+      expected:
+        outcomeId: reconciled
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+          - units-justification
+        kind: answer
+        contains:
+          - "LD-27: 84 crowns"
+          - "RJ-44: 84 crowns posted"
+          - for this period only
+    - id: prior-season
+      title: Equal numbers from different seasons
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: different
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 84
+      expected:
+        outcomeId: period-mismatch
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+        kind: answer
+        contains:
+          - Siltfall 4
+          - Siltfall 3
+          - do not compare
+    - id: unknown-period
+      title: No period label
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: unknown
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 60
+      expected:
+        outcomeId: unverified-period
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - Period not verified
+    - id: unsettled-payment
+      title: Pending entry carries a number
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: pending
+        memo: filed
+        declared: 84
+        paid: 84
+      expected:
+        outcomeId: posting-pending
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+        kind: answer
+        contains:
+          - pending, not posted
+          - neither a shortfall nor reconciliation
+    - id: justification-awaited
+      title: A requested note has not been received
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: expected
+        declared: 84
+        paid: 60
+      expected:
+        outcomeId: note-pending
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - "Justification: requested, not received"
+    - id: justification-missing
+      title: Agreement without the basis note is incomplete
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: missing
+        declared: 84
+        paid: 84
+      expected:
+        outcomeId: missing-note
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - "Justification: no note supplied"
+    - id: no-return-amount
+      title: Declaration amount left blank
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: null
+        paid: 60
+      expected:
+        outcomeId: missing-declaration
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - no declared amount to compare
+    - id: no-payment-row
+      title: No payment source supplied
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: absent
+        memo: filed
+        declared: 84
+        paid: 0
+      expected:
+        outcomeId: missing-payment
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - do not infer non-payment
+    - id: blank-posted-cell
+      title: Posted row without an amount
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: null
+      expected:
+        outcomeId: missing-payment
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - No usable posted amount
+    - id: recorded-zero
+      title: A posted zero can be compared
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 0
+      expected:
+        outcomeId: amounts-differ
+        documentIds:
+          - landing-declaration
+          - remittance-journal
+          - units-justification
+        kind: answer
+        contains:
+          - "RJ-44: 0 crowns posted"
+          - Ask the auditor
+    - id: basis-source-off
+      title: Require the source for the justification
+      inputs:
+        assignment: assigned
+        bundle: same
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 60
+      expected:
+        outcomeId: amounts-differ
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - JN-18
+      disabledKnowledge:
+        - units-justification
+    - id: denied-audit
+      title: No case result without assignment
+      inputs:
+        assignment: denied
+        bundle: same
+        period: different
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 60
+      expected:
+        outcomeId: no-audit-view
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - No audit details are available
+    - id: unrelated-case
+      title: Different case takes priority over amounts
+      inputs:
+        assignment: assigned
+        bundle: other
+        period: same
+        posting: posted
+        memo: filed
+        declared: 84
+        paid: 84
+      expected:
+        outcomeId: no-audit-view
+        documentIds:
+          - audit-reading-protocol
+        kind: answer
+        contains:
+          - No audit details are available
+implementation:
+  - title: Build this in the real service
+    description: A real audit workspace would require a case-specific assignment, period-aware joins and a distinction between ledger states. Preserve the versions of all three sources for the auditor.
+  - title: What to measure
+    description: Check that equal amounts reconcile only on a matched, posted and justified bundle. Count any pending entry, absent source or other-period payment incorrectly treated as a discrepancy.
+  - title: Scope of this draft
+    description: A mismatch is a question for the auditor, not evidence of fraud or an assessment. No balance, penalty or tax determination is produced. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

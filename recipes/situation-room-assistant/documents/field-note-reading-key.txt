@@ -1,0 +1,16 @@
+Alderfen | Reading two field slips
+Fictional training material. Not an official service record or policy.
+
+Keep each original slip intact. Note the stated observer or desk, whether the report was first-hand or forwarded, what was observed and when it was observed. Record intake time separately. Receiving two messages does not mean two people observed an event.
+
+A first-hand note dated inside the exercise shift can support only the observation it actually describes. A later delivery timestamp does not refresh an old observation. An undated copy cannot establish either the observation time or an independent source.
+
+Compare the subject and observation behind similar wording. If two slips could describe a single delivery, mark possible overlap, retain both slips and ask a reviewer to compare their originals. Until then, do not count the second slip as a second event. No slip is merged or dropped.
+
+Keep both original slips, mark possible overlap and do not count the second as another confirmed observation.
+
+Compare the subject, observer and observation time. A forwarded copy can repeat an original without adding an independent witness; leave any reconciliation to the reviewer.
+
+Compare the time of observation with the shift window. A fresh intake timestamp tells you only when the message arrived.
+
+If observation time is absent or outside the window, mark the note unverified for this shift or historical. Ask for a dated observation instead of silently carrying the note forward.

@@ -69,7 +69,7 @@ export function LabRuleGuide({ recipe }: { recipe: CompiledRecipe }) {
       <summary>How this exercise works</summary>
       <p>{lab.description}</p>
       <p className="fine-print">Rules run in this order; the first match wins. Use Try this example in Review to edit inputs and run a case, then read the result in Preview. Rules are declared by the recipe, not generated from free-text instructions.</p>
-      <ol>{lab.rules.map(rule => <li key={rule.id}><strong>{rule.label}</strong><p>{rule.all.length ? rule.all.map(item => `${checkLabels.get(item.checkId)} = ${item.equals ? 'met' : 'not met'}`).join(' AND ') : rule.any ? 'Conditional rule' : 'Fallback'}{rule.any ? `; at least one: ${rule.any.map(item => `${checkLabels.get(item.checkId)} = ${item.equals ? 'met' : 'not met'}`).join(' OR ')}` : ''}</p><p>Outcome: {lab.outcomes.find(item => item.id === rule.outcomeId)?.title}</p></li>)}</ol>
+      <ol>{lab.rules.map(rule => <li key={rule.id}><strong>{rule.label}</strong><p>{rule.all.length ? rule.all.map(item => `${checkLabels.get(item.checkId)} = ${item.equals ? 'met' : 'not met'}`).join(' AND ') : rule.any || rule.requiresKnowledge ? 'Conditional rule' : 'Fallback'}{rule.any ? `; at least one: ${rule.any.map(item => `${checkLabels.get(item.checkId)} = ${item.equals ? 'met' : 'not met'}`).join(' OR ')}` : ''}</p>{rule.requiresKnowledge && <p>Requires selected sources: {rule.requiresKnowledge.map(id => recipe.knowledge.find(doc => doc.id === id)!.title).join('; ')}</p>}<p>Outcome: {lab.outcomes.find(item => item.id === rule.outcomeId)?.title}</p></li>)}</ol>
       <p className="fine-print">Use Publish to download the configuration and implementation brief. No real deployment takes place here.</p>
     </details>
 }

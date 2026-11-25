@@ -1,0 +1,8 @@
+Alderfen | Bridge Room: fictional handover and desk cards
+Fictional training material. Not an official service record or policy.
+
+These synthetic source cards model alternate copies of the same appointment history for a technician’s exercise. They contain no resident identifiers.
+
+Contact entry, exercise day 2: the resident gives a preferred period to meet at the Bridge Room. Read the intake field on the chosen card: morning, afternoon, or not recorded. Handover entry, day 3: the outgoing technician repeats the contact entry. Count this as one account, not two independent confirmations.
+
+Desk slip, day 4: a separate planning desk proposes a period. The slip field is the proposed period, not a preference expressed by the resident. The provenance mark on that exercise copy is current and desk-verified, draft, or not known. A current slip with an empty period still leaves a gap. Do not fill it from the handover. A matching period supports a limited comparison only. The assigned technician owns the next question and decides what further human review is needed; the fixture has no attendance, eligibility or booking outcome.

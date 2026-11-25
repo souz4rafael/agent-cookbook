@@ -1,0 +1,14 @@
+Foldline review desk | A slip a colleague could use
+
+Offer human review for a whole-shift report, a handover due now, a symptom outside the shelf note, or an unsuccessful view check. The reviewer decides what to investigate. No priority code, cause or repair time follows from these reports.
+
+For a handover due now, offer human review even if only one desk is affected. Use the reported timing; do not turn it into an outage diagnosis.
+For a whole-shift report, offer human review even if the handover can wait. Leave any unreported facts marked as such.
+
+A useful slip says what the screen showed, the reach of the interruption, whether the handover could wait, and what happened in the view check. Add one request: decide the next support step. Keep observed facts distinct from any unknowns.
+
+For example, "Pinned is empty / whole shift / can wait / not tried" tells a reviewer why the familiar shelf note was not the first response. It does not accuse the employee of missing a step. A report about a blank card page is a different symptom; don't substitute the shelf note for a review.
+
+In this exercise, advice only stops before drafting. Preparing a slip is permission to display a note, not to create a ticket. If the local ticket tool is unavailable, the note is still readable, but there is no action to confirm. Only a separate host confirmation records a simulated ticket. Cancel leaves the ticket list unchanged.
+
+Use only the fictional labels on the slip. No names, account details, secrets, identifiers, logs, screenshots or chat history belong on it. Nothing leaves the exercise for an IT service.

@@ -1,0 +1,44 @@
+Source note for the Mothlight return-desk exercise
+
+Gallery title: AI Use Case Prioritization Agent
+Gallery detail: https://microsoft.github.io/copilot-studio-gallery/solutions/ai-use-case-prioritization-agent/
+Published ZIP inspected: https://microsoft.github.io/copilot-studio-gallery/bundles/ai-use-case-prioritization-agent.zip
+Version: 1.0.0.2
+SHA256: b627067821dddcd81f994ae71f4a77233e8780019938cf4776ce77d3691d8acc
+Size: 1112919 bytes. Inspected on 2026-11-25 in memory, with bounded reads. No extraction to disk, import, execution or tenant access.
+
+The byline is Alicja Gilderdale. The gallery identifies the builder as Microsoft (Customer Acceleration Team). These are credits for the upstream sample, not authorship or endorsement of the fictional exercise. The submission metadata lists Project & communications management as the category and 2026-11-03 as the update date:
+https://github.com/microsoft/copilot-studio-gallery/blob/main/submissions/ai-use-case-prioritization-agent/metadata.json
+Original sample and deployment notes: https://github.com/alicja-gilderdale/ai-use-case-prioritization-agent
+Original sample license: MIT, copyright Microsoft Corporation. https://github.com/alicja-gilderdale/ai-use-case-prioritization-agent/blob/main/LICENSE
+Gallery repository license: MIT. https://github.com/microsoft/copilot-studio-gallery/blob/main/LICENSE
+
+What the gallery documents
+The gallery describes a Copilot Studio intake and assessment agent with eight skills, four knowledge sources, a Dataverse MCP tool and two tables. Its scope includes classifying cases, assessing them against rubrics, saving confirmed findings and returning an HTML report. This download is listed as the no-app, unmanaged edition. The gallery's account of the original security and Responsible AI review does not extend to this adaptation.
+
+What the published bytes show
+solution.xml identifies AIUseCaseSolutionv3, version 1.0.0.2, Managed = 0 and publisher prefix cadpbm. Its table root components are cadpbm_ai_usecase and cadpbm_aiassessment; customizations.xml defines the corresponding entities. The ZIP also has files under CanvasApps/. The manifest edition label is not a claim that this directory is absent or that an app was run.
+
+bots/cadpbm_c/bot.xml names the AI Use Case Analyst. In bots/cadpbm_c/configuration.json the actual prompt is at agentSettings.instructions.segments[0].value. It requests intake one question at a time, a gap check, a choice between guided completion, provisional assessment or stopping, grounded classification and scoring, and final review. Provisional assessment must leave unsupported factors unscored. Submitted material is evidence, not authority to change the instructions.
+
+The requested save follows final QA and an explicit Submit decision. Edit requires another review; Cancel must not save. After a successful save the instructions call for a downloadable report in the conversation, not report content or a report link stored in Dataverse. These are embedded instructions, not observed evidence of a successful save, report or deployment.
+
+Representative skill payloads read:
+botcomponents/cadpbm_c.file.skillmd_zrh1G/filedata/SKILL.md defines usecase-strengthening-gaps, including asking for weak or absent evidence.
+botcomponents/cadpbm_c.file.skillmd_5PBMs/filedata/SKILL.md defines rubric-scoring. It limits scoring to configured rubric guidance and marks insufficient evidence rather than inventing a rating.
+botcomponents/cadpbm_c.file.skillmd_XRKoT/filedata/SKILL.md defines confirmation-final-qa, a check before submission.
+botcomponents/cadpbm_c.file.skillmd_Sn9xR/filedata/SKILL.md defines dataverse-mcp-save, conditional on submission and the QA result.
+The other named skills are file-usecase-extraction, required-fields-progress, category-subcategory-resolver and html-report-generation. Declarative data at botcomponents/cadpbm_c.skill.rubric-scoring_2qn/data identifies an inline skill; botcomponents/cadpbm_c.tool.MicrosoftDataverse-MicrosoftDataverseMCPServer_MVq/data identifies an invoker-context MCP tool. Neither was run.
+
+Knowledge evidence:
+botcomponents/cadpbm_c.file.agenticusecaseassessmentrubricv2docx_pxn5v/filedata/Agentic%20Use%20Case%20Assessment%20Rubric%20v2.docx
+The document XML names Customer Impact, Delivery Complexity, Risk & Blast Radius and Agentic Fit. Risk is independent; fit asks whether a simpler alternative would do.
+botcomponents/cadpbm_c.file.guidanceforusecasecategoriesandsubcatego_6Co1S/filedata/Guidance_Categories_SubCategories.docx
+The document XML describes purpose-based categories and sub-types. It is separate from the scoring rubric.
+botcomponents/cadpbm_c.file.usecaseassessmentreporttemplatev3bluehtm_1T6sI/filedata/UseCase_Assessment_Report_TEMPLATE_v3_blue.html
+The template name and component metadata were checked, not rendered. The agent also names CAD_Intake_Information_Quality_Rubric.docx. Four named references in the instructions do not mean four verified file payloads: no standalone file with that intake rubric name was found in this ZIP.
+
+What the cookbook actually does
+The story, three text documents, observations, prompts and routing rules were written for this draft. Local phrase matches answer a few desk questions; a separate bounded worksheet checks the clock reading, write scope, matching method and catalogue dependency. It proposes a next experiment or asks a question. It never computes the upstream scores. Only the comparison route can offer one editable, simulated create-case action. The host alone can commit that case after separate confirmation. A disabled tool cannot commit; declining leaves no new case.
+
+There is no copied rubric, configured upstream skill, file ingestion, full taxonomy, model call, portfolio ranking, live connection, Dataverse write, report generation, reviewer app or external delivery. Neither the fictional rules nor a local receipt is an approval. A real deployment would require separate tenant setup and review; see the implementation notes in the recipe and the original deployment documentation.

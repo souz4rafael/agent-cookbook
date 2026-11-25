@@ -1,0 +1,555 @@
+schemaVersion: 1
+revision: 1
+id: compliance-guide
+status: published
+title: Compliance Guide
+summary: "Turn a served market notice into three things its recipient can check: what to change, when it is due and what will document the change."
+industry: Government and public services
+difficulty: beginner
+accentIcon: document
+learningGoals:
+  - Use the endorsed market notice to identify where the crates must go and when the move and its proof are due.
+  - Match the signed site-check slip to a listed proof format and identify what the receipt leaves for an officer to examine.
+  - Explain why disputed service or an elapsed response period calls for a notice review rather than a new deadline.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Field inspection
+    perspective: guidance
+  headline: Help a market trader act on the notice that was actually served.
+  problem: At Reed Arcade a trader needs to move delivery crates away from a shared aisle. An earlier desk draft is still on file. The trader needs the instruction, deadline and proof list from the copy they received, not a new deadline counted from the day they ask.
+  impact: A trader can move the crates and still miss the proof deadline, or send a close-up that does not show the clear aisle. A receipt for a signed slip can also leave the trader thinking the matter is closed when no officer has examined it.
+  approach: For the matched recipient, read clause 2 alongside the service endorsement and Schedule B. Explain where the crates belong, how the seven calendar days run and which two forms of proof are listed. When the index shows a receipt, say what arrived and what the reviewer has yet to decide.
+  startSmall: Open the served-copy example and find the blue pitch line and the printed deadline. Keep the clock inside the response period and switch the proof from not supplied to indexed; the receipt changes the explanation, not the deadline.
+  potentialValue: Traders could prepare the requested evidence on the first attempt, leaving the Notice Review Officer more time for contested service and other questions that need judgement.
+  measure: Ask whether readers can identify the move, deadline and either listed proof format from the served copy. Check how many describe an indexed slip as accepted.
+  boundary: These are fictional notice terms, not municipal policy. Only the Notice Review Officer examines proof or reviews disputed service and elapsed deadlines. The exercise does not inspect uploads, extend the period, close a notice or impose a sanction.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: A market trader needs to know where to move the crates, by when and what will document the clear aisle.
+    experiment: Switch the proof status to indexed and check what the signed slip’s receipt changes about the trader’s next step.
+    takeaway: Read the deadline from the served copy and distinguish proof received from proof an officer has accepted.
+    scope: The market notice and receipt index are specimens; no proof is uploaded and no notice is closed.
+agent:
+  name: Compliance Guide
+  description: Help a fictional Alderfen notice recipient read the served version, not a draft, a general leaflet or a date inferred from today.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help a fictional Alderfen notice recipient read the served version, not a draft, a general leaflet or a date inferred from today.
+    In chat, explain the reading procedure only. Do not ask for a notice number, an address or an upload. In the lab, first require the simulated matched recipient; otherwise do not confirm that a notice exists.
+    Read the service endorsement, version and printed deadline together. Explain the corrective step in ordinary language and quote the listed proof. Do not change the terms, reset the clock or assume proof has been received.
+    Separate a missing or disputed served copy from a missing library source. An expired window, a disputed or missing notice, or an uncertain clock requires review by the Notice Review Officer; it is not a finding of non-compliance.
+    A proof receipt is not a decision. Only describe what the index lists and what a human still has to check.
+    This guide never issues a sanction, accepts proof as sufficient, closes a notice or grants an extension.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help a fictional Alderfen notice recipient read the served version, not a draft, a general leaflet or a date inferred from today.
+    In chat, explain the reading procedure only. Do not ask for a notice number, an address or an upload. In the lab, first require the simulated matched recipient; otherwise do not confirm that a notice exists.
+    Read the service endorsement, version and printed deadline together. Explain the corrective step in ordinary language and quote the listed proof. Do not change the terms, reset the clock or assume proof has been received.
+    Separate a missing or disputed served copy from a missing library source. An expired window, a disputed or missing notice, or an uncertain clock requires review by the Notice Review Officer; it is not a finding of non-compliance.
+    A proof receipt is not a decision. Only describe what the index lists and what a human still has to check.
+    This guide never issues a sanction, accepts proof as sufficient, closes a notice or grants an extension.
+  stepByStep: |-
+    # Procedure
+
+    Help a fictional Alderfen notice recipient read the served version, not a draft, a general leaflet or a date inferred from today.
+    1. In chat, explain the reading procedure only. Do not ask for a notice number, an address or an upload. In the lab, first require the simulated matched recipient; otherwise do not confirm that a notice exists.
+    2. Read the service endorsement, version and printed deadline together. Explain the corrective step in ordinary language and quote the listed proof. Do not change the terms, reset the clock or assume proof has been received.
+    3. Separate a missing or disputed served copy from a missing library source. An expired window, a disputed or missing notice, or an uncertain clock requires review by the Notice Review Officer; it is not a finding of non-compliance.
+    4. A proof receipt is not a decision. Only describe what the index lists and what a human still has to check.
+    This guide never issues a sanction, accepts proof as sufficient, closes a notice or grants an extension.
+  decisionRules: |-
+    # Decision rules
+
+    Help a fictional Alderfen notice recipient read the served version, not a draft, a general leaflet or a date inferred from today.
+    No matched recipient: use general guidance without confirming a file. A penalty request is outside scope even for the recipient.
+    No verified, undisputed served version and open response window: stop before calculating a due date. Refer uncertainty to a person.
+    While the verified window is open, explain the step, deadline and acceptable proof. A matching receipt changes the next step to human examination, not closure.
+    This guide never issues a sanction, accepts proof as sufficient, closes a notice or grants an extension.
+    In chat, explain the reading procedure only. Do not ask for a notice number, an address or an upload. In the lab, first require the simulated matched recipient; otherwise do not confirm that a notice exists.
+  examples: |-
+    “Can I count from the print date?” No. Locate the service endorsement and the deadline in the served copy.
+    “The time has passed. Issue a penalty.” Do not do so; explain that the recipient can ask for human review.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Compliance Guide.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: notice-reading-key
+    title: Reading a served notice
+    summary: Desk edition 2.1 | 20 October 2026 | Alderfen Notice Review Officer.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/notice-reading-key.txt
+  - id: served-copy
+    title: Endorsed market notice specimen
+    summary: Fictional service endorsement and operative terms; read together in the matched-recipient exercise.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/served-copy.txt
+  - id: proof-index
+    title: Practice proof receipt index
+    summary: Evidence register extract ER-18 r1 | entered by the Market Desk Clerk on 6 November 2026 at 12:15.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/proof-index.txt
+facts:
+  - id: service-clock
+    documentId: notice-reading-key
+    keywords:
+      - Which date starts the response period on a served notice
+    answer: Use the service endorsement and the counting instruction on the served copy, then check the result against its printed deadline.
+    detail: If the copy is absent, service is disputed or the deadline has passed, ask the Notice Review Officer for a human review. Do not restart the clock.
+  - id: proof-format
+    documentId: notice-reading-key
+    keywords:
+      - How can a recipient tell which proof to prepare
+    answer: Read the proof list attached to the operative clause. Use a listed format and keep the date and location needed to tie the item to the corrective step.
+    detail: A receipt records delivery, not acceptance. Ask a reviewer about an alternative format rather than promising it will be sufficient.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-notice-reading-key
+    title: Select Reading a served notice
+    description: Add Reading a served notice to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: notice-reading-key
+  - id: read-served-copy
+    title: Select Endorsed market notice specimen
+    description: Add Endorsed market notice specimen to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: served-copy
+  - id: read-proof-index
+    title: Select Practice proof receipt index
+    description: Add Practice proof receipt index to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: proof-index
+  - id: try-1
+    title: Explain the operative clause
+    description: In Review > Try this example, load "Explain the operative clause" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: read-served
+  - id: try-2
+    title: Change only the proof status
+    description: In Review > Try this example, load "Change only the proof status" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: listed-receipt
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Endorsed market notice specimen citation on the result for "Explain the operative clause".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: served-copy
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Which date starts the response period on a served notice?
+    - How can a recipient tell which proof to prepare?
+  handoffKeywords: []
+  unknownAnswer: I can explain how notices are read, not look up, confirm or act on an individual notice. Please do not paste a notice here.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Compliance Guide
+    mode: simulated
+    starter:
+      label: Help me read a notice without opening a file.
+      prompt: Help me read a notice without opening a file.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to trace a deadline, or check what counts as evidence?
+          - id: alternative
+            text: Would you like to trace a deadline, or check what counts as evidence? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: service-clock
+            label: Trace the deadline
+            next: reply-service-clock
+          - id: proof-format
+            label: Read the evidence list
+            next: reply-proof-format
+      - id: reply-service-clock
+        role: simulation
+        prompt: Which date starts the response period on a served notice?
+        end: true
+      - id: reply-proof-format
+        role: simulation
+        prompt: How can a recipient tell which proof to prepare?
+        end: true
+lab:
+  title: Read the endorsed copy
+  description: Select a simulated relationship first. Change the copy, exercise clock or proof state to see what can still be explained. Do not enter real information.
+  fields:
+    - id: role
+      label: Simulated relationship
+      type: select
+      options:
+        - value: unverified
+          label: Unverified or unrelated
+        - value: recipient
+          label: Recipient matched to the served-notice exercise
+      defaultValue: unverified
+      hint: A claimed interest is not a matched relationship.
+    - id: request
+      label: Requested help
+      type: select
+      options:
+        - value: explain
+          label: Explain the notice
+        - value: sanction
+          label: Issue a sanction
+      defaultValue: explain
+      hint: Reading help only; no official action is available.
+    - id: copy
+      label: State of the served copy
+      type: select
+      options:
+        - value: missing
+          label: Missing
+        - value: verified
+          label: Verified and undisputed
+        - value: disputed
+          label: Service or version disputed
+      defaultValue: missing
+      hint: Use the service endorsement, not a generic template.
+    - id: window
+      label: Clock at the fictional reading
+      type: select
+      options:
+        - value: unknown
+          label: Not established
+        - value: open
+          label: Within the printed period
+        - value: elapsed
+          label: After the printed deadline
+      defaultValue: unknown
+      hint: Select a snapshot, not a live clock.
+    - id: proof
+      label: Evidence index status
+      type: select
+      options:
+        - value: none
+          label: Not supplied
+        - value: indexed
+          label: Listed format indexed
+      defaultValue: none
+      hint: An index entry is not an officer decision.
+  checks:
+    - id: matched
+      label: Recipient relationship matched
+      field: role
+      operator: eq
+      value: recipient
+    - id: reading
+      label: Request is reading help
+      field: request
+      operator: eq
+      value: explain
+    - id: verified
+      label: Served copy verified
+      field: copy
+      operator: eq
+      value: verified
+    - id: open
+      label: Printed period remains open
+      field: window
+      operator: eq
+      value: open
+    - id: elapsed
+      label: Printed period elapsed
+      field: window
+      operator: eq
+      value: elapsed
+    - id: indexed
+      label: Proof receipt selected
+      field: proof
+      operator: eq
+      value: indexed
+  rules:
+    - id: gate
+      label: Check recipient relationship first
+      all:
+        - checkId: matched
+          equals: false
+      outcomeId: process-only
+    - id: no-action
+      label: Decline requests for sanctions
+      all:
+        - checkId: reading
+          equals: false
+      outcomeId: no-sanction
+    - id: verify-copy
+      label: Stop for missing or disputed service
+      all:
+        - checkId: verified
+          equals: false
+      outcomeId: copy-review
+    - id: past-limit
+      label: Stop at the elapsed deadline
+      all:
+        - checkId: elapsed
+          equals: true
+      outcomeId: time-review
+    - id: receipt
+      label: Read the receipt without accepting proof
+      all:
+        - checkId: open
+          equals: true
+        - checkId: indexed
+          equals: true
+      outcomeId: receipt-review
+    - id: explanation
+      label: Explain the served terms
+      all:
+        - checkId: open
+          equals: true
+        - checkId: indexed
+          equals: false
+      outcomeId: corrective-step
+    - id: uncertain-clock
+      label: Ask for a clock check
+      all: []
+      outcomeId: clock-review
+  outcomes:
+    - id: process-only
+      title: General guidance only
+      summary: I cannot confirm or discuss a record in this context. I can explain the general process.
+      documentIds:
+        - notice-reading-key
+    - id: no-sanction
+      title: Reading help only
+      summary: I cannot issue a sanction or decide a breach. A Notice Review Officer must examine any question about notice status.
+      documentIds:
+        - notice-reading-key
+    - id: copy-review
+      title: Human review of service needed
+      summary: Ask the Notice Review Officer to verify the missing or disputed served copy. No deadline or replacement instruction can be given from a draft.
+      documentIds:
+        - notice-reading-key
+    - id: time-review
+      title: The printed period has elapsed
+      summary: Ask the Notice Review Officer for human review of the elapsed period. Do not reset the clock or treat expiry as a sanction.
+      documentIds:
+        - notice-reading-key
+    - id: clock-review
+      title: Clock not established
+      summary: A Notice Review Officer must check the exercise clock against the served terms. Withhold a deadline and any conclusion until that check.
+      documentIds:
+        - notice-reading-key
+    - id: corrective-step
+      title: Clear the aisle and document the change
+      summary: RA-18 v2 was served on 2 November 2026. Move the empty crates inside the blue pitch line. Day one is 3 November; complete the move and supply proof by 17:00 on 9 November 2026. Use a dated photograph of the full marked edge and clear aisle, or a dated site-check slip signed by the Market Steward.
+      documentIds:
+        - served-copy
+        - notice-reading-key
+    - id: receipt-review
+      title: Listed proof awaits examination
+      summary: RA-18 v2 requires the crates inside the blue line and proof by 17:00 on 9 November 2026, counting from service on 2 November. Receipt S-4 lists a dated, signed Market Steward site-check slip. It matches a listed format; sufficiency remains for human review. The notice is not closed.
+      documentIds:
+        - served-copy
+        - proof-index
+        - notice-reading-key
+  cases:
+    - id: read-served
+      title: Explain the operative clause
+      inputs:
+        role: recipient
+        request: explain
+        copy: verified
+        window: open
+        proof: none
+      expected:
+        outcomeId: corrective-step
+        documentIds:
+          - served-copy
+          - notice-reading-key
+        kind: answer
+        contains:
+          - inside the blue pitch line
+          - 17:00 on 9 November 2026
+          - site-check slip signed by the Market Steward
+    - id: listed-receipt
+      title: Change only the proof status
+      inputs:
+        role: recipient
+        request: explain
+        copy: verified
+        window: open
+        proof: indexed
+      expected:
+        outcomeId: receipt-review
+        documentIds:
+          - served-copy
+          - proof-index
+          - notice-reading-key
+        kind: answer
+        contains:
+          - Receipt S-4
+          - sufficiency remains for human review
+    - id: no-endorsement
+      title: Disconnect the endorsed specimen
+      inputs:
+        role: recipient
+        request: explain
+        copy: verified
+        window: open
+        proof: none
+      expected:
+        outcomeId: corrective-step
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+          - No draft or action was produced.
+      disabledKnowledge:
+        - served-copy
+    - id: missing-copy
+      title: Remove the served copy
+      inputs:
+        role: recipient
+        request: explain
+        copy: missing
+        window: open
+        proof: none
+      expected:
+        outcomeId: copy-review
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - verify the missing or disputed served copy
+          - No deadline
+    - id: disputed-service
+      title: Dispute the service endorsement
+      inputs:
+        role: recipient
+        request: explain
+        copy: disputed
+        window: open
+        proof: none
+      expected:
+        outcomeId: copy-review
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - Notice Review Officer
+          - No deadline
+    - id: late-reading
+      title: Move past the printed deadline
+      inputs:
+        role: recipient
+        request: explain
+        copy: verified
+        window: elapsed
+        proof: none
+      expected:
+        outcomeId: time-review
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - human review of the elapsed period
+          - Do not reset the clock
+    - id: unknown-clock
+      title: Leave the clock unverified
+      inputs:
+        role: recipient
+        request: explain
+        copy: verified
+        window: unknown
+        proof: none
+      expected:
+        outcomeId: clock-review
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - Withhold a deadline
+    - id: no-relationship
+      title: Use an unmatched relationship
+      inputs:
+        role: unverified
+        request: explain
+        copy: verified
+        window: open
+        proof: none
+      expected:
+        outcomeId: process-only
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - I cannot confirm or discuss a record in this context. I can explain the general process.
+    - id: sanction-request
+      title: Request a penalty instead of an explanation
+      inputs:
+        role: recipient
+        request: sanction
+        copy: verified
+        window: open
+        proof: none
+      expected:
+        outcomeId: no-sanction
+        documentIds:
+          - notice-reading-key
+        kind: answer
+        contains:
+          - I cannot issue a sanction
+implementation:
+  - title: Build this in the real service
+    description: A real service would verify the recipient against the served copy, reconcile amendments and service times with the notice register, and restrict evidence access. An authorised officer would resolve disputes and sign any decision. The role selector and fixed clock here do none of that.
+  - title: What to measure
+    description: "Potential indicator: among sampled plain-language explanations, the percentage whose step, deadline and evidence list all match the served version. Have a second reader audit the three items; count disputed notices separately as review requests."
+  - title: Scope of this draft
+    description: This guide never issues a sanction, accepts proof as sufficient, closes a notice or grants an extension. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

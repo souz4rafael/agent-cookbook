@@ -1,0 +1,309 @@
+schemaVersion: 1
+revision: 1
+id: entrepreneur-guide
+status: published
+title: "Entrepreneur Guide: opening a bakery"
+summary: An entrepreneur has found a shop but does not know whether to prepare drawings, apply for a licence or book an inspection first. Compare two sites for the same bakery in fictional Alderfen. One has a documented route; the other needs a written zoning clarification first.
+industry: Government and public services
+difficulty: beginner
+accentIcon: citizen
+learningGoals:
+  - Match a bakery without seating to its own premises note; ask for the address or a different activity guide when neither note fits.
+  - Distinguish an unavailable source from an available source that records an unresolved zoning question.
+  - Use ML-14 to order the plan, application and inspection steps, and WY-08 to frame the question Planning must answer in writing.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group: { journey: Starting and licensing a business, perspective: guidance }
+  headline: Same baker, same floor plan. Why does the next step change across town?
+  problem: A baker choosing between two shops wants to know whether to pay for drawings or arrange an inspection. Both shops would sell bread over the counter without seating, but only one premises note says that use is eligible for an application.
+  impact: A generic bakery checklist can send someone to the licensing counter before Planning has settled the use of the site. The baker risks paying for work too soon, and desk staff have to explain why a complete drawing does not answer a zoning question.
+  approach: The exercise holds the bakery activity constant and uses the note for the chosen address. At Mill Lane the baker can check the plan and prepare an application before the inspection stage. At Wharf Yard the note itself leaves zoning open, so the next step is a written question to Planning, even with a plan in hand.
+  startSmall: For a pilot, choose one business activity and have Planning and the Business Desk check a small set of public premises notes. Include an unresolved entry and an unavailable note so neither is mistaken for a refusal.
+  potentialValue: An applicant could spend the first conversation with the right desk and bring the paperwork that matters at this stage, rather than preparing for an inspection too early.
+  measure: Ask prospective applicants which desk they would approach first and why. Track applications returned for unresolved site use and requests for inspections before the completeness review.
+  boundary: The two Alderfen addresses and their use classifications are fictional. A documented route is permission to apply, not permission to open. No register is searched, application submitted or inspection booked.
+  sourceLabel: Copilot Studio authoring guidance
+  home:
+    challenge: A baker has a floor plan but does not know whether either of two shops can use the same licensing checklist.
+    experiment: Select a bakery without seating and a prepared floor plan. Switch the premises from 14 Mill Lane to 8 Wharf Yard and compare the two site notes.
+    takeaway: One note supports an application; the other is available but leaves zoning unresolved. An unreadable note supports neither conclusion.
+    scope: Two fictional bakery sites only. The guide explains when an inspection fits; it cannot book one or give permission to open.
+agent:
+  name: Entrepreneur Guide
+  description: Find the next licensing step for a retail bakery in Alderfen.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help an entrepreneur plan a retail bakery with on-site baking, counter sales and no seating in Alderfen. Give public guidance only.
+    Identify the activity and exact premises before giving site-specific instructions. If either is missing, ask one clarifying question. Do not ask for personal identifiers.
+    Use the selected guidance for that exact site. Cite the note. If its use classification is documented, explain zoning, documents, application and the pre-opening inspection in order. Distinguish steps already completed from work still to do.
+    If the record leaves zoning unresolved, say what is unknown and what to ask the Planning Desk in writing. If a source is unavailable, say so instead of inferring its contents.
+    Do not transfer a classification between addresses, guess fees or deadlines, issue a licence, submit an application or book a visit. Only the authority can give a written licensing decision.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help an entrepreneur plan a retail bakery with on-site baking, counter sales and no seating in Alderfen. Give public guidance only.
+    Identify the activity and exact premises before giving site-specific instructions. If either is missing, ask one clarifying question. Do not ask for personal identifiers.
+    Use the selected guidance for that exact site. Cite the note. If its use classification is documented, explain zoning, documents, application and the pre-opening inspection in order. Distinguish steps already completed from work still to do.
+    If the record leaves zoning unresolved, say what is unknown and what to ask the Planning Desk in writing. If a source is unavailable, say so instead of inferring its contents.
+    Do not transfer a classification between addresses, guess fees or deadlines, issue a licence, submit an application or book a visit. Only the authority can give a written licensing decision.
+  stepByStep: |-
+    # Procedure
+
+    1. Establish the activity and premises. Ask for just the missing detail, not an identity document.
+    2. Match a retail bakery without seating to the note for that address. For another activity, request the appropriate guide.
+    3. If the source is not available, stop. If the source itself records an unknown classification, ask Planning for written clarification instead of assuming approval or refusal.
+    4. Otherwise cite the site note and order the remaining document, application and inspection steps, taking existing paperwork into account.
+    5. Explain who decides. Do not guess terms, submit a file or book a visit.
+    Help an entrepreneur plan a retail bakery with on-site baking, counter sales and no seating in Alderfen. Give public guidance only.
+  decisionRules: |-
+    # Decision rules
+
+    Different activity: refer to the matching activity guide. No premises: ask for the address. No relevant source: explain the gap.
+    Exact premises with recorded retail bakery use: cite the note, identify missing documents, explain how to apply and when the authority may arrange an inspection.
+    Exact premises with unresolved zoning: cite the note and request written clarification from Planning. A completed drawing does not settle zoning. Never borrow another site's rule.
+    Public guidance is not authorisation. Do not invent a fee, deadline or decision, submit a file or book a visit.
+    Help an entrepreneur plan a retail bakery with on-site baking, counter sales and no seating in Alderfen. Give public guidance only.
+    Identify the activity and exact premises before giving site-specific instructions. If either is missing, ask one clarifying question. Do not ask for personal identifiers.
+  examples: |-
+    A baker has drawings but no zoning determination. Explain why the drawings cannot settle the use classification; do not send them straight to inspection.
+    A baker has identified the site but the agent cannot read its note. Explain that the source is unavailable, not that zoning has been refused.
+editable: [ name, instructions, tone, detail ]
+connections:
+  - id: guidance-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the fictional municipal library that holds the site notes.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: business-desk
+        label: Alderfen business guidance
+        description: Two address-specific site notes and the Business Desk intake guide.
+    realWorldNote: A live service needs a maintained source with the competent planning authority as owner. Selecting this library is not a sign-in.
+knowledge:
+  - id: mill-lane
+    title: "ML-14: 14 Mill Lane bakery route"
+    summary: Permitted application route, paperwork and inspection sequence for one site.
+    connectionId: guidance-library
+    resourceId: business-desk
+    file: documents/mill-lane.txt
+  - id: wharf-yard
+    title: "WY-08: 8 Wharf Yard zoning query"
+    summary: An available site note whose use classification is unresolved.
+    connectionId: guidance-library
+    resourceId: business-desk
+    file: documents/wharf-yard.txt
+  - id: intake-guide
+    title: "IN-01: Business Desk intake guide"
+    summary: What to ask when the premises or activity do not identify a route.
+    connectionId: guidance-library
+    resourceId: business-desk
+    file: documents/intake-guide.txt
+facts:
+  - id: mill-route
+    documentId: mill-lane
+    keywords: [ bakery at 14 Mill Lane, ML-14 ]
+    answer: ML-14 lists a retail bakery without seating at 14 Mill Lane as eligible to apply, not approved to open. First, draw a floor plan showing preparation, storage and sales areas, and describe what you will bake and sell. Next, submit both documents to the Business Desk with the food-premises licence application, quoting ML-14. After the completeness review, the inspection team contacts you about a pre-opening visit. Wait for a written licensing decision before opening.
+    detail: If you already have a floor plan, check that all three areas are marked; do not draw it again.
+  - id: wharf-query
+    documentId: wharf-yard
+    keywords: [ bakery at 8 Wharf Yard, WY-08 ]
+    answer: The current zoning entry for 8 Wharf Yard does not establish whether a retail bakery is an eligible use. Ask the Planning Desk for written clarification before submitting a food-premises licence application or arranging an inspection.
+    detail: Quote WY-08 and the premises address. Describe the proposed on-site baking and counter sales, with no seating. Ask which use classification applies. Return to the licensing checklist when the Planning Desk replies in writing.
+  - id: ask-site
+    documentId: intake-guide
+    keywords: [ not chosen a site, address not provided ]
+    answer: Identify the proposed activity and the exact premises before choosing an address-specific route. If the site is not yet known, ask for the premises address; do not list permits or inspections as if the site had been checked.
+    detail: General guidance does not open a case, book a visit or issue a licence.
+tools: []
+test:
+  suggestedQuestions:
+    - I want to open a bakery at 14 Mill Lane. Where do I start?
+    - I want to open a bakery at 8 Wharf Yard. Can I book an inspection?
+    - I have not chosen a site. What do you need first?
+  handoffKeywords: []
+  unknownAnswer: This example covers two retail bakery sites in Alderfen. Choose a sample question with the activity and one address rather than entering a real address.
+  missingKnowledgeAnswer: I cannot read the guidance for this question. Connect the Alderfen business guidance library and select the matching note. No zoning conclusion can be drawn from an unavailable source.
+  handoffBlockedAnswer: No filing or booking tool is available.
+  handoffReadyAnswer: Public guidance only. This guide cannot submit an application or arrange an inspection.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: bakery-first-steps
+    title: Where do I start with my bakery?
+    mode: simulated
+    starter:
+      label: I want to open a bakery. Where do I start?
+      prompt: I want to open a bakery at this address. Where do I start?
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: ask-premises
+        role: assistant
+        variants:
+          - id: direct
+            text: For a retail bakery without seating in Alderfen, the first step depends on the premises. Which example address are you considering?
+          - id: friendly
+            text: Let's start with the site, before you pay for drawings or try to book a visit. Which Alderfen address would you use for your bakery without seating?
+      - id: choose-site
+        role: user
+        choices:
+          - { id: mill, label: 14 Mill Lane, acceptedTexts: [ Mill Lane ], next: mill-result }
+          - { id: wharf, label: 8 Wharf Yard, acceptedTexts: [ Wharf Yard ], next: wharf-result }
+          - { id: unknown, label: I have not chosen a site, next: missing-site-result }
+      - { id: mill-result, role: simulation, prompt: Where do I start with a bakery at 14 Mill Lane?, end: true }
+      - { id: wharf-result, role: simulation, prompt: Where do I start with a bakery at 8 Wharf Yard?, end: true }
+      - { id: missing-site-result, role: simulation, prompt: I have not chosen a site. What do you need first?, end: true }
+journey:
+  - id: connect-library
+    title: Connect the municipal guidance library
+    description: In Knowledge, choose Demo SharePoint and connect Alderfen business guidance. The connection alone does not select any documents.
+    tab: knowledge
+    completeWhen: { type: connection, connectionId: guidance-library }
+  - id: select-mill
+    title: Select the documented site
+    description: Select ML-14 for the zoning, application and inspection sequence at 14 Mill Lane.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: mill-lane }
+  - id: select-wharf
+    title: Select the unresolved site
+    description: Select WY-08. An accessible note can still say that zoning is unknown.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: wharf-yard }
+  - id: select-intake
+    title: Select the intake guide
+    description: Select IN-01 for requests with no site or a different activity.
+    tab: knowledge
+    completeWhen: { type: knowledge, documentId: intake-guide }
+  - id: run-mill
+    title: Produce an ordered route
+    description: In Review, open Try this example and run Mill Lane with no drawing. Which step must happen before the inspection team gets involved?
+    tab: activity
+    completeWhen: { type: case-tested, caseId: mill-needs-plan }
+  - id: read-evidence
+    title: Check the zoning evidence
+    description: Open the ML-14 citation on the lab result in Preview. Find the sentence that distinguishes permission to apply from permission to open.
+    tab: activity
+    completeWhen: { type: citation-opened, documentId: mill-lane }
+  - id: run-wharf
+    title: Change just the premises
+    description: Keep the activity and drawing unchanged; switch the address to 8 Wharf Yard and run the lab again. Notice why the next step is a question for Planning, not a licence filing.
+    tab: activity
+    completeWhen: { type: case-tested, caseId: wharf-needs-ruling }
+  - id: compare-cases
+    title: Evaluate scope and source failures
+    description: Run the declared cases in Evaluate. Confirm that withdrawing a source blocks the answer rather than producing a zoning decision.
+    tab: activity
+    completeWhen: { type: evaluation-passed }
+lab:
+  title: Same bakery, different premises
+  description: Prepare a route for one retail bakery in fictional Alderfen. Change only the site to see why a zoning gap takes precedence over a completed drawing. No real register is searched.
+  fields:
+    - id: activity
+      label: Proposed use
+      type: select
+      defaultValue: bakery
+      hint: Only the retail bakery use is covered by these site notes.
+      options:
+        - { value: bakery, label: Retail bakery without seating }
+        - { value: other, label: Another activity }
+    - id: site
+      label: Proposed premises
+      type: select
+      defaultValue: mill
+      hint: Choose a fictional site; no address lookup takes place.
+      options:
+        - { value: mill, label: 14 Mill Lane }
+        - { value: wharf, label: 8 Wharf Yard }
+        - { value: unknown, label: Address not provided }
+    - id: plan-ready
+      label: Floor plan already prepared
+      type: boolean
+      defaultValue: false
+      hint: A floor plan helps assemble the application. It does not establish the zoning classification.
+  checks:
+    - { id: bakery-use, label: Use is the covered retail bakery, field: activity, operator: eq, value: bakery }
+    - { id: wharf-site, label: Premises match WY-08, field: site, operator: eq, value: wharf }
+    - { id: mill-site, label: Premises match ML-14, field: site, operator: eq, value: mill }
+    - { id: plan-present, label: Drawing already prepared, field: plan-ready, operator: eq, value: true }
+  rules:
+    - { id: outside-use, label: Use outside the guide, all: [ { checkId: bakery-use, equals: false } ], outcomeId: different-activity }
+    - { id: documented-use, label: Follow the address-specific route, all: [ { checkId: mill-site, equals: true } ], outcomeId: bakery-roadmap }
+    - { id: no-determination, label: Unresolved classification at Wharf Yard, all: [ { checkId: wharf-site, equals: true } ], outcomeId: planning-first }
+    - { id: ask-address, label: No matching premises selected, all: [], outcomeId: missing-site }
+  outcomes:
+    - id: bakery-roadmap
+      title: "14 Mill Lane: prepare the food-premises licence application"
+      summary: |-
+        1. Match the proposed retail bakery without seating to site note ML-14. The entry permits an application, not opening day.
+        2. Assemble the floor plan and short activity description. Mark preparation, storage and sales areas on the drawing.
+        3. Submit the packet to the Business Desk for a food-premises licence, quoting ML-14.
+        4. After the completeness review, the inspection team invites the applicant to a pre-opening visit. Wait for a written licensing decision before opening.
+      documentIds: [ mill-lane ]
+      recommendations:
+        - when: { checkId: plan-present, equals: false }
+          title: What to do now
+          description: Draw the missing floor plan before submitting the packet.
+        - when: { checkId: plan-present, equals: true }
+          title: What to do now
+          description: Check the three areas on your existing floor plan; do not redraw it. Attach it to the activity description.
+    - id: planning-first
+      title: "8 Wharf Yard: clarify zoning before filing"
+      summary: WY-08 does not establish whether this bakery use is eligible. Ask the Planning Desk for written clarification, quoting 8 Wharf Yard, WY-08 and the proposed on-site baking and counter sales without seating. Do not submit a licence application or arrange an inspection until the classification is known. This is neither approval nor refusal; having a floor plan does not change the next step.
+      documentIds: [ wharf-yard ]
+    - id: missing-site
+      title: Which premises are you considering?
+      summary: Before using a site note, ask for the premises address. A bakery description alone cannot identify the applicable route.
+      documentIds: [ intake-guide ]
+    - id: different-activity
+      title: Use the guide for the actual business activity
+      summary: These notes cover a retail bakery without seating. Ask the Business Desk for the matching activity guide instead of applying either bakery route.
+      documentIds: [ intake-guide ]
+  cases:
+    - id: mill-needs-plan
+      title: Mill Lane with no drawing
+      inputs: { activity: bakery, site: mill, plan-ready: false }
+      expected: { outcomeId: bakery-roadmap, kind: answer, documentIds: [ mill-lane ], contains: [ Draw the missing floor plan, After the completeness review, written licensing decision ] }
+    - id: wharf-needs-ruling
+      title: Same bakery and paperwork at Wharf Yard
+      inputs: { activity: bakery, site: wharf, plan-ready: false }
+      expected: { outcomeId: planning-first, kind: answer, documentIds: [ wharf-yard ], contains: [ written clarification, neither approval nor refusal ] }
+    - id: mill-plan-ready
+      title: Mill Lane with a prepared drawing
+      inputs: { activity: bakery, site: mill, plan-ready: true }
+      expected: { outcomeId: bakery-roadmap, kind: answer, documentIds: [ mill-lane ], contains: [ existing floor plan, do not redraw it ] }
+    - id: wharf-plan-ready
+      title: A completed floor plan cannot settle zoning
+      inputs: { activity: bakery, site: wharf, plan-ready: true }
+      expected: { outcomeId: planning-first, kind: answer, documentIds: [ wharf-yard ], contains: [ Do not submit, written clarification ] }
+    - id: no-address
+      title: Bakery without a chosen site
+      inputs: { activity: bakery, site: unknown, plan-ready: false }
+      expected: { outcomeId: missing-site, kind: answer, documentIds: [ intake-guide ], contains: [ ask for the premises address ] }
+    - id: other-activity
+      title: Known premises but a different use
+      inputs: { activity: other, site: mill, plan-ready: true }
+      expected: { outcomeId: different-activity, kind: answer, documentIds: [ intake-guide ], contains: [ matching activity guide ] }
+    - id: unavailable-mill
+      title: Cannot read the known site's note
+      inputs: { activity: bakery, site: mill, plan-ready: false }
+      disabledKnowledge: [ mill-lane ]
+      expected: { outcomeId: bakery-roadmap, kind: missing-knowledge, documentIds: [], contains: [ Run blocked, ML-14 ] }
+    - id: unavailable-wharf
+      title: Missing source is not the same as unresolved zoning
+      inputs: { activity: bakery, site: wharf, plan-ready: false }
+      disabledKnowledge: [ wharf-yard ]
+      expected: { outcomeId: planning-first, kind: missing-knowledge, documentIds: [], contains: [ Run blocked, WY-08 ] }
+implementation:
+  - title: Start with one licensed use and an accountable source owner
+    description: Have planning and licensing officers agree the authority, premises identifiers, activity definition and inspection order. Replace every Alderfen note with approved local guidance carrying an owner, effective date and review date.
+  - title: Keep public guidance separate from private applications
+    description: Public instructions may explain an application route, not report on an individual's file. Any future status lookup needs authentication, record-level authorisation and a separate design for missing access. Do not use the visitor's identity or private documents in this pilot.
+  - title: Measure first-time completeness
+    description: In a real pilot, count bakery applications accepted as complete on the first intake review divided by all bakery applications first reviewed in the same period. Agree the definition and baseline with the Business Desk. A completed exercise does not measure this rate.
+  - title: What this exercise actually does
+    description: Local fictional sources and rules only. No map lookup, legal advice, upload, application, payment, inspection booking or licence decision. Microsoft Learn is a reference for writing agent instructions, not the source of the fictional municipal rules.

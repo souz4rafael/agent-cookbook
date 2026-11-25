@@ -321,16 +321,16 @@ export function respondLab(recipe: CompiledRecipe, session: Session, rawInputs: 
   assertSession(recipe, session)
   if (!recipe.lab) throw new Error('This recipe has no interactive lab.')
   const conversation = session.messages.slice(-6).map(item => `${item.role === 'user' ? 'Learner' : 'Agent'}: ${item.text.slice(0, 180)}${item.text.length > 180 ? ' [abbreviated]' : ''}`).join('\n')
-  const result = calculateLab(recipe.lab, rawInputs, conversation)
+  const available = getAvailableKnowledge(recipe, session)
+  const result = calculateLab(recipe.lab, rawInputs, conversation, new Set(available.map(doc => doc.id)))
   const fingerprint = getConfigurationFingerprint(session)
   const lab = { outcomeId: result.outcome.id, ruleId: result.rule.id, inputs: result.inputs, checks: result.checks, recommendations: result.recommendations, fingerprint }
-  const available = getAvailableKnowledge(recipe, session)
   const missing = result.outcome.documentIds.filter(id => !available.some(document => document.id === id))
   const trace = ['Deterministic calculation from editable fictional inputs; no AI or external service.',
     ...result.checks.map(check => `${check.label}: ${check.passed ? 'met' : 'not met / unknown'}.`),
     `First matching rule: ${result.rule.label} (${result.rule.id}).`]
   if (missing.length) {
-    return { kind: 'missing-knowledge', text: `Run blocked: connect and select these policy sources before using this outcome: ${missing.map(id => recipe.knowledge.find(document => document.id === id)?.title ?? id).join('; ')}. No draft or action was produced.`, citations: [], trace, lab }
+    return { kind: 'missing-knowledge', text: `Run blocked: connect and select these policy sources before using this outcome: ${missing.map(id => recipe.knowledge.find(document => document.id === id)?.title ?? id).join('; ')}. No draft or action was produced.`, citations: [], trace, lab: { ...lab, recommendations: [] } }
   }
   const tool = result.outcome.toolId ? recipe.tools.find(item => item.id === result.outcome.toolId) : undefined
   const toolReady = !!tool && isToolAvailable(recipe, session, tool.id)

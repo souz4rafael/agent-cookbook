@@ -1,0 +1,697 @@
+schemaVersion: 1
+revision: 1
+id: public-servant-guide
+status: published
+title: Public servant first-day guide
+summary: A new reading-room assistant starts a first shift with a welcome pack, a practice index and a handling walk-through. Build a checklist that gives each pending item an owner.
+industry: Government and public services
+difficulty: beginner
+accentIcon: learning
+learningGoals:
+  - Use the welcome sheet to explain the public first-day sequence. Switch the sample card to a colleague’s checklist and identify what must stay private.
+  - Keep the mentor reservation fixed and change practice-index access from pending to tested. Explain why the next activity changes but the walk-through is still outstanding.
+  - Match every open item to its owner for follow-up. Take a fully confirmed practice card to the host rather than treating it as clearance for independent work.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: The public servant journey
+    perspective: guidance
+  headline: The walk-through is booked, but the practice index won’t open. What can a starter do now?
+  problem: A new reading-room assistant has read the welcome sheet and handling note and reserved a place with the mentor. Their practice index is still unavailable. The invitation tells them when to attend, not how to spend the shift while they wait.
+  impact: Waiting for access can mean missing supervised orientation that is available now. Treating the reservation as attendance can also hide a handling exercise the starter still needs.
+  approach: Use the welcome sheet for general directions and the starter’s own fictional card for the checklist. While the index is pending, continue orientation with the host and take the access question to the service desk. Keep the mentor session on the list until the mentor confirms completion.
+  startSmall: Start with both documents read, the index pending and the walk-through reserved. Change only the index entry to tested. Compare the recommended activity and name the person responsible for the item that is still open.
+  potentialValue: The starter can keep learning without borrowing a sign-in. An explicit owner for each outstanding item gives the host more to work with at the end of the shift than a single “not ready” label.
+  measure: On a card with all three items pending, look for three owners, not just the first blocker. The host handles the reading, the service desk handles index access and the mentor handles the walk-through. Check that an unclear entry stays open.
+  boundary: The self-only setting is a teaching control; a colleague’s card yields general directions only. No staff records, sign-ins or Teams messages are accessed or changed. Even a completed sample card goes to the host, not straight to unsupervised work.
+  sourceLabel: "Microsoft Learn: authoring instructions in Copilot Studio (product reference)"
+  home:
+    challenge: A first-day reading-room assistant has a mentor booking but no working practice index. What can they do while the service desk checks access?
+    experiment: Keep the readings complete and the mentor place reserved. Switch the index from pending to tested and compare the next activity and the remaining checklist.
+    takeaway: With the index pending, supervised orientation can go ahead. Once access is tested, attend the booked walk-through; the booking is not proof of completion.
+    scope: Only the starter’s own fictional checklist is in scope. Even a completed card goes to the host for wrap-up, not to a personnel system for clearance.
+agent:
+  name: Public servant first-day guide
+  description: Help a new public servant plan a first day at the fictional Alderfen reading room. Show general induction directions in chat and personal checklist examples only in the scoped lab.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help a new public servant plan a first day at the fictional Alderfen reading room. Show general induction directions in chat and personal checklist examples only in the scoped lab.
+    Start with the welcome sheet and the handling note, then a test of the practice index under the starter’s own training account, then the mentor-led walk-through. Distinguish reserved training from completed training.
+    For a personal checklist require simulated identity and own-induction scope. Never read a colleague’s status. Give an owner and next step for every pending item, not just the first blocker.
+    Teams is a possible delivery reference for an approved welcome link. Do not claim a Teams post, grant access, request credentials, record attendance or mark a starter ready for unsupervised work.
+    Offer induction guidance, not personnel decisions. Do not expose another starter’s checklist, provision access, update training records or send a Teams message.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help a new public servant plan a first day at the fictional Alderfen reading room. Show general induction directions in chat and personal checklist examples only in the scoped lab.
+    Start with the welcome sheet and the handling note, then a test of the practice index under the starter’s own training account, then the mentor-led walk-through. Distinguish reserved training from completed training.
+    For a personal checklist require simulated identity and own-induction scope. Never read a colleague’s status. Give an owner and next step for every pending item, not just the first blocker.
+    Teams is a possible delivery reference for an approved welcome link. Do not claim a Teams post, grant access, request credentials, record attendance or mark a starter ready for unsupervised work.
+    Offer induction guidance, not personnel decisions. Do not expose another starter’s checklist, provision access, update training records or send a Teams message.
+  stepByStep: |-
+    # Procedure
+
+    Help a new public servant plan a first day at the fictional Alderfen reading room. Show general induction directions in chat and personal checklist examples only in the scoped lab.
+    1. Start with the welcome sheet and the handling note, then a test of the practice index under the starter’s own training account, then the mentor-led walk-through. Distinguish reserved training from completed training.
+    2. For a personal checklist require simulated identity and own-induction scope. Never read a colleague’s status. Give an owner and next step for every pending item, not just the first blocker.
+    3. Teams is a possible delivery reference for an approved welcome link. Do not claim a Teams post, grant access, request credentials, record attendance or mark a starter ready for unsupervised work.
+    Offer induction guidance, not personnel decisions. Do not expose another starter’s checklist, provision access, update training records or send a Teams message.
+  decisionRules: |-
+    # Decision rules
+
+    Help a new public servant plan a first day at the fictional Alderfen reading room. Show general induction directions in chat and personal checklist examples only in the scoped lab.
+    If the checklist is not the verified starter’s own, give only public access guidance. If the practice index is pending, use the supervised orientation route, never a shared account.
+    Use the host for documents, service desk for the practice index and mentor for the walk-through. Unknown entries must stay pending. Even a complete practice checklist still goes to the host.
+    Offer induction guidance, not personnel decisions. Do not expose another starter’s checklist, provision access, update training records or send a Teams message.
+    Start with the welcome sheet and the handling note, then a test of the practice index under the starter’s own training account, then the mentor-led walk-through. Distinguish reserved training from completed training.
+  examples: |-
+    “I can read the pack but my index is pending and the class is tomorrow.” Give both actions: ask the service desk about the test and attend the mentor’s reserved session.
+    “Is my colleague behind?” Do not disclose any status or infer a disciplinary concern. Offer the public first-day sequence.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Public servant first-day guide.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: welcome-sheet
+    title: Reading-room welcome sheet
+    summary: "The first-day host supplies two documents: the welcome sheet with the session order, and the handling note for items presented at the reading-room counter."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/welcome-sheet.txt
+  - id: reading-room-card
+    title: "First-shift card: index and handling practice"
+    summary: The practice card separates document reading, usable access and completed training. Each item has its own owner.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/reading-room-card.txt
+facts:
+  - id: documents
+    documentId: welcome-sheet
+    keywords:
+      - Where do I start reading on my first day
+    answer: Ask the induction host for the welcome sheet and handling note in a format you can use. Read both before the supervised counter exercise.
+    detail: Teams may be referenced as a way a host could distribute an approved welcome link. This exercise neither sends a message nor reads attendance or staff status.
+  - id: index
+    documentId: reading-room-card
+    keywords:
+      - What if the practice index will not open
+    answer: Try the synthetic practice index with the host using your own training account. For unresolved access, use the service desk and continue with supervised orientation.
+    detail: A colleague’s sign-in is not a workaround. Do not share credentials, seek live collection access or treat an access problem as a performance finding.
+  - id: training
+    documentId: reading-room-card
+    keywords:
+      - Does a reserved walk-through count as completed training
+    answer: No. A reservation is a place to attend the handling walk-through, not proof of attendance. The room mentor owns that check.
+    detail: Keep the item pending until the mentor can confirm completion. If no place is reserved, ask the mentor to arrange one.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-welcome-sheet
+    title: Select Reading-room welcome sheet
+    description: Add Reading-room welcome sheet to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: welcome-sheet
+  - id: read-reading-room-card
+    title: "Select First-shift card: index and handling practice"
+    description: "Add First-shift card: index and handling practice to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: reading-room-card
+  - id: try-1
+    title: The index is pending and a mentor place is reserved
+    description: In Review > Try this example, load "The index is pending and a mentor place is reserved" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: access-waits
+  - id: try-2
+    title: Same reservation, own index now tested
+    description: In Review > Try this example, load "Same reservation, own index now tested" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: access-tested
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Reading-room welcome sheet citation on the result for "The index is pending and a mentor place is reserved".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: welcome-sheet
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Where do I start reading on my first day?
+    - What if the practice index will not open?
+    - Does a reserved walk-through count as completed training?
+  handoffKeywords: []
+  unknownAnswer: I can explain the public induction pack, not look up a staff member or deliver messages. Personal checklist examples use simulated self-only scope.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Public servant first-day guide
+    mode: simulated
+    starter:
+      label: Walk me through a reading-room assistant’s first day.
+      prompt: Walk me through a reading-room assistant’s first day.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Which part of the public first-day pack do you want to explore?
+          - id: alternative
+            text: Which part of the public first-day pack do you want to explore? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: documents
+            label: Find the two documents and understand the Teams reference
+            next: reply-documents
+          - id: index
+            label: Find the owner of a practice-index problem
+            next: reply-index
+          - id: training
+            label: Tell a reservation from completed training
+            next: reply-training
+      - id: reply-documents
+        role: simulation
+        prompt: Where do I start reading on my first day?
+        end: true
+      - id: reply-index
+        role: simulation
+        prompt: What if the practice index will not open?
+        end: true
+      - id: reply-training
+        role: simulation
+        prompt: Does a reserved walk-through count as completed training?
+        end: true
+lab:
+  title: Build a first-shift checklist
+  description: Inspect the starter’s own fictional card. The headline identifies the next safe activity; the list underneath retains every pending item and its owner.
+  fields:
+    - id: view
+      label: Simulated identity and checklist scope
+      type: select
+      options:
+        - value: self
+          label: Verified starter, own induction checklist only
+        - value: colleague
+          label: Another starter’s checklist
+        - value: unknown
+          label: Identity or scope unknown
+      defaultValue: self
+      hint: This selector represents scope in a fixture. It does not access a personnel system.
+    - id: documents
+      label: Welcome sheet and handling note
+      type: select
+      options:
+        - value: read
+          label: Both read
+        - value: pending
+          label: At least one still to read
+        - value: unknown
+          label: Reading entry unclear
+      defaultValue: read
+      hint: The induction host owns both documents.
+    - id: access
+      label: Practice index access
+      type: select
+      options:
+        - value: tested
+          label: Own training sign-in tested successfully
+        - value: pending
+          label: Own access pending
+        - value: unknown
+          label: Test result unclear
+      defaultValue: pending
+      hint: A welcome link neither provisions access nor proves it works.
+    - id: training
+      label: Handling walk-through
+      type: select
+      options:
+        - value: complete
+          label: Mentor confirmed completion
+        - value: reserved
+          label: Place reserved only
+        - value: unbooked
+          label: No place arranged
+        - value: unknown
+          label: Training entry unclear
+      defaultValue: reserved
+      hint: Do not treat a reservation as attendance.
+  checks:
+    - id: own-card
+      label: Verified self-only scope
+      field: view
+      operator: eq
+      value: self
+    - id: read
+      label: Both documents read
+      field: documents
+      operator: eq
+      value: read
+    - id: tested
+      label: Own index access tested
+      field: access
+      operator: eq
+      value: tested
+    - id: in-queue
+      label: Access explicitly pending
+      field: access
+      operator: eq
+      value: pending
+    - id: course-done
+      label: Mentor confirmed walk-through
+      field: training
+      operator: eq
+      value: complete
+    - id: reserved
+      label: Place reserved only
+      field: training
+      operator: eq
+      value: reserved
+    - id: unbooked
+      label: No place reserved
+      field: training
+      operator: eq
+      value: unbooked
+    - id: course-unknown
+      label: Training entry unknown
+      field: training
+      operator: eq
+      value: unknown
+    - id: reading-pending
+      label: Reading pending
+      field: documents
+      operator: eq
+      value: pending
+  rules:
+    - id: self-scope
+      label: Check self-only scope first
+      all:
+        - checkId: own-card
+          equals: false
+      outcomeId: no-checklist
+    - id: wrap
+      label: All three items confirmed
+      all:
+        - checkId: read
+          equals: true
+        - checkId: tested
+          equals: true
+        - checkId: course-done
+          equals: true
+      outcomeId: host-wrap
+    - id: index-wait
+      label: Use a supervised alternative while access is pending
+      all:
+        - checkId: in-queue
+          equals: true
+      outcomeId: orientation
+    - id: reading-first
+      label: Host supplies the remaining reading
+      all:
+        - checkId: reading-pending
+          equals: true
+      outcomeId: read-pack
+    - id: next-session
+      label: Confirmed documents and access; reservation only
+      all:
+        - checkId: read
+          equals: true
+        - checkId: tested
+          equals: true
+        - checkId: reserved
+          equals: true
+      outcomeId: attend
+    - id: arrange-session
+      label: Confirmed documents and access; no reservation
+      all:
+        - checkId: read
+          equals: true
+        - checkId: tested
+          equals: true
+        - checkId: unbooked
+          equals: true
+      outcomeId: arrange
+    - id: verify-items
+      label: Unknown entries stay open
+      all: []
+      outcomeId: verify-checklist
+  outcomes:
+    - id: no-checklist
+      title: Use general induction guidance
+      summary: Self-only scope is required. No personal checklist information can be provided.
+      documentIds:
+        - welcome-sheet
+    - id: host-wrap
+      title: Take the completed practice card to the host
+      summary: Both documents, the practice-index test and the walk-through are confirmed on this sample card. No pending items are shown. Ask the host for the first-day wrap-up; this is not clearance to work independently.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+    - id: orientation
+      title: Continue supervised orientation
+      summary: The practice index is pending. Do not use a shared account. Continue the host-led orientation away from the index and keep the following items open.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+      recommendations:
+        - when:
+            checkId: read
+            equals: false
+          title: Documents | induction host
+          description: Find the welcome sheet and handling note; ask for an accessible copy or confirm the reading entry with the host.
+        - when:
+            checkId: tested
+            equals: false
+          title: Access | service desk
+          description: Check the practice index with your own training account and the host. Do not borrow a sign-in or send credentials.
+        - when:
+            checkId: reserved
+            equals: true
+          title: Training | room mentor
+          description: Attend the reserved handling walk-through. A reserved place is not a completion.
+        - when:
+            checkId: unbooked
+            equals: true
+          title: Training | room mentor
+          description: Ask the mentor to arrange the handling walk-through.
+        - when:
+            checkId: course-unknown
+            equals: true
+          title: Training | room mentor
+          description: Confirm the training entry; do not mark attendance from a calendar invitation.
+    - id: read-pack
+      title: Start with the two-document pack
+      summary: Ask the host for the outstanding reading before the supervised counter exercise. Carry forward the other open items below.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+      recommendations:
+        - when:
+            checkId: read
+            equals: false
+          title: Documents | induction host
+          description: Find the welcome sheet and handling note; ask for an accessible copy or confirm the reading entry with the host.
+        - when:
+            checkId: tested
+            equals: false
+          title: Access | service desk
+          description: Check the practice index with your own training account and the host. Do not borrow a sign-in or send credentials.
+        - when:
+            checkId: reserved
+            equals: true
+          title: Training | room mentor
+          description: Attend the reserved handling walk-through. A reserved place is not a completion.
+        - when:
+            checkId: unbooked
+            equals: true
+          title: Training | room mentor
+          description: Ask the mentor to arrange the handling walk-through.
+        - when:
+            checkId: course-unknown
+            equals: true
+          title: Training | room mentor
+          description: Confirm the training entry; do not mark attendance from a calendar invitation.
+    - id: attend
+      title: Use the reserved mentor session
+      summary: The index test and both readings are accounted for. The walk-through is booked, not completed.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+      recommendations:
+        - when:
+            checkId: read
+            equals: false
+          title: Documents | induction host
+          description: Find the welcome sheet and handling note; ask for an accessible copy or confirm the reading entry with the host.
+        - when:
+            checkId: tested
+            equals: false
+          title: Access | service desk
+          description: Check the practice index with your own training account and the host. Do not borrow a sign-in or send credentials.
+        - when:
+            checkId: reserved
+            equals: true
+          title: Training | room mentor
+          description: Attend the reserved handling walk-through. A reserved place is not a completion.
+        - when:
+            checkId: unbooked
+            equals: true
+          title: Training | room mentor
+          description: Ask the mentor to arrange the handling walk-through.
+        - when:
+            checkId: course-unknown
+            equals: true
+          title: Training | room mentor
+          description: Confirm the training entry; do not mark attendance from a calendar invitation.
+    - id: arrange
+      title: Find a mentor session
+      summary: The practice-index test succeeded and both documents were read. A handling walk-through still needs to be arranged.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+      recommendations:
+        - when:
+            checkId: read
+            equals: false
+          title: Documents | induction host
+          description: Find the welcome sheet and handling note; ask for an accessible copy or confirm the reading entry with the host.
+        - when:
+            checkId: tested
+            equals: false
+          title: Access | service desk
+          description: Check the practice index with your own training account and the host. Do not borrow a sign-in or send credentials.
+        - when:
+            checkId: reserved
+            equals: true
+          title: Training | room mentor
+          description: Attend the reserved handling walk-through. A reserved place is not a completion.
+        - when:
+            checkId: unbooked
+            equals: true
+          title: Training | room mentor
+          description: Ask the mentor to arrange the handling walk-through.
+        - when:
+            checkId: course-unknown
+            equals: true
+          title: Training | room mentor
+          description: Confirm the training entry; do not mark attendance from a calendar invitation.
+    - id: verify-checklist
+      title: Verify the unclear entries
+      summary: Keep unknown entries open and check with the owners below. A link or calendar invitation does not fill a gap.
+      documentIds:
+        - welcome-sheet
+        - reading-room-card
+      recommendations:
+        - when:
+            checkId: read
+            equals: false
+          title: Documents | induction host
+          description: Find the welcome sheet and handling note; ask for an accessible copy or confirm the reading entry with the host.
+        - when:
+            checkId: tested
+            equals: false
+          title: Access | service desk
+          description: Check the practice index with your own training account and the host. Do not borrow a sign-in or send credentials.
+        - when:
+            checkId: reserved
+            equals: true
+          title: Training | room mentor
+          description: Attend the reserved handling walk-through. A reserved place is not a completion.
+        - when:
+            checkId: unbooked
+            equals: true
+          title: Training | room mentor
+          description: Ask the mentor to arrange the handling walk-through.
+        - when:
+            checkId: course-unknown
+            equals: true
+          title: Training | room mentor
+          description: Confirm the training entry; do not mark attendance from a calendar invitation.
+  cases:
+    - id: access-waits
+      title: The index is pending and a mentor place is reserved
+      inputs:
+        view: self
+        documents: read
+        access: pending
+        training: reserved
+      expected:
+        outcomeId: orientation
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - Access | service desk
+          - Training | room mentor
+    - id: access-tested
+      title: Same reservation, own index now tested
+      inputs:
+        view: self
+        documents: read
+        access: tested
+        training: reserved
+      expected:
+        outcomeId: attend
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - booked, not completed
+    - id: three-open
+      title: Reading, index and mentor place are all pending
+      inputs:
+        view: self
+        documents: pending
+        access: pending
+        training: unbooked
+      expected:
+        outcomeId: orientation
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - Documents | induction host
+          - Access | service desk
+          - Training | room mentor
+    - id: doc-open
+      title: The induction pack is the last open item
+      inputs:
+        view: self
+        documents: pending
+        access: tested
+        training: complete
+      expected:
+        outcomeId: read-pack
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - outstanding reading
+          - Documents | induction host
+    - id: mentor-needed
+      title: All set for the room except a mentor place
+      inputs:
+        view: self
+        documents: read
+        access: tested
+        training: unbooked
+      expected:
+        outcomeId: arrange
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - Ask the mentor to arrange
+    - id: training-unclear
+      title: The training entry cannot be verified
+      inputs:
+        view: self
+        documents: read
+        access: tested
+        training: unknown
+      expected:
+        outcomeId: verify-checklist
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - Confirm the training entry
+    - id: wrap-up
+      title: Three confirmed items go back to the host
+      inputs:
+        view: self
+        documents: read
+        access: tested
+        training: complete
+      expected:
+        outcomeId: host-wrap
+        documentIds:
+          - welcome-sheet
+          - reading-room-card
+        kind: answer
+        contains:
+          - No pending items
+          - not clearance
+    - id: wrong-checklist
+      title: A colleague asks to see another starter’s card
+      inputs:
+        view: colleague
+        documents: read
+        access: pending
+        training: reserved
+      expected:
+        outcomeId: no-checklist
+        documentIds:
+          - welcome-sheet
+        kind: answer
+        contains:
+          - No personal checklist information
+    - id: missing-workbook
+      title: The practice card cannot be selected
+      inputs:
+        view: self
+        documents: read
+        access: pending
+        training: reserved
+      expected:
+        outcomeId: orientation
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+      disabledKnowledge:
+        - reading-room-card
+implementation:
+  - title: Build this in the real service
+    description: Keep public induction material separate from employee-specific status. Have identity and personnel systems enforce self-only access; verify the receiving audience separately before distributing even a welcome link through Teams.
+  - title: What to measure
+    description: Compare the pending items and owners in a sample of checklists with the host’s answer key. Count unknowns marked complete, reserved places counted as attendance, credential requests and colleague-status disclosures as errors.
+  - title: Scope of this draft
+    description: Offer induction guidance, not personnel decisions. Do not expose another starter’s checklist, provision access, update training records or send a Teams message. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

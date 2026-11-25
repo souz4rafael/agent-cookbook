@@ -19,7 +19,8 @@ test('home introduces the simplest recipe first without changing the manifest or
   const original = [...recipes]
   const extra = { ...recipes[0], id: 'future-recipe', title: 'Future recipe' }
   const ordered = orderHomeRecipes([...recipes, extra])
-  assert.deepEqual(ordered.map(recipe => recipe.id), ['citizen-qa', 'document-processing-routing', 'upskilling-recommendation', 'benefit-eligibility', 'customer-service-optimize', 'future-recipe'])
+  const originals = ['citizen-qa', 'document-processing-routing', 'upskilling-recommendation', 'benefit-eligibility']
+  assert.deepEqual(ordered.map(recipe => recipe.id), [...originals, ...recipes.filter(recipe => !originals.includes(recipe.id)).map(recipe => recipe.id), extra.id])
   assert.deepEqual(recipes, original)
   assert.deepEqual(orderHomeRecipes([]), [])
   assert.deepEqual(orderHomeRecipes([extra]), [extra])

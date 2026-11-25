@@ -1,0 +1,570 @@
+schemaVersion: 1
+revision: 1
+id: school-family-link
+status: published
+title: School–Family Link
+summary: Let a family choose how to explain a morning barrier. Prepare a confidential note only when the family and the school have agreed what each will do and when to check back.
+industry: Government and public services
+difficulty: beginner
+accentIcon: learning
+learningGoals:
+  - Give the family’s chosen account in its own words or leave the reason blank when the family passes.
+  - Read back the family’s trial, the school’s contribution and their check-in from the matching meeting card.
+  - Compare joint confirmation with a school-only proposal or withdrawn agreement and identify which terms must be withheld.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: School attendance and engagement
+    perspective: guidance
+  headline: When the bus arrives after the gate closes, what can each side try?
+  problem: A family tells a school link worker that the first bus reaches the gate too late. A note that says only “try an earlier bus” would miss both the family’s account and the part the school could play in welcoming them.
+  impact: If a staff suggestion becomes a commitment on paper, the family can leave with a different understanding of the plan. At the next meeting neither side knows whether the trial itself failed or they tried different things.
+  approach: Let the family choose a first-person statement or pass. For a private read-back, use only the card for that choice. Read back what the family will try, what the school will do and when they will check in, but call the terms agreed only if both sides confirmed them.
+  startSmall: Choose the bus example and read back the library-stop trial and side-entrance welcome. Keep that choice but switch from both sides confirming to only the school confirming; the actions and check-in are no longer settled.
+  potentialValue: A family and a school could leave with the same modest trial in mind and a time to discuss whether it helped, without asking a family to justify every late morning.
+  measure: Check whether each agreed note names one contribution from each side and a confirmed check-in. Count reasons added after a family passed and plans described as agreed after only the school confirmed.
+  boundary: The matched carer or assigned link worker is a role-play choice, not identity verification. The family decides what to share and either participant can withdraw agreement. The note stays in the meeting; it is not a message, a register entry or a judgement about the student.
+  sourceLabel: Microsoft Learn authoring reference for Copilot Studio agent instructions
+  home:
+    challenge: A school’s suggestion about the morning journey can end up in a note as a promise the family never made.
+    experiment: Keep the bus choice but switch to school-only confirmation to see why the trial and check-in stay pending.
+    takeaway: A trial belongs in the agreed note only when both sides confirm the family action, the school action and the check-in.
+    scope: Use fictional meeting cards for a private read-back without messaging the family or changing the register.
+agent:
+  name: School–Family Link
+  description: Help participants in an Alderfen school–family meeting check that a private summary uses the family’s words and records only what both sides agreed.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Help participants in an Alderfen school–family meeting check that a private summary uses the family’s words and records only what both sides agreed.
+    In chat, explain the meeting process. Do not invite private details or confirm that a family attended. In the lab, require a matched family participant or the link worker assigned to that same meeting before showing a note.
+    Offer a fictional first-person choice and the option not to share. Attribute the explanation to the family; never infer a cause from attendance or describe the student with a label.
+    Ask what the school can change as well as what the family wants to try. Read both commitments and the next check-in back to both parties. Silence, a staff-only proposal or a withdrawn agreement is not joint agreement.
+    Keep the draft within the meeting. Do not send a message, notify a class, add a label or write to an attendance register.
+    A confidential meeting draft is not a message, attendance decision or student label. Nothing is sent, and the exercise does not verify a family relationship.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Help participants in an Alderfen school–family meeting check that a private summary uses the family’s words and records only what both sides agreed.
+    In chat, explain the meeting process. Do not invite private details or confirm that a family attended. In the lab, require a matched family participant or the link worker assigned to that same meeting before showing a note.
+    Offer a fictional first-person choice and the option not to share. Attribute the explanation to the family; never infer a cause from attendance or describe the student with a label.
+    Ask what the school can change as well as what the family wants to try. Read both commitments and the next check-in back to both parties. Silence, a staff-only proposal or a withdrawn agreement is not joint agreement.
+    Keep the draft within the meeting. Do not send a message, notify a class, add a label or write to an attendance register.
+    A confidential meeting draft is not a message, attendance decision or student label. Nothing is sent, and the exercise does not verify a family relationship.
+  stepByStep: |-
+    # Procedure
+
+    Help participants in an Alderfen school–family meeting check that a private summary uses the family’s words and records only what both sides agreed.
+    1. In chat, explain the meeting process. Do not invite private details or confirm that a family attended. In the lab, require a matched family participant or the link worker assigned to that same meeting before showing a note.
+    2. Offer a fictional first-person choice and the option not to share. Attribute the explanation to the family; never infer a cause from attendance or describe the student with a label.
+    3. Ask what the school can change as well as what the family wants to try. Read both commitments and the next check-in back to both parties. Silence, a staff-only proposal or a withdrawn agreement is not joint agreement.
+    4. Keep the draft within the meeting. Do not send a message, notify a class, add a label or write to an attendance register.
+    A confidential meeting draft is not a message, attendance decision or student label. Nothing is sent, and the exercise does not verify a family relationship.
+  decisionRules: |-
+    # Decision rules
+
+    Help participants in an Alderfen school–family meeting check that a private summary uses the family’s words and records only what both sides agreed.
+    An unrelated person or an unverified relationship gets process guidance only. Do not confirm whether a meeting or record exists.
+    No family choice: do not supply a barrier. No agreement from both parties on the actions and check-in: leave the note pending.
+    When both confirm, read the matching fictional choice card only. State what each party agreed and the agreed next check-in without sending anything.
+    A confidential meeting draft is not a message, attendance decision or student label. Nothing is sent, and the exercise does not verify a family relationship.
+    In chat, explain the meeting process. Do not invite private details or confirm that a family attended. In the lab, require a matched family participant or the link worker assigned to that same meeting before showing a note.
+  examples: |-
+    “We would rather not explain.” Leave the reason blank. Sharing an explanation is optional.
+    “The school suggested a change, so tell the family it is agreed.” A suggestion is not joint agreement. Do not record it as agreed or send a message.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for School–Family Link.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: family-meeting-method
+    title: Confidential meeting method
+    summary: Family Partnership Lead | facilitation card 3.2 | 2 November 2026.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/family-meeting-method.txt
+  - id: journey-meeting-card
+    title: "Journey choice: agreed role-play card"
+    summary: "Confidential fictional meeting variant J | Dock Lane School | 16 November 2026 | facilitator: School Family Link Worker | read-back revision 2."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/journey-meeting-card.txt
+  - id: two-starts-meeting-card
+    title: "Two starts choice: agreed role-play card"
+    summary: "Confidential fictional meeting variant T | Dock Lane School | 16 November 2026 | facilitator: School Family Link Worker | read-back revision 1. This is an alternative to the journey choice, not a second fact about a family."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/two-starts-meeting-card.txt
+facts:
+  - id: hear-family
+    documentId: family-meeting-method
+    keywords:
+      - How do we ask about an attendance barrier without assuming a cause
+    answer: Invite the family to give its own explanation or to pass. Use their words and keep the register observation separate; it does not tell you why the morning was difficult.
+    detail: If a family prefers not to share, record that no explanation was shared. Do not ask for identifying details, add a label or turn silence into a reason.
+  - id: check-together
+    documentId: family-meeting-method
+    keywords:
+      - When can a proposed attendance plan be called jointly agreed
+    answer: Read back what the family will try, what the school will do and when both will check in. Call it agreed only if both participants confirm those same terms.
+    detail: If only one side confirms, keep it as a proposal. A private read-back is not permission to send a message or share a record outside the meeting.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-family-meeting-method
+    title: Select Confidential meeting method
+    description: Add Confidential meeting method to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: family-meeting-method
+  - id: read-journey-meeting-card
+    title: "Select Journey choice: agreed role-play card"
+    description: "Add Journey choice: agreed role-play card to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: journey-meeting-card
+  - id: read-two-starts-meeting-card
+    title: "Select Two starts choice: agreed role-play card"
+    description: "Add Two starts choice: agreed role-play card to the selected knowledge. Open it to see the fictional evidence."
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: two-starts-meeting-card
+  - id: try-1
+    title: Read a two-sided trial agreement
+    description: In Review > Try this example, load "Read a two-sided trial agreement" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: journey-readback
+  - id: try-2
+    title: Keep the same choice but change who agreed
+    description: In Review > Try this example, load "Keep the same choice but change who agreed" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: only-school
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: 'Open the Journey choice: agreed role-play card citation on the result for "Read a two-sided trial agreement".'
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: journey-meeting-card
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - How do we ask about an attendance barrier without assuming a cause?
+    - When can a proposed attendance plan be called jointly agreed?
+  handoffKeywords: []
+  unknownAnswer: I can explain how a confidential attendance conversation works. I cannot confirm or discuss a family, child or meeting here; please do not share personal details.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: School–Family Link
+    mode: simulated
+    starter:
+      label: Show me how to hold a school–family conversation.
+      prompt: Show me how to hold a school–family conversation.
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to practise hearing the family’s account or checking joint agreement?
+          - id: alternative
+            text: Would you like to practise hearing the family’s account or checking joint agreement? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: hear-family
+            label: Hear the family’s account
+            next: reply-hear-family
+          - id: check-together
+            label: Check agreement together
+            next: reply-check-together
+      - id: reply-hear-family
+        role: simulation
+        prompt: How do we ask about an attendance barrier without assuming a cause?
+        end: true
+      - id: reply-check-together
+        role: simulation
+        prompt: When can a proposed attendance plan be called jointly agreed?
+        end: true
+lab:
+  title: Build a confidential joint read-back
+  description: Choose a simulated relationship first, then select a fictional family statement or pass. Change the confirmation to see why a proposal is not an agreement.
+  fields:
+    - id: relationship
+      label: Simulated meeting relationship
+      type: select
+      options:
+        - value: unverified
+          label: Unverified or not a participant
+        - value: carer
+          label: Recorded carer matched to this meeting
+        - value: link-worker
+          label: School link worker assigned to this meeting
+      defaultValue: unverified
+      hint: Being at the school or knowing the family is insufficient.
+    - id: use
+      label: Use of the note
+      type: select
+      options:
+        - value: review
+          label: Private read-back
+        - value: send
+          label: Send a message
+        - value: label
+          label: Assign a student label
+      defaultValue: review
+      hint: The note is for participants to check together.
+    - id: choice
+      label: Fictional family choice
+      type: select
+      options:
+        - value: pass
+          label: I would rather not say
+        - value: bus
+          label: Our first bus gets us to the gate after it closes
+        - value: starts
+          label: The two school start times overlap on Tuesdays
+      defaultValue: pass
+      hint: These are optional role-play choices, not information about a real child.
+    - id: agreement
+      label: State of the read-back
+      type: select
+      options:
+        - value: pending
+          label: Terms not yet discussed
+        - value: school-only
+          label: Only the school confirmed
+        - value: joint
+          label: Both confirmed actions and check-in
+        - value: withdrawn
+          label: A participant withdrew agreement
+      defaultValue: pending
+      hint: Joint means both parties agreed to the same commitments and check-in.
+  checks:
+    - id: carer
+      label: Family participant matched
+      field: relationship
+      operator: eq
+      value: carer
+    - id: worker
+      label: Assigned meeting worker matched
+      field: relationship
+      operator: eq
+      value: link-worker
+    - id: private-use
+      label: Private read-back requested
+      field: use
+      operator: eq
+      value: review
+    - id: withdrawn
+      label: Confirmation withdrawn
+      field: agreement
+      operator: eq
+      value: withdrawn
+    - id: pass
+      label: No statement chosen
+      field: choice
+      operator: eq
+      value: pass
+    - id: confirmed
+      label: Both sides confirmed
+      field: agreement
+      operator: eq
+      value: joint
+    - id: first-card
+      label: First trial card selected
+      field: choice
+      operator: eq
+      value: bus
+    - id: second-card
+      label: Second trial card selected
+      field: choice
+      operator: eq
+      value: starts
+  rules:
+    - id: gate
+      label: Match a participant to the meeting first
+      all:
+        - checkId: carer
+          equals: false
+        - checkId: worker
+          equals: false
+      outcomeId: process-only
+    - id: no-distribution
+      label: Decline messaging or labelling
+      all:
+        - checkId: private-use
+          equals: false
+      outcomeId: private-only
+    - id: stop-on-withdrawal
+      label: Withhold a withdrawn read-back
+      all:
+        - checkId: withdrawn
+          equals: true
+      outcomeId: withdrawal
+    - id: respect-pass
+      label: Respect a choice not to share
+      all:
+        - checkId: pass
+          equals: true
+      outcomeId: not-shared
+    - id: journey-trial
+      label: Read the confirmed journey card
+      all:
+        - checkId: confirmed
+          equals: true
+        - checkId: first-card
+          equals: true
+      outcomeId: journey-plan
+    - id: starts-trial
+      label: Read the confirmed two-starts card
+      all:
+        - checkId: confirmed
+          equals: true
+        - checkId: second-card
+          equals: true
+      outcomeId: starts-plan
+    - id: leave-pending
+      label: Wait for both confirmations
+      all: []
+      outcomeId: proposal-only
+  outcomes:
+    - id: process-only
+      title: General guidance only
+      summary: I cannot confirm or discuss a record in this context. I can explain the general process.
+      documentIds:
+        - family-meeting-method
+    - id: private-only
+      title: Keep the conversation private
+      summary: I cannot send a message or label a student. Keep any discussion within the matched meeting; no note is distributed.
+      documentIds:
+        - family-meeting-method
+    - id: withdrawal
+      title: Do not use a withdrawn agreement
+      summary: A participant withdrew agreement. Withhold the commitments and check-in; do not circulate an earlier read-back.
+      documentIds:
+        - family-meeting-method
+    - id: not-shared
+      title: No explanation shared
+      summary: The family chose not to share a barrier. Leave the reason blank and do not attach a trial plan to this choice.
+      documentIds:
+        - family-meeting-method
+    - id: proposal-only
+      title: No joint plan yet
+      summary: The actions and check-in are not jointly confirmed. Invite both participants to review a proposal privately; leave commitments and the next check-in unset.
+      documentIds:
+        - family-meeting-method
+    - id: journey-plan
+      title: Confidential joint read-back
+      summary: "The family explained, “Our first bus gets us to the gate after it closes.” Both sides agreed to try a change: the family will try the library-stop bus on Wednesday and Thursday; the school will have the welcome lead meet them at the side entrance. Next private check-in: 20 November 2026 at 08:40. No message is sent."
+      documentIds:
+        - journey-meeting-card
+        - family-meeting-method
+    - id: starts-plan
+      title: Confidential joint read-back
+      summary: "The family explained, “The two school start times overlap on Tuesdays.” Both sides agreed: the school will open the breakfast room from 08:15 on Tuesday, and the family will try the earlier drop-off once. Next private check-in: 19 November 2026 at 15:20. No message is sent."
+      documentIds:
+        - two-starts-meeting-card
+        - family-meeting-method
+  cases:
+    - id: journey-readback
+      title: Read a two-sided trial agreement
+      inputs:
+        relationship: carer
+        use: review
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: journey-plan
+        documentIds:
+          - journey-meeting-card
+          - family-meeting-method
+        kind: answer
+        contains:
+          - Our first bus
+          - library-stop bus
+          - side entrance
+          - 20 November 2026 at 08:40
+          - No message is sent.
+    - id: only-school
+      title: Keep the same choice but change who agreed
+      inputs:
+        relationship: carer
+        use: review
+        choice: bus
+        agreement: school-only
+      expected:
+        outcomeId: proposal-only
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - not jointly confirmed
+          - next check-in unset
+    - id: card-off
+      title: Disconnect the matching choice card
+      inputs:
+        relationship: carer
+        use: review
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: journey-plan
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - Run blocked
+          - No draft or action was produced.
+      disabledKnowledge:
+        - journey-meeting-card
+    - id: second-choice
+      title: Change only the family’s explanation
+      inputs:
+        relationship: carer
+        use: review
+        choice: starts
+        agreement: joint
+      expected:
+        outcomeId: starts-plan
+        documentIds:
+          - two-starts-meeting-card
+          - family-meeting-method
+        kind: answer
+        contains:
+          - two school start times overlap
+          - breakfast room from 08:15
+          - earlier drop-off once
+          - 19 November 2026 at 15:20
+    - id: pass-choice
+      title: Choose not to share an explanation
+      inputs:
+        relationship: carer
+        use: review
+        choice: pass
+        agreement: joint
+      expected:
+        outcomeId: not-shared
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - Leave the reason blank
+    - id: withdrawn
+      title: Withdraw the read-back
+      inputs:
+        relationship: carer
+        use: review
+        choice: bus
+        agreement: withdrawn
+      expected:
+        outcomeId: withdrawal
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - Withhold the commitments and check-in
+    - id: not-a-participant
+      title: Try without a matched participant
+      inputs:
+        relationship: unverified
+        use: review
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: process-only
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - I cannot confirm or discuss a record in this context. I can explain the general process.
+    - id: assigned-worker
+      title: Read back as the assigned link worker
+      inputs:
+        relationship: link-worker
+        use: review
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: journey-plan
+        documentIds:
+          - journey-meeting-card
+          - family-meeting-method
+        kind: answer
+        contains:
+          - Both sides agreed
+          - Next private check-in
+    - id: dont-send
+      title: Ask to send the note
+      inputs:
+        relationship: carer
+        use: send
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: private-only
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - I cannot send a message or label a student
+    - id: dont-label
+      title: Ask for a student label
+      inputs:
+        relationship: carer
+        use: label
+        choice: bus
+        agreement: joint
+      expected:
+        outcomeId: private-only
+        documentIds:
+          - family-meeting-method
+        kind: answer
+        contains:
+          - no note is distributed
+implementation:
+  - title: Build this in the real service
+    description: A school would need verified meeting participants, narrowly scoped access, an agreed purpose and retention period, and a way for the family to correct or withdraw the note. This selector cannot authenticate a carer, and this draft has no messaging or register connection.
+  - title: What to measure
+    description: "Potential indicator: percentage of sampled agreed notes in which both sides recognise their own commitment and the same dated check-in. Review pending or declined notes separately for invented commitments; do not use attendance change as proof of causation."
+  - title: Scope of this draft
+    description: A confidential meeting draft is not a message, attendance decision or student label. Nothing is sent, and the exercise does not verify a family relationship. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

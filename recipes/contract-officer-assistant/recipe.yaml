@@ -1,0 +1,807 @@
+schemaVersion: 1
+revision: 1
+id: contract-officer-assistant
+status: published
+title: Alderfen contract officer assistant
+summary: Compare an invoice line with accepted delivery under the matching clause. The result is a quantity finding for an employee, never a payment instruction.
+industry: Government and public services
+difficulty: intermediate
+accentIcon: document
+learningGoals:
+  - Match the case, supplier, contract line and unit on the invoice and signed acceptance before comparing counts.
+  - Explain why a signed zero can be compared, a blank needs a completed entry and an unknown signature needs verification.
+  - Cite the invoice row, acceptance entry and contract clause in a finding that states which quantities agree or differ without recommending payment.
+sourceUrl: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions
+scenario:
+  group:
+    journey: Procurement and contracts
+    perspective: operations
+  headline: Ten path markers were billed. How many did the receiving team accept?
+  problem: An officer reviewing a delivery invoice finds ten path markers on the bill but eight on the signed acceptance entry. Before asking the supplier to explain, the officer needs to know whether both counts refer to the same contract line and whether the clause calls for units accepted or units dispatched.
+  impact: Comparing the wrong line can send a supplier looking for a delivery error that never happened. Treating a blank acceptance cell as zero can turn missing paperwork into a dispute about the entire invoice.
+  approach: For an assigned officer and a matched case, supplier, line and unit, the assistant checks the signature and reads the two quantity fields. It cites the invoice row, the acceptance entry and the clause together so the officer can retrace the finding. A missing count calls for a completed record, not an estimate.
+  startSmall: Use one invoice row and the signed receipt for line M4. Leave the billed count at ten and change the accepted count, then clear it. Compare what the officer can say about a difference with what they must ask the receiving team to supply.
+  potentialValue: An officer could take a specific question back to the supplier or receiving team, with the supporting rows in hand, rather than asking both to recheck the whole delivery.
+  measure: Sample quantity findings for all three citations. Count wrong-line comparisons and blanks reported as zero separately from genuine differences between billed and accepted units.
+  boundary: The lab compares typed quantities, not scanned documents or prices. The officer decides whether to seek an amended invoice or more acceptance evidence. Even when both counts agree, the result is not authority to pay.
+  sourceLabel: "Microsoft Learn: authoring Copilot Studio instructions (not the source of the fictional acceptance clause)"
+  home:
+    challenge: A contract officer needs to tell the supplier which billed units lack matching acceptance, without mistaking a gap in the paperwork for a short delivery.
+    experiment: On the matched, signed line, keep ten billed and change eight accepted to ten. The two-unit difference disappears; the finding confirms quantity only.
+    takeaway: Support a quantity finding with an invoice row, a signed acceptance entry and the clause that makes those counts comparable.
+    scope: One fictional invoice line for an assigned officer. No invoice is amended and no payment is released.
+agent:
+  name: Alderfen contract officer assistant
+  description: Teach an assigned contract officer to compare billed and accepted marker units under a single Alderfen contract line.
+  instructions: |-
+    # Purpose and operating boundaries
+
+    Teach an assigned contract officer to compare billed and accepted marker units under a single Alderfen contract line.
+    In free chat, explain the matching process without giving record references, quantities or decisions, even if the question supplies them.
+    In the lab, check assignment and the case, supplier and line linkage before reading numbers. Require signed acceptance and both numeric fields.
+    Cite the invoice, acceptance and line clause together. Name a difference of 2 only for the exact 10 billed and 8 accepted pair. Otherwise report only the comparison the fields support.
+    The employee decides what to do next. The assistant compares typed fictional fields; it does not read scans, authorise payment or decide entitlement.
+  tone: friendly
+  detail: concise
+instructionStyles:
+  structured: |-
+    # Purpose and operating boundaries
+
+    Teach an assigned contract officer to compare billed and accepted marker units under a single Alderfen contract line.
+    In free chat, explain the matching process without giving record references, quantities or decisions, even if the question supplies them.
+    In the lab, check assignment and the case, supplier and line linkage before reading numbers. Require signed acceptance and both numeric fields.
+    Cite the invoice, acceptance and line clause together. Name a difference of 2 only for the exact 10 billed and 8 accepted pair. Otherwise report only the comparison the fields support.
+    The employee decides what to do next. The assistant compares typed fictional fields; it does not read scans, authorise payment or decide entitlement.
+  stepByStep: |-
+    # Procedure
+
+    Teach an assigned contract officer to compare billed and accepted marker units under a single Alderfen contract line.
+    1. In free chat, explain the matching process without giving record references, quantities or decisions, even if the question supplies them.
+    2. In the lab, check assignment and the case, supplier and line linkage before reading numbers. Require signed acceptance and both numeric fields.
+    3. Cite the invoice, acceptance and line clause together. Name a difference of 2 only for the exact 10 billed and 8 accepted pair. Otherwise report only the comparison the fields support.
+    The employee decides what to do next. The assistant compares typed fictional fields; it does not read scans, authorise payment or decide entitlement.
+  decisionRules: |-
+    # Decision rules
+
+    Teach an assigned contract officer to compare billed and accepted marker units under a single Alderfen contract line.
+    Access not assigned, or wrong or unconfirmed case, supplier or line → no record result.
+    No acceptance or blank number → insufficient evidence; unknown signature → verify status. Zero is an entered quantity.
+    Both values present and signed → test the worked pair, equality, then the two directions. Matching quantities say nothing about prices or payment.
+    The employee decides what to do next. The assistant compares typed fictional fields; it does not read scans, authorise payment or decide entitlement.
+    In free chat, explain the matching process without giving record references, quantities or decisions, even if the question supplies them.
+  examples: |-
+    In the scoped example, 10 billed and 8 accepted flags two units; 10 and 10 supports quantity agreement only.
+    If signed acceptance is absent, do not substitute the dispatched quantity. If the line differs, do not compare at all.
+editable:
+  - name
+  - instructions
+  - tone
+  - detail
+connections:
+  - id: evidence-library
+    type: sharepoint
+    title: Demo SharePoint
+    description: Choose the library that holds the fictional guidance for this exercise.
+    accountLabel: Alderfen learning environment
+    resources:
+      - id: alderfen-library
+        label: Alderfen guidance library
+        description: Evidence selected for Alderfen contract officer assistant.
+    realWorldNote: A local library selection demonstrates grounding, not authentication. In a real service, validate the source owner, currency and access controls.
+knowledge:
+  - id: quantity-desk-card
+    title: Officer’s quantity desk card · QC-5
+    summary: QC-5 is a method card. It grants no case access.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/quantity-desk-card.txt
+  - id: marker-contract-line
+    title: Marker contract line · CT-73
+    summary: "Case key K-730; supplier S-MOSS; contract CT-73, line M4 (path markers, unit: each)."
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/marker-contract-line.txt
+  - id: marker-invoice
+    title: Marker invoice · IV-730
+    summary: IV-730, row 04, carries K-730 / S-MOSS / CT-73 / M4. The field “billed units” counts individual markers.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/marker-invoice.txt
+  - id: marker-acceptance
+    title: Marker acceptance entry · AC-512
+    summary: AC-512, receipt row M4, uses K-730 / S-MOSS / CT-73. “Accepted units” is the signed count, not the carrier’s tally.
+    connectionId: evidence-library
+    resourceId: alderfen-library
+    file: documents/marker-acceptance.txt
+facts:
+  - id: pair-records
+    documentId: quantity-desk-card
+    keywords:
+      - Which references must agree before I compare quantities
+    answer: Match the case, supplier and contract line on the invoice and signed acceptance to the current clause. Compare the same unit of measure on both rows.
+    detail: A delivery description, dispatch count or similar supplier name is not a substitute for that match.
+  - id: read-blank
+    documentId: quantity-desk-card
+    keywords:
+      - Does a blank acceptance quantity mean zero
+    answer: No. A blank supplies no quantity. A recorded zero is a number, but it still needs a signed acceptance entry on the matched line.
+    detail: If the signature status is unknown, verify it before using any number.
+  - id: word-finding
+    documentId: quantity-desk-card
+    keywords:
+      - What can a quantity finding tell an employee
+    answer: Say whether the two quantities agree or differ. Cite the invoice row, the acceptance entry and the clause that links them.
+    detail: Leave the next step to the employee. A quantity match does not establish price, tax or permission to pay.
+tools: []
+journey:
+  - id: connect-guidance
+    title: Connect the learning library
+    description: In Knowledge, connect Alderfen guidance library. Then choose the individual documents below.
+    tab: knowledge
+    completeWhen:
+      type: connection
+      connectionId: evidence-library
+  - id: read-quantity-desk-card
+    title: Select Officer’s quantity desk card · QC-5
+    description: Add Officer’s quantity desk card · QC-5 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: quantity-desk-card
+  - id: read-marker-contract-line
+    title: Select Marker contract line · CT-73
+    description: Add Marker contract line · CT-73 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: marker-contract-line
+  - id: read-marker-invoice
+    title: Select Marker invoice · IV-730
+    description: Add Marker invoice · IV-730 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: marker-invoice
+  - id: read-marker-acceptance
+    title: Select Marker acceptance entry · AC-512
+    description: Add Marker acceptance entry · AC-512 to the selected knowledge. Open it to see the fictional evidence.
+    tab: knowledge
+    completeWhen:
+      type: knowledge
+      documentId: marker-acceptance
+  - id: try-1
+    title: Compare ten billed with eight accepted
+    description: In Review > Try this example, load "Compare ten billed with eight accepted" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: ten-versus-eight
+  - id: try-2
+    title: Change accepted to ten
+    description: In Review > Try this example, load "Change accepted to ten" and run it. Identify the input that explains this result.
+    tab: activity
+    completeWhen:
+      type: case-tested
+      caseId: ten-versus-ten
+  - id: inspect-source
+    title: Read the evidence behind the result
+    description: Open the Marker invoice · IV-730 citation on the result for "Compare ten billed with eight accepted".
+    tab: activity
+    completeWhen:
+      type: citation-opened
+      documentId: marker-invoice
+  - id: evaluate
+    title: Compare the outcomes
+    description: Run the cases in Evaluate. Check the source, outcome and any proposed action, including the cases with missing evidence.
+    tab: activity
+    completeWhen:
+      type: evaluation-passed
+test:
+  suggestedQuestions:
+    - Which references must agree before I compare quantities?
+    - Does a blank acceptance quantity mean zero?
+    - What can a quantity finding tell an employee?
+  handoffKeywords: []
+  unknownAnswer: I can explain which evidence an officer needs. I cannot answer a question about a particular case or compare figures supplied in chat.
+  missingKnowledgeAnswer: The source needed for that question is unavailable. Connect the learning library and select the matching document; do not infer the answer from an absent source.
+  handoffBlockedAnswer: The review tool is unavailable. No request was created.
+  handoffReadyAnswer: Review the fictional request and confirm it separately. No external action has been performed.
+conversations:
+  - schemaVersion: 1
+    revision: 1
+    id: guided-example
+    title: Alderfen contract officer assistant
+    mode: simulated
+    starter:
+      label: How should I check a delivery invoice?
+      prompt: How should I check a delivery invoice?
+    variationPolicy: stable-per-session
+    onUnexpectedInput: stay-and-guide
+    variables: {}
+    steps:
+      - id: clarify
+        role: assistant
+        variants:
+          - id: direct
+            text: Would you like to match the records, interpret a blank, or word a finding?
+          - id: alternative
+            text: Would you like to match the records, interpret a blank, or word a finding? Choose the closest example.
+      - id: choose-route
+        role: user
+        choices:
+          - id: pair-records
+            label: Match the records
+            next: reply-pair-records
+          - id: read-blank
+            label: Interpret a blank
+            next: reply-read-blank
+          - id: word-finding
+            label: Word the finding
+            next: reply-word-finding
+      - id: reply-pair-records
+        role: simulation
+        prompt: Which references must agree before I compare quantities?
+        end: true
+      - id: reply-read-blank
+        role: simulation
+        prompt: Does a blank acceptance quantity mean zero?
+        end: true
+      - id: reply-word-finding
+        role: simulation
+        prompt: What can a quantity finding tell an employee?
+        end: true
+lab:
+  title: Check one marker invoice line
+  description: Use the employee assignment and matching status as simulated gates. Quantities are editable cells in alternate copies of the same training bundle, not extracted data.
+  fields:
+    - id: access
+      label: Employee’s simulated assignment
+      type: select
+      options:
+        - value: assigned
+          label: Assigned officer
+        - value: denied
+          label: Access denied
+        - value: unknown
+          label: Assignment unknown
+      defaultValue: unknown
+      hint: A role title alone does not grant an assignment.
+    - id: linkage
+      label: Case, supplier and clause-line linkage
+      type: select
+      options:
+        - value: matched
+          label: All keys and units match
+        - value: line
+          label: Different contract line
+        - value: supplier
+          label: Different supplier
+        - value: case
+          label: Different case
+        - value: unknown
+          label: Linkage unresolved
+      defaultValue: unknown
+      hint: A match includes the clause line, not just the contract header.
+    - id: endorsement
+      label: Acceptance evidence
+      type: select
+      options:
+        - value: signed
+          label: Signed entry available
+        - value: absent
+          label: No acceptance entry
+        - value: unknown
+          label: Entry status unknown
+      defaultValue: signed
+      hint: An unsigned or missing entry cannot support a comparison.
+    - id: billed
+      label: Billed marker units
+      type: number
+      defaultValue: 10
+      min: 0
+      max: 10000
+      hint: Type the invoice quantity; leave blank if it is not supplied.
+    - id: accepted
+      label: Accepted marker units
+      type: number
+      defaultValue: 8
+      min: 0
+      max: 10000
+      hint: Zero is an entered quantity. Clear the cell to represent a missing quantity.
+  checks:
+    - id: assigned
+      label: Employee assigned
+      field: access
+      operator: eq
+      value: assigned
+    - id: matches
+      label: Bundle keys match
+      field: linkage
+      operator: eq
+      value: matched
+    - id: signed
+      label: Acceptance signed
+      field: endorsement
+      operator: eq
+      value: signed
+    - id: unknown-status
+      label: Endorsement unknown
+      field: endorsement
+      operator: eq
+      value: unknown
+    - id: has-billed
+      label: Invoice quantity supplied
+      field: billed
+      operator: present
+    - id: has-accepted
+      label: Accepted quantity supplied
+      field: accepted
+      operator: present
+    - id: billed-ten
+      label: Invoice field is ten
+      field: billed
+      operator: eq
+      value: 10
+    - id: accepted-eight
+      label: Acceptance field is eight
+      field: accepted
+      operator: eq
+      value: 8
+    - id: equal
+      label: Same quantity
+      field: billed
+      operator: eq
+      otherField: accepted
+    - id: higher
+      label: More billed than accepted
+      field: billed
+      operator: gt
+      otherField: accepted
+    - id: lower
+      label: Fewer billed than accepted
+      field: billed
+      operator: lt
+      otherField: accepted
+  rules:
+    - id: assignment-first
+      label: Require the staff assignment
+      all:
+        - checkId: assigned
+          equals: false
+      outcomeId: no-case-view
+    - id: keys-before-cells
+      label: Require matching keys and units
+      all:
+        - checkId: matches
+          equals: false
+      outcomeId: no-case-view
+    - id: verify-signature
+      label: Keep unknown endorsement distinct
+      all:
+        - checkId: unknown-status
+          equals: true
+      outcomeId: unknown-acceptance
+    - id: require-entry
+      label: "No signed entry: stop"
+      all:
+        - checkId: signed
+          equals: false
+      outcomeId: missing-acceptance
+    - id: require-accepted-cell
+      label: A blank is not zero
+      all:
+        - checkId: has-accepted
+          equals: false
+      outcomeId: missing-accepted-cell
+    - id: require-billed-cell
+      label: Require the invoice quantity
+      all:
+        - checkId: has-billed
+          equals: false
+      outcomeId: missing-billed-cell
+    - id: worked-pair
+      label: Use the two-unit finding only for this exact pair
+      all:
+        - checkId: billed-ten
+          equals: true
+        - checkId: accepted-eight
+          equals: true
+      outcomeId: two-unit-difference
+    - id: compare-equality
+      label: Check agreement of quantities only
+      all:
+        - checkId: equal
+          equals: true
+      outcomeId: quantity-agrees
+    - id: compare-higher
+      label: Billed field exceeds the accepted field
+      all:
+        - checkId: higher
+          equals: true
+      outcomeId: billed-higher
+    - id: compare-lower
+      label: Billed field is below the accepted field
+      all:
+        - checkId: lower
+          equals: true
+      outcomeId: billed-lower
+    - id: stop-unresolved
+      label: No supported comparison
+      all: []
+      outcomeId: no-comparison
+  outcomes:
+    - id: two-unit-difference
+      title: Flag a difference of 2 units
+      summary: "Invoice IV-730 and acceptance AC-512, read against CT-73 line M4, clause 7.2. 10 billed versus 8 accepted: flag the two unmatched units for review. The employee decides whether to request an amended invoice or more acceptance evidence."
+      documentIds:
+        - marker-invoice
+        - marker-acceptance
+        - marker-contract-line
+    - id: quantity-agrees
+      title: Quantity agrees only
+      summary: Invoice IV-730 and acceptance AC-512, read against CT-73 line M4, clause 7.2. {{billed}} billed and {{accepted}} accepted. This establishes agreement of quantity only. Price, tax and payment are separate; the employee decides next steps.
+      documentIds:
+        - marker-invoice
+        - marker-acceptance
+        - marker-contract-line
+    - id: billed-higher
+      title: Billed quantity is higher
+      summary: Invoice IV-730 and acceptance AC-512, read against CT-73 line M4, clause 7.2. {{billed}} billed exceeds {{accepted}} accepted. Flag the mismatch without substituting a quantity. The employee decides how to follow up.
+      documentIds:
+        - marker-invoice
+        - marker-acceptance
+        - marker-contract-line
+    - id: billed-lower
+      title: Billed quantity is lower
+      summary: Invoice IV-730 and acceptance AC-512, read against CT-73 line M4, clause 7.2. {{billed}} billed is below {{accepted}} accepted. The employee decides whether the invoice covers only part of the delivery.
+      documentIds:
+        - marker-invoice
+        - marker-acceptance
+        - marker-contract-line
+    - id: missing-acceptance
+      title: "Insufficient evidence: no acceptance entry"
+      summary: A billed figure cannot stand in for signed acceptance. Ask for a signed entry on the matched line; give no comparison.
+      documentIds:
+        - quantity-desk-card
+    - id: unknown-acceptance
+      title: Acceptance status unknown
+      summary: The entry’s endorsement has not been verified. Its numbers cannot support a finding yet; do not treat them as zero or as a confirmed missing entry.
+      documentIds:
+        - quantity-desk-card
+    - id: missing-accepted-cell
+      title: "Insufficient evidence: accepted quantity is blank"
+      summary: A signed entry with a blank quantity is not evidence of zero accepted. Obtain the completed entry before comparing.
+      documentIds:
+        - quantity-desk-card
+    - id: missing-billed-cell
+      title: "Insufficient evidence: billed quantity is blank"
+      summary: The invoice quantity is not supplied. Obtain the completed invoice row; do not fill it from the delivery count.
+      documentIds:
+        - quantity-desk-card
+    - id: no-case-view
+      title: No case finding
+      summary: No case result is available in this view. The desk card describes the matching process.
+      documentIds:
+        - quantity-desk-card
+    - id: no-comparison
+      title: Comparison unresolved
+      summary: Do not infer an amount. Ask the employee to check the evidence before making a finding.
+      documentIds:
+        - quantity-desk-card
+  cases:
+    - id: ten-versus-eight
+      title: Compare ten billed with eight accepted
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: two-unit-difference
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - difference of 2 units
+          - IV-730
+          - AC-512
+          - line M4, clause 7.2
+          - The employee decides
+    - id: ten-versus-ten
+      title: Change accepted to ten
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 10
+      expected:
+        outcomeId: quantity-agrees
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - Quantity agrees only
+          - 10 billed and 10 accepted
+          - the employee decides
+    - id: zero-is-a-number
+      title: Zero accepted is a signed count
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 0
+      expected:
+        outcomeId: billed-higher
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - 10 billed exceeds 0 accepted
+    - id: two-zeroes
+      title: Both rows explicitly record zero
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 0
+        accepted: 0
+      expected:
+        outcomeId: quantity-agrees
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - 0 billed and 0 accepted
+    - id: not-the-worked-pair
+      title: Use nine and seven rather than the printed pair
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 9
+        accepted: 7
+      expected:
+        outcomeId: billed-higher
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - 9 billed exceeds 7 accepted
+    - id: lower-than-accepted
+      title: Reverse the direction
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 6
+        accepted: 8
+      expected:
+        outcomeId: billed-lower
+        documentIds:
+          - marker-invoice
+          - marker-acceptance
+          - marker-contract-line
+        kind: answer
+        contains:
+          - 6 billed is below 8 accepted
+    - id: entry-absent
+      title: An old number is not an acceptance entry
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: absent
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: missing-acceptance
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - "Insufficient evidence: no acceptance entry"
+    - id: null-accepted
+      title: Clear a signed acceptance cell
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: null
+      expected:
+        outcomeId: missing-accepted-cell
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - blank quantity is not evidence of zero
+    - id: null-billed
+      title: Clear the invoice cell
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: null
+        accepted: 8
+      expected:
+        outcomeId: missing-billed-cell
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - invoice quantity is not supplied
+    - id: unknown-endorsement
+      title: Do not use a count with unknown status
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: unknown
+        billed: 10
+        accepted: 0
+      expected:
+        outcomeId: unknown-acceptance
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - Acceptance status unknown
+    - id: without-marker-invoice
+      title: Block the comparison without marker-invoice
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: two-unit-difference
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - No draft or action was produced.
+      disabledKnowledge:
+        - marker-invoice
+    - id: without-marker-acceptance
+      title: Block the comparison without marker-acceptance
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: two-unit-difference
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - No draft or action was produced.
+      disabledKnowledge:
+        - marker-acceptance
+    - id: without-marker-contract-line
+      title: Block the comparison without marker-contract-line
+      inputs:
+        access: assigned
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: two-unit-difference
+        documentIds: []
+        kind: missing-knowledge
+        contains:
+          - "Run blocked:"
+          - No draft or action was produced.
+      disabledKnowledge:
+        - marker-contract-line
+    - id: link-line
+      title: "No comparison: line linkage"
+      inputs:
+        access: assigned
+        linkage: line
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+    - id: link-supplier
+      title: "No comparison: supplier linkage"
+      inputs:
+        access: assigned
+        linkage: supplier
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+    - id: link-case
+      title: "No comparison: case linkage"
+      inputs:
+        access: assigned
+        linkage: case
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+    - id: link-unknown
+      title: "No comparison: unknown linkage"
+      inputs:
+        access: assigned
+        linkage: unknown
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+    - id: officer-denied
+      title: No result on denied assignment
+      inputs:
+        access: denied
+        linkage: matched
+        endorsement: signed
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+    - id: officer-unverified
+      title: An unknown assignment does not grant access
+      inputs:
+        access: unknown
+        linkage: matched
+        endorsement: absent
+        billed: 10
+        accepted: 8
+      expected:
+        outcomeId: no-case-view
+        documentIds:
+          - quantity-desk-card
+        kind: answer
+        contains:
+          - No case result is available
+implementation:
+  - title: Build this in the real service
+    description: Bind access to the employee’s assignment. Retain row keys, units, source versions and signed status alongside the numeric cells. Keep review of a discrepancy separate from the authority to release funds.
+  - title: What to measure
+    description: Count findings backed by all three sources. Repeat with zero, blank, unknown endorsement and mismatched identifiers; none should silently become a payable quantity.
+  - title: Scope of this draft
+    description: The employee decides what to do next. The assistant compares typed fictional fields; it does not read scans, authorise payment or decide entitlement. This local exercise uses fictional evidence; it does not access a live system or make an official determination. The Microsoft Learn reference is about agent authoring, not municipal policy.

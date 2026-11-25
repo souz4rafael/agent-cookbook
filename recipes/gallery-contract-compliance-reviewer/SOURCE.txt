@@ -1,0 +1,19 @@
+Upstream: Contract Compliance Reviewer, Adriana Trujillo, version 1.0.0.1.
+Gallery: https://microsoft.github.io/copilot-studio-gallery/solutions/contract-compliance-reviewer/
+ZIP inspected: https://microsoft.github.io/copilot-studio-gallery/bundles/contract-compliance-reviewer.zip
+SHA-256: 003098b05287193943dacd6f61335611d05865ce8fccb1bb94c695c4fa73bd87
+Repository licence: https://github.com/microsoft/copilot-studio-gallery/blob/main/LICENSE (MIT).
+
+Package paths inspected, not executed:
+solution.xml
+bots/Default_Contract_Compliance_Reviewer_8c0b11/configuration.json
+botcomponents/Default_Contract_Compliance_Reviewer_8c0b11.file.skillmd_maMHB/filedata/SKILL.md
+botcomponents/Default_Contract_Compliance_Reviewer_8c0b11.file.skillmd_Dkufm/filedata/SKILL.md
+botcomponents/Default_Contract_Compliance_Reviewer_8c0b11.file.addcommentspy_CVgsX/filedata/add_comments.py
+botcomponents/Default_Contract_Compliance_Reviewer_8c0b11.file.addcommentspy_MBSfM/filedata/add_comments.py
+botcomponents/Default_Contract_Compliance_Reviewer_8c0b11.LegalDocumentsTest_RXDsoHpWlm9HjIoNKAx2j/data
+
+Observed configuration: web search is enabled, and the organisational knowledge component points to a placeholder SharePoint folder. Two inline skills distinguish internal review from legal review. The legal instructions ask for jurisdiction if absent and direct the agent to official sources. Optional internal policy evidence has its own finding category.
+The two packaged Python helpers receive quoted passages and findings prepared by the agent; they handle Word markup, not legal analysis. The PDF route is specified in the skill instructions. No helper, document, model or connection from the ZIP is used by the Cookbook.
+
+Local implementation: an original, deterministic, pre-signature payment-term exercise. It compares structured values using one training contract, an optional procurement playbook and a dated, invented authority card. Both passes can run together. A citation supports only its own finding; unavailable supplemental evidence leaves the other grounded findings intact. The authority card is a stand-in for testing source applicability, not a source of real law. Outputs are chat findings and an editable reviewer note, not an annotated Word/PDF. No real legal advice or contract approval. No upstream code or package assets are redistributed.

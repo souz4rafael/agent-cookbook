@@ -1,0 +1,21 @@
+Alderfen | After register: alternative paper packets
+Fictional training material. Not an official service record or policy.
+
+Window two covers exercise days 11–20 inclusive. Use ONE packet with the before register, never both after packets together. Copy and Plain replay the same four standard single-sheet templates A–D. Copy tests a slip that carries the accepted edition seal forward. Plain is an alternative fictional run of the old form.
+
+COPY PACKET
+A — Day 11 Intake accepts seal; day 12 Print reads copied seal; day 14 Print releases.
+B — Day 12 Intake accepts seal; day 13 Print reads copied seal; day 16 Print releases.
+C — Day 13 Intake accepts seal; day 14 Print gets a blank seal box and returns the job to Intake for the edition seal; day 15 Intake copies the same seal; day 16 Print receives it; day 17 Print releases.
+D — Day 14 Intake accepts seal; day 15 Print reads copied seal; day 17 Print releases.
+
+PLAIN PACKET (alternative, not a third period)
+A — Day 11 Intake accepts seal; day 12 Print returns job to Intake for the same edition seal; day 13 Intake copies it; day 14 Print receives; day 16 Print releases.
+B — Day 12 Intake accepts seal; day 13 Print returns job to Intake for the same edition seal; day 15 Intake copies it; day 16 Print receives; day 18 Print releases.
+C — Day 13 Intake accepts seal; day 14 Print returns job to Intake for the same edition seal; day 15 Intake copies it; day 16 Print receives; day 17 Print releases.
+D — Day 14 Intake accepts seal; day 15 Print reads seal; day 17 Print releases without a return.
+
+EXCEPTION PACKETS (each a separate variation on Copy)
+Mixed stock: keep A–C. Replace D with X, an oversize foldout: day 14 Intake accepts seal, day 15 Print reads seal, day 17 Print releases. The tempting totals still cover four jobs, but X is not the same template or work type.
+Two pairs: only A and B are available from each register. Do not silently bring C and D back into the denominator.
+Torn slip: keep all Copy events except C’s day 17 release stamp. Day 16 is a receipt at Print, not a release. The common endpoint is unknown for C.
