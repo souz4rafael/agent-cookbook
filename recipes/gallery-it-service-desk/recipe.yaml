@@ -5,6 +5,10 @@ status: published
 title: "IT service desk: the empty shift board"
 summary: A print-room employee opens Foldline and sees no cards. Find out whose work is affected and when the list is needed. Offer a matching article, ask for a missing fact, or prepare a short note for a colleague to review.
 industry: Employee IT support
+harnessFeatures:
+  topics: false
+  additionalSettingsWebBrowsing: false
+  sourceUrl: https://github.com/microsoft/copilot-studio-gallery/tree/d0407c114eeaf8ced73dcbda305a863630efc8ff/submissions/it-service-desk-assistant/solution
 difficulty: intermediate
 accentIcon: document
 learningGoals:

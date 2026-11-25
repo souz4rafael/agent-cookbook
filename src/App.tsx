@@ -64,7 +64,10 @@ export default function App() {
   }, [recipe, route.kind])
 
   if (route.kind === 'home' || route.kind === 'agents' || route.kind === 'scenarios') return <Catalog key={route.kind === 'agents' ? `agents:${route.search}` : route.kind} recipes={recipes} page={route.kind} initialSearch={route.kind === 'agents' ? route.search : ''} />
-  if (recipe) return <Studio key={`${recipe.id}:${recipe.revision}`} recipe={recipe} />
+  if (recipe && route.kind === 'recipe') {
+    const entryMode = route.entryMode ?? 'build'
+    return <Studio key={`${recipe.id}:${recipe.revision}:${entryMode}`} recipe={recipe} entryMode={entryMode} />
+  }
   return (
     <div className="not-found">
       <Brand />

@@ -5,6 +5,11 @@ status: published
 title: "Contract Compliance Reviewer: which source supports the finding?"
 summary: Two payment periods in a lantern hire draft do not agree. Compare the clauses before signature, then see why an internal exception and a legal question need different evidence and different reviewers.
 industry: Legal and procurement
+harnessFeatures:
+  topics: false
+  # The export has agentSettings.web.enableWebSearch=true, not an Additional settings entry.
+  additionalSettingsWebBrowsing: false
+  sourceUrl: https://github.com/microsoft/copilot-studio-gallery/tree/fa078c687a99b0265394d700def4d8605dd554cc/submissions/contract-compliance-reviewer/solution
 difficulty: intermediate
 accentIcon: document
 learningGoals:

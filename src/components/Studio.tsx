@@ -8,6 +8,7 @@ import {
   WrenchRegular as Wrench,
 } from '@fluentui/react-icons'
 import type { CompiledRecipe, Connection, GuideStep, Session } from '../domain/types.ts'
+import type { RecipeEntryMode } from '../domain/routes.ts'
 import { getAvailableKnowledge, isStepComplete, isToolAvailable } from '../domain/engine.ts'
 import { useRecipeSession } from '../hooks/useRecipeSession.ts'
 import { ConnectionWizard, DocumentViewer } from './Connections.tsx'
@@ -56,14 +57,14 @@ function ConfigurationCard({ recipe, session, onChooser, onDocument, toggleKnowl
   )
 }
 
-export function Studio({ recipe }: { recipe: CompiledRecipe }) {
+export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe; entryMode?: RecipeEntryMode }) {
   const { session, storageWarning, error, updateProfile, updateIcon, connect, toggleKnowledge, toggleTool, sendMessage, reactToMessage, saveEvaluation, runEvaluation, confirmHandoff, reset, clearChat, updateLabInputs, runLab, openCitation } = useRecipeSession(recipe)
-  const [mode, setMode] = useState<HarnessMode>('build')
+  const [mode, setMode] = useState<HarnessMode>(entryMode)
   const [chooser, setChooser] = useState<ChooserState | null>(null)
   const [connection, setConnection] = useState<Connection | null>(null)
   const [documentId, setDocumentId] = useState<string | null>(null)
   const [handoff, setHandoff] = useState<HandoffOffer | null>(null)
-  const [showReview, setShowReview] = useState(true)
+  const [showReview, setShowReview] = useState(entryMode === 'build')
   const [showExample, setShowExample] = useState(false)
   const [showIconPicker, setShowIconPicker] = useState(false)
   const [showPublish, setShowPublish] = useState(false)

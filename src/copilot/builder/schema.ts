@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { recipeIdSchema, recipeTextSchema } from '../../recipes/primitives.ts'
+import { conversationsSchema } from '../../conversations/schema.ts'
 
 export const knowledgeKinds = [
   'cloud-files', 'outlook', 'teams', 'fabric', 'connectors', 'dynamics', 'web', 'attachments',
@@ -57,6 +58,7 @@ export const builderRecipeSchema = z.strictObject({
     description: builderTextSchema(1000),
   })).max(builderLimits.skills),
   starterPrompts: z.array(builderPromptSchema).max(builderLimits.prompts),
+  conversations: conversationsSchema.optional(),
   simulation: z.strictObject({
     fallback: builderTextSchema(12_000),
     rules: z.array(z.strictObject({

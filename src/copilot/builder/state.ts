@@ -123,6 +123,7 @@ export function toPreviewAgent(recipe: BuilderRecipe, draft: BuilderDraft): Agen
       .map(prompt => ({ label: prompt.title, prompt: prompt.message })),
     sources: sources.map(source => ({ title: source.title, content: source.content })),
     fallback: `Local simulation: ${recipe.simulation.fallback}`,
+    ...(recipe.conversations ? { conversations: recipe.conversations } : {}),
     rules: recipe.simulation.rules.map(rule => {
       const missingSources = rule.requiredSources.filter(id => !sourceIds.has(id))
       const missingSkills = rule.requiredSkills.filter(id => !skillIds.has(id))

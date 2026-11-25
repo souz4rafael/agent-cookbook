@@ -2,11 +2,19 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
 import { readRoute } from '../src/domain/routes.ts'
-import { filterRecipes, orderHomeRecipes } from '../src/domain/catalog.ts'
+import { filterRecipes, orderHomeRecipes, recipeHarness } from '../src/domain/catalog.ts'
 import { getRecipeScenario } from '../src/content/scenarios.ts'
 import { compiledRecipeSchema } from '../src/domain/validation.ts'
 
 const recipes = compiledRecipeSchema.array().parse(JSON.parse(readFileSync(new URL('../src/generated/recipes.json', import.meta.url), 'utf8')))
+
+test('harness uses native Topics unless Additional settings exposes Web browsing', () => {
+  assert.equal(recipeHarness({}), 'Copilot Harness')
+  for (const topics of [false, true]) {
+    assert.equal(recipeHarness({ harnessFeatures: { topics, additionalSettingsWebBrowsing: false } }), topics ? 'Standard Harness' : 'Copilot Harness')
+    assert.equal(recipeHarness({ harnessFeatures: { topics, additionalSettingsWebBrowsing: true } }), 'Copilot Chat')
+  }
+})
 
 test('home, agents and legacy catalogue links have distinct routes', () => {
   for (const hash of ['', '#', '#/']) assert.deepEqual(readRoute(hash), { kind: 'home' })

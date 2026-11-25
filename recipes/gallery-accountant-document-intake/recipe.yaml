@@ -5,6 +5,10 @@ status: published
 title: Paper Quay invoice reconciliation
 summary: Explain a bindery's July net from five intake rows. Compare a test-inclusive figure, then trace a missing credit to the supplier's return allowance.
 industry: Finance and accounting
+harnessFeatures:
+  topics: false
+  additionalSettingsWebBrowsing: false
+  sourceUrl: https://github.com/microsoft/copilot-studio-gallery/tree/90f7a601556e46c7f7dcc107551ba375b9bb1ce0/submissions/accountant-document-intake/solution
 difficulty: intermediate
 accentIcon: document
 learningGoals:

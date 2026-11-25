@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import type { ConversationDefinition } from '../conversations/schema.ts'
 
 export interface ReplySection {
   title: string
@@ -21,6 +22,7 @@ export interface AgentDefinition {
   sources: { title: string; content: string }[]
   rules: { keywords: string[]; text: string; sections: ReplySection[] }[]
   fallback: string
+  conversations?: ConversationDefinition[]
 }
 
 export type ResponseStyle = 'Auto' | 'Quick response' | 'Think deeper'

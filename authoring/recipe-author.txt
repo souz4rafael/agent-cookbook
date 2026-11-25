@@ -79,8 +79,20 @@ Runtime: src/domain/engine.ts, lab.ts, evaluation.ts and actions.ts.
 The original four business stories live in src/content/scenarios.ts. New recipes
 can supply a scenario section in their YAML, with business context, a reference
 label and home: {challenge, experiment, takeaway, scope}. A group identifies
-the journey title and its guidance or operations perspective. Home and Explore
-business scenarios use this same content; do not create recipe-specific JSX.
+the journey title and its guidance or operations perspective. Scenarios shows
+the summaries; selecting a card opens its full story. Cook this recipe opens
+Preview directly with the existing configuration; it does not run or configure a case.
+Scenarios can be filtered by difficulty and industry. The Agents table sorts by
+name, difficulty, industry, estimated duration or agent harness when a column heading is selected.
+The harness column uses a Cookbook classification, not an official runtime ID.
+For an adapted ZIP, review its bot components and agent configuration and record
+harnessFeatures: {topics, additionalSettingsWebBrowsing, sourceUrl}. Link to the
+reviewed package. Count native Topics, not skills, starters, or guided scripts.
+The presence of Additional settings > Web browsing (even switched off) means
+Copilot Chat. Generic web search alone does not establish this. Otherwise use
+Standard Harness for Topics, Copilot Harness for no Topics. With no source
+package, classify the recipe itself; no declared features means Copilot Harness.
+Do not create recipe-specific JSX.
 Prefer citizen-qa for grounded Q&A; document-processing-routing for routing;
 benefit-eligibility for preliminary checks; upskilling-recommendation for
 recommendations. Use a Gallery recipe as a template for an attributed adaptation.

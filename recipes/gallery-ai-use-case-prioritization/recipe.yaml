@@ -5,6 +5,11 @@ status: published
 title: "AI use case prioritization: The return-desk test"
 summary: A prop library has a proposal for matching the names on returned crates to its catalogue. Use one shift of evidence to decide what to ask next, when a lookup will do, and whether to draft a comparison for a reviewer.
 industry: Arts and cultural services
+harnessFeatures:
+  topics: false
+  # Evaluation cases and starters are not Topics. agentSettings.web.enableWebSearch is false.
+  additionalSettingsWebBrowsing: false
+  sourceUrl: https://microsoft.github.io/copilot-studio-gallery/solutions/ai-use-case-prioritization-agent/
 difficulty: intermediate
 accentIcon: document
 learningGoals:

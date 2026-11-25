@@ -103,6 +103,7 @@ export interface Recipe {
   title: string
   summary: string
   industry: string
+  harnessFeatures?: { topics: boolean; additionalSettingsWebBrowsing: boolean; sourceUrl?: string }
   difficulty: 'beginner' | 'intermediate'
   estimatedMinutes?: number
   accentIcon: 'citizen' | 'document' | 'learning' | 'benefit'

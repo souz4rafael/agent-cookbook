@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "dynamics-365-licensing-advisor",
+  "title": "Dynamics 365 Licensing Advisor",
+  "summary": "Six people need Dynamics 365. Do they all do the same work? Build a shortlist from their tasks, then identify what still needs a licensing check.",
+  "icon": "expert",
+  "profile": {
+    "name": "Dynamics 365 Licensing Advisor",
+    "description": "Practise a Dynamics 365 and Power Platform licensing conversation with the fictional Bracken Cycles sales team.",
+    "instructions": "Start with the work, not the edition. Ask who will use the application, what each person needs to do, and what subscriptions they already have. Explain why a change in requirements changes the shortlist. Be concise, friendly and specific.\n\nConsult the sample internal playbook first. If it does not cover a requirement, identify the relevant Microsoft licensing guidance and what needs checking there. Distinguish a candidate to evaluate from a confirmed entitlement. Do not quote prices, promise discounts, assign licences or approve a purchase.\n\nThis is an offline adaptation of an Agent Builder agent. The examples replace its private knowledge and online sources. No SharePoint, connector, web search, code execution or image generation runs."
+  },
+  "sections": ["instructions", "knowledge", "prompts"],
+  "knowledge": [
+    { "id": "cloud-files", "label": "Sample internal playbook", "enabled": true, "scope": "work" },
+    { "id": "connectors", "label": "Sample licensing guidance index", "enabled": true, "scope": "work" },
+    { "id": "web", "label": "Offline public guidance checklist", "enabled": true, "scope": "web" }
+  ],
+  "sources": [
+    { "id": "discovery-playbook", "title": "Bracken Cycles: discovery notes", "kind": "cloud-files", "content": "Fictional case: four sellers create opportunities, one manager wants a regional forecast, and one coordinator needs a repair-intake app. Existing subscriptions, connector requirements and contract terms are unknown. Start with the work of each role. Do not turn six people into six identical licences. Compare Sales Professional for the sales pipeline and Sales Enterprise for the forecasting requirement; neither is an approved purchase." },
+    { "id": "workload-index", "title": "From workload to licensing guide", "kind": "connectors", "content": "Offline teaching index. For sales pipeline and forecasting, compare editions in the Dynamics 365 Licensing Guide. For the repair app, list its users, data sources, connectors and relationship to the licensed Dynamics application, then consult the Power Platform Licensing Guide. The index contains no use rights or prices." },
+    { "id": "terms-check", "title": "What the sample playbook cannot settle", "kind": "web", "content": "Offline checklist, not a web search result. Before a real recommendation, verify the relevant current Microsoft Product Terms, agreement, market and licensing guide. For nonprofit enquiries, eligibility and availability of an offer need separate confirmation. No live offer, entitlement or discount is included here." }
+  ],
+  "skills": [],
+  "starterPrompts": [
+    { "id": "small-business", "title": "Recommend a licence", "message": "Which licence should a small business evaluate for its sales team?" },
+    { "id": "power-platform", "title": "Explore Power Platform options", "message": "What Power Platform questions should we ask about the repair-intake app?" },
+    { "id": "requirements", "title": "Clarify requirements", "message": "What information is missing before we recommend licences for Bracken Cycles?" },
+    { "id": "compare-sales", "title": "Compare Sales editions", "message": "Compare Sales Professional and Sales Enterprise for a team that needs a regional forecast." },
+    { "id": "nonprofit", "title": "Check nonprofit options", "message": "Would a nonprofit with the same requirements qualify for a different offer?" },
+    { "id": "expansion", "title": "Assess an upgrade", "message": "When would an upgrade solve a problem for this team?" }
+  ],
+  "conversations": [
+    {
+      "schemaVersion": 1, "revision": 1, "id": "same-team-different-work", "title": "Six people, three jobs", "mode": "simulated",
+      "starter": { "label": "Advise Bracken Cycles", "prompt": "We have six people. Do they all need the same licence?" },
+      "variationPolicy": "stable-per-session", "onUnexpectedInput": "stay-and-guide", "variables": {},
+      "steps": [
+        { "id": "ask", "role": "assistant", "variants": [
+          { "id": "work", "text": "Not necessarily. Four people sell bikes, one manages the region and one coordinates repairs. Whose daily work should we look at first?" },
+          { "id": "roles", "text": "Headcount tells us how many people there are, not what they need. Shall we start with the sellers' pipeline, the manager's forecast or the coordinator's repair app?" }
+        ] },
+        { "id": "role", "role": "user", "choices": [
+          { "id": "seller", "label": "The sellers track opportunities", "acceptedTexts": ["Sellers"], "next": "sales" },
+          { "id": "manager", "label": "The manager needs a regional forecast", "acceptedTexts": ["Manager"], "next": "compare" },
+          { "id": "coordinator", "label": "The coordinator needs a repair-intake app", "acceptedTexts": ["Coordinator"], "next": "app" }
+        ] },
+        { "id": "sales", "role": "simulation", "prompt": "The sellers track opportunities.", "end": true },
+        { "id": "compare", "role": "simulation", "prompt": "Compare Sales editions for the regional forecast.", "end": true },
+        { "id": "app", "role": "simulation", "prompt": "Scope the repair-intake app.", "end": true }
+      ]
+    }
+  ],
+  "simulation": {
+    "fallback": "This offline advisor covers the Bracken Cycles case. Try a suggested prompt to compare sales roles, scope a Power Platform app or identify the terms that still need verification. It cannot look up your agreement or give a current quote.",
+    "rules": [
+      { "id": "eligibility", "keywords": ["nonprofit", "non-profit", "charity"], "requiredSources": ["terms-check"], "requiredSkills": [],
+        "text": "Separate the licensing need from eligibility for an offer. Being a nonprofit does not settle either question.",
+        "sections": [{ "title": "Two checks before discussing price", "items": ["First scope the users and workloads just as you would for Bracken Cycles.", "Then confirm the organisation's eligibility, market and available offers with the current Microsoft nonprofit programme. The sample contains no approval or discount."] }] },
+      { "id": "expansion", "keywords": ["upgrade", "upsell"], "requiredSources": ["discovery-playbook"], "requiredSkills": [],
+        "text": "Do not upgrade all six people because the manager needs a forecast. Find out which task the current configuration cannot support.",
+        "sections": [{ "title": "Make the case testable", "items": ["Ask the manager to show the regional forecast decision that cannot be made today. Check existing rights and configuration before adding licences.", "If a higher edition is still a candidate, test that scenario and verify who needs access under the current terms. A repair-intake app is a separate requirement."] }] },
+      { "id": "app-scope", "keywords": ["power platform", "repair-intake", "power apps"], "requiredSources": ["discovery-playbook", "workload-index"], "requiredSkills": [],
+        "text": "The coordinator needs an app for repairs, not necessarily the sellers' CRM licence. Is the app part of the Dynamics sales workflow or a standalone application?",
+        "sections": [{ "title": "What changes the shortlist", "items": ["For an extension of the sales workflow, identify the tables, users and operations and verify whether their existing use rights cover that exact context.", "For a standalone repair app, evaluate Power Apps licensing against its users, data and connectors. Do not assume a seller's subscription covers the coordinator."] }] },
+      { "id": "edition-comparison", "keywords": ["compare sales", "sales enterprise", "forecast"], "requiredSources": ["discovery-playbook", "workload-index"], "requiredSkills": [],
+        "text": "Sales Professional is a starting candidate for the sellers' opportunity pipeline. Put Sales Enterprise on the comparison list for the manager's regional forecast.",
+        "sections": [{ "title": "What would change the choice?", "items": ["Ask whether a pipeline view is enough, or whether the manager needs a forecasting hierarchy and roll-up. Demonstrate that exact task before proposing an edition.", "Check the current edition comparison, users who enter or consume forecast data, and deployment and coexistence restrictions. This is a shortlist, not confirmation that editions can be mixed."] }] },
+      { "id": "discovery", "keywords": ["information", "requirements", "clarify"], "requiredSources": ["discovery-playbook"], "requiredSkills": [],
+        "text": "We know the three jobs. What subscriptions do these people have already, and which task can each person not complete today?",
+        "sections": [{ "title": "Record before recommending", "items": ["For each role, record the application, read versus update needs, and frequency of access.", "Ask for the app's data sources, the required forecast output and the applicable purchasing market. Keep unconfirmed answers open."] }] },
+      { "id": "sales-intake", "keywords": ["small business", "track opportunities", "sales team"], "requiredSources": ["discovery-playbook"], "requiredSkills": [],
+        "text": "For the four Bracken sellers who track leads and opportunities, evaluate Sales Professional first. Company size alone is not a reason to pick an edition.",
+        "sections": [{ "title": "Next question", "items": ["Does the team need only the opportunity pipeline, or must it also produce a regional forecast? Try Compare Sales editions to explore the second case.", "Check existing subscriptions and current terms before recommending a purchase. The coordinator's repair app needs its own assessment."] }] }
+    ]
+  }
+}

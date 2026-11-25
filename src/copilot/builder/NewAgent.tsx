@@ -17,7 +17,7 @@ export function NewAgent({ drafts, onSelect, onInfo }: {
 }) {
   const [tab, setTab] = useState<'ideas' | 'mine'>('ideas')
   const [goal, setGoal] = useState('')
-  const first = builderRecipes[0]
+  const first = builderRecipes.find(recipe => recipe.id === 'rle-starter') ?? builderRecipes[0]
   function submit() {
     if (!first) return onInfo('No recipes available', 'Add a valid JSON recipe to the recipe catalogue before starting an agent.')
     onSelect(first, goal)

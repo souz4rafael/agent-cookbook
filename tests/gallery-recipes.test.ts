@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
 import { compileRecipes } from '../scripts/compile-recipes.ts'
+import { recipeHarness } from '../src/domain/catalog.ts'
 import { getBusinessScenarios, getScenarioRecipe } from '../src/content/scenarios.ts'
 import { advanceConversation, startConversation } from '../src/conversations/runtime.ts'
 import type { ConversationRun } from '../src/conversations/runtime.ts'
@@ -10,6 +11,15 @@ import { createSession, getConfigurationFingerprint, respondLab, selectKnowledge
 
 const recipes = await compileRecipes(fileURLToPath(new URL('../recipes/', import.meta.url)))
 const gallery = recipes.filter(r => r.id.startsWith('gallery-'))
+
+test('the four reviewed Gallery packages have neither Topics nor Additional settings Web browsing', () => {
+  for (const r of gallery) {
+    assert.equal(r.harnessFeatures?.topics, false)
+    assert.equal(r.harnessFeatures.additionalSettingsWebBrowsing, false)
+    assert.ok(r.harnessFeatures.sourceUrl)
+    assert.equal(recipeHarness(r), 'Copilot Harness')
+  }
+})
 
 test('each Gallery recipe is attributed and reachable from the public scenario catalogue', () => {
   assert.equal(gallery.length, 4)

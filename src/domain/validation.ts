@@ -80,6 +80,15 @@ export const agentProfileSchema = z.strictObject({
   detail: z.enum(['concise', 'detailed']),
 })
 
+const sourceUrl = z.url().max(2_000).refine((value) => {
+  try {
+    const url = new URL(value)
+    return url.protocol === 'https:' && !url.username && !url.password
+  } catch {
+    return false
+  }
+}, 'The source must use HTTPS without credentials in the URL.')
+
 const recipeFields = {
   schemaVersion: z.literal(1),
   revision: z.number().int().min(1).max(1_000_000),
@@ -88,19 +97,13 @@ const recipeFields = {
   title,
   summary: shortText,
   industry: z.string().min(1).max(100),
+  harnessFeatures: z.strictObject({ topics: z.boolean(), additionalSettingsWebBrowsing: z.boolean(), sourceUrl: sourceUrl.optional() }).optional(),
   difficulty: z.enum(['beginner', 'intermediate']),
   estimatedMinutes: z.number().int().min(1).max(180).optional(),
   accentIcon: z.enum(['citizen', 'document', 'learning', 'benefit']),
   learningGoals: z.array(shortText).min(1).max(12),
   scenario: scenarioSchema.optional(),
-  sourceUrl: z.url().max(2_000).refine((value) => {
-    try {
-      const url = new URL(value)
-      return url.protocol === 'https:' && !url.username && !url.password
-    } catch {
-      return false
-    }
-  }, 'The source must use HTTPS without credentials in the URL.'),
+  sourceUrl,
   agent: agentProfileSchema,
   instructionStyles: z.strictObject({
     structured: answer.max(3000),
