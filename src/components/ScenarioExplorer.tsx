@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft20Regular, ArrowRight20Regular, ArrowUpRight20Regular, BookOpen20Regular, Checkmark16Regular, Clock16Regular } from '@fluentui/react-icons'
+import { ArrowRight20Regular, ArrowUpRight20Regular, BookOpen20Regular, Checkmark16Regular, Clock16Regular } from '@fluentui/react-icons'
 import type { CompiledRecipe } from '../domain/types.ts'
 import { allCategories, compareCategories, getScenarioEntries, matchesCategories, recipeDuration, recipeDurationHint, recipeLevel } from '../domain/catalog.ts'
 import { recipeHref } from '../domain/routes.ts'
@@ -88,7 +88,7 @@ export function ScenarioDetails({ entry, onClose }: { entry: ScenarioEntry; onCl
     </div>
     <div className="modal-footer">
       {recipe && <RecipeMeta recipe={recipe} />}
-      {recipe ? <a className="button primary" href={recipeHref(recipe.id, 'preview')} title="Open this agent's Preview chat">Cook this recipe <ArrowRight20Regular aria-hidden="true" /></a>
+      {recipe ? <a className="button primary" href={recipeHref(recipe.id)} title="Open Build and review the recipe steps">Cook this recipe <ArrowRight20Regular aria-hidden="true" /></a>
         : <button className="button secondary" type="button" onClick={onClose}>Back to scenarios</button>}
     </div>
   </Modal>
@@ -105,7 +105,6 @@ export function ScenarioExplorer({ recipes }: { recipes: CompiledRecipe[] }) {
     && (filter === 'all' || (story?.group ? `journey:${story.group.journey}` : 'standalone') === filter))
   if (sortBy) visible.sort((a, b) => compareCategories(a.recipe, b.recipe, sortBy) || a.name.localeCompare(b.name))
   return <div className="scenario-explorer">
-    <nav className="scenario-breadcrumbs" aria-label="Scenario navigation"><a href="#/"><ArrowLeft20Regular aria-hidden="true" />Home</a><a href="#/agents">Browse agents <ArrowRight20Regular aria-hidden="true" /></a></nav>
     <header className="scenario-hero">
       <span className="scenario-kicker">AGENTS COOKBOOK</span><h1>Scenarios</h1>
       <p>Explore business challenges across industries. Choose an agent to read its story and see what you'll practise before you cook the recipe.</p>

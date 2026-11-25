@@ -22,6 +22,8 @@ import { AgentIconPicker } from './AgentIcon.tsx'
 import { StudioNavigation } from './StudioNavigation.tsx'
 import { ChatHistoryLanding } from './ChatHistoryLanding.tsx'
 import { ReviewGuide } from './ReviewGuide.tsx'
+import { ReviewCueContext, useReviewSpotlight } from './reviewCue.ts'
+import './ReviewCue.css'
 import { AgentOptionsMenu } from './AgentOptionsMenu.tsx'
 import { InteractiveLab } from './InteractiveLab.tsx'
 import { SkillReferences } from './SkillReferences.tsx'
@@ -65,6 +67,11 @@ export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe
   const [documentId, setDocumentId] = useState<string | null>(null)
   const [handoff, setHandoff] = useState<HandoffOffer | null>(null)
   const [showReview, setShowReview] = useState(entryMode === 'build')
+  const [guided, setGuided] = useState(false)
+  const [guideStep, setGuideStep] = useState<GuideStep | null>(null)
+  const guideRoot = useReviewSpotlight(guided, guideStep?.id)
+  const stepComplete = !!guideStep && isStepComplete(recipe, session, guideStep)
+  function openReview() { setGuideStep(null); setShowReview(true) }
   const [showExample, setShowExample] = useState(false)
   const [showIconPicker, setShowIconPicker] = useState(false)
   const [showPublish, setShowPublish] = useState(false)
@@ -108,7 +115,8 @@ export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe
     document.getElementById(`mode-${modes[next].id}`)?.focus()
   }
   return (
-    <div className="harness-shell">
+    <ReviewCueContext.Provider value={guided ? guideStep?.completeWhen ?? null : null}>
+    <div className="harness-shell" ref={guideRoot}>
       <a className="skip-link" href="#studio-main" onClick={event => { event.preventDefault(); document.getElementById('studio-main')?.focus() }}>Skip to workspace</a>
       <StudioNavigation activePage={showChatHistory ? 'chat' : 'agents'} onChat={() => setShowChatHistory(true)} onEnvironment={() => setShowEnvironment(true)} />
       {showChatHistory && <ChatHistoryLanding onReturnToRecipe={() => setShowChatHistory(false)} />}
@@ -122,15 +130,16 @@ export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe
               <button className="icon-button toolbar-share" type="button" disabled aria-label="Share agent" title="Sharing is not simulated"><Share20Regular aria-hidden="true" /></button>
               <span className={`save-status${storageWarning ? ' warning' : ''}`} title={storageWarning ?? 'Configuration saved only in this browser'}><Save aria-hidden="true" /><span className="sr-only">{storageWarning ? 'Storage notice' : 'Saved locally'}</span></span>
             </div>
-            <button ref={reviewButton} className="button secondary review-button" type="button" aria-haspopup="dialog" aria-expanded={showReview} onClick={() => setShowReview(true)}><span className="review-icon"><ClipboardCheck aria-hidden="true" /><span className="review-count" aria-label={`${remaining} remaining steps`}>{remaining}</span></span>Review</button>
+            <button ref={reviewButton} className="button secondary review-button" type="button" aria-haspopup="dialog" aria-expanded={showReview} onClick={openReview}><span className="review-icon"><ClipboardCheck aria-hidden="true" /><span className="review-count" aria-label={`${remaining} remaining steps`}>{remaining}</span></span>Review</button>
             <button className="button publish-button" type="button" onClick={() => setShowPublish(true)}>Publish</button>
           </div>
         </header>
+        {guided && guideStep && !showReview && <div className="review-step-notice"><span role="status">{stepComplete ? 'Step complete' : 'Guided step'}: <strong>{guideStep.title}</strong></span><button className="text-button" type="button" onClick={openReview}>Back to Review</button></div>}
         {storageWarning && <div className="storage-warning" role="status"><Info fontSize={16} aria-hidden="true" /><p>{storageWarning} Download the implementation brief to keep your choices.</p></div>}
         {error && <div className="error-notice" role="alert"><Info fontSize={16} aria-hidden="true" /><p>{error}</p></div>}
         <main className="harness-content" id={showChatHistory ? undefined : 'studio-main'} role="tabpanel" aria-labelledby={`mode-${mode}`} tabIndex={-1}>
           {mode === 'build' && <div className="build-layout"><BuildEditor recipe={recipe} session={session} updateProfile={updateProfile} onChangeIcon={() => setShowIconPicker(true)} /><ConfigurationCard recipe={recipe} session={session} onChooser={openChooser} onDocument={setDocumentId} toggleKnowledge={toggleKnowledge} toggleTool={toggleTool} /></div>}
-          <TestPanel key={resetCount} active={mode === 'preview' && !showChatHistory} recipe={recipe} session={session} sendMessage={sendMessage} clearChat={clearChat} onDocument={setDocumentId} onCitation={id => { if (openCitation(id)) setDocumentId(id) }} onHandoff={setHandoff} onReact={reactToMessage} />
+          <TestPanel key={resetCount} active={mode === 'preview' && !showChatHistory} recipe={recipe} session={session} sendMessage={sendMessage} clearChat={clearChat} onDocument={setDocumentId} onCitation={id => { if (openCitation(id)) setDocumentId(id) }} onHandoff={setHandoff} onReact={reactToMessage} onGuidedExample={openExample} />
           {mode === 'evaluate' && <Suspense fallback={<p className="workspace-page" role="status">Loading Evaluate...</p>}><EvaluatePanel recipe={recipe} session={session} onSave={saveEvaluation} onRun={runEvaluation} onDocument={setDocumentId} /></Suspense>}
           {mode === 'monitor' && <Suspense fallback={<p className="workspace-page" role="status">Loading Monitor...</p>}><MonitorPanel recipe={recipe} session={session} /></Suspense>}
         </main>
@@ -140,7 +149,7 @@ export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe
       {connection && <ConnectionWizard key={connection.id} connection={connection} currentResource={session.connections[connection.id]} onClose={() => setConnection(null)} onConnect={resourceId => { connect(connection.id, resourceId); setConnection(null) }} />}
       {sourceDocument && <DocumentViewer document={sourceDocument} recipe={recipe} session={session} onClose={() => setDocumentId(null)} />}
       {handoff && <HandoffDialog offer={handoff} recipe={recipe} session={session} onClose={() => setHandoff(null)} onConfirm={(toolId, summary) => { const confirmed = confirmHandoff(toolId, summary); if (confirmed) setHandoff(null); return confirmed }} />}
-      {showReview && <ReviewGuide recipe={recipe} session={session} updateProfile={updateProfile} onClose={() => setShowReview(false)} onJump={jumpToStep} onTryExample={() => openExample()} anchorRef={reviewButton} />}
+      {showReview && <ReviewGuide recipe={recipe} session={session} updateProfile={updateProfile} guided={guided} onGuidedChange={value => { setGuided(value); setGuideStep(null) }} onSelectStep={step => setGuideStep(guided ? step : null)} onClose={() => { setShowReview(false); setGuideStep(null) }} onJump={jumpToStep} onTryExample={() => { setGuideStep(null); openExample() }} anchorRef={reviewButton} />}
       {showExample && <Modal title="Try this example" eyebrow="COOKBOOK LEARNING CONTROLS" className="lab-dialog" wide onClose={() => setShowExample(false)}>
         <div className="modal-body">
           {error && <p className="error-notice" role="alert">{error}</p>}
@@ -160,5 +169,6 @@ export function Studio({ recipe, entryMode = 'build' }: { recipe: CompiledRecipe
       {showReset && <Modal title="Reset this recipe?" onClose={() => setShowReset(false)}><div className="modal-body"><p>This restores the original profile and removes this recipe’s connections, selected sources, enabled tools, conversation, reactions, evaluation, activity, and simulated requests from this browser.</p><div className="callout"><Info fontSize={18} aria-hidden="true" /><p>To keep your configuration and just start another conversation, use New chat in Preview.</p></div></div><div className="modal-footer"><button className="button secondary" type="button" onClick={() => setShowReset(false)}>Keep my work</button><button className="button danger" type="button" onClick={() => { if (reset()) { setResetCount(value => value + 1); setMode('build'); setShowReset(false) } }}><RotateCcw fontSize={15} aria-hidden="true" />Reset recipe</button></div></Modal>}
       {showEnvironment && <Modal title="Your local learning environment" eyebrow="COPILOT STUDIO AGENTS COOKBOOK" onClose={() => setShowEnvironment(false)}><div className="modal-body"><div className="callout accent"><ShieldCheck fontSize={22} aria-hidden="true" /><p>This independent educational simulator uses fictional data and deterministic rules. It is not an official Microsoft product and is not connected to a real environment or account.</p></div><p className="environment-note">Your configuration and exercise history are stored in this browser. Do not enter personal or confidential data. No generative AI, external requests, or real publications are performed.</p><p className="environment-note"><CircleHelp fontSize={16} aria-hidden="true" />Use Review for guided steps and Publish for an implementation brief.</p></div><div className="modal-footer"><span className="fine-print">Agents Cookbook beta</span><button className="button secondary" type="button" onClick={() => setShowEnvironment(false)}>Close</button></div></Modal>}
     </div>
+    </ReviewCueContext.Provider>
   )
 }

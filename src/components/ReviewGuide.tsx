@@ -9,13 +9,17 @@ import { isStepComplete } from '../domain/engine.ts'
 import { Modal } from './Modal.tsx'
 import { PreviewSettings } from './Panels.tsx'
 import { LabRuleGuide } from './InteractiveLab.tsx'
+import { useReviewCue } from './reviewCue.ts'
 
-export function ReviewGuide({ recipe, session, updateProfile, onClose, onJump, onTryExample, anchorRef }: {
+export function ReviewGuide({ recipe, session, updateProfile, onClose, onJump, onTryExample, anchorRef, guided, onGuidedChange, onSelectStep }: {
   recipe: CompiledRecipe
   session: Session
   updateProfile: (patch: Partial<AgentProfile>) => void
   onClose: () => void
   onJump: (step: GuideStep) => void
+  guided: boolean
+  onGuidedChange: (enabled: boolean) => void
+  onSelectStep: (step: GuideStep) => void
   onTryExample: () => void
   anchorRef: RefObject<HTMLButtonElement | null>
 }) {
@@ -24,7 +28,9 @@ export function ReviewGuide({ recipe, session, updateProfile, onClose, onJump, o
   const remaining = recipe.journey.length - completed
   const nextStep = recipe.journey.find(step => !isStepComplete(recipe, session, step))
   const settings = useRef<HTMLDetailsElement>(null)
+  const guideSettings = useReviewCue()?.type === 'behavior-edited'
   function choose(step: GuideStep) {
+    onSelectStep(step)
     if (step.completeWhen.type === 'behavior-edited' && settings.current) {
       settings.current.open = true
       settings.current.querySelector('summary')?.focus()
@@ -38,6 +44,8 @@ export function ReviewGuide({ recipe, session, updateProfile, onClose, onJump, o
     <Modal title="Review your recipe" onClose={onClose} anchorRef={anchorRef} className="review-panel">
       <div className="review-guide-body">
         <p className="review-intro">Open <strong>Review</strong> at any time to see your next step.</p>
+        <label className="switch-label review-guided-switch"><span>Guided</span><input aria-label="Guided" type="checkbox" role="switch" checked={guided} onChange={event => onGuidedChange(event.target.checked)} aria-describedby="review-guided-help" /><span className="switch-track" aria-hidden="true" /><small aria-hidden="true">{guided ? 'On' : 'Off'}</small></label>
+        <p id="review-guided-help" className="field-hint">Highlight where to click when you open a learning step.</p>
         {recipe.lab && <p className="review-intro">Complete the evidence requirements listed below. Depending on the recipe, these include named examples, source reviews, confirmed actions and evaluation. Evidence belongs to your current configuration; after changing sources, tools or profile settings, repeat the affected work. Evaluate does not replace hands-on Preview steps.</p>}
         <div className="review-filters" role="group" aria-label="Filter learning steps">
           {([
@@ -60,7 +68,7 @@ export function ReviewGuide({ recipe, session, updateProfile, onClose, onJump, o
               <li key={step.id} className={done ? 'complete' : ''} aria-current={step === nextStep ? 'step' : undefined}>
                 <Icon aria-hidden="true" />
                 <div>
-                  <div className="review-step-heading"><h4>{step.title}</h4><button type="button" className="button small secondary" onClick={() => choose(step)}>{done ? 'View' : step === nextStep ? 'Next step' : 'Open'}</button></div>
+                  <div className="review-step-heading"><h4>{step.title}</h4><button type="button" data-review-cue={(guided && step === nextStep && !guideSettings) || undefined} className="button small secondary" onClick={() => choose(step)}>{done ? 'View' : step === nextStep ? 'Next step' : 'Open'}</button></div>
                   <p>{step.description}</p>
                   <span className="sr-only">{done ? 'Complete' : 'Not complete'}</span>
                 </div>

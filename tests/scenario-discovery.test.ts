@@ -47,20 +47,21 @@ test('category filters combine, use available metadata and preserve unclassified
   assert.ok(compareCategories(undefined, a, 'difficulty') > 0)
 })
 
-test('only dialogs for available recipes offer a single primary recipe link directly to Preview', async () => {
+test('only dialogs for available recipes offer a single primary recipe link to the guided Build entry', async () => {
   const server = await createServer({ server: { middlewareMode: true }, logLevel: 'silent', appType: 'custom' })
   try {
     const { ScenarioExplorer, ScenarioDetails } = await server.ssrLoadModule('/src/components/ScenarioExplorer.tsx')
     const catalogue = renderToStaticMarkup(createElement(ScenarioExplorer, { recipes }))
     assert.equal(catalogue.match(/aria-haspopup="dialog"/g)?.length, getScenarioEntries(recipes).length)
     assert.doesNotMatch(catalogue, /href="#\/recipes\/|<dialog|PUBLIC SERVICES &amp;/)
+    assert.doesNotMatch(catalogue, /Scenario navigation|Browse agents/)
     for (const entry of getScenarioEntries(recipes)) {
       const detail = renderToStaticMarkup(createElement(ScenarioDetails, { entry, onClose: () => {} }))
       assert.ok(detail.includes('<dialog'))
       if (entry.story) for (const label of ['The problem', 'Why it matters', 'How an agent helps', 'Start small', 'How to measure progress']) assert.ok(detail.includes(label))
       if (entry.recipe) {
         assert.equal(detail.match(/href="#\/recipes\//g)?.length, 1)
-        assert.ok(detail.includes(`class="button primary" href="${recipeHref(entry.recipe.id, 'preview')}"`))
+        assert.ok(detail.includes(`class="button primary" href="${recipeHref(entry.recipe.id)}"`))
         assert.equal(detail.match(/Cook this recipe/g)?.length, 1)
         assert.doesNotMatch(detail, /Open in simulator/)
       }

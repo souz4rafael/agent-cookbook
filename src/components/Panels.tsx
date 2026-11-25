@@ -10,6 +10,7 @@ import { createImplementationBrief } from '../domain/export.ts'
 import { AgentIconGraphic } from './AgentIcon.tsx'
 import { implementationReferences } from '../content/implementation-references.ts'
 import { InstructionEditor } from './InstructionEditor.tsx'
+import { useReviewCue } from './reviewCue.ts'
 
 interface ConfigurationProps { recipe: CompiledRecipe; session: Session }
 
@@ -18,9 +19,10 @@ export function BuildEditor({ recipe, session, updateProfile, onChangeIcon }: Co
   onChangeIcon: () => void
 }) {
   const editable = (key: keyof AgentProfile) => recipe.editable.includes(key)
+  const guideProfile = useReviewCue()?.type === 'profile-edited'
   return (
     <div className="build-editor">
-      <div className="agent-identity"><button type="button" className="agent-large-icon" onClick={onChangeIcon} aria-label="Change agent icon" title="Change agent icon"><AgentIconGraphic icon={session.agentIcon} size={36} /></button><div><label className="sr-only" htmlFor="agent-name">Agent name</label><input id="agent-name" className="agent-name-input" value={session.profile.name} maxLength={100} readOnly={!editable('name')} onChange={event => updateProfile({ name: event.target.value })} aria-describedby="agent-name-help" /><span id="agent-name-help" className="identity-hint">{editable('name') ? 'Your agent · editable draft' : 'Name defined by this recipe'}<span>{session.profile.name.length}/100</span></span></div></div>
+      <div className="agent-identity"><button type="button" className="agent-large-icon" onClick={onChangeIcon} aria-label="Change agent icon" title="Change agent icon"><AgentIconGraphic icon={session.agentIcon} size={36} /></button><div><label className="sr-only" htmlFor="agent-name">Agent name</label><input id="agent-name" className="agent-name-input" data-review-cue={(guideProfile && editable('name')) || undefined} value={session.profile.name} maxLength={100} readOnly={!editable('name')} onChange={event => updateProfile({ name: event.target.value })} aria-describedby="agent-name-help" /><span id="agent-name-help" className="identity-hint">{editable('name') ? 'Your agent · editable draft' : 'Name defined by this recipe'}<span>{session.profile.name.length}/100</span></span></div></div>
       <InstructionEditor recipe={recipe} value={session.profile.instructions} onChange={instructions => updateProfile({ instructions })} />
     </div>
   )
@@ -30,10 +32,11 @@ export function PreviewSettings({ recipe, session, updateProfile }: Configuratio
   updateProfile: (patch: Partial<AgentProfile>) => void
 }) {
   const editable = (key: keyof AgentProfile) => recipe.editable.includes(key)
+  const guideBehavior = useReviewCue()?.type === 'behavior-edited'
   return (
     <>
       <p className="field-hint">These exercise settings change the tone and detail of deterministic responses. They are not additional controls in Copilot Studio.</p>
-      <div className="behaviour-content">
+      <div className="behaviour-content" data-review-cue={guideBehavior || undefined}>
           <fieldset className="segmented-field" disabled={!editable('tone')}><legend>Conversation tone</legend><div className="segmented-options">{([{ value: 'friendly', title: 'Friendly', detail: 'Warm and approachable' }, { value: 'formal', title: 'Formal', detail: 'Professional and direct' }] as const).map(item => <label key={item.value} className={session.profile.tone === item.value ? 'selected' : ''}><input type="radio" name="agent-tone" checked={session.profile.tone === item.value} onChange={() => updateProfile({ tone: item.value })} /><span><strong>{item.title}</strong><span>{item.detail}</span></span>{session.profile.tone === item.value && <Check fontSize={14} aria-hidden="true" />}</label>)}</div>{!editable('tone') && <p className="field-hint">Defined by this recipe.</p>}</fieldset>
           <fieldset className="segmented-field" disabled={!editable('detail')}><legend>Response detail</legend><div className="segmented-options">{([{ value: 'concise', title: 'Concise', detail: 'Straight to the point' }, { value: 'detailed', title: 'Detailed', detail: 'More context from the source' }] as const).map(item => <label key={item.value} className={session.profile.detail === item.value ? 'selected' : ''}><input type="radio" name="agent-detail" checked={session.profile.detail === item.value} onChange={() => updateProfile({ detail: item.value })} /><span><strong>{item.title}</strong><span>{item.detail}</span></span>{session.profile.detail === item.value && <Check fontSize={14} aria-hidden="true" />}</label>)}</div>{!editable('detail') && <p className="field-hint">Defined by this recipe.</p>}</fieldset>
       </div>

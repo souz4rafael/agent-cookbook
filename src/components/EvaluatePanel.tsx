@@ -12,6 +12,7 @@ import evaluationIllustration from '../assets/evaluation-illustration.png'
 import { InfoPopover } from './InfoPopover.tsx'
 import { CreditEstimate } from './CreditEstimate.tsx'
 import { LabResultDetails, ReviewableDraft } from './InteractiveLab.tsx'
+import { useReviewCue } from './reviewCue.ts'
 import './EvaluatePanel.css'
 
 interface EvaluatePanelProps {
@@ -93,6 +94,7 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
   const id = useId()
   const questions = recipe.lab?.cases.map(item => item.title) ?? recipe.test.suggestedQuestions
   const questionCount = questions.length
+  const evaluationTarget = useReviewCue()?.type === 'evaluation-passed' && questionCount > 0
   const lastRun = evaluation?.lastRun
   const effectiveScreen = screen === 'results' && !lastRun ? 'home' : screen
   const stale = !!lastRun && lastRun.fingerprint !== getConfigurationFingerprint(session)
@@ -158,7 +160,7 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
             <InfoPopover title="Recipe evaluations"><p>This guided exercise uses {questionCount} declared {recipe.lab ? 'input cases with expected outcomes, tools and policy sources' : 'questions'}. It does not measure AI quality or use an AI judge.</p><p>You can configure one evaluation, inspect its results, and rerun it after changing your agent settings. Evaluations do not replace the required hands-on Preview cases.</p></InfoPopover>
           </div>
           <div className="eval-welcome-estimate"><CreditEstimate estimate={creditEstimate} scope={creditScope} /></div>
-          <button className="button primary eval-create-button" type="button" onClick={openSetup} disabled={questionCount === 0}>
+          <button className="button primary eval-create-button" type="button" onClick={openSetup} disabled={questionCount === 0} data-review-cue={evaluationTarget || undefined}>
             <Add20Regular aria-hidden="true" />Create your first evaluation
           </button>
           {questionCount === 0 && <p className="eval-empty-reason">This recipe does not contain evaluation questions.</p>}
@@ -178,12 +180,13 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
             <button type="button" className="icon-button eval-back" aria-label="Back to evaluations; discard unsaved changes" onClick={goHome}><ChevronLeft20Regular aria-hidden="true" /></button>
             <label className="sr-only" htmlFor={`${id}-name`}>Evaluation name</label>
             <input id={`${id}-name`} ref={nameInput} className="eval-name-input" type="text" placeholder="Enter the evaluation name"
+              data-review-cue={(evaluationTarget && draft.dataReady && !validName(draft.name)) || undefined}
               maxLength={100} value={draft.name} aria-invalid={!validName(draft.name)} aria-describedby={`${id}-name-help`}
               onChange={event => setDraft({ ...draft, name: event.target.value })} />
           </div>
           <div className="eval-editor-actions">
             <button type="button" className="button secondary" onClick={save} disabled={!ready}><Save20Regular aria-hidden="true" />Save</button>
-            <button type="button" className="button primary" onClick={() => run(draft.name)} disabled={!ready}><Play20Regular aria-hidden="true" />Run</button>
+            <button type="button" className="button primary" onClick={() => run(draft.name)} disabled={!ready} data-review-cue={(evaluationTarget && ready) || undefined}><Play20Regular aria-hidden="true" />Run</button>
             <CreditEstimate estimate={creditEstimate} scope={creditScope} />
           </div>
         </div>
@@ -232,7 +235,7 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
               </fieldset>
               <div className="eval-generation-options"><label htmlFor={`${id}-options`}>Show all generation options</label><input id={`${id}-options`} className="eval-fixed-switch" type="checkbox" role="switch" checked={false} readOnly disabled /></div>
               <div className="eval-generate-row">
-                <button className="button secondary" type="button" disabled={questionCount === 0} onClick={() => {
+                <button className="button secondary" type="button" disabled={questionCount === 0} data-review-cue={evaluationTarget || undefined} onClick={() => {
                   pendingFocus.current = 'data'
                   setDraft({ ...draft, dataReady: true })
                 }}>Generate data set</button>
@@ -286,7 +289,7 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
           </div>
           <div className="eval-editor-actions">
             <button type="button" className="button secondary" onClick={openSetup}><Edit20Regular aria-hidden="true" />Edit setup</button>
-            <button type="button" className="button primary" onClick={() => run(evaluation.name)} disabled={questionCount === 0}><Play20Regular aria-hidden="true" />Run again</button>
+            <button type="button" className="button primary" onClick={() => run(evaluation.name)} disabled={questionCount === 0} data-review-cue={evaluationTarget || undefined}><Play20Regular aria-hidden="true" />Run again</button>
             <CreditEstimate estimate={creditEstimate} scope={creditScope} />
           </div>
         </div>
@@ -313,7 +316,7 @@ function EvaluationWorkspace({ recipe, session, onSave, onRun, onDocument }: Eva
           <div><h2><button className="eval-name-link" type="button" onClick={lastRun ? openResults : openSetup}>{evaluation.name}</button></h2><span className="eval-ready-label">{lastRun ? stale ? 'Configuration changed' : 'Results available' : 'Ready to run'}</span></div>
           <div className="eval-saved-actions">
             <button className="button secondary" type="button" onClick={openSetup}><Edit20Regular aria-hidden="true" />Edit setup</button>
-            <button className="button primary" type="button" onClick={() => run(evaluation.name)} disabled={questionCount === 0}><Play20Regular aria-hidden="true" />{lastRun ? 'Run again' : 'Run'}</button>
+            <button className="button primary" type="button" onClick={() => run(evaluation.name)} disabled={questionCount === 0} data-review-cue={evaluationTarget || undefined}><Play20Regular aria-hidden="true" />{lastRun ? 'Run again' : 'Run'}</button>
           </div>
         </div>
         <dl className="eval-saved-details">

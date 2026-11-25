@@ -3,6 +3,7 @@ import { Play20Regular, ArrowReset20Regular } from '@fluentui/react-icons'
 import type { CompiledRecipe, Session, TestResponse } from '../domain/types.ts'
 import type { LabInputs } from '../domain/lab-types.ts'
 import { defaultLabInputs, formatLabValue, inputsEqual } from '../domain/lab.ts'
+import { useReviewCue } from './reviewCue.ts'
 import './InteractiveLab.css'
 
 export function InteractiveLab({ recipe, session, onChange, onRun }: {
@@ -12,6 +13,8 @@ export function InteractiveLab({ recipe, session, onChange, onRun }: {
   onRun: () => boolean
 }) {
   const lab = recipe.lab
+  const cue = useReviewCue()
+  const runTarget = cue?.type === 'case-tested' || cue?.type === 'citation-opened' || cue?.type === 'action-confirmed'
   if (!lab) return null
   const inputs = session.labInputs ?? defaultLabInputs(lab)
   const examples = lab.cases.filter(item => !item.disabledKnowledge?.length && !item.disabledTools?.length)
@@ -36,7 +39,7 @@ export function InteractiveLab({ recipe, session, onChange, onRun }: {
             <span id={`lab-help-${field.id}`} className="field-hint">{field.hint}</span>
           </div>)}
         </div>
-        <div className="lab-actions"><button type="button" className="button primary" onClick={onRun}><Play20Regular aria-hidden="true" />Run example</button><button type="button" className="button quiet" onClick={() => onChange(defaultLabInputs(lab))}><ArrowReset20Regular aria-hidden="true" />Restore inputs</button><span>Running calculates an outcome. It never executes a tool.</span></div>
+        <div className="lab-actions"><button type="button" className="button primary" onClick={onRun} data-review-cue={runTarget || undefined}><Play20Regular aria-hidden="true" />Run example</button><button type="button" className="button quiet" onClick={() => onChange(defaultLabInputs(lab))}><ArrowReset20Regular aria-hidden="true" />Restore inputs</button><span>Running calculates an outcome. It never executes a tool.</span></div>
       </div>
     </div>
   )

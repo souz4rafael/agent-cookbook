@@ -81,7 +81,8 @@ can supply a scenario section in their YAML, with business context, a reference
 label and home: {challenge, experiment, takeaway, scope}. A group identifies
 the journey title and its guidance or operations perspective. Scenarios shows
 the summaries; selecting a card opens its full story. Cook this recipe opens
-Preview directly with the existing configuration; it does not run or configure a case.
+Build with Review visible. Turn on Guided in Review to highlight where to act
+for a selected step. Opening a step never runs an example or confirms an action.
 Scenarios can be filtered by difficulty and industry. The Agents table sorts by
 name, difficulty, industry, estimated duration or agent harness when a column heading is selected.
 The harness column uses a Cookbook classification, not an official runtime ID.

@@ -1,0 +1,12 @@
+.harness-shell [data-review-spotlight] {
+  outline: 3px solid var(--cp-accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 7px var(--cp-accent-soft), 0 0 14px var(--cp-accent-soft);
+  scroll-margin: 12px;
+}
+.review-guided-switch { display: flex; align-items: center; gap: 10px; margin: 10px 0 4px; }
+.review-guided-switch small { color: var(--cp-text-muted); }
+.review-step-notice { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 5px 16px; padding: 6px 16px; background: var(--cp-accent-soft); font-size: 12px; }
+@media (forced-colors: active) {
+  .harness-shell [data-review-spotlight] { outline-color: Highlight; box-shadow: none; }
+}
